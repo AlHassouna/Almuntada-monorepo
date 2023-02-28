@@ -20,7 +20,8 @@ function getDirection(locale) {
   return 'ltr';
 }
 
-function CustomApp({ Component, pageProps }: AppProps) {
+const CustomApp = ({ Component, pageProps }: AppProps)=> {
+
   const { locale } = useRouter();
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
