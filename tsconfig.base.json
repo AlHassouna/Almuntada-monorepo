@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@myworkspace/pgsql": ["libs/pgsql/src/index.ts"]
+      "@myworkspace/pgsql": ["libs/pgsql/src/index.ts"],
+      "@myworkspace/shared-hooks": ["libs/shared-hooks/src/index.ts"],
+      "@myworkspace/shared-types": ["libs/shared-types/src/index.ts"],
+      "@myworkspace/system-design": ["libs/system-design/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
