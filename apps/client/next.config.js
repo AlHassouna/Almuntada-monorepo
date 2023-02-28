@@ -16,6 +16,9 @@ const nextConfig = {
     defaultLocale: 'ar',
     localeDetection: false,
   },
+  compiler: {
+    styledComponents: true,
+  },
 };
 
 module.exports = withNx(nextConfig);
