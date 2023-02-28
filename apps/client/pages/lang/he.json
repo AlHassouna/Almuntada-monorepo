@@ -2,5 +2,9 @@
   "page.home.head.title": "ברוכים הבאים ל next.18 i18n",
   "page.home.head.meta.description": "Next.js i18n דוגמא - עברית",
   "page.home.title": "ברוכים הבאים ל next.18 i18n",
-  "page.home.description": "זוהי דוגמא לכיצד להשתמש ב i18n ב next.18"
+  "page.home.description": "זוהי דוגמא לכיצד להשתמש ב i18n ב next.18",
+  "navbar.home": "בית",
+  "navbar.about": "אודות",
+  "navbar.contact": "צור קשר",
+  "navbar.services": "שירותים"
 }

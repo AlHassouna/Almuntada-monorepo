@@ -1,13 +1,9 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { FormattedMessage, useIntl } from 'react-intl';
-
+import { useIntl } from 'react-intl';
+import Navbar from '../components/Navbar';
 import styles from './index.module.css';
 
 export default function Home({ dir }) {
-  const { locales } = useRouter();
-
   const intl = useIntl();
 
   const title = intl.formatMessage({ id: 'page.home.head.title' });
@@ -16,39 +12,20 @@ export default function Home({ dir }) {
   });
 
   return (
-    <div className={styles.container}>
+    <div >
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.ico" />
-
         <link rel="alternate" href="http://example.com" hrefLang="en" />
         <link rel="alternate" href="http://example.com/ar" hrefLang="ar" />
         <link rel="alternate" href="http://example.com/fr" hrefLang="fr" />
       </Head>
 
       <header>
-        <div className="w-1/2 flex justify-between mx-auto">
-          {[...locales].sort().map((locale) => (
-            <Link key={locale} href="/" locale={locale}>
-              {locale}
-            </Link>
-          ))}
-        </div>
+        <Navbar />
       </header>
 
-      <main dir={dir} className={styles.main}>
-        <h1 className={styles.title}>
-          <FormattedMessage
-            id="page.home.title"
-            values={{ b: (chunks) => <b>{chunks}</b> }}
-          />
-        </h1>
-
-        <p className={styles.description}>
-          <FormattedMessage id="page.home.description" />
-        </p>
-      </main>
+      <main dir={dir} className={styles.main}></main>
     </div>
   );
 }
