@@ -1,0 +1,4 @@
+labels:
+  - feature:
+      - color: f2e
+      - condetion: commit.message.matches('/:/')
