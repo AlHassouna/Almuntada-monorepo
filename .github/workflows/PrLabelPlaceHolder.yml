@@ -1,0 +1,23 @@
+name: PrLablePlaceHolder
+
+on: [pull_request]
+
+jobs:
+  add-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Define Label
+        run: |
+          PR_LABEL=$(jq -r '.pull_request.labels[] | .name' "$GITHUB_EVENT_PATH")
+          LABELS=$(jq -r '.pull_request.labels[] | .name' "$GITHUB_EVENT_PATH")
+      - name: Add labels to pull request
+        uses: actions/github-script@v3
+        with:
+          script: |
+            const issue_number = context.payload.pull_request.number;
+            const labels = "${{ steps.concat-labels.outputs.labels }}";
+            await github.issues.addLabels({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number,
+            labels: labels.split('\n').filter(Boolean),
