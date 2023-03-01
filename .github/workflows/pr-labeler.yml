@@ -24,12 +24,4 @@ jobs:
                 labels: ['feature'],
                 color: 'green'
               })
-              else if (labels.includes('bug')) {
-              github.issues.addLabels({
-                issue_number: github.event.number,
-                owner: github.context.repo.owner,
-                repo: github.context.repo.repo,
-                labels: ['bug'],
-                color: 'red'
-              })
             })
