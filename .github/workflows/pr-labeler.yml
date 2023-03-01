@@ -15,13 +15,11 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const labels = github.event.pull_request.labels.map(label => label.name)
-            if (labels.includes('feature') || labels.includes('feat')) {
-              github.issues.addLabels({
-                issue_number: github.event.number,
-                owner: github.context.repo.owner,
-                repo: github.context.repo.repo,
-                labels: ['feature'],
-                color: 'green'
-              })
-            })
+            const labels = github.event.head.commit.message.split(':')
+            const label = labels[0].trim()
+            const pr = context.payload.pull_request
+            const issue_number = pr.number
+            const owner = context.repo.owner
+            const repo = context.repo.repo
+            const params = { owner, repo, issue_number, labels: [label] }
+            await github.issues.addLabels(params)
