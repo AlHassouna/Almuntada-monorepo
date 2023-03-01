@@ -3,7 +3,7 @@ import { useIntl } from 'react-intl';
 import Navbar from '../components/Navbar';
 import styles from './index.module.css';
 
-export default function Home({ dir }) {
+export default function Home() {
   const intl = useIntl();
 
   const title = intl.formatMessage({ id: 'page.home.head.title' });
@@ -12,7 +12,7 @@ export default function Home({ dir }) {
   });
 
   return (
-    <div >
+    <div>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -25,7 +25,7 @@ export default function Home({ dir }) {
         <Navbar />
       </header>
 
-      <main dir={dir} className={styles.main}></main>
+      <main className={styles.main}></main>
     </div>
   );
 }
