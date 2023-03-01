@@ -15,11 +15,11 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const labels = github.event.head.commit.message.split(':')
-            const label = labels[0].trim()
-            const pr = context.payload.pull_request
-            const issue_number = pr.number
-            const owner = context.repo.owner
-            const repo = context.repo.repo
-            const params = { owner, repo, issue_number, labels: [label] }
-            await github.issues.addLabels(params)
+            const labels = github.event.pull_request.head.sha
+            const label = labels.split(':')[0]
+            github.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+              labels: [label]
+            })
