@@ -15,10 +15,10 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const labels = context.payload.pull_request.title.split(':')
+            const labels = context.payload.pull_request.commits_url.match(/\/commits\/(.*)/);
             github.issues.addLabels({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: labels
+              labels: labels[0]
             })
