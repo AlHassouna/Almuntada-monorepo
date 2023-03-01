@@ -15,13 +15,21 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const lastCommit = context.payload.pull_request.commits_url.split(':').pop()
-            const { data: commits } = await github.request(context.payload.pull_request.commits_url)
-            const { data: files } = await github.request(commits[commits.length - 1].url)
-            const labels = files.map(file => file.filename.split(':')[0]).filter((value, index, self) => self.indexOf(value) === index)
-            await github.issues.addLabels({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels 
+            const labels = github.event.pull_request.labels.map(label => label.name)
+            if (labels.includes('feature') || labels.includes('feat')) {
+              github.issues.addLabels({
+                issue_number: github.event.number,
+                owner: github.context.repo.owner,
+                repo: github.context.repo.repo,
+                labels: ['feature'],
+                color: 'green'
+              })
+              else if (labels.includes('bug')) {
+              github.issues.addLabels({
+                issue_number: github.event.number,
+                owner: github.context.repo.owner,
+                repo: github.context.repo.repo,
+                labels: ['bug'],
+                color: 'red'
+              })
             })
