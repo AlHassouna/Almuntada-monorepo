@@ -30,4 +30,5 @@ jobs:
               ...context.repo,
               issue_number: context.payload.pull_request.number,
               labels: [label],
+            console.log(`Added label: ${label}`);
             });
