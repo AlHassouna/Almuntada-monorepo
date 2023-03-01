@@ -6,12 +6,19 @@ jobs:
   add-label:
     runs-on: ubuntu-latest
     steps:
-      - name: Define labels
-        id: labels
+      - name: Concatenate labels
         run: |
-          echo "::set-output name=labels::['label1', 'label2']"
-      - name: Add labels
-        uses: actions-ecosystem/action-add-labels@v1
+          PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
+          LABELS=$(curl -sSL -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/issues/${PR_NUMBER}/labels | jq -r '.[] | select(.name | contains(":")) | .name' | awk -F : '{print $1}' | sort | uniq | tr '\n' ',' | sed 's/,$//')
+      - name: Add labels to pull request
+        uses: actions/github-script@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          labels: ${{ steps.labels.outputs.labels }}
+          script: |
+            const issue_number = context.payload.pull_request.number;
+            const labels = "${{ steps.concat-labels.outputs.labels }}";
+            await github.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number,
+              labels: labels.split(',').filter(Boolean),
+            });
