@@ -13,19 +13,20 @@ jobs:
       - uses: actions/labeler@v4
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-  # add-labels:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/github-script@v4
-  #       with:
-  #         github-token: ${{secrets.GITHUB_TOKEN}}
-  #         script: |
-  #           const labels = github.event.pull_request.head.sha
-  #           const label = labels.split(':')[0]
-  #           github.pulls.update({
-  #             owner: context.repo.owner,
-  #             repo: context.repo.repo,
-  #             pull_number: context.issue.number,
-  #             labels: [label]
-  #           })
+
+  add-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/github-script@v4
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const labels = github.event.pull_request.head.sha
+            const label = labels.split(':')[0]
+            github.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+              labels: [label]
+            })
