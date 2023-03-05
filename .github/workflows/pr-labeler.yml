@@ -14,21 +14,14 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-  #  add label to pr by the semantic versioning of the pr title
+  #  add label from the semantic title of the PR (e.g. feat: add label to PR)
 
-  add-label:
+  add-label-to-pr:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/labeler@v4
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          configuration-path: .github/labeler.yml
-          script: |
-            const title = context.payload.pull_request.title;
-            const label = title.startsWith('feat') ? 'feature' : title.startsWith('fix') ? 'bug' : 'other';
-            await github.issues.addLabels({
-              ...context.repo,
-              issue_number: context.payload.pull_request.number,
-              labels: [label],
-            console.log(`Added label: ${label}`);
-            });
+          configuration-path: .github/semantic.yml

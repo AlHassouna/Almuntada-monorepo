@@ -42,7 +42,6 @@ function Navbar() {
           className="items-center w-20 h-20 cursor-pointer"
           onClick={() => router.push('/')}
         />
-        {/* Links desktop starts */}
         <Styled.NavbarList>
           {links.map(({ name, id, link }) => (
             <Styled.NavbarListItem
@@ -77,8 +76,6 @@ function Navbar() {
             ))}
           </Styled.NavbarMenuList>
         </Styled.NavbarMenu>
-        {/* Links desktop ends */}
-        {/* Links mobile starts */}
         <Styled.NavbarMenuListMobile isOpen={isOpen}>
           {links.map(({ name, id, link }) => (
             <Styled.NavbarMenuListItemMobile
@@ -111,7 +108,6 @@ function Navbar() {
             </Styled.NavbarMenuListItemMobile>
           ))}
         </Styled.NavbarMenuListMobile>
-        {/* Links mobile ends */}
       </Styled.NavbarContainer>
     </Styled.Container>
   );
