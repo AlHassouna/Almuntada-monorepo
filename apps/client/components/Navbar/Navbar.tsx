@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useIntl } from 'react-intl';
 import { MenuIcon, CloseIcon } from '@myworkspace/system-design';
-import Logo from '../assets/AlmanshaLogo.png';
-import * as Styled from './styles';
+import Logo from '../../assets/AlmanshaLogo.png';
+import { useIntl } from 'react-intl';
+
+// import { links } from './navbar.consts';
+import * as Styled from './navbar.styled';
 function Navbar() {
+  const intl = useIntl();
   const { locales } = useRouter();
   const router = useRouter();
-  const intl = useIntl();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const links = [
     {
@@ -18,8 +20,8 @@ function Navbar() {
     },
     {
       id: 2,
-      name: intl.formatMessage({ id: 'navbar.about' }),
-      link: '/about',
+      name: intl.formatMessage({ id: 'navbar.podcust' }),
+      link: '/podcast',
     },
     {
       id: 3,
@@ -32,7 +34,6 @@ function Navbar() {
       link: '/contact',
     },
   ];
-
   return (
     <Styled.Container>
       <Styled.NavbarContainer>
