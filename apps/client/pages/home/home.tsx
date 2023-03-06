@@ -15,19 +15,33 @@ import {
   SecondSectionRightSide,
   SecondSectionLeftSideDescription,
   SecondSectionLeftSideTitle2,
+  ThirdSection,
 } from './home.styled';
 import { useIntl } from 'react-intl';
 import Logo from '../../assets/AlmanshaLogo.png';
 import sanadLogo from '../../assets/sanadlogo.jpeg';
 import Image from 'next/image';
 import { MediaCard } from '../../components/Card/Card';
+import { MediaCardThirdSection } from '../../components/Card/MediaCard';
 export const HomePage = () => {
   const intl = useIntl();
-  const cardsInformation = intl.messages[
+  const cardsInformationFirstSection = intl.messages[
     'homepage.ourUnique'
   ] as unknown as Array<{
     title: string;
     description: string;
+  }>;
+
+  const cardsInformationThirdSection = intl.messages[
+    'homepage.wwh'
+  ] as unknown as Array<{
+    title: string;
+    descreprion: string;
+    subTitle: string;
+    descreptions: Array<{
+      descreption: string;
+      icon: string;
+    }>;
   }>;
 
   return (
@@ -45,12 +59,12 @@ export const HomePage = () => {
               {intl.formatMessage({ id: 'homepage.ourUnique.title' })}
             </FirstSectionRightSideSubSectionTitle>
             <FirstSectionRightSideSubSectionDescription>
-              {Object.keys(cardsInformation).map((key, index) => {
+              {Object.keys(cardsInformationFirstSection).map((key, index) => {
                 return (
                   <MediaCard
                     key={index}
-                    description={cardsInformation[key].description}
-                    icon={cardsInformation[key].icon}
+                    description={cardsInformationFirstSection[key].description}
+                    icon={cardsInformationFirstSection[key].icon}
                   />
                 );
               })}
@@ -77,6 +91,19 @@ export const HomePage = () => {
           <Image src={sanadLogo} width={500} height={500} alt="" />
         </SecondSectionRightSide>
       </SecondSection>
+      <ThirdSection>
+        {Object.keys(cardsInformationThirdSection).map((key, index) => {
+          return (
+            <MediaCardThirdSection
+              key={index}
+              description={cardsInformationThirdSection[key].descreption}
+              title={cardsInformationThirdSection[key].title}
+              descriptions={cardsInformationThirdSection[key].sub_descreptions}
+              subTitle={cardsInformationThirdSection[key].sub_title}
+            />
+          );
+        })}
+      </ThirdSection>
     </Container>
   );
 };

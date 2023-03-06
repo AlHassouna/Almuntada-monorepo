@@ -5,6 +5,7 @@ export const Container = styled.div`
   height: 100%;
   width: 100%;
   align-items: center;
+
 `;
 
 export const FirstSection = styled.section`
@@ -142,5 +143,20 @@ export const SecondSectionRightSide = styled.div`
     height: fit-content;
     margin-top: 5rem;
     display: none;
+  }
+`;
+
+export const ThirdSection = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  width: 100%;
+  height: 100%;
+  @media screen and (max-width: 1024px) {
+    margin-top: 5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    height: min-content;
   }
 `;
