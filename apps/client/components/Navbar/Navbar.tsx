@@ -13,14 +13,12 @@ import {
   NavbarListItem,
   NavbarMenuIcon,
   NavbarMenu,
-  NavbarMenuList,
-  NavbarMenuListItem,
   NavbarMenuListMobile,
   NavbarMenuListItemMobile,
 } from './navbar.styled';
+import { LangMenu } from './LangMenu';
 function Navbar() {
   const intl = useIntl();
-  const { locales } = useRouter();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const links = [
@@ -65,25 +63,7 @@ function Navbar() {
           {isOpen ? <CloseIcon /> : <MenuIcon />}
         </NavbarMenuIcon>
         <NavbarMenu>
-          <NavbarMenuList>
-            {locales.map((locale) => (
-              <NavbarMenuListItem
-                key={locale}
-                onClick={() =>
-                  router.push(
-                    {
-                      pathname: router.pathname,
-                      query: { ...router.query, locale },
-                    },
-                    router.asPath,
-                    { locale }
-                  )
-                }
-              >
-                {locale}
-              </NavbarMenuListItem>
-            ))}
-          </NavbarMenuList>
+          <LangMenu />
         </NavbarMenu>
         <NavbarMenuListMobile isOpen={isOpen}>
           {links.map(({ name, id, link }) => (
@@ -97,25 +77,7 @@ function Navbar() {
               {name}
             </NavbarMenuListItemMobile>
           ))}
-
-          {locales.map((locale) => (
-            <NavbarMenuListItemMobile
-              key={locale}
-              onClick={() => {
-                router.push(
-                  {
-                    pathname: router.pathname,
-                    query: { ...router.query, locale },
-                  },
-                  router.asPath,
-                  { locale }
-                );
-                setIsOpen(false);
-              }}
-            >
-              {locale}
-            </NavbarMenuListItemMobile>
-          ))}
+          <LangMenu />
         </NavbarMenuListMobile>
       </NavbarContainer>
     </Container>
