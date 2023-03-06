@@ -16,6 +16,12 @@ import {
   SecondSectionLeftSideDescription,
   SecondSectionLeftSideTitle2,
   ThirdSection,
+  FourthSection,
+  FourthSectionTitle,
+  FourthSectionSub,
+  FooterSection,
+  FooterSectionLeftSide,
+  FooterSectionRightSide,
 } from './home.styled';
 import { useIntl } from 'react-intl';
 import Logo from '../../assets/AlmanshaLogo.png';
@@ -23,6 +29,7 @@ import sanadLogo from '../../assets/sanadlogo.jpeg';
 import Image from 'next/image';
 import { MediaCard } from '../../components/Card/Card';
 import { MediaCardThirdSection } from '../../components/Card/MediaCard';
+import { FounderCard } from '../../components/Card/FounderCard';
 export const HomePage = () => {
   const intl = useIntl();
   const cardsInformationFirstSection = intl.messages[
@@ -44,6 +51,14 @@ export const HomePage = () => {
     }>;
   }>;
 
+  const cardsInforamtionFounderSection = intl.messages[
+    'homepage.founders'
+  ] as unknown as Array<{
+    title: string;
+    name: string;
+    desc: string;
+    image: string;
+  }>;
   return (
     <Container>
       <FirstSection>
@@ -104,6 +119,25 @@ export const HomePage = () => {
           );
         })}
       </ThirdSection>
+      <FourthSection>
+        <FourthSectionTitle>
+          {intl.formatMessage({ id: 'homepage.founders.title' })}
+        </FourthSectionTitle>
+        <FourthSectionSub>
+          {Object.keys(cardsInforamtionFounderSection).map((key, index) => {
+            return (
+              <FounderCard
+                key={index}
+                title={cardsInforamtionFounderSection[key].title}
+                name={cardsInforamtionFounderSection[key].name}
+                desc={cardsInforamtionFounderSection[key].desc}
+                image={cardsInforamtionFounderSection[key].image}
+              />
+            );
+          })}
+        </FourthSectionSub>
+      </FourthSection>
+      <FooterSection></FooterSection>
     </Container>
   );
 };

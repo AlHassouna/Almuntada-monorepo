@@ -1,5 +1,4 @@
 import { intl } from '@myworkspace/system-design';
-console.log(intl, 'hereeeeeee:');
 export const links = [
   {
     id: 1,

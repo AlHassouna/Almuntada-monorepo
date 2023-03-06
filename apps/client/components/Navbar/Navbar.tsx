@@ -6,7 +6,18 @@ import Logo from '../../assets/AlmanshaLogo.png';
 import { useIntl } from 'react-intl';
 
 // import { links } from './navbar.consts';
-import * as Styled from './navbar.styled';
+import {
+  Container,
+  NavbarContainer,
+  NavbarList,
+  NavbarListItem,
+  NavbarMenuIcon,
+  NavbarMenu,
+  NavbarMenuList,
+  NavbarMenuListItem,
+  NavbarMenuListMobile,
+  NavbarMenuListItemMobile,
+} from './navbar.styled';
 function Navbar() {
   const intl = useIntl();
   const { locales } = useRouter();
@@ -35,31 +46,28 @@ function Navbar() {
     },
   ];
   return (
-    <Styled.Container>
-      <Styled.NavbarContainer>
+    <Container>
+      <NavbarContainer>
         <Image
           src={Logo}
           alt="logo"
           className="items-center w-20 h-20 cursor-pointer"
           onClick={() => router.push('/')}
         />
-        <Styled.NavbarList>
+        <NavbarList>
           {links.map(({ name, id, link }) => (
-            <Styled.NavbarListItem
-              key={id}
-              onClick={() => router.push(`${link}`)}
-            >
+            <NavbarListItem key={id} onClick={() => router.push(`${link}`)}>
               {name}
-            </Styled.NavbarListItem>
+            </NavbarListItem>
           ))}
-        </Styled.NavbarList>
-        <Styled.NavbarMenuIcon onClick={() => setIsOpen(!isOpen)}>
+        </NavbarList>
+        <NavbarMenuIcon onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <CloseIcon /> : <MenuIcon />}
-        </Styled.NavbarMenuIcon>
-        <Styled.NavbarMenu>
-          <Styled.NavbarMenuList>
+        </NavbarMenuIcon>
+        <NavbarMenu>
+          <NavbarMenuList>
             {locales.map((locale) => (
-              <Styled.NavbarMenuListItem
+              <NavbarMenuListItem
                 key={locale}
                 onClick={() =>
                   router.push(
@@ -73,13 +81,13 @@ function Navbar() {
                 }
               >
                 {locale}
-              </Styled.NavbarMenuListItem>
+              </NavbarMenuListItem>
             ))}
-          </Styled.NavbarMenuList>
-        </Styled.NavbarMenu>
-        <Styled.NavbarMenuListMobile isOpen={isOpen}>
+          </NavbarMenuList>
+        </NavbarMenu>
+        <NavbarMenuListMobile isOpen={isOpen}>
           {links.map(({ name, id, link }) => (
-            <Styled.NavbarMenuListItemMobile
+            <NavbarMenuListItemMobile
               key={id}
               onClick={() => {
                 router.push(`${link}`);
@@ -87,11 +95,11 @@ function Navbar() {
               }}
             >
               {name}
-            </Styled.NavbarMenuListItemMobile>
+            </NavbarMenuListItemMobile>
           ))}
 
           {locales.map((locale) => (
-            <Styled.NavbarMenuListItemMobile
+            <NavbarMenuListItemMobile
               key={locale}
               onClick={() => {
                 router.push(
@@ -106,11 +114,11 @@ function Navbar() {
               }}
             >
               {locale}
-            </Styled.NavbarMenuListItemMobile>
+            </NavbarMenuListItemMobile>
           ))}
-        </Styled.NavbarMenuListMobile>
-      </Styled.NavbarContainer>
-    </Styled.Container>
+        </NavbarMenuListMobile>
+      </NavbarContainer>
+    </Container>
   );
 }
 

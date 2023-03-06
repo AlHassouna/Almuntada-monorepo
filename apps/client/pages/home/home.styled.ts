@@ -5,7 +5,6 @@ export const Container = styled.div`
   height: 100%;
   width: 100%;
   align-items: center;
-
 `;
 
 export const FirstSection = styled.section`
@@ -158,5 +157,74 @@ export const ThirdSection = styled.section`
     flex-direction: column;
     justify-content: space-between;
     height: min-content;
+  }
+`;
+
+export const FourthSection = styled.section`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+`;
+export const FourthSectionSub = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+  @media screen and (max-width: 1024px) {
+    margin-top: 5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    height: min-content;
+  }
+`;
+
+export const FourthSectionTitle = styled.h1`
+  margin-top: 1rem;
+  color: orange;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+`;
+
+export const FooterSection = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50%;
+  background-color: orange;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: space-between;
+    height: min-content;
+  }
+`;
+
+export const FooterSectionLeftSide = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 100%;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+`;
+
+export const FooterSectionRightSide = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
   }
 `;
