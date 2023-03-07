@@ -2,46 +2,45 @@ import React from 'react';
 import {
   Container,
   FirstSection,
+  FirstSectionLeftSide,
+  FooterSection,
+  FourthSection,
+  FourthSectionSub,
+  FourthSectionTitle,
   RightSide,
-  RightSideTitle,
   RightSideDesc,
   RightSideSubSec,
   RightSideSubSecDesc,
   RightSideSubSecTitle,
-  FirstSectionLeftSide,
-  SecondSection,
+  RightSideTitle,
   SecLeftSideTitle,
+  SecondSection,
   SecSecLeftSide,
-  SecSecRightSide,
   SecSecLeftSideDesc,
   SecSecLeftSideTitle2,
+  SecSecRightSide,
   ThirdSection,
-  FourthSection,
-  FourthSectionTitle,
-  FourthSectionSub,
-  FooterSection,
-  FooterSectionLeftSide,
-  FooterSectionRightSide,
 } from './home.styled';
-import { useIntl } from 'react-intl';
+import {useIntl} from 'react-intl';
 import Logo from '../../assets/AlmanshaLogo.png';
 import sanadLogo from '../../assets/sanadlogo.jpeg';
 import Image from 'next/image';
-import { MediaCard } from '../../components/Card/Card';
-import { MediaCardThirdSection } from '../../components/Card/MediaCard';
-import { FounderCard } from '../../components/Card/FounderCard';
+import {MediaCard} from '../../components/Card/Card';
+import {MediaCardThirdSection} from '../../components/Card/MediaCard';
+import {FounderCard} from '../../components/Card/FounderCard';
+
 export const HomePage = () => {
   const intl = useIntl();
   const cardsInformationFirstSection = intl.messages[
     'homepage.ourUnique'
-  ] as unknown as Array<{
+    ] as unknown as Array<{
     title: string;
     description: string;
   }>;
 
   const cardsInformationThirdSection = intl.messages[
     'homepage.wwh'
-  ] as unknown as Array<{
+    ] as unknown as Array<{
     title: string;
     descreprion: string;
     subTitle: string;
@@ -53,25 +52,27 @@ export const HomePage = () => {
 
   const cardsInforamtionFounderSection = intl.messages[
     'homepage.founders'
-  ] as unknown as Array<{
+    ] as unknown as Array<{
     title: string;
     name: string;
     desc: string;
     image: string;
   }>;
+
+  console.log("habibibbibibi")
   return (
     <Container>
       <FirstSection>
         <RightSide>
           <RightSideTitle>
-            {intl.formatMessage({ id: 'homepage.title' })}
+            {intl.formatMessage({id: 'homepage.title'})}
           </RightSideTitle>
           <RightSideDesc>
-            {intl.formatMessage({ id: 'homepage.description' })}
+            {intl.formatMessage({id: 'homepage.description'})}
           </RightSideDesc>
           <RightSideSubSec>
             <RightSideSubSecTitle>
-              {intl.formatMessage({ id: 'homepage.ourUnique.title' })}
+              {intl.formatMessage({id: 'homepage.ourUnique.title'})}
             </RightSideSubSecTitle>
             <RightSideSubSecDesc>
               {Object.keys(cardsInformationFirstSection).map((key, index) => {
@@ -87,23 +88,23 @@ export const HomePage = () => {
           </RightSideSubSec>
         </RightSide>
         <FirstSectionLeftSide>
-          <Image src={Logo} alt="" />
+          <Image src={Logo} alt=""/>
         </FirstSectionLeftSide>
       </FirstSection>
       <SecondSection>
         <SecSecLeftSide>
           <SecLeftSideTitle>
-            {intl.formatMessage({ id: 'homepage.ourVision.title' })}
+            {intl.formatMessage({id: 'homepage.ourVision.title'})}
           </SecLeftSideTitle>
           <SecSecLeftSideTitle2>
-            {intl.formatMessage({ id: 'homepage.ourVision.title2' })}
+            {intl.formatMessage({id: 'homepage.ourVision.title2'})}
           </SecSecLeftSideTitle2>
           <SecSecLeftSideDesc>
-            {intl.formatMessage({ id: 'homepage.ourVision.description' })}
+            {intl.formatMessage({id: 'homepage.ourVision.description'})}
           </SecSecLeftSideDesc>
         </SecSecLeftSide>
         <SecSecRightSide>
-          <Image src={sanadLogo} width={500} height={500} alt="" />
+          <Image src={sanadLogo} width={500} height={500} alt=""/>
         </SecSecRightSide>
       </SecondSection>
       <ThirdSection>
@@ -121,7 +122,7 @@ export const HomePage = () => {
       </ThirdSection>
       <FourthSection>
         <FourthSectionTitle>
-          {intl.formatMessage({ id: 'homepage.founders.title' })}
+          {intl.formatMessage({id: 'homepage.founders.title'})}
         </FourthSectionTitle>
         <FourthSectionSub>
           {Object.keys(cardsInforamtionFounderSection).map((key, index) => {

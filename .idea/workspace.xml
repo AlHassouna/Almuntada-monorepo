@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="feat: update API layer" />
+    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="feat: update API layer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +38,9 @@
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectId" id="2MMqRARQGIMfHTrEe2t11c9LulU" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,7 +51,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/apps/client/API/academic",
+    "last_opened_file_path": "/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.stylelint": "true",
@@ -81,6 +86,8 @@
       <updated>1677587787267</updated>
       <workItem from="1677587788379" duration="32000" />
       <workItem from="1677587822811" duration="22444000" />
+      <workItem from="1678200632766" duration="133000" />
+      <workItem from="1678200810959" duration="245000" />
     </task>
     <task id="LOCAL-00001" summary="feat: webstorm config">
       <created>1677588685594</created>
@@ -155,7 +162,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="develop" />
+                        <option value="origin/feat/003-Fronend-create-about-us" />
                       </list>
                     </value>
                   </entry>
