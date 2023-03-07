@@ -17,7 +17,7 @@ export class CreateUserDto {
     example: 'Hassouna',
   })
   @IsNotEmpty({ message: 'The Last Name is required' })
-  lastName: string;
+  secondName: string;
 
   // Email //
 
@@ -77,4 +77,13 @@ export class CreateUserDto {
     message: 'The career is required',
   })
   career: string;
+  // City //
+
+  @ApiProperty({
+    description: 'The city of the user',
+  })
+  @IsNotEmpty({
+    message: 'The city is required',
+  })
+  city: string;
 }
