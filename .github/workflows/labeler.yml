@@ -1,22 +1,31 @@
 on:
-  - pull_request
-permissions:
-  contents: read
-  pull-requests: write
-
+  pull_request:
+    types: [opened, reopened, synchronize]
 jobs:
-  add-labels:
+  label-semantic-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/github-script@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Label semantic commit
+        uses: actions/github-script@v3
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const labels = context.payload.pull_request.title.split(':')
-            github.issues.addLabels({
-              issue_number: context.issue.number,
+            const commits = await github.pulls.listCommits({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: labels
-            })
+              pull_number: context.payload.pull_request.number
+            });
+            const labels = commits.data.map(commit => {
+              const match = commit.commit.message.match(/(feat|fix|docs|style|refactor|test|chore)(\(.+\))?: .+/);
+              return match ? match[1] : null;
+            });
+            const uniqueLabels = [...new Set(labels.filter(label => label !== null))];
+            await github.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              labels: uniqueLabels
+            });
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
