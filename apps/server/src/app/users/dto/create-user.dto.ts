@@ -1,33 +1,80 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEmail, IsNotEmpty, IsStrongPassword } from 'class-validator';
+import { IsEmail, IsNotEmpty } from 'class-validator';
 
 export class CreateUserDto {
+  // First Name //
+
   @ApiProperty({
-    description: 'The name of the user',
-    example: 'Elias Salom',
+    description: 'The first name of the user',
+    example: 'Hassan',
   })
-  @IsNotEmpty({ message: 'The name is required' })
-  name: string;
+  @IsNotEmpty({ message: 'The First Name is required' })
+  firstName: string;
+
+  // Last Name //
+  @ApiProperty({
+    description: 'The last name of the user',
+    example: 'Hassouna',
+  })
+  @IsNotEmpty({ message: 'The Last Name is required' })
+  lastName: string;
+
+  // Email //
 
   @ApiProperty({
     description: 'The email of the user',
-    example: 'elias.29@hotmail.com',
+    example: 'example@gmail.com',
   })
   @IsEmail({
     allow_display_name: true,
   })
   email: string;
 
+  // Image //
+
   @ApiProperty({
-    description: 'The password of the user',
-    example: '123456',
+    description: 'The image url of the user',
   })
-  @IsStrongPassword({
-    minLength: 6,
-    minLowercase: 1,
-    minUppercase: 1,
-    minNumbers: 1,
-    minSymbols: 1,
+  @IsNotEmpty({ message: 'The image url is required' })
+  image: string;
+
+  // Age //
+
+  @ApiProperty({
+    description: 'The age of the user',
   })
-  password: string;
+  @IsNotEmpty({
+    message: 'The age is required',
+  })
+  age: number;
+
+  // Degree //
+
+  @ApiProperty({
+    description: 'The degree of the user',
+  })
+  @IsNotEmpty({
+    message: 'The degree is required',
+  })
+  degree: string;
+
+  // Subject //
+
+  @ApiProperty({
+    description: 'The subject of the user',
+  })
+  @IsNotEmpty({
+    message: 'The subject is required',
+  })
+  subject: string;
+
+  // Career //
+
+  @ApiProperty({
+    description: 'The career of the user',
+  })
+  @IsNotEmpty({
+    message: 'The career is required',
+  })
+  career: string;
 }

@@ -4,7 +4,6 @@ import {
   Post,
   Body,
   Param,
-  Delete,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
@@ -16,7 +15,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 
-@ApiTags('user')
+@ApiTags('Users')
 @Controller('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
@@ -42,10 +41,5 @@ export class UserController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.userService.findOne(+id);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.userService.remove(+id);
   }
 }

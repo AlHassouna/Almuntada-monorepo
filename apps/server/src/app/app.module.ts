@@ -4,14 +4,15 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { PodcastsModule } from './podcasts/podcasts.module';
 import ormconfig from '../../../../ormconfig';
 
-const IMPORTED_MODULES = [UserModule];
 @Module({
   imports: [
+    UserModule,
+    PodcastsModule,
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot(ormconfig),
-    ...IMPORTED_MODULES,
   ],
 
   controllers: [AppController],
