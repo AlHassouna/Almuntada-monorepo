@@ -6,14 +6,35 @@ export class User {
   id: number;
 
   @Column()
-  name: string;
+  fistName: string;
+
+  @Column()
+  secondName: string;
 
   @Column()
   email: string;
 
   @Column()
-  password: string;
+  image: string;
+
+  @Column()
+  age: number;
+
+  @Column()
+  city: string;
+
+  @Column()
+  degree: string;
+
+  @Column()
+  subject: string;
+
+  @Column()
+  career: string;
 
   @Column()
   createdAt: Date;
+
+  @Column()
+  updatedAt: Date;
 }
