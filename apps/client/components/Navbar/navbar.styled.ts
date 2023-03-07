@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 export const Container = styled.div`
-  display: fixed;
-  z-index: 10;
+  position: fixed;
+  z-index: 50;
   width: 100%;
 `;
 
@@ -12,6 +12,7 @@ export const NavbarContainer = styled.div`
   height: 100%;
   align-items: center;
   justify-content: space-between;
+  background: #d9d0c5;
 `;
 
 export const NavbarList = styled.ul`
@@ -39,40 +40,15 @@ export const NavbarMenuIcon = styled.div`
     justify-content: flex-end;
     cursor: pointer;
     z-index: 40;
-    color: #ccc;
   }
 `;
 
 export const NavbarMenu = styled.div`
   display: flex;
   @media screen and (max-width: 768px) {
-    display: block;
+    display: none;
     justify-content: space-between;
     align-items: center;
-  }
-`;
-
-export const NavbarMenuList = styled.ul`
-  display: none;
-  @media screen and (min-width: 768px) {
-    display: flex;
-  }
-`;
-
-export const NavbarMenuListItem = styled.li`
-  padding: 0 1rem;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
-  }
-  @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
   }
 `;
 
@@ -88,7 +64,6 @@ export const NavbarMenuListMobile = styled.ul<{ isOpen: boolean }>`
   left: 0;
   background: #fff;
   z-index: 30;
-
   transition: all 0.5s ease-in-out;
   transform: ${({ isOpen }) =>
     isOpen ? 'translateX(0)' : 'translateX(-100%)'};
