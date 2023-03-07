@@ -16,7 +16,7 @@ interface Props {
 export const FounderCard: FC<Props> = ({ name, title, desc, image, key }) => {
   return (
     <RevealWrapper delay={100} duration={2000} reset={true}>
-      <Card key={key} sx={{ maxWidth: 345, textAlign: 'center' }}>
+      <Card key={key} sx={{ maxWidth: 345, textAlign: 'center', height: 600 }}>
         <CardMedia sx={{ height: 300 }} image={image} title={name} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
