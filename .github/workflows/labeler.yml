@@ -1,31 +1,22 @@
+name: Add Labels
+
 on:
   pull_request:
-    types: [opened, reopened, synchronize]
+    types: [opened, edited, reopened]
+
 jobs:
-  label-semantic-commit:
+  add_labels:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Label semantic commit
-        uses: actions/github-script@v3
+      - uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ startsWith(github.event.comment.body, '/add-labels') }}
         with:
-          script: |
-            const commits = await github.pulls.listCommits({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number
-            });
-            const labels = commits.data.map(commit => {
-              const match = commit.commit.message.match(/(feat|fix|docs|style|refactor|test|chore)(\(.+\))?: .+/);
-              return match ? match[1] : null;
-            });
-            const uniqueLabels = [...new Set(labels.filter(label => label !== null))];
-            await github.issues.addLabels({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number,
-              labels: uniqueLabels
-            });
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          labels: |
+            documentation
+            changelog
+            feature
+            fix
+            bug
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: .github/semantic.yml
