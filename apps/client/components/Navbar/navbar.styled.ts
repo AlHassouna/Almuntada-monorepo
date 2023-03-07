@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 export const Container = styled.div`
-  display: fixed;
-  z-index: 10;
+  position: fixed;
+  z-index: 50;
   width: 100%;
 `;
 
@@ -12,6 +12,7 @@ export const NavbarContainer = styled.div`
   height: 100%;
   align-items: center;
   justify-content: space-between;
+  background: #d9d0c5;
 `;
 
 export const NavbarList = styled.ul`
@@ -39,7 +40,6 @@ export const NavbarMenuIcon = styled.div`
     justify-content: flex-end;
     cursor: pointer;
     z-index: 40;
-    color: #ccc;
   }
 `;
 
@@ -88,7 +88,6 @@ export const NavbarMenuListMobile = styled.ul<{ isOpen: boolean }>`
   left: 0;
   background: #fff;
   z-index: 30;
-
   transition: all 0.5s ease-in-out;
   transform: ${({ isOpen }) =>
     isOpen ? 'translateX(0)' : 'translateX(-100%)'};

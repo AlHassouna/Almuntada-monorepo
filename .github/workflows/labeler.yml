@@ -1,0 +1,30 @@
+name: Add Labels
+
+on:
+  pull_request:
+    types: [opened, edited, reopened]
+
+jobs:
+  add_labels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ startsWith(github.event.comment.body, '/add-labels') }}
+        with:
+          script: |
+            const labels = ['documentation', 'changelog', 'feature', 'fix', 'bug']
+            const title = github.event.pull_request.title
+            const body = github.event.pull_request.body
+            const titleLabels = labels.filter(label => title.toLowerCase().includes(label))
+            const bodyLabels = labels.filter(label => body.toLowerCase().includes(label))
+            const allLabels = [...new Set([...titleLabels, ...bodyLabels])]
+            return allLabels
+          labels: |
+            documentation
+            changelog
+            feature
+            fix
+            bug
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: .github/semantic.yml

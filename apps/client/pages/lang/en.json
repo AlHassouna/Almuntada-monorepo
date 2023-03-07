@@ -4,7 +4,11 @@
   "page.home.title": "Welcome to <b>Next.js i18n tutorial</b>",
   "page.home.description": "You are currently viewing the homepage in English 🚀",
   "navbar.home": "Home",
-  "navbar.about": "About",
+  "navbar.podcust": "Podcast",
   "navbar.contact": "Contact",
-  "navbar.services": "Services"
+  "navbar.services": "Services",
+  "homepage.title": "مرحبا بك في المنشاة",
+  "homepage.description": "المنشاة هي المنتدى الاكاديمي العربي الاكبر الذي يجمع الاكاديميين العرب من شتى المجالات , القائم على تطوير التعليم العالي بالمجتمع العربي عبر المشاركة ,تبادل الخبرات وايجاد الفرص. كما وان المنشاة تجمع كل الفعاليات الاكاديمية .المنشاة عبارىة عن مرجعًا لجيل القادم الراغب في التعليم الاكاديمي العالي . ",
+  "homepage.ourGolas.title": "اهدافنا",
+  "homepage.ourGoals": []
 }
