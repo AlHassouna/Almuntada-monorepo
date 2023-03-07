@@ -59,6 +59,7 @@ export const HomePage = () => {
     desc: string;
     image: string;
   }>;
+
   return (
     <Container>
       <FirstSection>
