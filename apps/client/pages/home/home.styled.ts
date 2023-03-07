@@ -20,7 +20,7 @@ export const FirstSection = styled.section`
   }
 `;
 
-export const FirstSectionRightSide = styled.div`
+export const RightSide = styled.div`
   display: flex;
   margin-top: 2rem;
   flex-direction: column;
@@ -33,19 +33,19 @@ export const FirstSectionRightSide = styled.div`
   }
 `;
 
-export const FirstSectionRightSideTitle = styled.h1`
+export const RightSideTitle = styled.h1`
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
 `;
 
-export const FirstSectionRightSideDescription = styled.h2`
+export const RightSideDesc = styled.h2`
   font-size: 1.5rem;
   font-weight: 400;
   text-align: right;
 `;
 
-export const FirstSectionRightSideSubSection = styled.section`
+export const RightSideSubSec = styled.section`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -54,7 +54,7 @@ export const FirstSectionRightSideSubSection = styled.section`
   width: 100%;
 `;
 
-export const FirstSectionRightSideSubSectionTitle = styled.h3`
+export const RightSideSubSecTitle = styled.h3`
   font-size: 1.5rem;
   color: orange;
 
@@ -62,7 +62,7 @@ export const FirstSectionRightSideSubSectionTitle = styled.h3`
   text-align: center;
 `;
 
-export const FirstSectionRightSideSubSectionDescription = styled.div`
+export const RightSideSubSecDesc = styled.div`
   display: flex;
   justify-content: space-between;
   width: 80%;
@@ -100,7 +100,7 @@ export const SecondSection = styled.section`
   }
 `;
 
-export const SecondSectionLeftSide = styled.div`
+export const SecSecLeftSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,25 +112,25 @@ export const SecondSectionLeftSide = styled.div`
   }
 `;
 
-export const SecondSectionLeftSideTitle = styled.h1`
+export const SecLeftSideTitle = styled.h1`
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
 `;
-export const SecondSectionLeftSideTitle2 = styled.h2`
+export const SecSecLeftSideTitle2 = styled.h2`
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
   color: orange;
 `;
 
-export const SecondSectionLeftSideDescription = styled.h3`
+export const SecSecLeftSideDesc = styled.h3`
   font-size: 1.5rem;
   font-weight: 400;
   text-align: right;
 `;
 
-export const SecondSectionRightSide = styled.div`
+export const SecSecRightSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

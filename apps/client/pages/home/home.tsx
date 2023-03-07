@@ -2,19 +2,19 @@ import React from 'react';
 import {
   Container,
   FirstSection,
-  FirstSectionRightSide,
-  FirstSectionRightSideTitle,
-  FirstSectionRightSideDescription,
-  FirstSectionRightSideSubSection,
-  FirstSectionRightSideSubSectionDescription,
-  FirstSectionRightSideSubSectionTitle,
+  RightSide,
+  RightSideTitle,
+  RightSideDesc,
+  RightSideSubSec,
+  RightSideSubSecDesc,
+  RightSideSubSecTitle,
   FirstSectionLeftSide,
   SecondSection,
-  SecondSectionLeftSideTitle,
-  SecondSectionLeftSide,
-  SecondSectionRightSide,
-  SecondSectionLeftSideDescription,
-  SecondSectionLeftSideTitle2,
+  SecLeftSideTitle,
+  SecSecLeftSide,
+  SecSecRightSide,
+  SecSecLeftSideDesc,
+  SecSecLeftSideTitle2,
   ThirdSection,
   FourthSection,
   FourthSectionTitle,
@@ -62,18 +62,18 @@ export const HomePage = () => {
   return (
     <Container>
       <FirstSection>
-        <FirstSectionRightSide>
-          <FirstSectionRightSideTitle>
+        <RightSide>
+          <RightSideTitle>
             {intl.formatMessage({ id: 'homepage.title' })}
-          </FirstSectionRightSideTitle>
-          <FirstSectionRightSideDescription>
+          </RightSideTitle>
+          <RightSideDesc>
             {intl.formatMessage({ id: 'homepage.description' })}
-          </FirstSectionRightSideDescription>
-          <FirstSectionRightSideSubSection>
-            <FirstSectionRightSideSubSectionTitle>
+          </RightSideDesc>
+          <RightSideSubSec>
+            <RightSideSubSecTitle>
               {intl.formatMessage({ id: 'homepage.ourUnique.title' })}
-            </FirstSectionRightSideSubSectionTitle>
-            <FirstSectionRightSideSubSectionDescription>
+            </RightSideSubSecTitle>
+            <RightSideSubSecDesc>
               {Object.keys(cardsInformationFirstSection).map((key, index) => {
                 return (
                   <MediaCard
@@ -83,28 +83,28 @@ export const HomePage = () => {
                   />
                 );
               })}
-            </FirstSectionRightSideSubSectionDescription>
-          </FirstSectionRightSideSubSection>
-        </FirstSectionRightSide>
+            </RightSideSubSecDesc>
+          </RightSideSubSec>
+        </RightSide>
         <FirstSectionLeftSide>
           <Image src={Logo} alt="" />
         </FirstSectionLeftSide>
       </FirstSection>
       <SecondSection>
-        <SecondSectionLeftSide>
-          <SecondSectionLeftSideTitle>
+        <SecSecLeftSide>
+          <SecLeftSideTitle>
             {intl.formatMessage({ id: 'homepage.ourVision.title' })}
-          </SecondSectionLeftSideTitle>
-          <SecondSectionLeftSideTitle2>
+          </SecLeftSideTitle>
+          <SecSecLeftSideTitle2>
             {intl.formatMessage({ id: 'homepage.ourVision.title2' })}
-          </SecondSectionLeftSideTitle2>
-          <SecondSectionLeftSideDescription>
+          </SecSecLeftSideTitle2>
+          <SecSecLeftSideDesc>
             {intl.formatMessage({ id: 'homepage.ourVision.description' })}
-          </SecondSectionLeftSideDescription>
-        </SecondSectionLeftSide>
-        <SecondSectionRightSide>
+          </SecSecLeftSideDesc>
+        </SecSecLeftSide>
+        <SecSecRightSide>
           <Image src={sanadLogo} width={500} height={500} alt="" />
-        </SecondSectionRightSide>
+        </SecSecRightSide>
       </SecondSection>
       <ThirdSection>
         {Object.keys(cardsInformationThirdSection).map((key, index) => {
