@@ -46,33 +46,9 @@ export const NavbarMenuIcon = styled.div`
 export const NavbarMenu = styled.div`
   display: flex;
   @media screen and (max-width: 768px) {
-    display: block;
+    display: none;
     justify-content: space-between;
     align-items: center;
-  }
-`;
-
-export const NavbarMenuList = styled.ul`
-  display: none;
-  @media screen and (min-width: 768px) {
-    display: flex;
-  }
-`;
-
-export const NavbarMenuListItem = styled.li`
-  padding: 0 1rem;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
-  }
-  @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
   }
 `;
 
