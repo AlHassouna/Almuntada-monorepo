@@ -1,20 +1,24 @@
-export interface IAcademic{
+export interface IAcademic {
   firstName: string;
-  lastName:string;
+  lastName: string;
   age: number;
+  imageUrl: string;
   email: string;
   city: string;
   degree: string;
-  createdAt:Date;
+  subject: string;
+  createdAt: Date;
   updatedAt: Date;
 }
 
-enum degree{
-AssociatesDegree,
+export type AcademicCreated = Omit<IAcademic, 'createdAt' | 'updatedAt'>;
 
-BachelorsDegree,
+enum degree {
+  AssociatesDegree,
 
-MastersDegree,
+  BachelorsDegree,
 
-DoctorateDegree,
+  MastersDegree,
+
+  DoctorateDegree,
 }

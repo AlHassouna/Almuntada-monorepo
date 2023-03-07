@@ -1,8 +1,8 @@
 export interface IListType {
   nameInArabic: string;
   nameInHebrew: string;
-  nameInEnglish: string;
+  nameInEnglish?: string;
   websiteUrl?: string;
-  UniversityCalculatorUrl?: string;
+  universityCalculatorUrl?: string;
   imageUrl: string;
 }
