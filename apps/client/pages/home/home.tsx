@@ -115,7 +115,7 @@ export const HomePage = () => {
         </SecSecRightSide>
       </SecondSection>
       <ThirdSection>
-        {Object.keys(cardsInformationThirdSection).map((key, index) => {
+        {Object.keys(cardsInformationThirdSection).map((key: string, index: number) => {
           return (
             <MediaCardThirdSection
               key={index}
@@ -132,7 +132,7 @@ export const HomePage = () => {
           {intl.formatMessage({id: 'homepage.founders.title'})}
         </FourthSectionTitle>
         <FourthSectionSub>
-          {Object.keys(cardsInforamtionFounderSection).map((key, index) => {
+          {Object.keys(cardsInforamtionFounderSection).map((key: string, index: number) => {
             return (
               <FounderCard
                 key={index}

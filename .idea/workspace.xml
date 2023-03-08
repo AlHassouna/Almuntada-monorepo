@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="feat: connecting endpoints to the back">
+    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="feat: initialize the podcasts query">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/getAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/getAcademic.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/getAcademics.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/getAcademics.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/postAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/postAcademic.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/updateAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/updateAcademic.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/API/podcast/getPodcast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/podcast/getPodcast.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/API/podcast/getPodcasts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/podcast/getPodcasts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/API/podcast/postPodcast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/podcast/postPodcast.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/API/podcast/updatePodcast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/podcast/updatePodcast.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/Card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/FounderCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/FounderCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/MediaCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/MediaCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +38,29 @@
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="009/frontend-academics-page" />
+                    <option name="lastUsedInstant" value="1678263528" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feat/008-frontend-connecting-endpoints-with-back" />
+                    <option name="lastUsedInstant" value="1678263527" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -105,7 +122,7 @@
       <workItem from="1678217102433" duration="4704000" />
       <workItem from="1678259322455" duration="383000" />
       <workItem from="1678259722688" duration="2540000" />
-      <workItem from="1678262721342" duration="514000" />
+      <workItem from="1678262721342" duration="1381000" />
     </task>
     <task id="LOCAL-00001" summary="feat: webstorm config">
       <created>1677588685594</created>
@@ -177,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678260582633</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: initialize the podcasts query">
+      <created>1678263461292</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1678263461292</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +240,7 @@
     <MESSAGE value="feat: update API layer" />
     <MESSAGE value="fix: trying webstorm" />
     <MESSAGE value="feat: connecting endpoints to the back" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: connecting endpoints to the back" />
+    <MESSAGE value="feat: initialize the podcasts query" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: initialize the podcasts query" />
   </component>
 </project>

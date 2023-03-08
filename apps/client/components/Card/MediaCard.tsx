@@ -1,29 +1,26 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { RevealWrapper } from 'next-reveal';
+import {RevealWrapper} from 'next-reveal';
 import Typography from '@mui/material/Typography';
-import { FC } from 'react';
+import {FC} from 'react';
 
 interface Props {
   title: string;
   description: string;
   subTitle: string;
-  descriptions: Array<{ descreption: string; icon: string }>;
-  key: number;
+  descriptions: Array<{ description: string; icon: string }>;
 }
 
 export const MediaCardThirdSection: FC<Props> = ({
-  description,
-  title,
-  subTitle,
-  descriptions,
-  key,
-}) => {
+                                                   description,
+                                                   title,
+                                                   subTitle,
+                                                   descriptions,
+                                                 }) => {
   return (
     <RevealWrapper delay={100} duration={2000} reset={true}>
       <Card
         className="card"
-        key={key}
         sx={{
           maxWidth: 345,
           textAlign: 'center',
@@ -47,29 +44,29 @@ export const MediaCardThirdSection: FC<Props> = ({
             {title}
           </Typography>
           <Typography
-            sx={{ marginTop: '1rem', fontFamily: 'Cairo' }}
+            sx={{marginTop: '1rem', fontFamily: 'Cairo'}}
             variant="body1"
             color="text.primary"
           >
             {description}
           </Typography>
           <Typography
-            sx={{ marginTop: '1rem', fontFamily: 'Cairo', color: 'orange' }}
+            sx={{marginTop: '1rem', fontFamily: 'Cairo', color: 'orange'}}
             gutterBottom
             variant="h3"
             component="div"
           >
             {subTitle}
           </Typography>
-          {descriptions.map((descreption, index) => {
+          {descriptions.map((description, index) => {
             return (
               <Typography
-                sx={{ marginTop: '1rem', fontFamily: 'Cairo' }}
+                sx={{marginTop: '1rem', fontFamily: 'Cairo'}}
                 variant="body1"
                 color="text.primary"
                 key={index}
               >
-                {descreption.descreption}
+                {description.description}
               </Typography>
             );
           })}
