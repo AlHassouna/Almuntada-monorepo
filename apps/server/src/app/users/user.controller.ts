@@ -7,8 +7,8 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
-import { UserService } from './user.service';
-import { CreateUserDto } from './dto/create-user.dto';
+import {UserService} from './user.service';
+import {CreateUserDto} from './dto/create-user.dto';
 import {
   ApiBadRequestResponse,
   ApiCreatedResponse,
@@ -18,7 +18,8 @@ import {
 @ApiTags('Users')
 @Controller('users')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService) {
+  }
 
   @Post('/register')
   @UsePipes(ValidationPipe)
@@ -29,7 +30,7 @@ export class UserController {
     description: 'The record has not been created.',
   })
   create(@Body() createUserDto: CreateUserDto) {
-    this.userService.create(createUserDto);
+    return this.userService.create(createUserDto);
   }
 
   @Get()

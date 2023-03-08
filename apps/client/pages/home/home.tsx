@@ -28,6 +28,9 @@ import Image from 'next/image';
 import {MediaCard} from '../../components/Card/Card';
 import {MediaCardThirdSection} from '../../components/Card/MediaCard';
 import {FounderCard} from '../../components/Card/FounderCard';
+// import {useGetAcademics} from "../../API/academic/getAcademics";
+import {usePostAcademic} from "../../API/academic/postAcademic";
+import {AcademicCreated} from "../../API/academic/types";
 
 export const HomePage = () => {
   const intl = useIntl();
@@ -59,7 +62,22 @@ export const HomePage = () => {
     image: string;
   }>;
 
-  console.log("habibibbibibi")
+  const mockUser: AcademicCreated = {
+    firstName: 'Sobhi',
+    lastName: "airi",
+    email: 'hzdkv@example.com',
+    imageUrl: "https://media.licdn.com/dms/image/C4D03AQF1zOe2Pjku0w/profile-displayphoto-shrink_800_800/0/1662553255489?e=1683763200&v=beta&t=ImifO4UEu38bxSOaGmgk2kUktQMWSd2a0eK6LReyvbU",
+    age: 25,
+    city: 'Bangalore',
+    subject: "asdasds",
+    degree: "asdasd",
+    career: "sharmatauser"
+  }
+
+  const postAcademic = usePostAcademic(mockUser)
+
+  console.log(postAcademic)
+
   return (
     <Container>
       <FirstSection>
@@ -75,7 +93,7 @@ export const HomePage = () => {
               {intl.formatMessage({id: 'homepage.ourUnique.title'})}
             </RightSideSubSecTitle>
             <RightSideSubSecDesc>
-              {Object.keys(cardsInformationFirstSection).map((key, index) => {
+              {Object.keys(cardsInformationFirstSection).map((key: string, index: number) => {
                 return (
                   <MediaCard
                     key={index}
@@ -108,7 +126,7 @@ export const HomePage = () => {
         </SecSecRightSide>
       </SecondSection>
       <ThirdSection>
-        {Object.keys(cardsInformationThirdSection).map((key, index) => {
+        {Object.keys(cardsInformationThirdSection).map((key: string, index: number) => {
           return (
             <MediaCardThirdSection
               key={index}
@@ -125,7 +143,7 @@ export const HomePage = () => {
           {intl.formatMessage({id: 'homepage.founders.title'})}
         </FourthSectionTitle>
         <FourthSectionSub>
-          {Object.keys(cardsInforamtionFounderSection).map((key, index) => {
+          {Object.keys(cardsInforamtionFounderSection).map((key: string, index: number) => {
             return (
               <FounderCard
                 key={index}

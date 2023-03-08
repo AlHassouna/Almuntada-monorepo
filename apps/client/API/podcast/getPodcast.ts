@@ -1,11 +1,11 @@
-import { podcastInstance } from '../api';
-import { useQuery } from '@tanstack/react-query';
-import { IPodcast } from './types';
+import {podcastInstance} from '../api';
+import {useQuery} from '@tanstack/react-query';
+import {IPodcast} from './types';
 
 const getPodcast = (): Promise<IPodcast> => {
-  return podcastInstance.get('/example');
+  return podcastInstance.get('/podcasts/:id');
 };
 
 export const useGetPodcast = (auth?: string) => {
-  return useQuery<IPodcast, Error>(['podcast'], () => getPodcast());
+  return useQuery<IPodcast, Error>(['podcast'], getPodcast);
 };

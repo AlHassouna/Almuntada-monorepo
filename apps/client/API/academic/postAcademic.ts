@@ -1,10 +1,11 @@
-import { academicInstance } from '../api';
-import { useQuery } from '@tanstack/react-query';
+import {academicInstance} from '../api';
+import {useQuery} from '@tanstack/react-query';
+import {AcademicCreated, IAcademic} from "./types";
 
-const getAcademic = async () => {
-  return await academicInstance.post('/example');
+const postAcademic = async (data: AcademicCreated): Promise<IAcademic> => {
+  return await academicInstance.post('/users/register', data);
 };
 
-export const useGetAcademic = (auth?: string) => {
-  return useQuery<object, Error>(['academic'], getAcademic);
+export const usePostAcademic = (data: AcademicCreated, auth?: string) => {
+  return useQuery<object, Error>(['academic'], () => postAcademic(data));
 };

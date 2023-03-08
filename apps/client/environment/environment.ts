@@ -1,7 +1,5 @@
-import {Academic} from "../pages/Academic/Academic";
-
 export const environment = {
   production: false,
-  PODCAST: 'example.example',
-  ACADEMIC: 'example.example',
+  PODCAST: 'http://localhost:8000/api',
+  ACADEMIC: 'http://localhost:8000/api',
 };

@@ -7,6 +7,8 @@ export interface IAcademic {
   city: string;
   degree: string;
   subject: string;
+
+  career: string
   createdAt: Date;
   updatedAt: Date;
 }
