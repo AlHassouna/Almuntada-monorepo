@@ -25,7 +25,7 @@ jobs:
         run: npm install -g yarn
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn
 
       - name: Yarn ci
         run: yarn install --frozen-lockfile
@@ -46,8 +46,7 @@ jobs:
           TARGET: ${{ secrets.TARGET_DIR }}
 
           script: |
-            cd ~/YOUR/TARGET/DIR
-            yarn/npm install
-            yarn/npm build
-            yarn/npm i serve
-            serve -p 3000 build/
+            cd ~/dist/apps/server
+            yarn
+            yarn build-server
+            yarn start:server

@@ -248,7 +248,28 @@
       <option name="project" value="LOCAL" />
       <updated>1678290412656</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix: package json nx">
+      <created>1678310599336</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1678310599336</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix: package json nx">
+      <created>1678310804757</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1678310804757</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix: package json nx">
+      <created>1678310847035</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1678310847035</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
