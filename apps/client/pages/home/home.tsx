@@ -28,6 +28,7 @@ import Image from 'next/image';
 import {MediaCard} from '../../components/Card/Card';
 import {MediaCardThirdSection} from '../../components/Card/MediaCard';
 import {FounderCard} from '../../components/Card/FounderCard';
+import {academicInstance} from '../../API/api'
 
 export const HomePage = () => {
   const intl = useIntl();
@@ -59,7 +60,13 @@ export const HomePage = () => {
     image: string;
   }>;
 
-  console.log("habibibbibibi")
+  React.useEffect(() => {
+      academicInstance.get('/users').then(res => {
+        console.log("Try to fetch: ", res.data)
+      })
+    }
+    , [])
+
   return (
     <Container>
       <FirstSection>
@@ -75,7 +82,7 @@ export const HomePage = () => {
               {intl.formatMessage({id: 'homepage.ourUnique.title'})}
             </RightSideSubSecTitle>
             <RightSideSubSecDesc>
-              {Object.keys(cardsInformationFirstSection).map((key, index) => {
+              {Object.keys(cardsInformationFirstSection).map((key: string, index: number) => {
                 return (
                   <MediaCard
                     key={index}
