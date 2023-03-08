@@ -62,6 +62,7 @@ export const HomePage = () => {
     image: string;
   }>;
 
+
   const mockUser: AcademicCreated = {
     firstName: 'Sobhi',
     lastName: "airi",
@@ -74,6 +75,7 @@ export const HomePage = () => {
     career: "sharmatauser"
   }
 
+  console.log("adsadasd")
   const postAcademic = usePostAcademic(mockUser)
 
   console.log(postAcademic)
