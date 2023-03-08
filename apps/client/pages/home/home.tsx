@@ -28,7 +28,9 @@ import Image from 'next/image';
 import {MediaCard} from '../../components/Card/Card';
 import {MediaCardThirdSection} from '../../components/Card/MediaCard';
 import {FounderCard} from '../../components/Card/FounderCard';
-import {useGetPodcast} from "../../API/academic/getAcademics";
+// import {useGetAcademics} from "../../API/academic/getAcademics";
+import {usePostAcademic} from "../../API/academic/postAcademic";
+import {AcademicCreated} from "../../API/academic/types";
 
 export const HomePage = () => {
   const intl = useIntl();
@@ -60,9 +62,21 @@ export const HomePage = () => {
     image: string;
   }>;
 
-  const sobhi = useGetPodcast()
+  const mockUser: AcademicCreated = {
+    firstName: 'Sobhi',
+    lastName: "airi",
+    email: 'hzdkv@example.com',
+    imageUrl: "https://media.licdn.com/dms/image/C4D03AQF1zOe2Pjku0w/profile-displayphoto-shrink_800_800/0/1662553255489?e=1683763200&v=beta&t=ImifO4UEu38bxSOaGmgk2kUktQMWSd2a0eK6LReyvbU",
+    age: 25,
+    city: 'Bangalore',
+    subject: "asdasds",
+    degree: "asdasd",
+    career: "sharmatauser"
+  }
 
-  console.log("sobhi", sobhi)
+  const postAcademic = usePostAcademic(mockUser)
+
+  console.log(postAcademic)
 
   return (
     <Container>

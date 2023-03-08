@@ -1,5 +1,5 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { IsEmail, IsNotEmpty } from 'class-validator';
+import {ApiProperty} from '@nestjs/swagger';
+import {IsEmail, IsNotEmpty, IsNumber} from 'class-validator';
 
 export class CreateUserDto {
   // First Name //
@@ -8,7 +8,7 @@ export class CreateUserDto {
     description: 'The first name of the user',
     example: 'Hassan',
   })
-  @IsNotEmpty({ message: 'The First Name is required' })
+  @IsNotEmpty({message: 'The First Name is required'})
   firstName: string;
 
   // Last Name //
@@ -16,8 +16,8 @@ export class CreateUserDto {
     description: 'The last name of the user',
     example: 'Hassouna',
   })
-  @IsNotEmpty({ message: 'The Last Name is required' })
-  secondName: string;
+  @IsNotEmpty({message: 'The Last Name is required'})
+  lastName: string;
 
   // Email //
 
@@ -35,8 +35,8 @@ export class CreateUserDto {
   @ApiProperty({
     description: 'The image url of the user',
   })
-  @IsNotEmpty({ message: 'The image url is required' })
-  image: string;
+  @IsNotEmpty({message: 'The image url is required'})
+  imageUrl: string;
 
   // Age //
 
@@ -46,6 +46,7 @@ export class CreateUserDto {
   @IsNotEmpty({
     message: 'The age is required',
   })
+  @IsNumber()
   age: number;
 
   // Degree //

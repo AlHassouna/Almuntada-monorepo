@@ -8,8 +8,8 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 
-import { PodcastsService } from './podcasts.service';
-import { CreatePodcastDto } from './dto/create-podcast.dto';
+import {PodcastsService} from './podcasts.service';
+import {CreatePodcastDto} from './dto/create-podcast.dto';
 import {
   ApiBadRequestResponse,
   ApiCreatedResponse,
@@ -19,7 +19,8 @@ import {
 @ApiTags('Podcasts')
 @Controller('podcasts')
 export class PodcastsController {
-  constructor(private readonly podcastsService: PodcastsService) {}
+  constructor(private readonly podcastsService: PodcastsService) {
+  }
 
   @Post()
   @UsePipes(ValidationPipe)
@@ -30,7 +31,7 @@ export class PodcastsController {
     description: 'The record has not been created.',
   })
   create(@Body() createPodcastDto: CreatePodcastDto) {
-    this.podcastsService.create(createPodcastDto);
+    return this.podcastsService.create(createPodcastDto);
   }
 
   @Get()

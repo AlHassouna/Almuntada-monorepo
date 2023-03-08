@@ -1,11 +1,11 @@
 import {academicInstance} from '../api';
 import {useQuery} from '@tanstack/react-query';
-import {IPodcast} from '../podcast/types';
+import {IAcademic} from "./types";
 
-const getAcademics = async (): Promise<Array<IPodcast>> => {
+const getAcademics = async (): Promise<Array<IAcademic>> => {
   return await academicInstance.get('/users');
 };
 
-export const useGetPodcast = (auth?: string) => {
+export const useGetAcademics = (auth?: string) => {
   return useQuery<object, Error>(['academic'], getAcademics);
 };

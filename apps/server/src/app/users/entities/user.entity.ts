@@ -15,13 +15,13 @@ export class User {
   firstName: string;
 
   @Column()
-  secondName: string;
+  lastName: string;
 
   @Column()
   email: string;
 
   @Column()
-  image: string;
+  imageUrl: string;
 
   @Column()
   age: number;
