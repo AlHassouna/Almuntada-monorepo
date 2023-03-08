@@ -6,6 +6,10 @@ import ar from './lang/ar.json';
 import en from './lang/en.json';
 import he from './lang/he.json';
 import {ThemeProvider} from 'styled-components';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 import React from "react";
 
 const messages = {
@@ -23,15 +27,18 @@ function getDirection(locale) {
 
 const CustomApp = ({Component, pageProps}: AppProps) => {
   const {locale} = useRouter();
-
+  const queryClient = new QueryClient()
   return (
-    <IntlProvider locale={locale} messages={messages[locale]}>
-      <main className="app" dir={getDirection(locale)}>
-        <ThemeProvider theme={{dir: getDirection(locale)}}>
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </main>
-    </IntlProvider>
+    <QueryClientProvider client={queryClient}>
+      <IntlProvider locale={locale} messages={messages[locale]}>
+        <main className="app" dir={getDirection(locale)}>
+          <ThemeProvider theme={{dir: getDirection(locale)}}>
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </main>
+      </IntlProvider>
+    </QueryClientProvider>
+
 
   );
 };

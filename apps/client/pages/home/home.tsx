@@ -28,7 +28,7 @@ import Image from 'next/image';
 import {MediaCard} from '../../components/Card/Card';
 import {MediaCardThirdSection} from '../../components/Card/MediaCard';
 import {FounderCard} from '../../components/Card/FounderCard';
-import {academicInstance} from '../../API/api'
+import {useGetPodcast} from "../../API/academic/getAcademics";
 
 export const HomePage = () => {
   const intl = useIntl();
@@ -60,12 +60,9 @@ export const HomePage = () => {
     image: string;
   }>;
 
-  React.useEffect(() => {
-      academicInstance.get('/users').then(res => {
-        console.log("Try to fetch: ", res.data)
-      })
-    }
-    , [])
+  const sobhi = useGetPodcast()
+
+  console.log("sobhi", sobhi)
 
   return (
     <Container>

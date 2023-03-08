@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="fix: key problem with components">
+    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="tring the error handler">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Navbar/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/components/Navbar/navbar.consts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Navbar/navbar.consts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/intl/intl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/intl/intl.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/system-design/tsconfig.lib.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/tsconfig.lib.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +88,7 @@
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/node_modules/prettier",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "actions.on.save",
     "ts.external.directory.path": "/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/typescript/lib",
     "ts.rename.search.for.dynamic.occurrences": "true",
     "vue.rearranger.settings.migration": "true"
@@ -120,7 +118,8 @@
       <workItem from="1678217102433" duration="4704000" />
       <workItem from="1678259322455" duration="383000" />
       <workItem from="1678259722688" duration="2540000" />
-      <workItem from="1678262721342" duration="4643000" />
+      <workItem from="1678262721342" duration="5139000" />
+      <workItem from="1678268247730" duration="2693000" />
     </task>
     <task id="LOCAL-00001" summary="feat: webstorm config">
       <created>1677588685594</created>
@@ -206,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678264167216</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixing shared links">
+      <created>1678267931279</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1678267931279</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +253,8 @@
     <MESSAGE value="feat: connecting endpoints to the back" />
     <MESSAGE value="feat: initialize the podcasts query" />
     <MESSAGE value="fix: key problem with components" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: key problem with components" />
+    <MESSAGE value="fixing shared links" />
+    <MESSAGE value="tring the error handler" />
+    <option name="LAST_COMMIT_MESSAGE" value="tring the error handler" />
   </component>
 </project>
