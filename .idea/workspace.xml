@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="feat: initialize the podcasts query">
+    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="fix: key problem with components">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/FounderCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/FounderCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/MediaCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/MediaCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Navbar/navbar.consts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Navbar/navbar.consts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/intl/intl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/intl/intl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/system-design/tsconfig.lib.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/tsconfig.lib.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,9 +65,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="OptimizeOnSaveOptions">
-    <option name="myRunOnSave" value="true" />
-  </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
@@ -92,6 +89,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/node_modules/prettier",
+    "rearrange.code.on.save": "true",
     "settings.editor.selected.configurable": "preferences.keymap",
     "ts.external.directory.path": "/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/typescript/lib",
     "ts.rename.search.for.dynamic.occurrences": "true",
@@ -122,7 +120,7 @@
       <workItem from="1678217102433" duration="4704000" />
       <workItem from="1678259322455" duration="383000" />
       <workItem from="1678259722688" duration="2540000" />
-      <workItem from="1678262721342" duration="1381000" />
+      <workItem from="1678262721342" duration="4643000" />
     </task>
     <task id="LOCAL-00001" summary="feat: webstorm config">
       <created>1677588685594</created>
@@ -201,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678263461292</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix: key problem with components">
+      <created>1678264167216</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1678264167216</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +246,7 @@
     <MESSAGE value="fix: trying webstorm" />
     <MESSAGE value="feat: connecting endpoints to the back" />
     <MESSAGE value="feat: initialize the podcasts query" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: initialize the podcasts query" />
+    <MESSAGE value="fix: key problem with components" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: key problem with components" />
   </component>
 </project>

@@ -5,6 +5,7 @@
     "declaration": true,
     "types": []
   },
-  "include": ["src/**/*.ts", "src/lib/intl/intl",],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts"]
+  "include": [
+    "src/**/*.ts"
+  ]
 }
