@@ -4,8 +4,11 @@ import {IAcademic} from './types';
 
 const getAcademic = async (): Promise<IAcademic> => {
   return await academicInstance.get('/users/:id');
+
 };
 
-export const useGetPodcast = (auth?: string) => {
-  return useQuery<IAcademic, Error>(['academic'], () => getAcademic());
+export const useGetAcademic = (auth?: string) => {
+  return useQuery<IAcademic, Error>(['academic'], getAcademic);
 };
+
+
