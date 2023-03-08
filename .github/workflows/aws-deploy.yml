@@ -6,10 +6,10 @@ on:
       - develop
 
 jobs:
-  deploy:
+  build:
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ ubuntu-latest ]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -20,15 +20,34 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '18.x'
-      
+
       - name: Install Yarn
         run: npm install -g yarn
 
       - name: Install dependencies
         run: yarn install
-        
-      - name : Yarn ci
-        run : yarn install --frozen-lockfile
+
+      - name: Yarn ci
+        run: yarn install --frozen-lockfile
 
       - name: Build server
         run: yarn build-server
+
+  deploy:
+    needs: [ build ]
+    runs-on: [ ubuntu-latest ]
+    steps:
+      - name: SSH deploy to AWS
+        uses: easingthemes/ssh-deploy@main
+        env:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+
+          script: |
+            cd ~/YOUR/TARGET/DIR
+            yarn/npm install
+            yarn/npm build
+            yarn/npm i serve
+            serve -p 3000 build/
