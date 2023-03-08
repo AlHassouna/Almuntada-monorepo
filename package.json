@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "npx nx run-many --all --target=test --parallel",
-    "build": "nx build",
+    "build-server": "nx build server",
+    "build-client": "nx build client",
     "start:client": "nx run client:serve",
     "start:server": "nx run server:serve",
     "start:auth": "nx run auth:serve",
