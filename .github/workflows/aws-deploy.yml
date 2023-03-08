@@ -1,8 +1,6 @@
 name: Continous Integration
 
-on:
-  push:
-    branches: [deploy]
+on: push
 
 jobs:
   test_pull_request:
