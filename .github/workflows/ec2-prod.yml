@@ -52,5 +52,4 @@ jobs:
           port: ${{ secrets.INSTANCE_PORT }}
           script: |
             cd /home/ubuntu/Al-Manshaah
-            yarn
-            yarn install
+            yarn install --frozen-lockfile
