@@ -25,10 +25,9 @@ jobs:
       - name: building the app
         uses: appleboy/ssh-action@master
         with: 
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.INSTANCE_IP }}
-          REMOTE_USER: ${{ secrets.INSTANCE_USER }}
-          REMOTE_PORT: ${{ secrets.INSTANCE_PORT}}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: ${{ secrets.INSTANCE_IP }}
+          username: ${{ secrets.INSTANCE_USER }}
           script: |
             yarn/npm install
             yarn/npm build
