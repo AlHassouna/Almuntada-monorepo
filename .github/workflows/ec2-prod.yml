@@ -1,8 +1,5 @@
 name: Ec2-Prod    
 on:
-  push:
-    branches:
-      - develop
   pull_request:
 
 env:
