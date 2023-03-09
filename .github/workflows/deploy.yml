@@ -19,14 +19,14 @@ jobs:
       - name: Build application
         run: yarn build:prod
 
-      - name: Deploy to EC2
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.INSTANCE_HOST }}
-          username: ${{ secrets.INSTANCE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: 'dist/apps/workspace'
-          target: '/home/ubuntu/workspace'
+      #      - name: Deploy to EC2
+      #        uses: appleboy/scp-action@master
+      #        with:
+      #          host: ${{ secrets.INSTANCE_HOST }}
+      #          username: ${{ secrets.INSTANCE_USER }}
+      #          key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #          source: 'dist/apps/workspace'
+      #          target: '/home/ubuntu/workspace'
 
       - name: SSH into EC2
         uses: appleboy/ssh-action@master
