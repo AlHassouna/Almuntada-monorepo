@@ -14,10 +14,18 @@ jobs:
   develop:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Node.js
-        uses: actions/setup-node@v2
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v2.4.0
         with:
-          node-version: '18.x'
+          node-version: '14.x'
+
+      - run: npm ci
+
+      - run: npx nx format:check
+      - run: npx nx affected --target=lint --parallel=3
+      - run: npx nx affected --target=test --parallel=3 --configuration=ci
+      - run: npx nx affected --target=build --parallel=3
+      
       - name: Install Yarn
         run: sudo npm install -g yarn
       - name: Checking ssh-agent
@@ -52,7 +60,3 @@ jobs:
           script: |
             cd /home/ubuntu/Al-Manshaah
             yarn
-            npx nx format:check
-            npx nx affected --target=lint --parallel=3
-            npx nx affected --target=test --parallel=3 --configuration=ci
-            npx nx affected --target=build --parallel=3
