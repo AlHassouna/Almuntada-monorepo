@@ -17,6 +17,14 @@ jobs:
         run: sudo npm install -g yarn
       - name: Checking ssh-agent
         run: eval "$(ssh-agent -s)"
+      - name: Debug secrets
+        run: |
+          echo $INSTANCE_IP
+          echo $INSTANCE_PORT
+          echo $SSH_PRIVATE_KEY
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.5.0
         with:
