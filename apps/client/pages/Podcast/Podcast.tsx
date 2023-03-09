@@ -1,12 +1,15 @@
 import {FC} from "react";
 
-interface Props{
+interface Props {
 
 }
-export const Podcast:FC = ()=>{
+
+const Podcast: FC = () => {
   return (
     <div>
       heeey
     </div>
   )
 }
+
+export default Podcast;

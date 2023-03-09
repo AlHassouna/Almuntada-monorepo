@@ -32,7 +32,7 @@ import {FounderCard} from '../../components/Card/FounderCard';
 import {usePostAcademic} from "../../API/academic/postAcademic";
 import {AcademicCreated} from "../../API/academic/types";
 
-export const HomePage = () => {
+const HomePage = () => {
   const intl = useIntl();
   const cardsInformationFirstSection = intl.messages[
     'homepage.ourUnique'
@@ -162,3 +162,5 @@ export const HomePage = () => {
     </Container>
   );
 };
+
+export default HomePage;

@@ -1,9 +1,11 @@
 import {FC} from "react";
 
-export const Academic:FC = ()=>{
-  return(
+const Academic: FC = () => {
+  return (
     <div>
       heeey
     </div>
   )
 }
+
+export default Academic;

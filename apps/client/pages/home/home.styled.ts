@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+const Container = styled.div`
   z-index: 10;
   height: 100%;
   width: 100%;
   align-items: center;
 `;
 
-export const FirstSection = styled.section`
+const FirstSection = styled.section`
   display: flex;
   justify-content: space-between;
   padding: 0 5%;
@@ -20,7 +20,7 @@ export const FirstSection = styled.section`
   }
 `;
 
-export const RightSide = styled.div`
+const RightSide = styled.div`
   display: flex;
   margin-top: 2rem;
   flex-direction: column;
@@ -33,19 +33,19 @@ export const RightSide = styled.div`
   }
 `;
 
-export const RightSideTitle = styled.h1`
+const RightSideTitle = styled.h1`
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
 `;
 
-export const RightSideDesc = styled.h2`
+const RightSideDesc = styled.h2`
   font-size: 1.5rem;
   font-weight: 400;
   text-align: right;
 `;
 
-export const RightSideSubSec = styled.section`
+const RightSideSubSec = styled.section`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -54,7 +54,7 @@ export const RightSideSubSec = styled.section`
   width: 100%;
 `;
 
-export const RightSideSubSecTitle = styled.h3`
+const RightSideSubSecTitle = styled.h3`
   font-size: 1.5rem;
   color: orange;
 
@@ -62,7 +62,7 @@ export const RightSideSubSecTitle = styled.h3`
   text-align: center;
 `;
 
-export const RightSideSubSecDesc = styled.div`
+const RightSideSubSecDesc = styled.div`
   display: flex;
   justify-content: space-between;
   width: 80%;
@@ -75,7 +75,7 @@ export const RightSideSubSecDesc = styled.div`
   }
 `;
 
-export const FirstSectionLeftSide = styled.div`
+const FirstSectionLeftSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +87,7 @@ export const FirstSectionLeftSide = styled.div`
   }
 `;
 
-export const SecondSection = styled.section`
+const SecondSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -100,7 +100,7 @@ export const SecondSection = styled.section`
   }
 `;
 
-export const SecSecLeftSide = styled.div`
+const SecSecLeftSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,25 +112,25 @@ export const SecSecLeftSide = styled.div`
   }
 `;
 
-export const SecLeftSideTitle = styled.h1`
+const SecLeftSideTitle = styled.h1`
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
 `;
-export const SecSecLeftSideTitle2 = styled.h2`
+const SecSecLeftSideTitle2 = styled.h2`
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
   color: orange;
 `;
 
-export const SecSecLeftSideDesc = styled.h3`
+const SecSecLeftSideDesc = styled.h3`
   font-size: 1.5rem;
   font-weight: 400;
   text-align: right;
 `;
 
-export const SecSecRightSide = styled.div`
+const SecSecRightSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,7 +145,7 @@ export const SecSecRightSide = styled.div`
   }
 `;
 
-export const ThirdSection = styled.section`
+const ThirdSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -160,7 +160,7 @@ export const ThirdSection = styled.section`
   }
 `;
 
-export const FourthSection = styled.section`
+const FourthSection = styled.section`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -169,7 +169,7 @@ export const FourthSection = styled.section`
   height: 100%;
   background-color: #f5f5f5;
 `;
-export const FourthSectionSub = styled.div`
+const FourthSectionSub = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -183,7 +183,7 @@ export const FourthSectionSub = styled.div`
   }
 `;
 
-export const FourthSectionTitle = styled.h1`
+const FourthSectionTitle = styled.h1`
   margin-top: 1rem;
   color: orange;
   font-size: 3rem;
@@ -191,7 +191,7 @@ export const FourthSectionTitle = styled.h1`
   text-align: center;
 `;
 
-export const FooterSection = styled.section`
+const FooterSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -205,7 +205,7 @@ export const FooterSection = styled.section`
   }
 `;
 
-export const FooterSectionLeftSide = styled.div`
+const FooterSectionLeftSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -217,7 +217,7 @@ export const FooterSectionLeftSide = styled.div`
   }
 `;
 
-export const FooterSectionRightSide = styled.div`
+const FooterSectionRightSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -228,3 +228,28 @@ export const FooterSectionRightSide = styled.div`
     width: 100%;
   }
 `;
+
+export {
+  Container,
+  FirstSection,
+  RightSide,
+  FirstSectionLeftSide,
+  RightSideTitle,
+  RightSideDesc,
+  RightSideSubSec,
+  RightSideSubSecTitle,
+  RightSideSubSecDesc,
+  SecondSection,
+  SecSecLeftSide,
+  SecLeftSideTitle,
+  SecSecLeftSideTitle2,
+  SecSecLeftSideDesc,
+  SecSecRightSide,
+  ThirdSection,
+  FourthSection,
+  FourthSectionSub,
+  FourthSectionTitle,
+  FooterSection,
+  FooterSectionLeftSide,
+  FooterSectionRightSide,
+}
