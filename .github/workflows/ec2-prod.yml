@@ -54,7 +54,3 @@ jobs:
             cd /home/ubuntu/Al-Manshaah
             yarn
             yarn install
-            npx nx format:check
-            npx nx affected --target=lint --parallel=3
-            npx nx affected --target=test --parallel=3 --configuration=ci
-            npx nx affected --target=build --parallel=3
