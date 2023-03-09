@@ -1,4 +1,4 @@
-name: Ec2-Prod  
+name: Ec2-Prod   
 on:
   push:
     branches:
