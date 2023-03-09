@@ -22,7 +22,7 @@ jobs:
         run: sudo npm install -g yarn
       - name: Checking ssh-agent
         run: eval "$(ssh-agent -s)"
-      - name: Debug secrets
+      - name: Debug secrets 
         run: |
           echo $INSTANCE_IP
           echo $INSTANCE_PORT
