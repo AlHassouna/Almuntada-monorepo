@@ -5,6 +5,11 @@ on:
       - develop
   pull_request:
 
+env:
+  INSTANCE_IP: ${{ secrets.INSTANCE_IP }}
+  INSTANCE_PORT: ${{ secrets.INSTANCE_PORT }}
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  
 jobs:
   develop:
     runs-on: ubuntu-latest
