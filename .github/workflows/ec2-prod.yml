@@ -52,4 +52,4 @@ jobs:
           port: ${{ secrets.INSTANCE_PORT }}
           script: |
             cd /home/ubuntu/Al-Manshaah
-            yarn install --frozen-lockfile
+            yarn install --ignore-engines
