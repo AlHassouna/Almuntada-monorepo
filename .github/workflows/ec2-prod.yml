@@ -15,6 +15,8 @@ jobs:
           node-version: '18.x'
       - name: Install Yarn
         run: sudo npm install -g yarn
+      - name: Checking ssh-agent
+        run: eval "$(ssh-agent -s)"
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.5.0
         with:
@@ -26,7 +28,7 @@ jobs:
           username: ${{ secrets.INSTANCE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: .
-          target: /home/ec2-user/my-app
+          target: /home/ubuntu/Al-Manshaah
       - name: Connect to instance and run commands
         uses: appleboy/ssh-action@master
         with:
