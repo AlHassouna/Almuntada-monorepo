@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="657a012d-e0a2-43c3-aa18-8ea26083524e" name="Changes" comment="fix: axios instance">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="657a012d-e0a2-43c3-aa18-8ea26083524e" name="Changes" comment="feat: IDE" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,39 +24,67 @@
     "ts.external.directory.path": "/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/node_modules/typescript/lib"
   }
 }]]></component>
-  <component name="RunManager" selected="npm.build-client">
-    <configuration name="build-client" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.start:client">
+    <configuration name="build-client" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="build-client" />
       </scripts>
       <node-interpreter value="project" />
+      <package-manager value="yarn" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="build-server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="build-server" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="build-server" />
       </scripts>
       <node-interpreter value="project" />
+      <package-manager value="yarn" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:client" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:client" />
+      </scripts>
+      <node-interpreter value="project" />
+      <package-manager value="yarn" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:server" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <package-manager value="yarn" />
       <envs />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="npm.build-server" />
       <item itemvalue="npm.build-client" />
+      <item itemvalue="npm.start:server" />
+      <item itemvalue="npm.start:client" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.build-client" />
-        <item itemvalue="npm.build-server" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="feat: IDE">
+      <created>1678451304500</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678451304500</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -71,5 +97,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: IDE" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: IDE" />
   </component>
 </project>
