@@ -8,28 +8,33 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Install dependencies
         run: |
-          npm install -g yarn
           yarn install
 
-      - name: Build server
-        run: |
-          yarn build-server
+      - name: Build project
+        run: yarn build-server
 
-      - name: Deploy to EC2
+      - name: Copy files to EC2 instance
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.INSTANCE_HOST }}
           username: ${{ secrets.INSTANCE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY}}
-          source: 'dist/apps/workspace'
-          target: '/home/ubuntu/workspace'
-          strip_components: 1
-          rm: true
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "."
+          target: "~/project"
 
-
+      - name: SSH into EC2 instance
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.INSTANCE_HOST }}
+          username: ${{ secrets.INSTANCE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/project
+            yarn start-server
