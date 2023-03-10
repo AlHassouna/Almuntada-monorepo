@@ -30,4 +30,6 @@ jobs:
           source: 'dist/apps/workspace'
           target: '/home/ubuntu/workspace'
           strip_components: 1
+          rm: true
+
 
