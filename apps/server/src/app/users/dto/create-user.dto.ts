@@ -1,90 +1,45 @@
-import {ApiProperty} from '@nestjs/swagger';
-import {IsEmail, IsNotEmpty, IsNumber} from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
+import { IsEmail, IsNotEmpty, IsNumber, Max, Min } from 'class-validator';
 
 export class CreateUserDto {
   // First Name //
 
-  @ApiProperty({
-    description: 'The first name of the user',
-    example: 'Hassan',
-  })
-  @IsNotEmpty({message: 'The First Name is required'})
+  @ApiProperty()
+  @IsNotEmpty()
   firstName: string;
 
-  // Last Name //
-  @ApiProperty({
-    description: 'The last name of the user',
-    example: 'Hassouna',
-  })
-  @IsNotEmpty({message: 'The Last Name is required'})
+  @ApiProperty()
+  @IsNotEmpty()
   lastName: string;
 
-  // Email //
-
-  @ApiProperty({
-    description: 'The email of the user',
-    example: 'example@gmail.com',
-  })
-  @IsEmail({
-    allow_display_name: true,
-  })
+  @ApiProperty()
+  @IsEmail()
   email: string;
 
-  // Image //
-
-  @ApiProperty({
-    description: 'The image url of the user',
-  })
-  @IsNotEmpty({message: 'The image url is required'})
+  @ApiProperty()
+  @IsNotEmpty({ message: 'The image url is required' })
   imageUrl: string;
 
-  // Age //
-
-  @ApiProperty({
-    description: 'The age of the user',
-  })
-  @IsNotEmpty({
-    message: 'The age is required',
-  })
+  @ApiProperty()
+  @IsNotEmpty()
   @IsNumber()
+  @Min(18)
+  @Max(70)
   age: number;
 
-  // Degree //
-
-  @ApiProperty({
-    description: 'The degree of the user',
-  })
-  @IsNotEmpty({
-    message: 'The degree is required',
-  })
+  @ApiProperty()
+  @IsNotEmpty()
   degree: string;
 
-  // Subject //
-
-  @ApiProperty({
-    description: 'The subject of the user',
-  })
-  @IsNotEmpty({
-    message: 'The subject is required',
-  })
+  @ApiProperty()
+  @IsNotEmpty()
   subject: string;
 
-  // Career //
-
-  @ApiProperty({
-    description: 'The career of the user',
-  })
-  @IsNotEmpty({
-    message: 'The career is required',
-  })
+  @ApiProperty()
+  @IsNotEmpty()
   career: string;
-  // City //
 
-  @ApiProperty({
-    description: 'The city of the user',
-  })
-  @IsNotEmpty({
-    message: 'The city is required',
-  })
+  @ApiProperty()
+  @IsNotEmpty()
   city: string;
 }
