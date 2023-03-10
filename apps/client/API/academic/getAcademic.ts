@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { IAcademic } from './types';
 
 const getAcademic = async (): Promise<IAcademic> => {
-  return await backendInstance.get('/users/:id');
+  return (await backendInstance.get('/users/:id')).data;
 };
 
 export const useGetAcademic = (auth?: string) => {

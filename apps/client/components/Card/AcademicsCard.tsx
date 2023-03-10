@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { RevealWrapper } from 'next-reveal';
-import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import { AcademicCardBox } from './card.styled';
 
 interface Props {
   firstName: string;
@@ -27,13 +27,13 @@ export const AcademicsCard: FC<Props> = ({
 }) => {
   return (
     <RevealWrapper delay={100} duration={2000} reset={true}>
-      <Card sx={{ maxWidth: 345, textAlign: 'center', height: 600 }}>
+      <AcademicCardBox>
         <img src={imageUrl} alt={firstName} />
         <CardContent>
-          <Typography gutterBottom variant="h3" component="div">
+          <Typography gutterBottom variant="h5" component="div">
             {`${firstName.toUpperCase()} ${lastName.toUpperCase()}`}
           </Typography>
-          <Typography variant="h5" color="text.secondary">
+          <Typography variant="h6" color="text.secondary">
             {`${degree} ${subject} - ${career}`}
           </Typography>
           <Typography
@@ -47,7 +47,7 @@ export const AcademicsCard: FC<Props> = ({
             {`Email: ${email}`}
           </Typography>
         </CardContent>
-      </Card>
+      </AcademicCardBox>
     </RevealWrapper>
   );
 };
