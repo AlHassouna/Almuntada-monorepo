@@ -27,6 +27,7 @@ jobs:
           host: ${{ secrets.INSTANCE_HOST }}
           username: ${{ secrets.INSTANCE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY}}
-          source: 'dist/apps/workspace'
-          target: '/home/ubuntu/workspace'
+          script: |
+            whoami
+            ls -al
 
