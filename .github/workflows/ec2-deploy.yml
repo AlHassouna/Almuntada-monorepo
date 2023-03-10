@@ -22,7 +22,7 @@ jobs:
           yarn build-server
 
       - name: Deploy to EC2
-        uses: easingthemes/ssh-deploy@v2.1.11
+        uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.INSTANCE_HOST}}
