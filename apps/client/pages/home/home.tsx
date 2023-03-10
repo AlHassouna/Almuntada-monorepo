@@ -28,7 +28,7 @@ import Image from 'next/image';
 import {MediaCard} from '../../components/Card/Card';
 import {MediaCardThirdSection} from '../../components/Card/MediaCard';
 import {FounderCard} from '../../components/Card/FounderCard';
-// import {useGetAcademics} from "../../API/academic/getAcademics";
+import {useGetAcademicsBySearchTerms} from "../../API/academic/getAcademics";
 import {usePostAcademic} from "../../API/academic/postAcademic";
 import {AcademicCreated} from "../../API/academic/types";
 
@@ -62,6 +62,14 @@ const HomePage = () => {
     image: string;
   }>;
 
+
+  const searchTerms = {
+    subject: "Master",
+  }
+
+  const getAcademics = useGetAcademicsBySearchTerms(searchTerms)
+
+  console.log("Search: ", getAcademics)
 
   const mockUser: AcademicCreated = {
     firstName: 'Sobhi',
