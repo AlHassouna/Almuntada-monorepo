@@ -14,6 +14,9 @@ import {
   ApiCreatedResponse,
   ApiTags,
 } from '@nestjs/swagger';
+import {OutputCreatedDataDtoData} from "./dto/output-created-data.dto";
+import {SearchTermDto} from "./dto/search-term.dto";
+import {SearchTermOutputDto} from "./dto/search-term-output.dto";
 
 @ApiTags('Users')
 @Controller('users')
@@ -29,7 +32,7 @@ export class UserController {
   @ApiBadRequestResponse({
     description: 'The record has not been created.',
   })
-  create(@Body() createUserDto: CreateUserDto) {
+  create(@Body() createUserDto: CreateUserDto): Promise<OutputCreatedDataDtoData> {
     return this.userService.create(createUserDto);
   }
 
@@ -43,4 +46,11 @@ export class UserController {
   findOne(@Param('id') id: string) {
     return this.userService.findOne(+id);
   }
+
+
+  @Post('/search')
+  async findUsersBySearchTerms(@Body() searchTerms: SearchTermDto): Promise<Array<SearchTermOutputDto>> {
+    return this.userService.findUsersBySearchTerms(searchTerms);
+  }
+
 }

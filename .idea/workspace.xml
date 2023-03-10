@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="deploy to ec2" />
+    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="deploy to ec2">
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/search-term-output.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/search-term.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/deployment.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/jest.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/project.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/service.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/src/app/app.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/src/app/app.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/src/app/app.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/src/app/app.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/src/assets/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/output-created-data.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/getAcademics.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/getAcademics.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +50,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feat/010-test-elias" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,6 +64,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feat/011-backend-search-endpoint" />
+                    <option name="lastUsedInstant" value="1678364425" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feat/010-test-elias" />
                     <option name="lastUsedInstant" value="1678287232" />
@@ -331,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678363703707</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="deploy to ec2">
+      <created>1678363987447</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1678363987447</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
