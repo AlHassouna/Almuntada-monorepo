@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="deploy: ec2">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ec2-deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ec2-deploy.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/pages/home/home.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/home/home.styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,27 +133,6 @@
       <workItem from="1678262721342" duration="5139000" />
       <workItem from="1678268247730" duration="3346000" />
       <workItem from="1678280005573" duration="4803000" />
-    </task>
-    <task id="LOCAL-00001" summary="feat: webstorm config">
-      <created>1677588685594</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1677588685594</updated>
-    </task>
-    <task id="LOCAL-00002" summary="feat: website api layer">
-      <created>1678161653318</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1678161653318</updated>
-    </task>
-    <task id="LOCAL-00003" summary="feat: environment layer">
-      <created>1678161719265</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1678161719265</updated>
     </task>
     <task id="LOCAL-00004" summary="feat: create podcast page">
       <created>1678161801242</created>
@@ -481,11 +456,37 @@
       <option name="project" value="LOCAL" />
       <updated>1678448514814</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="deploy: ec2">
+      <created>1678471096763</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1678471096764</updated>
+    </task>
+    <task id="LOCAL-00051" summary="deploy: ec2">
+      <created>1678471483470</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1678471483470</updated>
+    </task>
+    <task id="LOCAL-00052" summary="deploy: ec2">
+      <created>1678471515562</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1678471515562</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/apps/client/pages/home/home.styled.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
