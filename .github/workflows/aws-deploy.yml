@@ -3,7 +3,6 @@ name: AWS Deploy
 on:
   push:
     branches:
-      - develop
 
 jobs:
   build:
