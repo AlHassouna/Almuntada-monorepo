@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="deploy: ec2">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ec2-deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ec2-deploy.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -387,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678441370245</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="deploy: ec2">
+      <created>1678442214928</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1678442214928</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
