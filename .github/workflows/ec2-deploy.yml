@@ -5,35 +5,33 @@ on:
     branches:
       - develop
 
-env:
-  SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-  SSH_PORT: ${{ secrets.INSTANCE_PORT }}
-  SSH_USER: ${{ secrets.INSTANCE_USER }}
-  SSH_HOST: ${{ secrets.INSTANCE_HOST }}
-  REMOTE_DIR: /home/ec2-user/app
-
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Install dependencies
         run: |
+          npm install -g yarn
           yarn install
 
-      - name: Build backend
+      - name: Build client and server
         run: |
           yarn build-server
 
       - name: Deploy to EC2
-        uses: easingthemes/ssh-deploy@v2.1.5
+        uses: easingthemes/ssh-deploy@v2.1.11
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.INSTANCE_HOST}}
+          REMOTE_USER: ${{ secrets.INSTANCE_USER }}
+          TARGET: "/home/ecs-user/AlManshaah"
+          SOURCE: "./dist/apps"
         with:
-          command: |
-            mkdir -p $REMOTE_DIR
-            rm -rf $REMOTE_DIR/*
-            cp -r ./dist/* $REMOTE_DIR
-          ssh-private-key: ${{ env.SSH_KEY }}
-          args: -o StrictHostKeyChecking=no -p ${{ env.SSH_PORT }} ${{ env.SSH_USER }}@${{ env.SSH_HOST }}
+          args: "-rltgoDzvO --delete"
+
+      - name: Restart server
+        run: |
+          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.INSTANCE_USER }}@${{ secrets.INSTANCE_HOST }} "sudo systemctl restart AlManshaah-server.service"
