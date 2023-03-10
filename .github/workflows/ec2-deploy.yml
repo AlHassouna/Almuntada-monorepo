@@ -39,6 +39,3 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ~/project
-            yarn install
-            yarn global add pm2
-            pm2 start dist/main.js --name server
