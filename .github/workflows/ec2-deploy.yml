@@ -22,9 +22,11 @@ jobs:
           yarn build-server
 
       - name: Deploy to EC2
-        run: |
-          scp -i ${{ secrets.SSH_PRIVATE_KEY }} -r ./dist/apps ${{ secrets.INSTANCE_USER }}@${{ secrets.INSTANCE_HOST }}:/home/ubuntu/my-nx-project
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.INSTANCE_HOST }}
+          username: ${{ secrets.INSTANCE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: 'dist/apps/workspace'
+          target: '/home/ubuntu/workspace'
 
-      - name: Restart server
-        run: |
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.INSTANCE_USER }}@${{ secrets.INSTANCE_HOST }} "sudo systemctl restart my-nx-project-server.service"
