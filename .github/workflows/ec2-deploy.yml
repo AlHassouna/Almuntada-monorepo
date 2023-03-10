@@ -12,13 +12,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          cache: 'yarn'
 
       - name: Install dependencies
         run: |
-          yarn install
+          yarn install --frozen-lockfile
 
       - name: Build project
-        run: yarn build-client
+        run: yarn build-server
 
       - name: Copy files to EC2 instance
         uses: appleboy/scp-action@master
@@ -37,4 +39,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ~/project
-            npm run start:client
+            yarn install --production
+            pm2 start dist/main.js --name server
