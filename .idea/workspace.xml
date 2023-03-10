@@ -4,31 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="deploy to ec2">
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/search-term-output.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/search-term.dto.ts" afterDir="false" />
+    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="feat: add academic card">
+      <change afterPath="$PROJECT_DIR$/apps/client/components/Card/AcademicsCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/.eslintrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/deployment.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/jest.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/project.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/service.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/src/app/app.controller.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/src/app/app.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/src/app/app.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/src/app/app.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/src/assets/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/output-created-data.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth/webpack.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/getAcademics.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/getAcademics.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/home/home.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/home.styled.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/lang/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/lang/he.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/lang/he.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/app.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/app.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="tsconfig.json" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -122,7 +108,7 @@
     "prettierjs.PrettierConfiguration.Package": "/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/node_modules/prettier",
     "rearrange.code.on.save": "true",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/typescript/lib",
+    "ts.external.directory.path": "/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/node_modules/typescript/lib",
     "ts.rename.search.for.dynamic.occurrences": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -136,6 +122,54 @@
       <recent name="$PROJECT_DIR$/apps/client/components" />
       <recent name="$PROJECT_DIR$/libs/shared-hooks/src/lib/useList" />
     </key>
+  </component>
+  <component name="RunManager" selected="npm.lint">
+    <configuration name="build-client" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build-client" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build-server" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build-server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="lint" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:client" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:client" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.build-server" />
+      <item itemvalue="npm.build-client" />
+      <item itemvalue="npm.start:client" />
+      <item itemvalue="npm.lint" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -415,6 +449,7 @@
     <MESSAGE value="test: tesing ci cd" />
     <MESSAGE value="fix: package json nx" />
     <MESSAGE value="deploy to ec2" />
-    <option name="LAST_COMMIT_MESSAGE" value="deploy to ec2" />
+    <MESSAGE value="feat: add academic card" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add academic card" />
   </component>
 </project>
