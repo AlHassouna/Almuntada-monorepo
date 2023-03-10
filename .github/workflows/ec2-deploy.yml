@@ -22,16 +22,9 @@ jobs:
           yarn build-server
 
       - name: Deploy to EC2
-        uses: easingthemes/ssh-deploy@main
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.INSTANCE_HOST}}
-          REMOTE_USER: ${{ secrets.INSTANCE_USER }}
-          TARGET: "/home/ecs-user/AlManshaah"
-          SOURCE: "./dist/apps"
-        with:
-          args: "-rltgoDzvO --delete"
+        run: |
+          scp -i ${{ secrets.SSH_PRIVATE_KEY }} -r ./dist/apps ${{ secrets.INSTANCE_USER }}@${{ secrets.INSTANCE_HOST }}:/home/ubuntu/my-nx-project
 
       - name: Restart server
         run: |
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.INSTANCE_USER }}@${{ secrets.INSTANCE_HOST }} "sudo systemctl restart AlManshaah-server.service"
+          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.INSTANCE_USER }}@${{ secrets.INSTANCE_HOST }} "sudo systemctl restart my-nx-project-server.service"
