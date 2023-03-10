@@ -5,16 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="feat: add academic card">
-      <change afterPath="$PROJECT_DIR$/apps/client/components/Card/AcademicsCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/API/academic/searchAcademic.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/pages/air/air.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/pages/home/home.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/home.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/pages/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/lang/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/pages/lang/he.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/lang/he.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/app.controller.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/app.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/getAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/getAcademic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/getAcademics.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/getAcademics.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/postAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/postAcademic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/updateAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/updateAcademic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/podcast/getPodcast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/podcast/getPodcast.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/podcast/getPodcasts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/podcast/getPodcasts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/podcast/postPodcast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/podcast/postPodcast.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/podcast/updatePodcast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/podcast/updatePodcast.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/environment/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/environment/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/Academic/Academic.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +35,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -123,7 +133,7 @@
       <recent name="$PROJECT_DIR$/libs/shared-hooks/src/lib/useList" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.lint">
+  <component name="RunManager" selected="npm.start:server">
     <configuration name="build-client" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -164,11 +174,22 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start:server" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="npm.build-server" />
       <item itemvalue="npm.build-client" />
       <item itemvalue="npm.start:client" />
       <item itemvalue="npm.lint" />
+      <item itemvalue="npm.start:server" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -401,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678363987447</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="feat: add academic card">
+      <created>1678440301017</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1678440301017</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

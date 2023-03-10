@@ -17,7 +17,7 @@
     "start:mailer": "nx run mailer:serve",
     "start:analysis": "nx run analysis:serve",
     "start:search": "nx run search:serve",
-    "build:prod": "nx build server --prod",
+    "build:prod": "nx build client --prod",
     "lint": "nx workspace-lint && npx nx run-many --all --target=lint --parallel",
     "typeorm": "ts-node ./node_modules/typeorm/cli.js",
     "migration:create": "yarn typeorm migration:create -n",
