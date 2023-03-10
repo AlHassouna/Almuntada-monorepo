@@ -1,10 +1,10 @@
-import {podcastInstance} from '../api';
-import {useQuery} from '@tanstack/react-query';
+import { backendInstance } from '../api';
+import { useQuery } from '@tanstack/react-query';
 
-const postPodcust = async () => {
-  return await podcastInstance.post('/podcasts');
+const postPodcast = async () => {
+  return await backendInstance.post('/podcasts');
 };
 
 export const useGetPodcast = (auth?: string) => {
-  return useQuery<object, Error>(['podcast'], postPodcust);
+  return useQuery<object, Error>(['podcast'], postPodcast);
 };

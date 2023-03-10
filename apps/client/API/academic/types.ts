@@ -8,19 +8,19 @@ export interface IAcademic {
   degree: string;
   subject: string;
 
-  career: string
+  career: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
 export type AcademicCreated = Omit<IAcademic, 'createdAt' | 'updatedAt'>;
 
-enum degree {
-  AssociatesDegree,
-
-  BachelorsDegree,
-
-  MastersDegree,
-
-  DoctorateDegree,
-}
+// enum degree {
+//   AssociatesDegree,
+//
+//   BachelorsDegree,
+//
+//   MastersDegree,
+//
+//   DoctorateDegree,
+// }

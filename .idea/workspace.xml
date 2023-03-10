@@ -4,8 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="deploy: ec2">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ec2-deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ec2-deploy.yml" afterDir="false" />
+    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="feat: add academic card">
+      <change afterPath="$PROJECT_DIR$/apps/client/API/academic/searchAcademic.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/pages/air/air.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/getAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/getAcademic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/getAcademics.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/getAcademics.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/postAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/postAcademic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/updateAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/updateAcademic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/podcast/getPodcast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/podcast/getPodcast.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/podcast/getPodcasts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/podcast/getPodcasts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/podcast/postPodcast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/podcast/postPodcast.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/podcast/updatePodcast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/podcast/updatePodcast.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/environment/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/environment/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/Academic/Academic.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="tsconfig.json" />
+        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -81,27 +101,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/node_modules/prettier&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/typescript/lib&quot;,
-    &quot;ts.rename.search.for.dynamic.occurrences&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/node_modules/prettier",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/node_modules/typescript/lib",
+    "ts.rename.search.for.dynamic.occurrences": "true",
+    "vue.rearranger.settings.migration": "true"
+
   }
 }</component>
   <component name="RecentsManager">
@@ -113,6 +135,65 @@
       <recent name="$PROJECT_DIR$/apps/client/components" />
       <recent name="$PROJECT_DIR$/libs/shared-hooks/src/lib/useList" />
     </key>
+  </component>
+  <component name="RunManager" selected="npm.start:server">
+    <configuration name="build-client" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build-client" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build-server" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build-server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="lint" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:client" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:client" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:server" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.build-server" />
+      <item itemvalue="npm.build-client" />
+      <item itemvalue="npm.start:client" />
+      <item itemvalue="npm.lint" />
+      <item itemvalue="npm.start:server" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -518,7 +599,8 @@
     <MESSAGE value="test: tesing ci cd" />
     <MESSAGE value="fix: package json nx" />
     <MESSAGE value="deploy to ec2" />
-    <MESSAGE value="deploy: ec2" />
-    <option name="LAST_COMMIT_MESSAGE" value="deploy: ec2" />
+    <MESSAGE value="feat: add academic card" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add academic card" />
+
   </component>
 </project>
