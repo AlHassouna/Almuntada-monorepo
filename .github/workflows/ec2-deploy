@@ -1,0 +1,39 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - develop
+
+env:
+  SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  SSH_PORT: ${{ secrets.INSTANCE_PORT }}
+  SSH_USER: ${{ secrets.INSTANCE_USER }}
+  SSH_HOST: ${{ secrets.INSTANCE_HOST }}
+  REMOTE_DIR: /home/ec2-user/app
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          yarn install
+
+      - name: Build backend
+        run: |
+          yarn build-server
+
+      - name: Deploy to EC2
+        uses: easingthemes/ssh-deploy@v2.1.5
+        with:
+          command: |
+            mkdir -p $REMOTE_DIR
+            rm -rf $REMOTE_DIR/*
+            cp -r ./dist/* $REMOTE_DIR
+          ssh-private-key: ${{ env.SSH_KEY }}
+          args: -o StrictHostKeyChecking=no -p ${{ env.SSH_PORT }} ${{ env.SSH_USER }}@${{ env.SSH_HOST }}
