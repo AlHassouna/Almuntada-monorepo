@@ -17,6 +17,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.INSTANCE_PORT }}
           source: "."
+          target: "~/project"
 
 
       - name: SSH into EC2 instance and start docker-compose
