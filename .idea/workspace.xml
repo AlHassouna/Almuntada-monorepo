@@ -135,13 +135,6 @@
       <workItem from="1678268247730" duration="3346000" />
       <workItem from="1678280005573" duration="4803000" />
     </task>
-    <task id="LOCAL-00012" summary="fix: key problem with components">
-      <created>1678264167216</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1678264167216</updated>
-    </task>
     <task id="LOCAL-00013" summary="fixing shared links">
       <created>1678267931279</created>
       <option name="number" value="00013" />
@@ -478,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678525844001</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="deploy: ec2">
+      <created>1678525964545</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1678525964545</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

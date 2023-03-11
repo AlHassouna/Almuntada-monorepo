@@ -9,30 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Install SSH
-        run: sudo apt-get install openssh-client
-
-      - name: Connect to EC2 instance
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.INSTANCE_IP }}
-          username: ${{ secrets.INSTANCE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.INSTANCE_PORT }}
-          run: |
-            # Install Node.js and Yarn
-            sudo apt update
-            sudo apt install -y nodejs npm
-            sudo npm install -g yarn
-            sudo apt-get update
-            sudo apt-get install docker-compose
-
-            # Install project dependencies
-            yarn install
-
-            # Build the project
-            yarn build-server
-
       - name: SSH into EC2 instance and start docker-compose
         uses: appleboy/ssh-action@master
         with:
