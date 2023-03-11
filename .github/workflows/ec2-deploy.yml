@@ -9,6 +9,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Copy code to EC2 instance
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.INSTANCE_IP }}
+          username: ${{ secrets.INSTANCE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.INSTANCE_PORT }}
+          source: "./*"
+          target: "~/project/"
+
+          
       - name: SSH into EC2 instance and start docker-compose
         uses: appleboy/ssh-action@master
         with:
