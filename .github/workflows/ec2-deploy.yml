@@ -16,10 +16,9 @@ jobs:
           username: ${{ secrets.INSTANCE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.INSTANCE_PORT }}
-          source: "./*"
-          target: "~/project/"
+          source: "."
 
-          
+
       - name: SSH into EC2 instance and start docker-compose
         uses: appleboy/ssh-action@master
         with:
