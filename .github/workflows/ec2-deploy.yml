@@ -1,4 +1,4 @@
-name: Deploy to EC2 New
+name: Deploy to EC2 instance
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -17,24 +16,54 @@ jobs:
         run: |
           yarn install
 
-      - name: Build project
-        run: yarn build-client
+      - name: Build client and server
+        run: |
+          yarn build-server
 
-      - name: Copy files to EC2 instance
+
+      - name: Copy code to EC2 instance
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.INSTANCE_HOST }}
+          host: ${{ secrets.INSTANCE_IP }}
           username: ${{ secrets.INSTANCE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.INSTANCE_PORT }}
           source: "."
           target: "~/project"
 
-      - name: SSH into EC2 instance
+
+      - name: SSH into EC2 instance and start docker-compose
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.INSTANCE_HOST }}
+          host: ${{ secrets.INSTANCE_IP }}
           username: ${{ secrets.INSTANCE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.INSTANCE_PORT }}
           script: |
-            cd ~/project
-            npm run start:client
+            docker-compose down
+            docker-compose up -d
+
+      - name: SSH into EC2 instance and set environment variables
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.INSTANCE_IP }}
+          username: ${{ secrets.INSTANCE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY}}
+          port: ${{ secrets.INSTANCE_PORT }}
+          script: |
+            echo "export DB_HOST=$(aws ssm get-parameter --name DB_HOST --query 'Parameter.Value' --output text)" >> ~/.bashrc
+            echo "export DB_PORT=$(aws ssm get-parameter --name DB_PORT --query 'Parameter.Value' --output text)" >> ~/.bashrc
+            echo "export DB_USERNAME=$(aws ssm get-parameter --with-decryption --name DB_USERNAME --query 'Parameter.Value' --output text)" >> ~/.bashrc
+            echo "export DB_PASSWORD=$(aws ssm get-parameter --with-decryption --name DB_PASSWORD --query 'Parameter.Value' --output text)" >> ~/.bashrc
+            echo "export DB_DATABASE=$(aws ssm get-parameter --name DB_DATABASE --query 'Parameter.Value' --output text)" >> ~/.bashrc
+
+      - name: SSH into EC2 instance and copy .env file
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.INSTANCE_IP }}
+          username: ${{ secrets.INSTANCE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.INSTANCE_PORT }}
+          script: |
+            aws ssm get-parameters --names DB_HOST DB_PORT DB_USERNAME DB_PASSWORD DB_DATABASE --with-decryption --query 'Parameters[*].Value' --output text | \
+            awk 'BEGIN { ORS = "" } { print "export " $1 "=\"" $2 "\"\n" }' > .env

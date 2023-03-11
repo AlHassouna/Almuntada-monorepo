@@ -26,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="tsconfig.json" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -134,6 +135,89 @@
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
+      <updated>1678525588848</updated>
+    </task>
+    <task id="LOCAL-00059" summary="deploy: ec2">
+      <created>1678525711856</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1678525711856</updated>
+    </task>
+    <task id="LOCAL-00060" summary="deploy: ec2">
+      <created>1678525844001</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1678525844001</updated>
+    </task>
+    <task id="LOCAL-00061" summary="deploy: ec2">
+      <created>1678525964545</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1678525964545</updated>
+    </task>
+    <task id="LOCAL-00062" summary="deploy: ec2">
+      <created>1678527653457</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1678527653457</updated>
+    </task>
+    <task id="LOCAL-00063" summary="deploy: ec2">
+      <created>1678527776319</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1678527776319</updated>
+    </task>
+    <task id="LOCAL-00064" summary="deploy: ec2">
+      <created>1678527911036</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1678527911036</updated>
+    </task>
+    <task id="LOCAL-00065" summary="deploy: ec2">
+      <created>1678528001734</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1678528001734</updated>
+    </task>
+    <task id="LOCAL-00066" summary="deploy: ec2">
+      <created>1678528205498</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1678528205498</updated>
+    </task>
+    <task id="LOCAL-00067" summary="deploy: ec2">
+      <created>1678528260308</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1678528260308</updated>
+    </task>
+    <task id="LOCAL-00068" summary="deploy: ec2">
+      <created>1678528330247</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1678528330247</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/apps/client/pages/home/home.styled.js" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -149,5 +233,6 @@
     <MESSAGE value="feat: IDE" />
     <MESSAGE value="feat: create academic page with form" />
     <option name="LAST_COMMIT_MESSAGE" value="feat: create academic page with form" />
+
   </component>
 </project>
