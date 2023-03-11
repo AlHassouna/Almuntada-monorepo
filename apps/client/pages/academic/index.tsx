@@ -5,6 +5,7 @@ import { AcademicsCard } from '../../components/Card/AcademicsCard';
 import { CardContainer } from '../../styled/academics.styled';
 import Typography from '@mui/material/Typography';
 import { AcademicDialog } from '../../components/Dialog/AcademicDialog';
+import { AcademicDialogLogic } from '../../components/Dialog/academicDialogLogic';
 
 interface Props {
   onOpen: () => void;
@@ -12,8 +13,9 @@ interface Props {
   handleSubmit: () => void;
   handleClose: () => void;
 }
-const Academic: FC<Props> = ({ onOpen, isOpen, handleSubmit, handleClose }) => {
+const Academic: FC = () => {
   const { data } = useGetAcademics();
+  const { isOpen, onClose, onOpen, OnSubmit } = AcademicDialogLogic();
   return (
     <Box>
       <Box
@@ -43,14 +45,14 @@ const Academic: FC<Props> = ({ onOpen, isOpen, handleSubmit, handleClose }) => {
           luctus vestib
         </Typography>
 
-        <Button sx={{ margin: '50px' }} variant="outlined">
+        <Button sx={{ margin: '50px' }} variant="outlined" onClick={onOpen}>
           Open form dialog
         </Button>
         {isOpen && (
           <AcademicDialog
             isOpen={isOpen}
-            handleSubmit={handleSubmit}
-            handleClose={handleClose}
+            onSubmit={OnSubmit}
+            handleClose={onClose}
           />
         )}
       </Box>

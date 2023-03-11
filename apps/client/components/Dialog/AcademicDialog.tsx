@@ -8,15 +8,16 @@ import {
   TextField,
 } from '@mui/material';
 import { FC } from 'react';
+import { AcademicCreated } from '../../API/academic/types';
 
 interface Props {
   handleClose: () => void;
-  handleSubmit: () => void;
+  onSubmit: (data: AcademicCreated) => void;
   isOpen: boolean;
 }
 export const AcademicDialog: FC<Props> = ({
   handleClose,
-  handleSubmit,
+  onSubmit,
   isOpen,
 }) => {
   return (
@@ -66,7 +67,7 @@ export const AcademicDialog: FC<Props> = ({
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose}>Cancel</Button>
-        <Button onClick={handleSubmit}>Subscribe</Button>
+        <Button onClick={() => onSubmit}>Save</Button>
       </DialogActions>
     </Dialog>
   );

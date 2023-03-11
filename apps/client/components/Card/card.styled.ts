@@ -13,3 +13,10 @@ export const AcademicCardBox = styled(Card)`
   margin: 5px;
   padding: 5px;
 `;
+
+export const PodcastCardBox = styled(Card)`
+  max-width: 250px;
+  max-height: 400px;
+  margin: 5px;
+  padding: 5px;
+`;
