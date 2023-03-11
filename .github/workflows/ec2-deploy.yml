@@ -9,6 +9,19 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          yarn install
+
+      - name: Build client and server
+        run: |
+          yarn build-server
+
+        
       - name: Copy code to EC2 instance
         uses: appleboy/scp-action@master
         with:
