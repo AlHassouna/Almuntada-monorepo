@@ -312,6 +312,7 @@ exports.CreateUserDto = void 0;
 const tslib_1 = __webpack_require__("tslib");
 const swagger_1 = __webpack_require__("@nestjs/swagger");
 const class_validator_1 = __webpack_require__("class-validator");
+const class_transformer_1 = __webpack_require__("class-transformer");
 class CreateUserDto {
 }
 tslib_1.__decorate([
@@ -336,10 +337,10 @@ tslib_1.__decorate([
 ], CreateUserDto.prototype, "imageUrl", void 0);
 tslib_1.__decorate([
     (0, swagger_1.ApiProperty)(),
-    (0, class_validator_1.IsNotEmpty)(),
     (0, class_validator_1.IsNumber)(),
     (0, class_validator_1.Min)(18),
     (0, class_validator_1.Max)(70),
+    (0, class_transformer_1.Type)(() => Number),
     tslib_1.__metadata("design:type", Number)
 ], CreateUserDto.prototype, "age", void 0);
 tslib_1.__decorate([
@@ -586,15 +587,12 @@ let UserService = class UserService {
         return this.userRepository.save(newUser);
     }
     findAll() {
-        console.log('in find all');
         return this.userRepository.find();
     }
     findOne(id) {
-        console.log('in find id');
         return `This action returns a #${id} user`;
     }
     findUsersBySearchTerms(searchTerms) {
-        console.log('in find search');
         return this.userRepository.find({
             where: {
                 city: searchTerms.city,
@@ -702,6 +700,13 @@ module.exports = require("@nestjs/swagger");
 /***/ ((module) => {
 
 module.exports = require("@nestjs/typeorm");
+
+/***/ }),
+
+/***/ "class-transformer":
+/***/ ((module) => {
+
+module.exports = require("class-transformer");
 
 /***/ }),
 

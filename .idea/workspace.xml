@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="657a012d-e0a2-43c3-aa18-8ea26083524e" name="Changes" comment="feat: create academic page with form">
-      <change afterPath="$PROJECT_DIR$/apps/client/components/Card/Podcast.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/client/components/Dialog/academicDialogLogic.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/Dialog/dialogLogic.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/card.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/card.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/postAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/postAcademic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/components/Dialog/AcademicDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Dialog/AcademicDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Dialog/academicDialogLogic.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/pages/air/air.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/apps/server/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/apps/server/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/apps/server/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/apps/server/main.js.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678483882815</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: create academic page with form">
+      <created>1678550062598</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678550062598</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -20,19 +20,14 @@ export class UserService {
   }
 
   findAll() {
-    console.log('in find all');
     return this.userRepository.find();
   }
 
   findOne(id: number) {
-    console.log('in find id');
-
     return `This action returns a #${id} user`;
   }
 
   findUsersBySearchTerms(searchTerms: SearchTermDto) {
-    console.log('in find search');
-
     return this.userRepository.find({
       where: {
         city: searchTerms.city,

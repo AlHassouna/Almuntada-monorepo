@@ -5,17 +5,12 @@ import { AcademicsCard } from '../../components/Card/AcademicsCard';
 import { CardContainer } from '../../styled/academics.styled';
 import Typography from '@mui/material/Typography';
 import { AcademicDialog } from '../../components/Dialog/AcademicDialog';
-import { AcademicDialogLogic } from '../../components/Dialog/academicDialogLogic';
+import { AcademicDialogLogic } from '../../components/Dialog/dialogLogic';
 
-interface Props {
-  onOpen: () => void;
-  isOpen: boolean;
-  handleSubmit: () => void;
-  handleClose: () => void;
-}
 const Academic: FC = () => {
   const { data } = useGetAcademics();
-  const { isOpen, onClose, onOpen, OnSubmit } = AcademicDialogLogic();
+
+  const { isOpen, onClose, onOpen, OnSubmit, onChange } = AcademicDialogLogic();
   return (
     <Box>
       <Box
@@ -53,6 +48,7 @@ const Academic: FC = () => {
             isOpen={isOpen}
             onSubmit={OnSubmit}
             handleClose={onClose}
+            onChange={onChange}
           />
         )}
       </Box>
