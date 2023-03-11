@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="deploy: ec2">
       <change beforePath="$PROJECT_DIR$/.github/workflows/ec2-deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ec2-deploy.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,20 +133,6 @@
       <workItem from="1678262721342" duration="5139000" />
       <workItem from="1678268247730" duration="3346000" />
       <workItem from="1678280005573" duration="4803000" />
-    </task>
-    <task id="LOCAL-00017" summary="fix: package json nx">
-      <created>1678290412656</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1678290412656</updated>
-    </task>
-    <task id="LOCAL-00018" summary="fix: package json nx">
-      <created>1678310599336</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1678310599336</updated>
     </task>
     <task id="LOCAL-00019" summary="fix: package json nx">
       <created>1678310804757</created>
@@ -478,7 +463,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678528001734</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="deploy: ec2">
+      <created>1678528205498</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1678528205498</updated>
+    </task>
+    <task id="LOCAL-00067" summary="deploy: ec2">
+      <created>1678528260308</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1678528260308</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
