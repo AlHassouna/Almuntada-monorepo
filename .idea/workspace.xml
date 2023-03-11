@@ -135,13 +135,6 @@
       <workItem from="1678268247730" duration="3346000" />
       <workItem from="1678280005573" duration="4803000" />
     </task>
-    <task id="LOCAL-00011" summary="feat: initialize the podcasts query">
-      <created>1678263461292</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1678263461292</updated>
-    </task>
     <task id="LOCAL-00012" summary="fix: key problem with components">
       <created>1678264167216</created>
       <option name="number" value="00012" />
@@ -478,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678525711856</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="deploy: ec2">
+      <created>1678525844001</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1678525844001</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -41,7 +41,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.INSTANCE_PORT }}
           script: |
-            cd ~/project
             docker-compose down
             docker-compose up -d
 
@@ -67,16 +66,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.INSTANCE_PORT }}
           script: |
-            cd ~/nx-app
             aws ssm get-parameters --names DB_HOST DB_PORT DB_USERNAME DB_PASSWORD DB_DATABASE --with-decryption --query 'Parameters[*].Value' --output text | \
-              awk 'BEGIN { ORS = "" } { print "export " $1 "=\"" $2 "\"\n" }' > .env
-
-      - name: SSH into EC2 instance and run migrations
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.INSTANCE_IP }}
-          username: ${{ secrets.INSTANCE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.INSTANCE_PORT }}
-          script: |
-            cd ~/nx-app
+            awk 'BEGIN { ORS = "" } { print "export " $1 "=\"" $2 "\"\n" }' > .env
