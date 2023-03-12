@@ -1,8 +1,5 @@
-import { Dispatch, SetStateAction, useState } from 'react';
-import {
-  usePostAcademic,
-  usePostAcademicMutation,
-} from '../../API/academic/postAcademic';
+import { useState } from 'react';
+import { usePostAcademicMutation } from '../../API/academic/postAcademic';
 import { AcademicCreated, AcademicField } from '../../API/academic/types';
 
 export const AcademicDialogLogic = () => {
@@ -12,7 +9,6 @@ export const AcademicDialogLogic = () => {
   const onClose = () => setIsOpen(false);
   const onOpen = () => setIsOpen(true);
   const OnSubmit = async () => {
-    console.log(academicDetail);
     await mutate(academicDetail);
     onClose();
   };
