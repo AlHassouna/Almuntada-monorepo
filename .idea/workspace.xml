@@ -16,6 +16,12 @@
       <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/apps/server/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/apps/server/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/apps/server/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/apps/server/main.js.map" afterDir="false" />
+    <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="deploy: ec2">
+      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +37,9 @@
       </list>
     </option>
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -39,102 +48,365 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "node.js.selected.package.tslint": "(autodetect)",
-    "prettierjs.PrettierConfiguration.Package": "/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/node_modules/prettier",
-    "ts.external.directory.path": "/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/node_modules/typescript/lib"
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feat/011-backend-search-endpoint" />
+                    <option name="lastUsedInstant" value="1678364425" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feat/010-test-elias" />
+                    <option name="lastUsedInstant" value="1678287232" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1678287196" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="009/frontend-academics-page" />
+                    <option name="lastUsedInstant" value="1678263528" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feat/008-frontend-connecting-endpoints-with-back" />
+                    <option name="lastUsedInstant" value="1678263527" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectId" id="2MMqRARQGIMfHTrEe2t11c9LulU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/node_modules/prettier&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/typescript/lib&quot;,
+    &quot;ts.rename.search.for.dynamic.occurrences&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/apps/client/API/academic" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/apps/client/styled" />
+      <recent name="$PROJECT_DIR$/apps/client/components" />
+      <recent name="$PROJECT_DIR$/libs/shared-hooks/src/lib/useList" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start:client">
-    <configuration name="build-client" type="js.build_tools.npm" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build-client" />
-      </scripts>
-      <node-interpreter value="project" />
-      <package-manager value="yarn" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="build-server" type="js.build_tools.npm" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build-server" />
-      </scripts>
-      <node-interpreter value="project" />
-      <package-manager value="yarn" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="start:client" type="js.build_tools.npm" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start:client" />
-      </scripts>
-      <node-interpreter value="project" />
-      <package-manager value="yarn" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="start:server" type="js.build_tools.npm" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start:server" />
-      </scripts>
-      <node-interpreter value="project" />
-      <package-manager value="yarn" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="npm.build-server" />
-      <item itemvalue="npm.build-client" />
-      <item itemvalue="npm.start:server" />
-      <item itemvalue="npm.start:client" />
-    </list>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task id="LOCAL-00001" summary="feat: IDE">
-      <created>1678451304500</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1678451304500</updated>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="feat: start comments" />
+      <created>1677587787267</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677587787267</updated>
+      <workItem from="1677587788379" duration="32000" />
+      <workItem from="1677587822811" duration="22444000" />
+      <workItem from="1678200632766" duration="133000" />
+      <workItem from="1678200810959" duration="245000" />
+      <workItem from="1678201062808" duration="875000" />
+      <workItem from="1678217102433" duration="4704000" />
+      <workItem from="1678259322455" duration="383000" />
+      <workItem from="1678259722688" duration="2540000" />
+      <workItem from="1678262721342" duration="5139000" />
+      <workItem from="1678268247730" duration="3346000" />
+      <workItem from="1678280005573" duration="4803000" />
     </task>
-    <task id="LOCAL-00002" summary="feat: IDE">
-      <created>1678451481889</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
+    <task id="LOCAL-00022" summary="deploy to ec2">
+      <created>1678360052169</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1678451481889</updated>
+      <updated>1678360052169</updated>
     </task>
-    <task id="LOCAL-00003" summary="feat: create academic page with form">
-      <created>1678483882815</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
+    <task id="LOCAL-00023" summary="deploy to ec2">
+      <created>1678362400426</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1678483882815</updated>
+      <updated>1678362400426</updated>
     </task>
-    <task id="LOCAL-00004" summary="feat: create academic page with form">
-      <created>1678550062598</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
+    <task id="LOCAL-00024" summary="deploy to ec2">
+      <created>1678362592087</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
-      <updated>1678550062598</updated>
+      <updated>1678362592087</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
-    <servers />
-  </component>
+    <task id="LOCAL-00025" summary="deploy to ec2">
+      <created>1678362794904</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1678362794904</updated>
+    </task>
+    <task id="LOCAL-00026" summary="deploy to ec2">
+      <created>1678362951368</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1678362951368</updated>
+    </task>
+    <task id="LOCAL-00027" summary="deploy to ec2">
+      <created>1678363238700</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1678363238700</updated>
+    </task>
+    <task id="LOCAL-00028" summary="deploy to ec2">
+      <created>1678363469802</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1678363469802</updated>
+    </task>
+    <task id="LOCAL-00029" summary="deploy to ec2">
+      <created>1678363703707</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1678363703707</updated>
+    </task>
+    <task id="LOCAL-00030" summary="deploy to ec2">
+      <created>1678363987447</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1678363987447</updated>
+    </task>
+    <task id="LOCAL-00031" summary="deploy: ec2">
+      <created>1678440255469</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1678440255469</updated>
+    </task>
+    <task id="LOCAL-00032" summary="deploy: ec2">
+      <created>1678440400934</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1678440400934</updated>
+    </task>
+    <task id="LOCAL-00033" summary="deploy: ec2">
+      <created>1678440514151</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1678440514151</updated>
+    </task>
+    <task id="LOCAL-00034" summary="deploy: ec2">
+      <created>1678440617211</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1678440617211</updated>
+    </task>
+    <task id="LOCAL-00035" summary="deploy: ec2">
+      <created>1678441190426</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1678441190426</updated>
+    </task>
+    <task id="LOCAL-00036" summary="deploy: ec2">
+      <created>1678441370245</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1678441370245</updated>
+    </task>
+    <task id="LOCAL-00037" summary="deploy: ec2">
+      <created>1678442214928</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1678442214928</updated>
+    </task>
+    <task id="LOCAL-00038" summary="deploy: ec2">
+      <created>1678444300914</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1678444300914</updated>
+    </task>
+    <task id="LOCAL-00039" summary="deploy: ec2">
+      <created>1678444690484</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1678444690484</updated>
+    </task>
+    <task id="LOCAL-00040" summary="deploy: ec2">
+      <created>1678445095355</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1678445095355</updated>
+    </task>
+    <task id="LOCAL-00041" summary="deploy: ec2">
+      <created>1678445172356</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1678445172356</updated>
+    </task>
+    <task id="LOCAL-00042" summary="deploy: ec2">
+      <created>1678445450040</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1678445450040</updated>
+    </task>
+    <task id="LOCAL-00043" summary="deploy: ec2">
+      <created>1678445670435</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1678445670435</updated>
+    </task>
+    <task id="LOCAL-00044" summary="deploy: ec2">
+      <created>1678445925341</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1678445925341</updated>
+    </task>
+    <task id="LOCAL-00045" summary="deploy: ec2">
+      <created>1678446073905</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1678446073905</updated>
+    </task>
+    <task id="LOCAL-00046" summary="deploy: ec2">
+      <created>1678446328574</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1678446328574</updated>
+    </task>
+    <task id="LOCAL-00047" summary="deploy: ec2">
+      <created>1678446597870</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1678446597870</updated>
+    </task>
+    <task id="LOCAL-00048" summary="deploy: ec2">
+      <created>1678448082005</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1678448082005</updated>
+    </task>
+    <task id="LOCAL-00049" summary="deploy: ec2">
+      <created>1678448514814</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1678448514814</updated>
+    </task>
+    <task id="LOCAL-00050" summary="deploy: ec2">
+      <created>1678471096763</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1678471096764</updated>
+    </task>
+    <task id="LOCAL-00051" summary="deploy: ec2">
+      <created>1678471483470</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1678471483470</updated>
+    </task>
+    <task id="LOCAL-00052" summary="deploy: ec2">
+      <created>1678471515562</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1678471515562</updated>
+    </task>
+    <task id="LOCAL-00053" summary="deploy: ec2">
+      <created>1678471954550</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1678471954550</updated>
+    </task>
+    <task id="LOCAL-00054" summary="deploy: ec2">
+      <created>1678472929544</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1678472929544</updated>
+    </task>
+    <task id="LOCAL-00055" summary="deploy: ec2">
+      <created>1678472942982</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1678472942982</updated>
+    </task>
+    <task id="LOCAL-00056" summary="deploy: ec2">
+      <created>1678473104205</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1678473104206</updated>
+    </task>
+    <task id="LOCAL-00057" summary="deploy: ec2">
+      <created>1678478074228</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1678478074228</updated>
+    </task>
+    <task id="LOCAL-00058" summary="deploy: ec2">
+      <created>1678525588848</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
       <updated>1678525588848</updated>
     </task>
     <task id="LOCAL-00059" summary="deploy: ec2">
