@@ -15,6 +15,16 @@ export interface IAcademic {
 
 export type AcademicCreated = Omit<IAcademic, 'createdAt' | 'updatedAt'>;
 
+export type AcademicField =
+  | 'firstName'
+  | 'lastName'
+  | 'age'
+  | 'imageUrl'
+  | 'email'
+  | 'city'
+  | 'degree'
+  | 'subject'
+  | 'career';
 // enum degree {
 //   AssociatesDegree,
 //

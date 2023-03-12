@@ -19,7 +19,7 @@ import {
   SecSecLeftSideTitle2,
   SecSecRightSide,
   ThirdSection,
-} from '../../components/home.styled';
+} from '../../styled/home.styled';
 import { useIntl } from 'react-intl';
 import Logo from '../../assets/AlmanshaLogo.png';
 import sanadLogo from '../../assets/sanadlogo.jpeg';

@@ -4,6 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="657a012d-e0a2-43c3-aa18-8ea26083524e" name="Changes" comment="feat: create academic page with form">
+      <change afterPath="$PROJECT_DIR$/apps/client/components/Dialog/dialogLogic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/postAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/postAcademic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Dialog/AcademicDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Dialog/AcademicDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Dialog/academicDialogLogic.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/apps/server/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/apps/server/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/apps/server/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/apps/server/main.js.map" afterDir="false" />
     <list default="true" id="1cdbe31e-236d-4e1a-bb3b-19cb4422de68" name="Changes" comment="deploy: ec2">
       <change afterPath="$PROJECT_DIR$/apps/server/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/ec2-deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ec2-deploy.yml" afterDir="false" />
@@ -467,28 +479,8 @@
       <option name="project" value="LOCAL" />
       <updated>1678528330247</updated>
     </task>
-    <task id="LOCAL-00069" summary="deploy: ec2">
-      <created>1678528360179</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1678528360179</updated>
-    </task>
-    <task id="LOCAL-00070" summary="deploy: ec2">
-      <created>1678603756454</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1678603756454</updated>
-    </task>
-    <task id="LOCAL-00071" summary="deploy: ec2">
-      <created>1678604758716</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1678604758716</updated>
-    </task>
-    <option name="localTasksCounter" value="72" />
+    <option name="localTasksCounter" value="69" />
+
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,44 +496,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/develop" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: website api layer" />
-    <MESSAGE value="feat: environment layer" />
-    <MESSAGE value="feat: create podcast page" />
-    <MESSAGE value="feat: webstorm config" />
-    <MESSAGE value="feat: college list" />
-    <MESSAGE value="feat: update yarn" />
-    <MESSAGE value="feat: update API layer" />
-    <MESSAGE value="fix: trying webstorm" />
-    <MESSAGE value="feat: connecting endpoints to the back" />
-    <MESSAGE value="feat: initialize the podcasts query" />
-    <MESSAGE value="fix: key problem with components" />
-    <MESSAGE value="fixing shared links" />
-    <MESSAGE value="tring the error handler" />
-    <MESSAGE value="fixing useQuery" />
-    <MESSAGE value="fix: class validator" />
-    <MESSAGE value="test: tesing ci cd" />
-    <MESSAGE value="fix: package json nx" />
-    <MESSAGE value="deploy to ec2" />
-    <MESSAGE value="deploy: ec2" />
-    <option name="LAST_COMMIT_MESSAGE" value="deploy: ec2" />
+    <MESSAGE value="feat: IDE" />
+    <MESSAGE value="feat: create academic page with form" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create academic page with form" />
+
   </component>
 </project>

@@ -1,29 +1,73 @@
 import { FC } from 'react';
 import { useGetAcademics } from '../../API/academic/getAcademics';
-
-import { AcademicCreated } from '../../API/academic/types';
-import { usePostAcademic } from '../../API/academic/postAcademic';
+import { Box, Button } from '@mui/material';
+import { AcademicsCard } from '../../components/Card/AcademicsCard';
+import { CardContainer } from '../../styled/academics.styled';
+import Typography from '@mui/material/Typography';
+import { AcademicDialog } from '../../components/Dialog/AcademicDialog';
+import { AcademicDialogLogic } from '../../components/Dialog/dialogLogic';
 
 const Academic: FC = () => {
-  const mockUser: AcademicCreated = {
-    firstName: 'Sobhi',
-    lastName: 'airi',
-    email: 'hzdkv@example.com',
-    imageUrl:
-      'https://media.licdn.com/dms/image/C4D03AQF1zOe2Pjku0w/profile-displayphoto-shrink_800_800/0/1662553255489?e=1683763200&v=beta&t=ImifO4UEu38bxSOaGmgk2kUktQMWSd2a0eK6LReyvbU',
-    age: 25,
-    city: 'Bangalore',
-    subject: 'asdasds',
-    degree: 'asdasd',
-    career: 'sharmatauser',
-  };
+  const { data } = useGetAcademics();
 
-  usePostAcademic(mockUser);
+  const { isOpen, onClose, onOpen, OnSubmit, onChange } = AcademicDialogLogic();
+  return (
+    <Box>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+          padding: '50px',
+          margin: '50px',
+        }}
+      >
+        <Typography variant="h1" color="text.secondary">
+          this is the first title
+        </Typography>
+        <Typography variant="h3" color="text.secondary">
+          this is the second title
+        </Typography>
+        <Typography variant="subtitle1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel dolor
+          sit amet nibh euismod lobortis. Nullam consequat odio non est aliquet,
+          ac consectetur lorem maximus. Nunc vel turpis in ex hendrerit
+          fringilla. Duis vel orci ac elit consequat bibendum. Suspendisse
+          porttitor malesuada elit, at malesuada nibh lacinia vitae. Etiam nec
+          faucibus nisl, nec scelerisque metus. Nullam sit amet ligula id velit
+          luctus vestib
+        </Typography>
 
-  const data = useGetAcademics();
-
-  console.log(data, 'data');
-
-  return <div>adsasdas</div>;
+        <Button sx={{ margin: '50px' }} variant="outlined" onClick={onOpen}>
+          Open form dialog
+        </Button>
+        {isOpen && (
+          <AcademicDialog
+            isOpen={isOpen}
+            onSubmit={OnSubmit}
+            handleClose={onClose}
+            onChange={onChange}
+          />
+        )}
+      </Box>
+      <CardContainer>
+        {data?.map((item, id) => (
+          <AcademicsCard
+            key={id}
+            firstName={item.firstName}
+            lastName={item.lastName}
+            email={item.email}
+            imageUrl={item.imageUrl}
+            degree={item.degree}
+            subject={item.subject}
+            career={item.career}
+            city={item.city}
+          />
+        ))}
+      </CardContainer>
+    </Box>
+  );
 };
 export default Academic;
