@@ -3,7 +3,6 @@ name: Deploy to EC2 instance
 on:
   push:
     branches:
-      - develop
 
 # Install all pre in ec2 manully
 jobs:
