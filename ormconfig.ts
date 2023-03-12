@@ -1,5 +1,7 @@
-import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-const { DB_USERNAME, DB_PASSWORD, DB_NAME, DB_HOST } = process.env;
+import {TypeOrmModuleOptions} from '@nestjs/typeorm';
+import {ConfigService} from "@nestjs/config";
+
+const {DB_USERNAME, DB_PASSWORD, DB_NAME, DB_HOST} = process.env;
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
