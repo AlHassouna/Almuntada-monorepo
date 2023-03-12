@@ -3,7 +3,6 @@ import { useIntl } from 'react-intl';
 import Navbar from '../components/Navbar/Navbar';
 import styles from './index.module.css';
 import HomePage from './home/home';
-import { Index } from './academic';
 
 export default function Home() {
   const intl = useIntl();
