@@ -22,7 +22,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  pageExtensions: ['.tsx'],
 };
 
 module.exports = withNx(nextConfig);
