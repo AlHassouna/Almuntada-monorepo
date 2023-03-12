@@ -9,6 +9,7 @@
   "scripts": {
     "test": "npx nx run-many --all --target=test --parallel",
     "build-server": "nx build server",
+    "build-nest": "nest build server",
     "start:client": "nx run client:serve",
     "start:server": "nx run server:serve",
     "start:auth": "nx run auth:serve",
@@ -16,9 +17,10 @@
     "start:mailer": "nx run mailer:serve",
     "start:analysis": "nx run analysis:serve",
     "start:search": "nx run search:serve",
-    "build:prod": "nx build server --prod",
+    "start:prod": "nx run server:serve:prod",
     "lint": "nx workspace-lint && npx nx run-many --all --target=lint --parallel",
     "typeorm": "ts-node ./node_modules/typeorm/cli.js",
+    "deploy": "nx build server && nx run server:serve:prod",
     "migration:create": "yarn typeorm migration:create -n",
     "migration:run": "yarn typeorm migration:run",
     "migration:revert": "yarn typeorm migration:revert"
@@ -65,6 +67,7 @@
     "scrollreveal": "^4.0.9",
     "styled-components": "^5.3.6",
     "tailwindcss": "^3.2.7",
+    "ts-loader": "^9.4.2",
     "tslib": "^2.3.0",
     "typeorm": "^0.3.12",
     "webpack": "^5.76.1",
