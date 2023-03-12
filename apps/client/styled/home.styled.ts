@@ -152,6 +152,8 @@ const ThirdSection = styled.section`
   padding: 0 5%;
   width: 100%;
   height: 100%;
+  background-color: #f5f5f5;
+
   @media screen and (max-width: 1024px) {
     margin-top: 5rem;
     flex-direction: column;
@@ -167,7 +169,6 @@ const FourthSection = styled.section`
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  background-color: #f5f5f5;
 `;
 const FourthSectionSub = styled.div`
   display: flex;
