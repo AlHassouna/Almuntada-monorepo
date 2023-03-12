@@ -1,7 +1,7 @@
 //@ts-check
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const {withNx} = require('@nrwl/next/plugins/with-nx');
+const { withNx } = require('@nrwl/next/plugins/with-nx');
 
 /**
  * @type {import('@nrwl/next/plugins/with-nx').WithNxOptions}
@@ -20,11 +20,9 @@ const nextConfig = {
     styledComponents: true,
   },
   typescript: {
-    ignoreBuildErrors: true
+    ignoreBuildErrors: true,
   },
-  pageExtensions: [
-    ".tsx"
-  ]
+  pageExtensions: ['.tsx'],
 };
 
 module.exports = withNx(nextConfig);
