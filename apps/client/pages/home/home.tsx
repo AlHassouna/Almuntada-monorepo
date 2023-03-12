@@ -43,8 +43,8 @@ const HomePage = () => {
     title: string;
     descreprion: string;
     subTitle: string;
-    descreptions: Array<{
-      descreption: string;
+    descriptions: Array<{
+      description: string;
       icon: string;
     }>;
   }>;
@@ -115,10 +115,10 @@ const HomePage = () => {
             return (
               <MediaCardThirdSection
                 key={index}
-                description={cardsInformationThirdSection[key].descreption}
+                description={cardsInformationThirdSection[key].description}
                 title={cardsInformationThirdSection[key].title}
                 descriptions={
-                  cardsInformationThirdSection[key].sub_descreptions
+                  cardsInformationThirdSection[key].sub_descriptions
                 }
                 subTitle={cardsInformationThirdSection[key].sub_title}
               />

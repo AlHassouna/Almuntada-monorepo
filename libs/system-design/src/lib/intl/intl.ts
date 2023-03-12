@@ -11,7 +11,7 @@ function useIntlShared() {
     },
     {
       id: 2,
-      name: intl.formatMessage({id: 'navbar.podcust'}),
+      name: intl.formatMessage({id: 'navbar.podcast'}),
       link: '/podcast',
     },
     {
