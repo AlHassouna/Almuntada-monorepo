@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
@@ -29,13 +30,14 @@ const MainSection = styled.section`
     margin-top: 5rem;
 
   }
-  `;
+`;
 const FirstSection = styled.section`
   display: flex;
   justify-content: space-between;
   padding: 0 5%;
   height: 100%;
   width: 100%;
+  margin-top: 2%;
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     height: fit-content;
@@ -65,7 +67,7 @@ const RightSideTitle = styled.h1`
 const RightSideDesc = styled.h2`
   font-size: 1.5rem;
   font-weight: 400;
-  text-align: right;
+  text-align:
 `;
 
 const RightSideSubSec = styled.section`

@@ -3,6 +3,7 @@ import CardContent from '@mui/material/CardContent';
 import {RevealWrapper} from 'next-reveal';
 import Typography from '@mui/material/Typography';
 import {FC} from 'react';
+import {useLocale} from "@myworkspace/system-design";
 
 interface Props {
   title: string;
@@ -17,12 +18,16 @@ export const MediaCardThirdSection: FC<Props> = ({
                                                    subTitle,
                                                    descriptions,
                                                  }) => {
+  const locale = useLocale()
+  console.log("locale: ", locale)
   return (
     <RevealWrapper delay={100} duration={2000} reset={true}>
       <Card
         className="card"
         sx={{
-          maxWidth: 345,
+          maxWidth: 400,
+          height: 650,
+          overflow: 'scroll',
           textAlign: 'center',
           '&.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root':
             {
@@ -44,7 +49,7 @@ export const MediaCardThirdSection: FC<Props> = ({
             {title}
           </Typography>
           <Typography
-            sx={{marginTop: '1rem', fontFamily: 'Cairo'}}
+            sx={{marginTop: '1rem', fontFamily: 'Cairo' , textAlign: locale === 'en' ? 'left' : 'right'}}
             variant="body1"
             color="text.primary"
           >
@@ -61,7 +66,7 @@ export const MediaCardThirdSection: FC<Props> = ({
           {descriptions.map((description, index) => {
             return (
               <Typography
-                sx={{marginTop: '1rem', textAlign:"right", fontFamily: 'Cairo'}}
+                sx={{marginTop: '1rem', textAlign: locale === 'en' ? 'left' : 'right' , fontFamily: 'Cairo'}}
                 variant="body1"
                 color="text.primary"
                 key={index}

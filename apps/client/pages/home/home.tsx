@@ -1,4 +1,5 @@
 import React from 'react';
+import {useLocale} from "@myworkspace/system-design"
 import {
   Container,
   FirstSection,
@@ -23,6 +24,7 @@ import { FounderCard } from '../../components/Card/FounderCard';
 
 const HomePage = () => {
   const intl = useIntl();
+  const locale = useLocale()
   const cardsInformationFirstSection = intl.messages[
     'homepage.ourUnique'
   ] as unknown as Array<{
@@ -52,7 +54,7 @@ const HomePage = () => {
   }>;
 
   return (
-    <Container>
+    <Container dir={locale}>
       <FirstSection>
         <RightSide>
           <RightSideTitle>
@@ -61,26 +63,26 @@ const HomePage = () => {
           <RightSideDesc>
             {intl.formatMessage({ id: 'homepage.description' })}
           </RightSideDesc>
-          <RightSideSubSec>
-            <RightSideSubSecTitle>
-              {intl.formatMessage({ id: 'homepage.ourUnique.title' })}
-            </RightSideSubSecTitle>
-            <RightSideSubSecDesc>
-              {Object.keys(cardsInformationFirstSection).map(
-                (key: string, index: number) => {
-                  return (
-                    <MediaCard
-                      key={index}
-                      description={
-                        cardsInformationFirstSection[key].description
-                      }
-                      icon={cardsInformationFirstSection[key].icon}
-                    />
-                  );
-                }
-              )}
-            </RightSideSubSecDesc>
-          </RightSideSubSec>
+          {/*<RightSideSubSec>*/}
+          {/*  <RightSideSubSecTitle>*/}
+          {/*    {intl.formatMessage({ id: 'homepage.ourUnique.title' })}*/}
+          {/*  </RightSideSubSecTitle>*/}
+          {/*  <RightSideSubSecDesc>*/}
+          {/*    {Object.keys(cardsInformationFirstSection).map(*/}
+          {/*      (key: string, index: number) => {*/}
+          {/*        return (*/}
+          {/*          <MediaCard*/}
+          {/*            key={index}*/}
+          {/*            description={*/}
+          {/*              cardsInformationFirstSection[key].description*/}
+          {/*            }*/}
+          {/*            icon={cardsInformationFirstSection[key].icon}*/}
+          {/*          />*/}
+          {/*        );*/}
+          {/*      }*/}
+          {/*    )}*/}
+          {/*  </RightSideSubSecDesc>*/}
+          {/*</RightSideSubSec>*/}
         </RightSide>
         <FirstSectionLeftSide>
           <Image src={Logo} alt="" />
