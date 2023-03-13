@@ -20,12 +20,12 @@ export class CreatePodcastDto {
   @IsNotEmpty({ message: 'The Description is required' })
   description: string;
 
-  // Podcast Url //
+  // Index Url //
 
   @ApiProperty({
     description: 'The podcast url of the podcast',
-    example: 'The Podcast Url',
+    example: 'The Index Url',
   })
-  @IsNotEmpty({ message: 'The Podcast Url is required' })
+  @IsNotEmpty({ message: 'The Index Url is required' })
   podcastUrl: string;
 }

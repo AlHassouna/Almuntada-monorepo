@@ -8,6 +8,7 @@ import he from './lang/he.json';
 import { ThemeProvider } from 'styled-components';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
+import Navbar from "../components/Navbar/Navbar";
 
 const messages = {
   ar,
@@ -28,8 +29,10 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
   return (
     <QueryClientProvider client={queryClient}>
       <IntlProvider locale={locale} messages={messages[locale]}>
+
         <main className="app" dir={getDirection(locale)}>
           <ThemeProvider theme={{ dir: getDirection(locale) }}>
+            <Navbar/>
             <Component {...pageProps} />
           </ThemeProvider>
         </main>

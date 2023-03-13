@@ -1,12 +1,35 @@
 import styled from 'styled-components';
 
+const MainContainer = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Tajawal', sans-serif;
+  padding: 0 5%;
+  background-color: #f5f5f5;
+`;
 const Container = styled.div`
-  z-index: 10;
   height: 100%;
   width: 100%;
   align-items: center;
 `;
 
+
+const MainSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%;
+  width: 100%;
+  height: 100vh;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    height: fit-content;
+    margin-top: 5rem;
+
+  }
+  `;
 const FirstSection = styled.section`
   display: flex;
   justify-content: space-between;
@@ -253,4 +276,6 @@ export {
   FooterSection,
   FooterSectionLeftSide,
   FooterSectionRightSide,
+  MainContainer,
+  MainSection
 }

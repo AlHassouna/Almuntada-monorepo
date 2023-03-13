@@ -42,7 +42,7 @@ const HomePage = () => {
     }>;
   }>;
 
-  const cardsInforamtionFounderSection = intl.messages[
+  const cardsInformationFounderSection = intl.messages[
     'homepage.founders'
   ] as unknown as Array<{
     title: string;
@@ -108,15 +108,15 @@ const HomePage = () => {
           {intl.formatMessage({ id: 'homepage.founders.title' })}
         </FourthSectionTitle>
         <FourthSectionSub>
-          {Object.keys(cardsInforamtionFounderSection).map(
+          {Object.keys(cardsInformationFounderSection).map(
             (key: string, index: number) => {
               return (
                 <FounderCard
                   key={index}
-                  title={cardsInforamtionFounderSection[key]?.title}
-                  name={cardsInforamtionFounderSection[key]?.name}
-                  desc={cardsInforamtionFounderSection[key]?.desc}
-                  image={cardsInforamtionFounderSection[key]?.image}
+                  title={cardsInformationFounderSection[key]?.title}
+                  name={cardsInformationFounderSection[key]?.name}
+                  desc={cardsInformationFounderSection[key]?.desc}
+                  image={cardsInformationFounderSection[key]?.image}
                 />
               );
             }

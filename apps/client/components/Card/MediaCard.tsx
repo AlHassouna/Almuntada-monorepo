@@ -61,7 +61,7 @@ export const MediaCardThirdSection: FC<Props> = ({
           {descriptions.map((description, index) => {
             return (
               <Typography
-                sx={{marginTop: '1rem', fontFamily: 'Cairo'}}
+                sx={{marginTop: '1rem', textAlign:"right", fontFamily: 'Cairo'}}
                 variant="body1"
                 color="text.primary"
                 key={index}

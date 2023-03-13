@@ -8,9 +8,9 @@ export const IconBtn = styled(Card)`
 `;
 
 export const AcademicCardBox = styled(Card)`
-  max-width: 300px;
-  max-height: 480px;
-  margin: 5px;
+  max-width: 320px;
+  height: 550px;
+  margin: 15px;
   padding: 5px;
 `;
 

@@ -6,23 +6,16 @@ import { CardContainer } from '../../styled/academics.styled';
 import Typography from '@mui/material/Typography';
 import { AcademicDialog } from '../../components/Dialog/AcademicDialog';
 import { AcademicDialogLogic } from '../../components/Dialog/dialogLogic';
+import {FirstSection,MainSection, MainContainer, SecondSection} from "../../styled/home.styled";
 
 const Academic: FC = () => {
   const { data } = useGetAcademics();
 
   const { isOpen, onClose, onOpen, OnSubmit, onChange } = AcademicDialogLogic();
   return (
-    <Box>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center',
-          padding: '50px',
-          margin: '50px',
-        }}
+
+    <MainContainer>
+      <MainSection
       >
         <Typography variant="h1" color="text.secondary">
           this is the first title
@@ -51,7 +44,9 @@ const Academic: FC = () => {
             onChange={onChange}
           />
         )}
-      </Box>
+      </MainSection>
+
+      <MainSection>
       <CardContainer>
         {data?.map((item, id) => (
           <AcademicsCard
@@ -67,7 +62,9 @@ const Academic: FC = () => {
           />
         ))}
       </CardContainer>
-    </Box>
+      </MainSection>
+
+    </MainContainer>
   );
 };
 export default Academic;

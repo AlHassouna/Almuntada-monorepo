@@ -30,21 +30,32 @@ export const AcademicsCard: FC<Props> = ({
       <AcademicCardBox>
         <img src={imageUrl} alt={firstName} />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography  sx={{textAlign:"center"}} gutterBottom variant="h5" component="div">
             {`${firstName.toUpperCase()} ${lastName.toUpperCase()}`}
           </Typography>
-          <Typography variant="h6" color="text.secondary">
-            {`${degree} ${subject} - ${career}`}
+          <Typography sx={{
+          textAlign : "center"}
+          } variant="subtitle1" color="text.secondary">
+            {`${degree} ${subject}`}
+          </Typography>
+          <Typography sx={{
+            textAlign : "center"}
+          } variant="subtitle1" color="text.secondary">
+            {`${career}`}
           </Typography>
           <Typography
             sx={{
-              textAlign: 'right',
+              textAlign: 'center',
             }}
             variant="body2"
             color="text.secondary"
           >
-            {`City: ${city}`}
-            {`Email: ${email}`}
+            <Typography gutterBottom variant="subtitle2" component="div">
+              {`City: ${city}`}
+            </Typography>
+            <Typography gutterBottom variant="subtitle2" component="div">
+              {`Email: ${email}`}
+            </Typography>
           </Typography>
         </CardContent>
       </AcademicCardBox>

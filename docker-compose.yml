@@ -18,3 +18,21 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: 'admin@admin.com'
       PGADMIN_DEFAULT_PASSWORD: 'pgadmin4'
+
+  server:
+    image: almansha/server
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DB_USERNAME : hassouna
+      DB_PASSWORD : hh123789
+      DB_NAME : services_db
+      DB_HOST : localhost
+
+
+

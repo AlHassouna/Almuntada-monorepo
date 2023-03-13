@@ -4,11 +4,12 @@
   "page.home.title": "Welcome to <b>Next.js i18n tutorial</b>",
   "page.home.description": "You are currently viewing the homepage in English 🚀",
   "navbar.home": "Home",
-  "navbar.podcast": "Podcast",
+  "navbar.podcast": "Podcasts",
+  "navbar.academic": "Academics",
   "navbar.contact": "Contact",
-  "navbar.services": "Services",
-  "homepage.title": "مرحبا بك في المنشاة",
-  "homepage.description": "المنشاة هي المنتدى الاكاديمي العربي الاكبر الذي يجمع الاكاديميين العرب من شتى المجالات , القائم على تطوير التعليم العالي بالمجتمع العربي عبر المشاركة ,تبادل الخبرات وايجاد الفرص. كما وان المنشاة تجمع كل الفعاليات الاكاديمية .المنشاة عبارىة عن مرجعًا لجيل القادم الراغب في التعليم الاكاديمي العالي . ",
+  "navbar.lang": "Language",
+  "homepage.title": "Welcome To Al-Manshah - The Academic Forum",
+  "homepage.description": "\"Almanshah' is the largest Arab academic forum that unites academics from the Arab population in a variety of fields based on the development of education in the Arab population while creating a partnership and exchanging knowledge and finding opportunities, as well as consolidating a vast knowledge base for academic activities. The next generation looks to Almanshah as a reference for a higher education.",
   "homepage.ourUnique.title": "ميزتنا",
   "homepage.ourUnique": [
     {
@@ -20,71 +21,76 @@
       "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Noun_Project_Community_icon_986471.svg/1024px-Noun_Project_Community_icon_986471.svg.png"
     }
   ],
-  "homepage.ourVision.title": "رؤيتنا - المنصة الاكاديمية العربية الرائدة محليا واقليما",
-  "homepage.ourVision.title2": "جمعية سند",
-  "homepage.ourVision.description": "جمعية سند هي جمعية أسر يّة قطرية، تعنى بشؤون الأسرة. انطلقت فكرة تأسيس الجمعية عام 1999 نتيجة غياب الجسم الأمين لرعاية شؤون الأسرة العربية في الداخل الفلسطيني، وللإرتقاء بالأسرة والمجتمع على كافة المستويات، وإبراز الرؤية لقضايا الأسرة والمجتمع. الهدف الأعلى للجمعية المحافظة على تكامل الأسرة وتوعيتها وتثقيفها بموجب احتياجاتها، وبناء قيادات مجتمعية شابة، مؤثرة، منتجة وصانعة للحياة.  ",
   "homepage.wwh": [
     {
       "title": "why",
-      "description": "المنصة العربية الاولى التي تجمع بين كل الاكاديمين المهنين العرب في مكان واحد للتشبيك والتواصل , وللحصول على مرجعية والهام للجيل القادم",
-      "sub_title": "أهدافنا",
+      "description": "A platform that brings together professional Arab academics in one place to facilitate communication between professionals and academics from different fields and to inspire the next generation to pursue academic careers.",
+      "sub_title": "Our goals",
       "sub_descriptions": [
         {
-          "description": "زيادة نسبة الأكاديميين العرب كل عام. بنسبة 40 % بثلاث سنوات القادمة.",
+          "description": "An increase of 40% in Arab academics per academic year within three years.",
           "icon": ""
         },
         {
-          "description": "جمع الأكاديميين القائميين في بالوسط لخلق التعاون بينهم",
+          "description": "Creating collaborations between academics and the economy",
           "icon": ""
         },
         {
-          "description": "دمج الأكاديميين في سوق العمل",
+          "description": "Academics' integration into the labor market",
           "icon": ""
         },
         {
-          "description": "إمكانية الوصول إلى كافة المعلومات الأكاديمية للمستخدم من السكان العرب في مكان واحد.",
+          "description": "Access to all academic information for the Arab population in one place.",
+          "icon": ""
+        },
+        {
+          "description": "In four years, the project will be scaled up from a local project to a global project.",
+          "icon": ""
+        },
+        {
+          "description": "One of the world's most popular academic podcasts",
           "icon": ""
         }
       ]
     },
     {
       "title": "how",
-      "description": "جمع كافة المعلومات الأكاديمية في منصة واحدة مما يتضمن نخبة الأكاديميين المهنين العرب, اخبار, مناسبات ,نشاطات مشاريع اكاديمية, مؤسسات الاكاديمية والمشغلين الداعمين .",
-      "sub_title": "خدمتنا",
+      "description": "The compilation of all academic information on one platform, including a database of Arab academics, news, events, academic project activities, academic institutions, and employers supporting the integration of Arab academics into the labor market ",
+      "sub_title": "Our services ",
       "sub_descriptions": [
         {
-          "description": "قائمة الأكاديميين حسب المهنة ومكان الإقامة",
+          "description": "Academics by profession and location.",
           "icon": ""
         },
         {
-          "description": "قائمة المشغلين الداعمين لدمج الأكاديميين العرب بشركاتهم وقائمة الوظائف المتاحة",
+          "description": "Companies that support the integration of Arab academics in their organizations, including job openings",
           "icon": ""
         },
         {
-          "description": "قائمة الخدمات التي تمنحها كل مؤسسات التعليم العالي للوسط العربي في البلاد.",
+          "description": "Higher education institutions in Israel provide services to the Arab community.",
           "icon": ""
         },
         {
-          "description": "بودكاست أكاديمي 'سمعنا صوتك' استضافة شخصية اكاديمية",
+          "description": "A variety of scholarships are available for students.",
           "icon": ""
         },
         {
-          "description": "دورات تأهيل للعمل",
+          "description": "Arab academic podcast \"Make your voice heard\"",
           "icon": ""
         },
         {
-          "description": "مؤتمرات واجتماعات من شتى المجالات للتشبيك بين الأكاديميين العرب ودعم الاكاديمية",
+          "description": "Conferences and workshops in various fields to network among Arab academics and support the academy",
           "icon": ""
         }
       ]
     },
     {
       "title": "what",
-      "description": "المنشاة المنصة الاكاديمية التي تتضمن قائمة الأكاديميين العرب وخدامات تدعم الاكاديمية للوسط العربي .",
-      "sub_title": "الأثر الاجتماعي",
+      "description": "Almanshah is the first platform to offer a comprehensive academic database and academic services for the Arab community",
+      "sub_title": "The social impact",
       "sub_descriptions": [
         {
-          "description": "هناك العديد من التحديات التي يواجهها الوسط العربي، تلك التحديات تنعكس في فجوات الوضع الاجتماعي والاقتصادي، الفجوات التعليمية واللغوية. نحن نؤمن ان الأكاديمية وال وعلى هذا الاساس نشأت المنشاة لسد هذه الفجوات، مع خلق نظام إيجابي يؤثر على السكان العرب. 'تثبت الدراسات أن الانخراط في العمل الاجتماعي يؤدي إلى التفكير الإيجابي ويقلل من العنف والجريمة. التركيز على الإيجابية سيوفر الأمن المالي والعقلي ويؤثر على طريقة الحياة.'",
+          "description": "Among the Arab population, there are many challenges, including socioeconomic status gaps, educational gaps, and language barriers. Almanshah is based on the belief that academia and social involvement are essential for closing these gaps. It has been demonstrated in studies that academic social activity promotes positive thinking, which gives a sense of mental and general well-being, as well as reducing crime and violence",
           "icon": ""
         }
       ]
@@ -93,15 +99,15 @@
   "homepage.founders.title": "تعرفوا علينا",
   "homepage.founders": [
     {
-      "name": "حسن حسونة",
+      "name": "Hassan Hasona",
       "title": "Co-Founder & Technology Manager",
-      "desc": "حسن حسونة ، حاصل على لقب اول إدارة نظم المعلومات الكلية الأكاديمية تل أبيب - يافا . صاحب خبرة في تطوير وإنشاء مواقع الويب مع باستخدام أحدث التقنيات في السوق، سواء على جانب قاعدة بيانات باستخدام السحابة الالكترونية ومن جانب الزبون. صاحب خبرة مثبتة في إلادارة ,التخطيط, اتخاذ .لقرارات ومهارات البيع والتسويق",
+      "desc": "Hassan Hassona graduated from Tel Aviv-Yafo Academic College with a Bachelor of Science degree in cave management. Experienced in developing and setting up websites using the most advanced technologies in the market, both on the server side and on the client side .Extensive experience in management, planning, decision-making, and sales and marketing.",
       "image": "https://media.licdn.com/dms/image/C4D03AQF1zOe2Pjku0w/profile-displayphoto-shrink_800_800/0/1662553255489?e=1683763200&v=beta&t=ImifO4UEu38bxSOaGmgk2kUktQMWSd2a0eK6LReyvbU"
     },
     {
-      "name": "الاء حسونة",
+      "name": "ala Hasona",
       "title": "Founder & Manager",
-      "desc": "آلاء حسونة طالبة دكتوراة في الإدارة جامعة بار ايلان , لقب اول الاقتصاد والإدارة تخصص ريادة الأعمال، لقب ثاني إدارة الأعمال تخصص تسويق . صاحبة خبرة واسعة في ريادة الأعمال والمبادرات الاجتماعية، صاحبة خبرة في الإدارة أكثر من 12 عا مً ا في مجال المبيعات ,التخطيط والميزانية ومعرفة العمليات والوظائف التجارية )المالية، الموارد البشرية، المشتريات( القدرة التحليلية، مهارات الاتصال الممتازة، المهارات التنظيمية والقيادية المتميزة.",
+      "desc": "Ala Hasona is a doctoral student at Bar-Ilan University, specializing in entrepreneurship with a bachelor's degree in economics A master's degree in business administration with a focus on marketing. With more than 12 years of experience in sales, planning and budgeting, knowledge of operations and business functions (finance, human resources, procurement), analytical abilities, excellent communication skills and exceptional organizational abilities, she has considerable expertise in the establishment of social-business ventures.",
       "image": "https://media.licdn.com/dms/image/C4D03AQF29U_yrJJibA/profile-displayphoto-shrink_800_800/0/1655839867728?e=1683763200&v=beta&t=OlYZf3jA792K5vFacgTgQUGd6xJPEONxp1OOZOBaq1A"
     }
   ]
