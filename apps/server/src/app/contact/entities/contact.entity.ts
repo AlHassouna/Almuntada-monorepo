@@ -1,13 +1,40 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty } from 'class-validator';
+import {
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
+@Entity('Contact')
 export class Contact {
 
-@ApiProperty({
-  description: 'The Full Name of the Contact',
-  example: 'The Full Name',
-})
+  @PrimaryGeneratedColumn()
+  id: number;
 
-@IsNotEmpty({ message: 'The Full Name is required' })
+  @Column()
   fullName: string;
+
+  @Column()
+  email: string;
+
+  @Column()
+  message: string;
+
+  @Column()
+  subject: string;
+
+
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+
 }
+
+
+
+
+
+

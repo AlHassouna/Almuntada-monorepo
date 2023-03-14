@@ -5,17 +5,12 @@ import {TypeOrmModule} from '@nestjs/typeorm';
 import {AppController} from './app.controller';
 import {AppService} from './app.service';
 import {PodcastsModule} from './podcasts/podcasts.module';
-
-// import typeOrmConfig from '../../../../ormconfig';
-
-console.log(process.env.DB_USERNAME);
-console.log(process.env.DB_PASSWORD);
-console.log(process.env.DB_HOST);
-
+import {ContactModule} from "./contact/contact.module";
 @Module({
   imports: [
     UserModule,
     PodcastsModule,
+    ContactModule,
     ConfigModule.forRoot({isGlobal: true, envFilePath: '.env'}),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
