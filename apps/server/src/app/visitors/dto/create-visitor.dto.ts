@@ -1,14 +1,16 @@
 import {ApiProperty} from '@nestjs/swagger';
-import {IsNotEmpty, IsNumber, IsIP} from 'class-validator';
+import {IsNotEmpty, IsNumber, IsIP, IsString, IsBoolean} from 'class-validator';
 
 export class CreateVisitorDto {
   @ApiProperty()
   @IsNotEmpty()
   @IsIP()
+
   ip: string;
 
   @ApiProperty()
   @IsNotEmpty()
+  @IsString()
   device: string;
 
   @ApiProperty()
@@ -22,5 +24,6 @@ export class CreateVisitorDto {
 
   @ApiProperty()
   @IsNotEmpty()
+  @IsBoolean()
   is_Vpn: boolean;
 }
