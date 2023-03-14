@@ -19,13 +19,17 @@ export class CreatePodcastDto {
   })
   @IsNotEmpty()
   description: string;
-å
-  // Podcast Url //
+
+
+  // Index Url //
+
 
   @ApiProperty({
     description: 'The podcast url of the podcast',
-    example: 'The Podcast Url',
+    example: 'The Index Url',
   })
+
   @IsNotEmpty()
+
   podcastUrl: string;
 }

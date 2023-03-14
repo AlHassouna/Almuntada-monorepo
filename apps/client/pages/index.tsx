@@ -6,7 +6,6 @@ import HomePage from './home/home';
 
 export default function Home() {
   const intl = useIntl();
-
   const title = intl.formatMessage({ id: 'page.home.head.title' });
 
   return (
@@ -14,11 +13,6 @@ export default function Home() {
       <Head>
         <title>{title}</title>
       </Head>
-
-      <header>
-        <Navbar />
-      </header>
-
       <main className={styles.main}>
         <HomePage />
       </main>

@@ -11,14 +11,15 @@ function useIntlShared() {
     },
     {
       id: 2,
-      name: intl.formatMessage({id: 'navbar.podcust'}),
-      link: '/podcast',
+      name: intl.formatMessage({id: 'navbar.academic'}),
+      link: '/academic',
     },
     {
       id: 3,
-      name: intl.formatMessage({id: 'navbar.services'}),
-      link: '/services',
+      name: intl.formatMessage({id: 'navbar.podcast'}),
+      link: '/podcast',
     },
+
     {
       id: 4,
       name: intl.formatMessage({id: 'navbar.contact'}),
