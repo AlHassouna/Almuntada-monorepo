@@ -1,5 +1,6 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty,IsNumber,IsIP } from 'class-validator';
+import {ApiProperty} from '@nestjs/swagger';
+import {IsNotEmpty, IsNumber, IsIP} from 'class-validator';
+
 export class CreateVisitorDto {
   @ApiProperty()
   @IsNotEmpty()
