@@ -1,18 +1,44 @@
 import styled from 'styled-components';
 
+
+const MainContainer = styled.main`
+  display: flex;
+  height:100vh;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Tajawal', sans-serif;
+  padding: 0 5%;
+  background-color: #f5f5f5;
+`;
 const Container = styled.div`
-  z-index: 10;
   height: 100%;
   width: 100%;
   align-items: center;
 `;
 
+
+const MainSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%;
+  height:100%;
+  width: 100%;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    height: fit-content;
+    margin-top: 5rem;
+
+  }
+`;
 const FirstSection = styled.section`
   display: flex;
   justify-content: space-between;
   padding: 0 5%;
   height: 100%;
   width: 100%;
+  margin-top: 2%;
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     height: fit-content;
@@ -42,7 +68,7 @@ const RightSideTitle = styled.h1`
 const RightSideDesc = styled.h2`
   font-size: 1.5rem;
   font-weight: 400;
-  text-align: right;
+  text-align:
 `;
 
 const RightSideSubSec = styled.section`
@@ -152,6 +178,8 @@ const ThirdSection = styled.section`
   padding: 0 5%;
   width: 100%;
   height: 100%;
+  background-color: #f5f5f5;
+
   @media screen and (max-width: 1024px) {
     margin-top: 5rem;
     flex-direction: column;
@@ -167,7 +195,6 @@ const FourthSection = styled.section`
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  background-color: #f5f5f5;
 `;
 const FourthSectionSub = styled.div`
   display: flex;
@@ -252,4 +279,6 @@ export {
   FooterSection,
   FooterSectionLeftSide,
   FooterSectionRightSide,
+  MainContainer,
+  MainSection
 }

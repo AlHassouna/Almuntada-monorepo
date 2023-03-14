@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import Typography from '@mui/material/Typography';
 import { PodcastCardBox } from './card.styled';
-import { log } from 'next/dist/server/typescript/utils';
 
 interface IProps {
   imageUrl: string;

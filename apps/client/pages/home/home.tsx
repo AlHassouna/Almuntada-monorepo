@@ -1,4 +1,5 @@
 import React from 'react';
+import {useLocale} from "@myworkspace/system-design"
 import {
   Container,
   FirstSection,
@@ -12,17 +13,10 @@ import {
   RightSideSubSecDesc,
   RightSideSubSecTitle,
   RightSideTitle,
-  SecLeftSideTitle,
-  SecondSection,
-  SecSecLeftSide,
-  SecSecLeftSideDesc,
-  SecSecLeftSideTitle2,
-  SecSecRightSide,
   ThirdSection,
 } from '../../styled/home.styled';
 import { useIntl } from 'react-intl';
 import Logo from '../../assets/AlmanshaLogo.png';
-import sanadLogo from '../../assets/sanadlogo.jpeg';
 import Image from 'next/image';
 import { MediaCard } from '../../components/Card/Card';
 import { MediaCardThirdSection } from '../../components/Card/MediaCard';
@@ -30,6 +24,7 @@ import { FounderCard } from '../../components/Card/FounderCard';
 
 const HomePage = () => {
   const intl = useIntl();
+  const locale = useLocale()
   const cardsInformationFirstSection = intl.messages[
     'homepage.ourUnique'
   ] as unknown as Array<{
@@ -41,15 +36,15 @@ const HomePage = () => {
     'homepage.wwh'
   ] as unknown as Array<{
     title: string;
-    descreprion: string;
+    description: string;
     subTitle: string;
-    descreptions: Array<{
-      descreption: string;
+    descriptions: Array<{
+      description: string;
       icon: string;
     }>;
   }>;
 
-  const cardsInforamtionFounderSection = intl.messages[
+  const cardsInformationFounderSection = intl.messages[
     'homepage.founders'
   ] as unknown as Array<{
     title: string;
@@ -59,7 +54,7 @@ const HomePage = () => {
   }>;
 
   return (
-    <Container>
+    <Container dir={locale}>
       <FirstSection>
         <RightSide>
           <RightSideTitle>
@@ -68,57 +63,41 @@ const HomePage = () => {
           <RightSideDesc>
             {intl.formatMessage({ id: 'homepage.description' })}
           </RightSideDesc>
-          <RightSideSubSec>
-            <RightSideSubSecTitle>
-              {intl.formatMessage({ id: 'homepage.ourUnique.title' })}
-            </RightSideSubSecTitle>
-            <RightSideSubSecDesc>
-              {Object.keys(cardsInformationFirstSection).map(
-                (key: string, index: number) => {
-                  return (
-                    <MediaCard
-                      key={index}
-                      description={
-                        cardsInformationFirstSection[key].description
-                      }
-                      icon={cardsInformationFirstSection[key].icon}
-                    />
-                  );
-                }
-              )}
-            </RightSideSubSecDesc>
-          </RightSideSubSec>
+          {/*<RightSideSubSec>*/}
+          {/*  <RightSideSubSecTitle>*/}
+          {/*    {intl.formatMessage({ id: 'homepage.ourUnique.title' })}*/}
+          {/*  </RightSideSubSecTitle>*/}
+          {/*  <RightSideSubSecDesc>*/}
+          {/*    {Object.keys(cardsInformationFirstSection).map(*/}
+          {/*      (key: string, index: number) => {*/}
+          {/*        return (*/}
+          {/*          <MediaCard*/}
+          {/*            key={index}*/}
+          {/*            description={*/}
+          {/*              cardsInformationFirstSection[key].description*/}
+          {/*            }*/}
+          {/*            icon={cardsInformationFirstSection[key].icon}*/}
+          {/*          />*/}
+          {/*        );*/}
+          {/*      }*/}
+          {/*    )}*/}
+          {/*  </RightSideSubSecDesc>*/}
+          {/*</RightSideSubSec>*/}
         </RightSide>
         <FirstSectionLeftSide>
           <Image src={Logo} alt="" />
         </FirstSectionLeftSide>
       </FirstSection>
-      <SecondSection>
-        <SecSecLeftSide>
-          <SecLeftSideTitle>
-            {intl.formatMessage({ id: 'homepage.ourVision.title' })}
-          </SecLeftSideTitle>
-          <SecSecLeftSideTitle2>
-            {intl.formatMessage({ id: 'homepage.ourVision.title2' })}
-          </SecSecLeftSideTitle2>
-          <SecSecLeftSideDesc>
-            {intl.formatMessage({ id: 'homepage.ourVision.description' })}
-          </SecSecLeftSideDesc>
-        </SecSecLeftSide>
-        <SecSecRightSide>
-          <Image src={sanadLogo} width={500} height={500} alt="" />
-        </SecSecRightSide>
-      </SecondSection>
       <ThirdSection>
         {Object.keys(cardsInformationThirdSection).map(
           (key: string, index: number) => {
             return (
               <MediaCardThirdSection
                 key={index}
-                description={cardsInformationThirdSection[key].descreption}
+                description={cardsInformationThirdSection[key].description}
                 title={cardsInformationThirdSection[key].title}
                 descriptions={
-                  cardsInformationThirdSection[key].sub_descreptions
+                  cardsInformationThirdSection[key].sub_descriptions
                 }
                 subTitle={cardsInformationThirdSection[key].sub_title}
               />
@@ -131,15 +110,15 @@ const HomePage = () => {
           {intl.formatMessage({ id: 'homepage.founders.title' })}
         </FourthSectionTitle>
         <FourthSectionSub>
-          {Object.keys(cardsInforamtionFounderSection).map(
+          {Object.keys(cardsInformationFounderSection).map(
             (key: string, index: number) => {
               return (
                 <FounderCard
                   key={index}
-                  title={cardsInforamtionFounderSection[key]?.title}
-                  name={cardsInforamtionFounderSection[key]?.name}
-                  desc={cardsInforamtionFounderSection[key]?.desc}
-                  image={cardsInforamtionFounderSection[key]?.image}
+                  title={cardsInformationFounderSection[key]?.title}
+                  name={cardsInformationFounderSection[key]?.name}
+                  desc={cardsInformationFounderSection[key]?.desc}
+                  image={cardsInformationFounderSection[key]?.image}
                 />
               );
             }
