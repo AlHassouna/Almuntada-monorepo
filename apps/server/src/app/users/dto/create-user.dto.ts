@@ -16,7 +16,7 @@ export class CreateUserDto {
   email: string;
 
   @ApiProperty()
-  @IsNotEmpty({ message: 'The image url is required' })
+  @IsNotEmpty()
   imageUrl: string;
 
   @ApiProperty()

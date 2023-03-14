@@ -1,5 +1,5 @@
 import {ApiProperty} from "@nestjs/swagger";
-import {IsNotEmpty} from "class-validator";
+import {IsEmail, IsNotEmpty} from "class-validator";
 
 export class CreateContactDto {
   @ApiProperty({
@@ -7,7 +7,7 @@ export class CreateContactDto {
     example: 'The Full Name',
   })
 
-  @IsNotEmpty({ message: 'The Full Name is required' })
+  @IsNotEmpty()
   FullName: string;
 
 
@@ -16,17 +16,15 @@ export class CreateContactDto {
     example: 'The Email',
   })
 
-  @IsNotEmpty({ message: 'The Email is required' })
+  @IsEmail()
   Email: string;
-
-
 
   @ApiProperty({
     description: 'The Subject of the Contact',
     example: 'The Subject',
   })
 
-  @IsNotEmpty({ message: 'The Subject is required' })
+  @IsNotEmpty()
   Subject: string;
 
 
@@ -34,8 +32,7 @@ export class CreateContactDto {
     description: "The Message of the Contact",
     example : "The Message"
   })
-  @IsNotEmpty({message: "The Nessage is required"})
-
+  @IsNotEmpty()
   Message: string
 
 
