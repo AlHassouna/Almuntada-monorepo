@@ -3,6 +3,7 @@ name: Deploy to EC2 instance
 on:
   push:
     branches:
+      develop 
 
 # Install all pre in ec2 manully
 jobs:
@@ -12,6 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+
+      - name: Install dependencies
+        run: |
+          yarn install
       - name: Copy code to EC2 instance
         uses: appleboy/scp-action@master
         with:
