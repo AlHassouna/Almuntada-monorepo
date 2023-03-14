@@ -2,7 +2,8 @@ import { FC } from 'react';
 import { RevealWrapper } from 'next-reveal';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { AcademicCardBox } from './card.styled';
+import { AcademicCardBox,HiddenContent } from './card.styled';
+import CardMedia from '@mui/material/CardMedia';
 
 interface Props {
   firstName: string;
@@ -28,8 +29,21 @@ export const AcademicsCard: FC<Props> = ({
   return (
     <RevealWrapper delay={100} duration={2000} reset={true}>
       <AcademicCardBox>
-        <img src={imageUrl} alt={firstName} />
-        <CardContent>
+        <CardMedia
+          sx={{ height: 300 ,
+            filter: 'grayscale(100%)',
+            '&:hover + div': {
+              maxHeight: 200,
+            },
+            '&:hover': {
+            transition: 'all 0.5s ease',
+              filter: 'grayscale(0%)',
+            }
+          }}
+          image={imageUrl}
+          title={firstName}
+        />
+        <HiddenContent>
           <Typography  sx={{textAlign:"center"}} gutterBottom variant="h5" component="div">
             {`${firstName.toUpperCase()} ${lastName.toUpperCase()}`}
           </Typography>
@@ -50,14 +64,11 @@ export const AcademicsCard: FC<Props> = ({
             variant="body2"
             color="text.secondary"
           >
-            <Typography gutterBottom variant="subtitle2" component="div">
-              {`City: ${city}`}
-            </Typography>
-            <Typography gutterBottom variant="subtitle2" component="div">
+
+              {`City: ${city}`} <br/>
               {`Email: ${email}`}
-            </Typography>
           </Typography>
-        </CardContent>
+        </HiddenContent>
       </AcademicCardBox>
     </RevealWrapper>
   );

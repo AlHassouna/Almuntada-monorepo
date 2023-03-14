@@ -6,7 +6,7 @@ import { CardContainer } from '../../styled/academics.styled';
 import Typography from '@mui/material/Typography';
 import { AcademicDialog } from '../../components/Dialog/AcademicDialog';
 import { AcademicDialogLogic } from '../../components/Dialog/dialogLogic';
-import {FirstSection,MainSection, MainContainer, SecondSection} from "../../styled/home.styled";
+import {MainSection, MainContainer,Container} from "../../styled/home.styled";
 
 const Academic: FC = () => {
   const { data } = useGetAcademics();
@@ -15,8 +15,8 @@ const Academic: FC = () => {
   return (
 
     <MainContainer>
-      <MainSection
-      >
+      <Container>
+      <MainSection>
         <Typography variant="h1" color="text.secondary">
           this is the first title
         </Typography>
@@ -45,7 +45,6 @@ const Academic: FC = () => {
           />
         )}
       </MainSection>
-
       <MainSection>
       <CardContainer>
         {data?.map((item, id) => (
@@ -61,10 +60,12 @@ const Academic: FC = () => {
             city={item.city}
           />
         ))}
+
       </CardContainer>
       </MainSection>
-
+      </Container>
     </MainContainer>
+
   );
 };
 export default Academic;

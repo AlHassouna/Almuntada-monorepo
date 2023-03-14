@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const MainContainer = styled.main`
   display: flex;
+  height:100vh;
   flex-direction: column;
   align-items: center;
   font-family: 'Tajawal', sans-serif;
@@ -22,8 +23,8 @@ const MainSection = styled.section`
   align-items: center;
   justify-content: center;
   padding: 0 5%;
+  height:100%;
   width: 100%;
-  height: 100vh;
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     height: fit-content;

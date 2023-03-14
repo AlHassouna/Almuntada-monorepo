@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Card from '@mui/material/Card';
+import {Card,CardContent} from '@mui/material';
 
 export const IconBtn = styled(Card)`
   box-shadow: none;
@@ -8,8 +8,7 @@ export const IconBtn = styled(Card)`
 `;
 
 export const AcademicCardBox = styled(Card)`
-  max-width: 320px;
-  height: 550px;
+  width: 300px;
   margin: 15px;
   padding: 5px;
 `;
@@ -20,3 +19,8 @@ export const PodcastCardBox = styled(Card)`
   margin: 5px;
   padding: 5px;
 `;
+export const HiddenContent = styled(CardContent)(({ theme }) => ({
+  maxHeight: '0',
+  overflow: 'hidden',
+  transition: 'max-height .6s ease-out',
+}));
