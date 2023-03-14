@@ -3,13 +3,10 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
-  Delete,
 } from '@nestjs/common';
 import { VisitorsService } from './visitors.service';
 import { CreateVisitorDto } from './dto/create-visitor.dto';
-import { UpdateVisitorDto } from './dto/update-visitor.dto';
 
 @Controller('visitors')
 export class VisitorsController {
@@ -27,16 +24,7 @@ export class VisitorsController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.visitorsService.findOne(+id);
+    return this.visitorsService.findOne(+id)
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateVisitorDto: UpdateVisitorDto) {
-    return this.visitorsService.update(+id, updateVisitorDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.visitorsService.remove(+id);
-  }
 }
