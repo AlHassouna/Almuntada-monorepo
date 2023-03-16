@@ -6,9 +6,16 @@ export interface IAcademic {
   email: string;
   city: string;
   degree: string;
-  subject: string;
+  subject: Subject;
 
   career: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Subject {
+  id: number;
+  subject: string;
   createdAt: Date;
   updatedAt: Date;
 }

@@ -4,10 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="8ebffd12-c487-4da2-aff9-ffdb30b7f5fd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/apps/client/assets/FinalLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/assets/back.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/assets/sec2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/Chart/Chart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/Search/Search.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/Slideshow/Slideshow.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/public/mission.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/public/values.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/public/vision.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/styled/slideshow.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-subject.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/entities/subject.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/system-design/src/lib/slideshow/slide.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/events/dto/create-event.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/events/dto/create-event.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/AcademicsCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/AcademicsCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/MediaCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/MediaCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/card.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/card.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Navbar/navbar.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Navbar/navbar.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/lang/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/lang/ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/styled/home.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/styled/home.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/entities/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/entities/user.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/pgsql/src/lib/database.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/pgsql/src/lib/database.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/system-design/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ormconfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ormconfig.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,58 +50,61 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="2N1CL9ABDNay1nLnvWKKHxxrGJU" />
+  <component name="ProjectId" id="2N5RatdSaiQ5mykw5iWyxXzig3Z" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "code.cleanup.on.save": "true",
     "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "actions.on.save",
     "ts.external.directory.path": "/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/apps/server" />
+      <recent name="$PROJECT_DIR$/apps/client/public" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="" />
-      <created>1678822151227</created>
+      <changelist id="8ebffd12-c487-4da2-aff9-ffdb30b7f5fd" name="Changes" comment="" />
+      <created>1678952031012</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1678822151227</updated>
-      <workItem from="1678822153821" duration="38000" />
-      <workItem from="1678822206805" duration="220000" />
-      <workItem from="1678822441431" duration="834000" />
+      <updated>1678952031012</updated>
+      <workItem from="1678952033797" duration="25074000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

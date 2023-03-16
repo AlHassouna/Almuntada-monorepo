@@ -7,21 +7,24 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
-import { UserService } from './user.service';
-import { CreateUserDto } from './dto/create-user.dto';
+import {UserService} from './user.service';
+import {CreateUserDto} from './dto/create-user.dto';
+import {Subject} from "./entities/subject.entity";
 import {
   ApiBadRequestResponse,
   ApiCreatedResponse,
   ApiTags,
 } from '@nestjs/swagger';
-import { OutputCreatedDataDtoData } from './dto/output-created-data.dto';
-import { SearchTermDto } from './dto/search-term.dto';
-import { SearchTermOutputDto } from './dto/search-term-output.dto';
+import {OutputCreatedDataDtoData} from './dto/output-created-data.dto';
+import {SearchTermDto} from './dto/search-term.dto';
+import {SearchTermOutputDto} from './dto/search-term-output.dto';
+import {SubjectDto} from "./dto/create-subject.dto";
 
 @ApiTags('Users')
 @Controller('users')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService) {
+  }
 
   @Post()
   @UsePipes(ValidationPipe)
@@ -33,7 +36,7 @@ export class UserController {
   })
   create(
     @Body() createUserDto: CreateUserDto
-  ): Promise<OutputCreatedDataDtoData> {
+  ) {
     return this.userService.create(createUserDto);
   }
 
@@ -42,15 +45,20 @@ export class UserController {
     return await this.userService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.userService.findOne(Number(id));
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.userService.findOne(Number(id));
+  // }
+
+  @Get('subjects')
+  async findAllSubjects(): Promise<Subject[]> {
+    return await this.userService.findAllSubjects();
   }
 
-  @Post('/search')
-  async findUsersBySearchTerms(
-    @Body() searchTerms: SearchTermDto
-  ): Promise<Array<SearchTermOutputDto>> {
-    return this.userService.findUsersBySearchTerms(searchTerms);
-  }
+  // @Post('/search')
+  // async findUsersBySearchTerms(
+  //   @Body() searchTerms: SearchTermDto
+  // ): Promise<Array<SearchTermOutputDto>> {
+  //   return this.userService.findUsersBySearchTerms(searchTerms);
+  // }
 }

@@ -4,7 +4,9 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToOne, JoinColumn
 } from 'typeorm';
+import {Subject} from "./subject.entity";
 
 @Entity('users')
 export class User {
@@ -32,8 +34,10 @@ export class User {
   @Column()
   degree: string;
 
-  @Column()
-  subject: string;
+
+  @OneToOne(() => Subject)
+  @JoinColumn()
+  subject: Subject;
 
   @Column()
   career: string;

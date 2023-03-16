@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import Image from 'next/image';
 import {useRouter} from 'next/router';
 import {MenuIcon, CloseIcon} from '@myworkspace/system-design';
-import Logo from '../../assets/AlmanshaLogo.png';
+import Logo from '../../assets/FinalLogo.png';
 import {useIntlShared} from './navbar.consts';
 import {
   Container,
@@ -13,6 +12,7 @@ import {
   NavbarMenu,
   NavbarMenuListMobile,
   NavbarMenuListItemMobile,
+  LogoContainer
 } from './navbar.styled';
 import {LangMenu} from './LangMenu';
 
@@ -23,10 +23,9 @@ function Navbar() {
   return (
     <Container>
       <NavbarContainer>
-        <Image
+        <LogoContainer
           src={Logo}
           alt="logo"
-          className="items-center w-20 h-20 cursor-pointer"
           onClick={() => router.push('/')}
         />
         <NavbarList>
@@ -39,24 +38,24 @@ function Navbar() {
         <NavbarMenuIcon onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <CloseIcon/> : <MenuIcon/>}
         </NavbarMenuIcon>
-        <NavbarMenu>
-          <LangMenu/>
-        </NavbarMenu>
-        <NavbarMenuListMobile isOpen={isOpen}>
-          {links.map(({name, id, link}) => (
-            <NavbarMenuListItemMobile
-              key={id}
-              onClick={() => {
-                router.push(`${link}`);
-                setIsOpen(false);
-              }}
-            >
-              {name}
-            </NavbarMenuListItemMobile>
-          ))}
-          <LangMenu/>
-        </NavbarMenuListMobile>
       </NavbarContainer>
+      <NavbarMenu>
+        <LangMenu/>
+      </NavbarMenu>
+      <NavbarMenuListMobile isOpen={isOpen}>
+        {links.map(({name, id, link}) => (
+          <NavbarMenuListItemMobile
+            key={id}
+            onClick={() => {
+              router.push(`${link}`);
+              setIsOpen(false);
+            }}
+          >
+            {name}
+          </NavbarMenuListItemMobile>
+        ))}
+        <LangMenu/>
+      </NavbarMenuListMobile>
     </Container>
   );
 }
