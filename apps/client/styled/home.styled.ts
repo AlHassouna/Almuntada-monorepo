@@ -14,7 +14,7 @@ export const MainSection = styled.section`
   display: flex;
   max-width: 1280px;
   flex-direction: ${props => props.property || "column"};
-  height: ${props => props.className || "max-content"};
+  height: max-content;
   justify-content: center;
   @media screen and (max-width: 1024px) {
     flex-direction: column;

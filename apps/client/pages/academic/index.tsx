@@ -41,10 +41,10 @@ const Academic: FC = () => {
   return (
     <MainContainer dir={locale}>
       <ImageContainer>
-        <Typography variant="h3" color="white">
+        <Typography className='text-center' variant="h3" color="white">
           {intl.formatMessage({id: 'academicpage.title'})}
         </Typography>
-        <Typography variant="h4" color="white">
+        <Typography className='text-center' variant="h4" color="white">
           {intl.formatMessage({id: 'academicpage.sub.title'})}
         </Typography>
 
@@ -66,7 +66,7 @@ const Academic: FC = () => {
         >
           {intl.messages['academicpage.text']}
         </motion.p>
-        <div className='flex justify-around'>
+        <div className='flex flex-col sm:flex-row mx-auto w-full sm:justify-around items-center h-full'>
           <GroupedCities size={"300px"} label={String(intl.messages['academicpage.dialog.city'])}
                          onSelected={setSelectedCity}/>
           <GroupedSubject size={"300px"} label={String(intl.messages['academicpage.dialog.subject'])}
