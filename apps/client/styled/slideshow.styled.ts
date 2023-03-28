@@ -41,14 +41,17 @@ export const SlideshowText = styled.div`
 
 export const MuiButton = styled(Button)`
   color: black;
+  background: rgba(255, 255, 255, 0.5);
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   border-radius: 24px;
   width: 200px;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
-    background: #f5f5f5;
-    color: black;
+    background: #000000;
+    color: #d2cece;
+    transition: all 0.2s ease-in-out;
   }
 `;

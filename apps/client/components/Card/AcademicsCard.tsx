@@ -3,7 +3,7 @@ import {RevealWrapper} from 'next-reveal';
 import Typography from '@mui/material/Typography';
 import {AcademicCardBox, HiddenContent} from './card.styled';
 import CardMedia from '@mui/material/CardMedia';
-import {Subject} from "../../API/academic/types";
+import {Career, Subject} from "../../API/academic/types";
 
 interface Props {
   firstName: string;
@@ -12,7 +12,7 @@ interface Props {
   imageUrl: string;
   degree: string;
   subject: Subject;
-  career: string;
+  career: Career;
   city: string;
 }
 
@@ -55,7 +55,7 @@ export const AcademicsCard: FC<Props> = ({
           textAlign: "center"
         }
         } variant="subtitle1" color="text.secondary">
-          {`${career}`}
+          {`${career.career}`}
         </Typography>
         <Typography
           sx={{

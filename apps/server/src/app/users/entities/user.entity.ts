@@ -4,16 +4,20 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
-  OneToOne, JoinColumn
+  ManyToOne
 } from 'typeorm';
 import {Subject} from "./subject.entity";
+import {Company} from "./company.entity";
+import {Career} from "./career.entity";
 
 @Entity('users')
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({
+    nullable: false,
+  })
   firstName: string;
 
   @Column()
@@ -35,13 +39,29 @@ export class User {
   degree: string;
 
 
-  @OneToOne(() => Subject)
-  @JoinColumn()
+  @ManyToOne(() => Subject, (subject) => subject.user)
   subject: Subject;
 
-  @Column()
-  career: string;
+  @ManyToOne(() => Career, (career) => career.user)
 
+  career: Career;
+
+  @Column()
+  gender: string;
+
+  @Column()
+  phone: string;
+
+  @ManyToOne(() => Company, (company) => company.user)
+  company: Company;
+
+  @Column({type: "boolean", default: false})
+  isApproved: boolean;
+  @Column({type: "boolean", default: false})
+  isBlocked: boolean;
+
+  @Column()
+  isAgree: boolean;
   @CreateDateColumn()
   createdAt: Date;
 

@@ -5,9 +5,11 @@ import {TypeOrmModule} from '@nestjs/typeorm';
 import {DatabaseModule} from '@myworkspace/pgsql';
 import {User} from './entities/user.entity';
 import {Subject} from './entities/subject.entity';
+import {Company} from "./entities/company.entity";
+import {Career} from "./entities/career.entity";
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User, Subject]), DatabaseModule],
+  imports: [TypeOrmModule.forFeature([User, Subject, Company, Career]), DatabaseModule],
   controllers: [UserController],
   providers: [UserService],
 })

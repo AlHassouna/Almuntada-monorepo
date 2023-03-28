@@ -4,47 +4,95 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ebffd12-c487-4da2-aff9-ffdb30b7f5fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/client/assets/FinalLogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/client/assets/back.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/client/assets/sec2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/client/components/Chart/Chart.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/client/components/Search/Search.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/client/components/Slideshow/Slideshow.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/client/public/mission.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/client/public/values.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/client/public/vision.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/client/styled/slideshow.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-subject.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/entities/subject.entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/system-design/src/lib/slideshow/slide.ts" afterDir="false" />
+    <list default="true" id="8ebffd12-c487-4da2-aff9-ffdb30b7f5fd" name="Changes" comment="rearrange the code">
+      <change afterPath="$PROJECT_DIR$/apps/client/API/academic/getCareers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/API/academic/getCompany.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/API/academic/getSubjects.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/Card/BasicCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/CitySearch/Search.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/CustomText/TypingText.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/Dialog/optionAcademic.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/StartSteps/StartSteps.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/Subject/Search.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/public/academic.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/public/impact.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/public/socialimpact.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/sections/About.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/sections/Goals.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/sections/Hero.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/sections/Impact.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/styled/global.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/utils/motion.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-career.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-company.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/search-user.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/entities/career.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/entities/company.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/shared-hooks/src/lib/helpFunc/helpfulFunction.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/shared-hooks/src/lib/helpFunc/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/shared-types/src/lib/citiesList/list.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/shared-types/src/lib/degreeList/degree.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/shared-types/src/lib/subjectList/subjectList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/system-design/src/lib/Select/AutoComplete.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/system-design/src/lib/Select/GenericSelect.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/system-design/src/lib/Select/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/postAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/postAcademic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/searchAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/searchAcademic.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/API/academic/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/components/Card/AcademicsCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/AcademicsCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/MediaCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/MediaCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/card.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/card.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Chart/Chart.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Dialog/AcademicDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Dialog/AcademicDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Dialog/dialogLogic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Dialog/dialogLogic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Form/Form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Form/Form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Navbar/LangMenu.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Navbar/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/components/Navbar/navbar.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Navbar/navbar.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Search/Search.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/contact/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/contact/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/index.module.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/pages/lang/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/lang/ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/podcast/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/podcast/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/styled/academics.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/styled/academics.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/styled/contact-us.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/styled/contact-us.styled.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/styled/home.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/styled/home.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/styled/slideshow.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/styled/slideshow.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/contact/contact.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/contact/contact.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/search-term-output.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/search-term.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/entities/subject.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/entities/subject.entity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/entities/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/entities/user.entity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/pgsql/src/lib/database.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/pgsql/src/lib/database.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/shared-hooks/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/shared-hooks/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/shared-types/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/shared-types/src/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/system-design/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ormconfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ormconfig.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nx.json" beforeDir="false" afterPath="$PROJECT_DIR$/nx.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.base.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.base.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
@@ -65,25 +113,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "code.cleanup.on.save": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "ts.external.directory.path": "/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/apps/client/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/client/public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs/shared-hooks/src/lib/helpFunc" />
+      <recent name="$PROJECT_DIR$/apps/client/components/Dialog" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/apps/server" />
       <recent name="$PROJECT_DIR$/apps/client/public" />
@@ -97,8 +151,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678952031012</updated>
-      <workItem from="1678952033797" duration="25074000" />
+      <workItem from="1678952033797" duration="76496000" />
+      <workItem from="1679477094925" duration="13682000" />
+      <workItem from="1679502186379" duration="27413000" />
+      <workItem from="1679833554930" duration="989000" />
+      <workItem from="1679834564341" duration="30462000" />
+      <workItem from="1679916620983" duration="4590000" />
+      <workItem from="1679922439156" duration="26502000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: re-styling and managing">
+      <created>1678985258591</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678985258591</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,5 +174,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="feat: re-styling and managing" />
+    <MESSAGE value="rearrange the code" />
+    <option name="LAST_COMMIT_MESSAGE" value="rearrange the code" />
   </component>
 </project>
