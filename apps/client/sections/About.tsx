@@ -41,20 +41,20 @@ const About = () => {
         >
           {intl.messages['homepage.description_2']}
         </motion.p>
-        <motion.div className='flex  items-center gap-8'
-                    variants={fadeIn('up', 'tween', 0.2, 1)}
+        {/*<motion.div className='sm:flex  items-center gap-8'*/}
+        {/*            variants={fadeIn('up', 'tween', 0.2, 1)}*/}
 
-        >
-          {
-            chartsInformation.map((chart, index) => (
-              <BasicCard
-                key={index}
-                title={chart.title}
-                number={chart.number}
-              />
-            ))
-          }
-        </motion.div>
+        {/*>*/}
+        {/*  {*/}
+        {/*    chartsInformation.map((chart, index) => (*/}
+        {/*      <BasicCard*/}
+        {/*        key={index}*/}
+        {/*        title={chart.title}*/}
+        {/*        number={chart.number}*/}
+        {/*      />*/}
+        {/*    ))*/}
+        {/*  }*/}
+        {/*</motion.div>*/}
       </MotionContainer>
     </HomeSection>
   );

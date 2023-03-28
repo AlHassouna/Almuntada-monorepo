@@ -14,7 +14,7 @@ export const MainSection = styled.section`
   display: flex;
   max-width: 1280px;
   flex-direction: ${props => props.property || "column"};
-  height: ${props => props.className || "100vh"};
+  height: ${props => props.className || "max-content"};
   justify-content: center;
   @media screen and (max-width: 1024px) {
     flex-direction: column;
@@ -36,7 +36,6 @@ export const MContainer = styled(motion.div)`
   max-width: 80%;
   margin: 0 auto;
   display: flex;
-
   @media (min-width: 1024px) {
     width: 80%;
   }
