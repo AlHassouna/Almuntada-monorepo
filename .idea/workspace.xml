@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="fix: responsive styling in academic page">
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/events/events.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/visitors/visitors.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/API/academic/updateAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/updateAcademic.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/pages/admin/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/admin/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/entities/users.factory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/entities/users.factory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/Table/Table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/Table/Table.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/Table/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/Table/types.ts" afterDir="false" />
     </list>
@@ -54,7 +58,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="npm.start:client">
+  <component name="RunManager" selected="npm.start:server">
     <configuration name="start:client" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -81,8 +85,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start:client" />
         <item itemvalue="npm.start:server" />
+        <item itemvalue="npm.start:client" />
       </list>
     </recent_temporary>
   </component>
@@ -113,5 +117,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix: resolve the table issue" />
+    <MESSAGE value="fix: responsive styling in academic page" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: responsive styling in academic page" />
   </component>
 </project>
