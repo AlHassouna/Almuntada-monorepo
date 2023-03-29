@@ -1,3 +1,3 @@
-import {useIntlShared} from '@myworkspace/system-design';
+import { useIntlShared } from "@lib/system-design";
 
-export {useIntlShared}
+export { useIntlShared };

@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import Image from 'next/image';
-import {useRouter} from 'next/router';
-import {MenuIcon, CloseIcon} from '@myworkspace/system-design';
-import Logo from '../../assets/AlmanshaLogo.png';
-import {useIntlShared} from './navbar.consts';
+import React, { useState } from "react";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import { MenuIcon, CloseIcon } from "@lib/system-design";
+import Logo from "../../assets/AlmanshaLogo.png";
+import { useIntlShared } from "./navbar.consts";
 import {
   Container,
   NavbarContainer,
@@ -12,9 +12,9 @@ import {
   NavbarMenuIcon,
   NavbarMenu,
   NavbarMenuListMobile,
-  NavbarMenuListItemMobile,
-} from './navbar.styled';
-import {LangMenu} from './LangMenu';
+  NavbarMenuListItemMobile
+} from "./navbar.styled";
+import { LangMenu } from "./LangMenu";
 
 function Navbar() {
   const links = useIntlShared();
@@ -27,23 +27,23 @@ function Navbar() {
           src={Logo}
           alt="logo"
           className="items-center w-20 h-20 cursor-pointer"
-          onClick={() => router.push('/')}
+          onClick={() => router.push("/")}
         />
         <NavbarList>
-          {links.map(({name, id, link}) => (
+          {links.map(({ name, id, link }) => (
             <NavbarListItem key={id} onClick={() => router.push(`${link}`)}>
               {name}
             </NavbarListItem>
           ))}
         </NavbarList>
         <NavbarMenuIcon onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <CloseIcon/> : <MenuIcon/>}
+          {isOpen ? <CloseIcon /> : <MenuIcon />}
         </NavbarMenuIcon>
         <NavbarMenu>
-          <LangMenu/>
+          <LangMenu />
         </NavbarMenu>
         <NavbarMenuListMobile isOpen={isOpen}>
-          {links.map(({name, id, link}) => (
+          {links.map(({ name, id, link }) => (
             <NavbarMenuListItemMobile
               key={id}
               onClick={() => {
@@ -54,7 +54,7 @@ function Navbar() {
               {name}
             </NavbarMenuListItemMobile>
           ))}
-          <LangMenu/>
+          <LangMenu />
         </NavbarMenuListMobile>
       </NavbarContainer>
     </Container>

@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { useIntl } from 'react-intl';
-import Navbar from '../components/Navbar/Navbar';
 import styles from './index.module.css';
 import HomePage from './home/home';
 

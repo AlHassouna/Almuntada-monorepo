@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import { FC } from "react";
 import { useGetAcademics } from '../../API/academic/getAcademics';
-import { Box, Button } from '@mui/material';
+import { Button } from '@mui/material';
 import { AcademicsCard } from '../../components/Card/AcademicsCard';
 import { CardContainer } from '../../styled/academics.styled';
 import Typography from '@mui/material/Typography';

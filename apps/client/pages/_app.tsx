@@ -7,8 +7,8 @@ import en from './lang/en.json';
 import he from './lang/he.json';
 import { ThemeProvider } from 'styled-components';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import React from 'react';
-import Navbar from "../components/Navbar/Navbar";
+import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar/Navbar';
 
 const messages = {
   ar,
@@ -24,15 +24,23 @@ function getDirection(locale) {
 }
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
+  useEffect(() => {
+    if ('geolocation' in navigator) {
+      // Retrieve latitude & longitude coordinates from `navigator.geolocation` Web API
+      navigator.geolocation.getCurrentPosition(({ coords }) => {
+        const { latitude, longitude } = coords;
+        console.log({ latitude, longitude });
+      });
+    }
+  }, []);
   const { locale } = useRouter();
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
       <IntlProvider locale={locale} messages={messages[locale]}>
-
         <main className="app" dir={getDirection(locale)}>
           <ThemeProvider theme={{ dir: getDirection(locale) }}>
-            <Navbar/>
+            <Navbar />
             <Component {...pageProps} />
           </ThemeProvider>
         </main>

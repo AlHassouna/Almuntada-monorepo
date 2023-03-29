@@ -1,9 +1,9 @@
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import {RevealWrapper} from 'next-reveal';
-import Typography from '@mui/material/Typography';
-import {FC} from 'react';
-import {useLocale} from "@myworkspace/system-design";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import { RevealWrapper } from "next-reveal";
+import Typography from "@mui/material/Typography";
+import { FC } from "react";
+import { useLocale } from "@lib/system-design";
 
 interface Props {
   title: string;
@@ -16,10 +16,9 @@ export const MediaCardThirdSection: FC<Props> = ({
                                                    description,
                                                    title,
                                                    subTitle,
-                                                   descriptions,
+                                                   descriptions
                                                  }) => {
-  const locale = useLocale()
-  console.log("locale: ", locale)
+  const locale = useLocale();
   return (
     <RevealWrapper delay={100} duration={2000} reset={true}>
       <Card
@@ -27,20 +26,20 @@ export const MediaCardThirdSection: FC<Props> = ({
         sx={{
           maxWidth: 400,
           height: 650,
-          overflow: 'scroll',
-          textAlign: 'center',
-          '&.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root':
+          overflow: "scroll",
+          textAlign: "center",
+          "&.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root":
             {
-              boxShadow: '0px 0px 0px 0px',
-              borderRadius: '0px',
-            },
+              boxShadow: "0px 0px 0px 0px",
+              borderRadius: "0px"
+            }
         }}
       >
         <CardContent>
           <Typography
             sx={{
-              fontFamily: 'Cairo',
-              color: 'orange',
+              fontFamily: "Cairo",
+              color: "orange"
             }}
             gutterBottom
             variant="h1"
@@ -49,14 +48,18 @@ export const MediaCardThirdSection: FC<Props> = ({
             {title}
           </Typography>
           <Typography
-            sx={{marginTop: '1rem', fontFamily: 'Cairo' , textAlign: locale === 'en' ? 'left' : 'right'}}
+            sx={{
+              marginTop: "1rem",
+              fontFamily: "Cairo",
+              textAlign: locale === "en" ? "left" : "right"
+            }}
             variant="body1"
             color="text.primary"
           >
             {description}
           </Typography>
           <Typography
-            sx={{marginTop: '1rem', fontFamily: 'Cairo', color: 'orange'}}
+            sx={{ marginTop: "1rem", fontFamily: "Cairo", color: "orange" }}
             gutterBottom
             variant="h3"
             component="div"
@@ -66,7 +69,11 @@ export const MediaCardThirdSection: FC<Props> = ({
           {descriptions.map((description, index) => {
             return (
               <Typography
-                sx={{marginTop: '1rem', textAlign: locale === 'en' ? 'left' : 'right' , fontFamily: 'Cairo'}}
+                sx={{
+                  marginTop: "1rem",
+                  textAlign: locale === "en" ? "left" : "right",
+                  fontFamily: "Cairo"
+                }}
                 variant="body1"
                 color="text.primary"
                 key={index}

@@ -10,16 +10,34 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "jsx": "react-jsx",
     "paths": {
-      "@myworkspace/pgsql": ["libs/pgsql/src/index.ts"],
-      "@myworkspace/shared-hooks": ["libs/shared-hooks/src/index.ts"],
-      "@myworkspace/shared-types": ["libs/shared-types/src/index.ts"],
-      "@myworkspace/system-design": ["libs/system-design/src/index.ts"]
-    }
+      "@lib/pgsql": [
+        "libs/pgsql/src/index.ts"
+      ],
+      "@lib/shared-hooks": [
+        "libs/shared-hooks/src/index.ts"
+      ],
+      "@lib/shared-types": [
+        "libs/shared-types/src/index.ts"
+      ],
+      "@lib/system-design": [
+        "libs/system-design/src/index.ts"
+      ]
+    },
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

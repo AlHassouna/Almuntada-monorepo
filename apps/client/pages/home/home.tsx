@@ -1,5 +1,5 @@
-import React from 'react';
-import {useLocale} from "@myworkspace/system-design"
+import React from "react";
+import { useLocale } from "@lib/system-design";
 import {
   Container,
   FirstSection,
@@ -9,32 +9,28 @@ import {
   FourthSectionTitle,
   RightSide,
   RightSideDesc,
-  RightSideSubSec,
-  RightSideSubSecDesc,
-  RightSideSubSecTitle,
   RightSideTitle,
-  ThirdSection,
-} from '../../styled/home.styled';
-import { useIntl } from 'react-intl';
-import Logo from '../../assets/AlmanshaLogo.png';
-import Image from 'next/image';
-import { MediaCard } from '../../components/Card/Card';
-import { MediaCardThirdSection } from '../../components/Card/MediaCard';
-import { FounderCard } from '../../components/Card/FounderCard';
+  ThirdSection
+} from "../../styled/home.styled";
+import { useIntl } from "react-intl";
+import Logo from "../../assets/AlmanshaLogo.png";
+import Image from "next/image";
+import { MediaCardThirdSection } from "../../components/Card/MediaCard";
+import { FounderCard } from "../../components/Card/FounderCard";
 
 const HomePage = () => {
   const intl = useIntl();
-  const locale = useLocale()
+  const locale = useLocale();
   const cardsInformationFirstSection = intl.messages[
-    'homepage.ourUnique'
-  ] as unknown as Array<{
+    "homepage.ourUnique"
+    ] as unknown as Array<{
     title: string;
     description: string;
   }>;
 
   const cardsInformationThirdSection = intl.messages[
-    'homepage.wwh'
-  ] as unknown as Array<{
+    "homepage.wwh"
+    ] as unknown as Array<{
     title: string;
     description: string;
     subTitle: string;
@@ -45,8 +41,8 @@ const HomePage = () => {
   }>;
 
   const cardsInformationFounderSection = intl.messages[
-    'homepage.founders'
-  ] as unknown as Array<{
+    "homepage.founders"
+    ] as unknown as Array<{
     title: string;
     name: string;
     desc: string;
@@ -58,10 +54,10 @@ const HomePage = () => {
       <FirstSection>
         <RightSide>
           <RightSideTitle>
-            {intl.formatMessage({ id: 'homepage.title' })}
+            {intl.formatMessage({ id: "homepage.title" })}
           </RightSideTitle>
           <RightSideDesc>
-            {intl.formatMessage({ id: 'homepage.description' })}
+            {intl.formatMessage({ id: "homepage.description" })}
           </RightSideDesc>
           {/*<RightSideSubSec>*/}
           {/*  <RightSideSubSecTitle>*/}
@@ -107,7 +103,7 @@ const HomePage = () => {
       </ThirdSection>
       <FourthSection>
         <FourthSectionTitle>
-          {intl.formatMessage({ id: 'homepage.founders.title' })}
+          {intl.formatMessage({ id: "homepage.founders.title" })}
         </FourthSectionTitle>
         <FourthSectionSub>
           {Object.keys(cardsInformationFounderSection).map(
