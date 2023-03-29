@@ -19,7 +19,6 @@ export const MediaCardThirdSection: FC<Props> = ({
                                                    descriptions,
                                                  }) => {
   const locale = useLocale()
-  console.log("locale: ", locale)
   return (
     <RevealWrapper delay={100} duration={2000} reset={true}>
       <Card
@@ -49,7 +48,7 @@ export const MediaCardThirdSection: FC<Props> = ({
             {title}
           </Typography>
           <Typography
-            sx={{marginTop: '1rem', fontFamily: 'Cairo' , textAlign: locale === 'en' ? 'left' : 'right'}}
+            sx={{marginTop: '1rem', fontFamily: 'Cairo', textAlign: locale === 'en' ? 'left' : 'right'}}
             variant="body1"
             color="text.primary"
           >
@@ -66,7 +65,7 @@ export const MediaCardThirdSection: FC<Props> = ({
           {descriptions.map((description, index) => {
             return (
               <Typography
-                sx={{marginTop: '1rem', textAlign: locale === 'en' ? 'left' : 'right' , fontFamily: 'Cairo'}}
+                sx={{marginTop: '1rem', textAlign: locale === 'en' ? 'left' : 'right', fontFamily: 'Cairo'}}
                 variant="body1"
                 color="text.primary"
                 key={index}

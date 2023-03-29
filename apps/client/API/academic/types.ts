@@ -6,12 +6,39 @@ export interface IAcademic {
   email: string;
   city: string;
   degree: string;
-  subject: string;
-
-  career: string;
+  subject: Subject;
+  gender: string;
+  career: Career;
+  phone: string;
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface Subject {
+  id: number;
+  subject: string;
+  inputValue?: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Company {
+  id: number;
+  company: string;
+  inputValue?: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Career {
+  id: number;
+  career: string;
+  inputValue?: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export type SearchData = Omit<IAcademic, 'age' | 'imageUrl' | 'phone' | 'createdAt' | 'updatedAt'>;
 
 export type AcademicCreated = Omit<IAcademic, 'createdAt' | 'updatedAt'>;
 
@@ -25,12 +52,17 @@ export type AcademicField =
   | 'degree'
   | 'subject'
   | 'career';
-// enum degree {
+
+// export enum degree {
 //   AssociatesDegree,
 //
 //   BachelorsDegree,
 //
 //   MastersDegree,
 //
-//   DoctorateDegree,
+//   DoctoralDegree,
 // }
+
+export type SubjectCreated = Omit<Subject, 'createdAt' | 'updatedAt'>;
+
+

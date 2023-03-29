@@ -1,32 +1,39 @@
 import React, {useState} from 'react';
-import Image from 'next/image';
 import {useRouter} from 'next/router';
 import {MenuIcon, CloseIcon} from '@myworkspace/system-design';
-import Logo from '../../assets/AlmanshaLogo.png';
+import Logo from '../../assets/FinalLogo.png';
 import {useIntlShared} from './navbar.consts';
 import {
-  Container,
   NavbarContainer,
+  Gradient,
   NavbarList,
   NavbarListItem,
   NavbarMenuIcon,
-  NavbarMenu,
+  LogoContainer,
+  MotionContainer,
+  NavbarLanguageContainer,
+  NavbarLanguage,
   NavbarMenuListMobile,
-  NavbarMenuListItemMobile,
+  NavbarMenuListItemMobile
 } from './navbar.styled';
-import {LangMenu} from './LangMenu';
+import {navVariants} from '../../utils/motion';
 
 function Navbar() {
   const links = useIntlShared();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const {locales} = useRouter()
   return (
-    <Container>
+    <MotionContainer
+      variants={navVariants}
+      initial="hidden"
+      whileInView="show"
+    >
+      <Gradient/>
       <NavbarContainer>
-        <Image
+        <LogoContainer
           src={Logo}
           alt="logo"
-          className="items-center w-20 h-20 cursor-pointer"
           onClick={() => router.push('/')}
         />
         <NavbarList>
@@ -36,12 +43,19 @@ function Navbar() {
             </NavbarListItem>
           ))}
         </NavbarList>
+
+        <NavbarLanguageContainer>
+          {
+            locales?.map((locale) => (
+              <NavbarLanguage key={locale} onClick={() => router.push(router.pathname, router.pathname, {locale})}>
+                {locale}
+              </NavbarLanguage>
+            ))
+          }
+        </NavbarLanguageContainer>
         <NavbarMenuIcon onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <CloseIcon/> : <MenuIcon/>}
         </NavbarMenuIcon>
-        <NavbarMenu>
-          <LangMenu/>
-        </NavbarMenu>
         <NavbarMenuListMobile isOpen={isOpen}>
           {links.map(({name, id, link}) => (
             <NavbarMenuListItemMobile
@@ -54,10 +68,21 @@ function Navbar() {
               {name}
             </NavbarMenuListItemMobile>
           ))}
-          <LangMenu/>
+          {
+            locales?.map((locale) => (
+              <NavbarMenuListItemMobile key={locale} onClick={() => {
+                router.push(router.pathname, router.pathname, {locale});
+                setIsOpen(false);
+              }
+              }>
+                {locale}
+              </NavbarMenuListItemMobile>
+            ))
+          }
         </NavbarMenuListMobile>
       </NavbarContainer>
-    </Container>
+    </MotionContainer>
+
   );
 }
 

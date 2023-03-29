@@ -1,6 +1,9 @@
 import {ApiProperty} from '@nestjs/swagger';
-import {IsEmail, IsNotEmpty, IsNumber, IsString, IsUrl, Max, Min} from 'class-validator';
+import {IsBoolean, IsEmail, IsNotEmpty, IsNumber, IsString, IsUrl, Max, Min} from 'class-validator';
 import {Type} from 'class-transformer';
+import {SubjectDto} from "./create-subject.dto";
+import {CompanyDto} from "./create-company.dto";
+import {CareerDto} from "./create-career.dto";
 
 export class CreateUserDto {
   @ApiProperty()
@@ -40,14 +43,9 @@ export class CreateUserDto {
   degree: string;
 
   @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-
   subject: string;
 
   @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
 
   career: string;
 
@@ -56,4 +54,26 @@ export class CreateUserDto {
   @IsString()
 
   city: string;
+
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  gender: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  phone: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  company: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsBoolean()
+  isAgree: boolean;
+
 }
