@@ -1,5 +1,6 @@
 import { SxProps } from "@mui/material";
 import { Theme } from "@emotion/react";
+import { ReactElement } from "react";
 
 export interface ITable<T extends Record<string, unknown>> {
   columns: IColumns[];
@@ -8,8 +9,8 @@ export interface ITable<T extends Record<string, unknown>> {
 }
 
 export interface IColumns {
-  id?: string;
+  id?: number;
   header: string;
   accessor?: string | number;
-  cell?: <T>(a: T) => void;
+  cell?: (a: IColumns) => any;
 }

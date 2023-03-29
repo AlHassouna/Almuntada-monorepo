@@ -1,10 +1,10 @@
-import { backendInstance } from '../api';
-import { useQuery } from '@tanstack/react-query';
+import { backendInstance } from "../api";
+import { useQuery } from "@tanstack/react-query";
 
-const updateAcademic = async () => {
-  return await backendInstance.put('/users/:id');
+const updateAcademic = async (id: number) => {
+  return await backendInstance.put("/users/:id");
 };
 
-export const useGetPodcast = (auth?: string) => {
-  return useQuery<object, Error>(['academic'], updateAcademic);
+export const useUpdateAcademic = (id: number) => {
+  return useQuery<object, Error>(["academic"], () => updateAcademic(id));
 };

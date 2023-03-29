@@ -8,6 +8,7 @@ import {
   Paper
 } from "@mui/material";
 import { ITable } from "./types";
+import { ReactElement } from "react";
 
 export const Table = <T extends Record<string, unknown>>({ columns, data, style }: ITable<T>) => {
   return (
@@ -29,7 +30,8 @@ export const Table = <T extends Record<string, unknown>>({ columns, data, style 
             {data.map((row, index) => (
               <TableRow key={index}>
                 {columns.map((column) => (
-                  <TableCell key={column.id}> {row[column.accessor as string]} </TableCell>
+                  <TableCell
+                    key={column.id}> {row[column.accessor as string] || column.cell?.(column.id)}  </TableCell>
                 ))}
               </TableRow>
             ))}

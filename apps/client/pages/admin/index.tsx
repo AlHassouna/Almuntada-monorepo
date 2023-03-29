@@ -1,7 +1,8 @@
 import { FC, useMemo } from "react";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { AdminCard } from "../../components/AdminCard/AdminCard";
 import { IColumns, Table } from "@lib/system-design";
+import { useUpdateAcademic } from "../../API/academic/updateAcademic";
 
 
 interface ICardInfo {
@@ -10,11 +11,13 @@ interface ICardInfo {
 }
 
 const Admin: FC = () => {
-
   const cardInfo: Array<ICardInfo> = [
     { counter: 100435, title: "New User" },
     { counter: 1001, title: "Academics" }
   ];
+  const OnDelete = (id: number) => {
+    useUpdateAcademic(id);
+  };
 
   const columns: Array<IColumns> = useMemo(
     () => [
@@ -28,7 +31,9 @@ const Admin: FC = () => {
       },
       {
         header: "Action",
-        cell: (a) => console.log(a)
+        cell: (a) => (
+          <Box><Button variant="contained" onClick={() => OnDelete(a.id)}>Approve</Button><Button variant="contained"
+                                                                                                  color={"error"}>Block</Button></Box>)
       }
     ],
     []
