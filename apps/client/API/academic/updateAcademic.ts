@@ -1,8 +1,8 @@
 import { backendInstance } from "../api";
 import { useQuery } from "@tanstack/react-query";
-import { IAcademic } from "./types";
+import { AcademicUpdated } from "./types";
 
-const updateAcademic = async (id: number, data: IAcademic) => {
+const updateAcademic = async (id: number, data: AcademicUpdated) => {
   return await backendInstance.put("/users", data, {
     params: {
       id
@@ -10,6 +10,6 @@ const updateAcademic = async (id: number, data: IAcademic) => {
   });
 };
 
-export const useUpdateAcademic = (id: number, data: IAcademic) => {
+export const useUpdateAcademic = (id: number, data: AcademicUpdated) => {
   return useQuery<object, Error>(["academic"], () => updateAcademic(id, data));
 };

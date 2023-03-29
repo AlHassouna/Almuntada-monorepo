@@ -1,20 +1,18 @@
 import Head from 'next/head';
-import { useIntl } from 'react-intl';
-import styles from './index.module.css';
+import {useIntl} from 'react-intl';
 import HomePage from './home/home';
+import React from "react";
 
 export default function Home() {
   const intl = useIntl();
-  const title = intl.formatMessage({ id: 'page.home.head.title' });
+  const title = intl.formatMessage({id: 'page.home.head.title'});
 
   return (
-    <div>
+    <>
       <Head>
         <title>{title}</title>
       </Head>
-      <main className={styles.main}>
-        <HomePage />
-      </main>
-    </div>
+      <HomePage/>
+    </>
   );
 }

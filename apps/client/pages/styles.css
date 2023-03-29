@@ -2,4 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tajawal&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almarai&family=IBM+Plex+Sans+Arabic:wght@100&family=Noto+Nastaliq+Urdu:wght@500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}

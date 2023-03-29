@@ -1,5 +1,5 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty } from 'class-validator';
+import {ApiProperty} from '@nestjs/swagger';
+import {IsNotEmpty, IsString} from 'class-validator';
 
 export class CreatePodcastDto {
   // Title //
@@ -9,6 +9,7 @@ export class CreatePodcastDto {
     example: 'The Title',
   })
   @IsNotEmpty()
+  @IsString()
   title: string;
 
   // Description //
@@ -18,6 +19,8 @@ export class CreatePodcastDto {
     example: 'The Description',
   })
   @IsNotEmpty()
+  @IsString()
+
   description: string;
 
 
@@ -30,6 +33,6 @@ export class CreatePodcastDto {
   })
 
   @IsNotEmpty()
-
+  @IsString()
   podcastUrl: string;
 }

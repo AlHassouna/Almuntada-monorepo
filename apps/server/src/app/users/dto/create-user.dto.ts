@@ -1,22 +1,29 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { IsEmail, IsNotEmpty, IsNumber, Max, Min } from 'class-validator';
-import { Type } from 'class-transformer';
+import { ApiProperty } from "@nestjs/swagger";
+import { IsBoolean, IsEmail, IsNotEmpty, IsNumber, IsString, IsUrl, Max, Min } from "class-validator";
+import { Type } from "class-transformer";
 
 export class CreateUserDto {
   @ApiProperty()
   @IsNotEmpty()
+  @IsString()
+
   firstName: string;
 
   @ApiProperty()
   @IsNotEmpty()
+  @IsString()
   lastName: string;
 
   @ApiProperty()
   @IsEmail()
+  @IsString()
+
   email: string;
 
   @ApiProperty()
   @IsNotEmpty()
+  @IsString()
+  @IsUrl()
   imageUrl: string;
 
   @ApiProperty()
@@ -28,17 +35,41 @@ export class CreateUserDto {
 
   @ApiProperty()
   @IsNotEmpty()
+  @IsString()
   degree: string;
 
   @ApiProperty()
-  @IsNotEmpty()
   subject: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+
   career: string;
 
   @ApiProperty()
   @IsNotEmpty()
+  @IsString()
+
   city: string;
+
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  gender: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  phone: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  company: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsBoolean()
+  isAgree: boolean;
+
 }

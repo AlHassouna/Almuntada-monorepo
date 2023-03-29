@@ -4,16 +4,108 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="fix: responsive styling in academic page">
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/events/events.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/visitors/visitors.module.ts" afterDir="false" />
+    <list default="true" id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="fix: resolve issue and conflict">
+      <change afterPath="$PROJECT_DIR$/apps/client/API/academic/getCareers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/API/academic/getCompany.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/API/academic/getSubjects.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/assets/FinalLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/assets/back.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/assets/sec2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/Card/BasicCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/CustomText/TypingText.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/Dialog/optionAcademic.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/Slideshow/Slideshow.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/components/StartSteps/StartSteps.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/public/academic.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/public/impact.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/public/mission.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/public/socialimpact.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/public/values.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/public/vision.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/sections/About.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/sections/Goals.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/sections/Hero.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/sections/Impact.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/styled/global.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/styled/slideshow.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/client/utils/motion.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/events/dto/create-event.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/events/entities/event.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/events/events.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/events/events.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-career.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-company.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-subject.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/search-user.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/entities/career.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/entities/company.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/entities/subject.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/visitors/dto/create-visitor.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/visitors/entities/visitor.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/visitors/visitors.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/server/src/app/visitors/visitors.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/shared-hooks/src/lib/helpFunc/helpfulFunction.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/shared-hooks/src/lib/helpFunc/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/shared-types/src/lib/citiesList/list.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/shared-types/src/lib/degreeList/degree.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/shared-types/src/lib/subjectList/subjectList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/system-design/src/lib/Select/AutoComplete.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/system-design/src/lib/Select/GenericSelect.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/system-design/src/lib/Select/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/system-design/src/lib/slideshow/slide.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/postAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/postAcademic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/searchAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/searchAcademic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/API/academic/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/API/academic/updateAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/API/academic/updateAcademic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/AcademicsCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/AcademicsCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/MediaCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/MediaCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/card.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/card.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Dialog/AcademicDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Dialog/AcademicDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Dialog/dialogLogic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Dialog/dialogLogic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Form/Form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Form/Form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Navbar/LangMenu.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Navbar/navbar.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Navbar/navbar.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/client/pages/admin/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/admin/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/entities/users.factory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/entities/users.factory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/Table/Table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/Table/Table.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/Table/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/Table/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/contact/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/contact/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/index.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/lang/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/lang/ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/podcast/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/podcast/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/styled/academics.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/styled/academics.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/styled/contact-us.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/styled/contact-us.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/styled/home.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/styled/home.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/contact/contact.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/contact/contact.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/podcasts/dto/create-podcast.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/podcasts/dto/create-podcast.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/podcasts/podcasts.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/podcasts/podcasts.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/search-term-output.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/search-term.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/entities/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/entities/user.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/pgsql/src/lib/database.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/pgsql/src/lib/database.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/shared-hooks/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/shared-hooks/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/shared-types/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/shared-types/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/system-design/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nx.json" beforeDir="false" afterPath="$PROJECT_DIR$/nx.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ormconfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ormconfig.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.base.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.base.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +194,14 @@
       <workItem from="1678822206805" duration="220000" />
       <workItem from="1678822441431" duration="834000" />
     </task>
+    <task id="LOCAL-00001" summary="fix: resolve issue and conflict">
+      <created>1680094738832</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680094738832</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +221,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix: resolve the table issue" />
     <MESSAGE value="fix: responsive styling in academic page" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: responsive styling in academic page" />
+    <MESSAGE value="fix: resolve issue and conflict" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: resolve issue and conflict" />
   </component>
 </project>

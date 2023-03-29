@@ -3,6 +3,7 @@ import { Box, Button } from "@mui/material";
 import { AdminCard } from "../../components/AdminCard/AdminCard";
 import { IColumns, Table } from "@lib/system-design";
 import { useUpdateAcademic } from "../../API/academic/updateAcademic";
+import { AcademicUpdated } from "../../API/academic/types";
 
 
 interface ICardInfo {
@@ -15,8 +16,8 @@ const Admin: FC = () => {
     { counter: 100435, title: "New User" },
     { counter: 1001, title: "Academics" }
   ];
-  const OnDelete = (id: number) => {
-    useUpdateAcademic(id);
+  const OnDelete = (id: number, data: AcademicUpdated) => {
+    useUpdateAcademic(id, data);
   };
 
   const columns: Array<IColumns> = useMemo(
@@ -32,8 +33,9 @@ const Admin: FC = () => {
       {
         header: "Action",
         cell: (a) => (
-          <Box><Button variant="contained" onClick={() => OnDelete(a.id)}>Approve</Button><Button variant="contained"
-                                                                                                  color={"error"}>Block</Button></Box>)
+          <Box><Button variant="contained" onClick={() => OnDelete(a.id, { isApproved: true })}>Approve</Button><Button
+            variant="contained"
+            color={"error"}>Block</Button></Box>)
       }
     ],
     []

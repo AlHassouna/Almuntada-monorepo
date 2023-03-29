@@ -1,12 +1,12 @@
-import {FC} from "react";
+import { FC } from "react";
 import ContactForm from "../../components/Form/Form";
-import {FormLogic} from "../../components/Form/FormLogic";
+import { FormLogic } from "../../components/Form/FormLogic";
 
-const ContactUs: FC  = () => {
-  const {onSubmit} = FormLogic();
+const ContactUs: FC = () => {
+  const { onSubmit } = FormLogic();
   return (
-  <ContactForm onSubmit={onSubmit} />
-  )
-}
+    <ContactForm onSubmit={onSubmit} />
+  );
+};
 
 export default ContactUs;

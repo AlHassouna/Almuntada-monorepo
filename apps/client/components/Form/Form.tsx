@@ -1,87 +1,94 @@
-import React,{FC} from "react";
-import { Formik, Field, ErrorMessage } from "formik";
+import React, {FC} from "react";
+import {Formik, Field, ErrorMessage} from "formik";
 import * as Yup from "yup";
-import {StyledHeading,StyledForm} from "../../styled/contact-us.styled"
+import {StyledHeading, StyledForm} from "../../styled/contact-us.styled"
 import {ContactUsCreated} from "../../API/contact-us/types";
+import {useIntl} from "react-intl";
+
 
 interface ContactUsProps {
   onSubmit: (values: ContactUsCreated) => void;
 }
 
-const ContactForm: FC<ContactUsProps> = ({ onSubmit }) => {
+const ContactForm: FC<ContactUsProps> = ({onSubmit}) => {
 
+  const intl = useIntl();
+  const required = intl.messages['contactpage.required'] as string;
   const initialValues: ContactUsCreated = {
     fullName: "",
     email: "",
     subject: "",
     message: "",
   }
-
   const validationSchema = Yup.object({
-    fullName: Yup.string().required("Required"),
-    email: Yup.string().email("Invalid email address").required("Required"),
-    subject: Yup.string().required("Required"),
-    message: Yup.string().max(500,"Must be 500 characters or less").required("Required"),
+    fullName: Yup.string().required(String(required)),
+    email: Yup.string().email("Invalid email address").required(String(required)),
+    subject: Yup.string().required(String(required)),
+    message: Yup.string().max(500, "Must be 500 characters or less").required(String(required)),
   })
 
+  const subjects = intl.messages['contactpage.subjects'] as unknown as Array<{
+    name: string;
+  }>;
   return (
-    <div>
-      <StyledHeading>Contact Us</StyledHeading>
+    <div className='h-[80vh] '>
+      <StyledHeading>{intl.messages['contactpage.title']}</StyledHeading>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={values => onSubmit(values)}
       >
-        {({ isSubmitting }) => (
+        {({isSubmitting}) => (
           <StyledForm>
             <div>
-              <label htmlFor="fullName">Full Name</label>
+              <label htmlFor="fullName">{intl.messages['contactpage.fullname']}</label>
               <Field
                 name="fullName"
                 id="fullName"
               >
 
               </Field>
-              <ErrorMessage name="fullName" />
+              <ErrorMessage name="fullName"/>
             </div>
 
             <div>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">{intl.messages['contactpage.email']}</label>
               <Field
                 type="email"
                 id="email"
                 name="email"
               />
-              <ErrorMessage name="email" />
+              <ErrorMessage name="email"/>
             </div>
 
             <div>
-              <label htmlFor="subject">Subject</label>
+              <label htmlFor="subject">{intl.messages['contactpage.subject']}</label>
               <Field
                 as="select"
                 id="subject"
                 name="subject"
               >
-                <option value=""></option>
-                <option value="Support">Support</option>
-                <option value="Sales">Sales</option>
-                <option value="General Inquiry">General Inquiry</option>
+                {
+                  subjects.map((subject, index) => {
+                    return <option key={index} value={index}>{subject.name}</option>
+                  })
+                }
               </Field>
-              <ErrorMessage name="subject" />
+              <ErrorMessage name="subject"/>
             </div>
 
             <div>
-              <label htmlFor="message">Message</label>
+              <label htmlFor="message">{intl.messages['contactpage.message']}</label>
               <Field
                 as="textarea"
                 id="message"
                 name="message"
               />
-              <ErrorMessage name="message" />
+              <ErrorMessage name="message"/>
             </div>
 
             <button type="submit" disabled={isSubmitting}>
-              Submit
+              {intl.messages['contactpage.submit']}
             </button>
           </StyledForm>
         )}

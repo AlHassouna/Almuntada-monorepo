@@ -16,8 +16,8 @@
     ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": ".",
     "jsx": "react-jsx",
+    "baseUrl": ".",
     "paths": {
       "@lib/pgsql": [
         "libs/pgsql/src/index.ts"
