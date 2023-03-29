@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ebffd12-c487-4da2-aff9-ffdb30b7f5fd" name="Changes" comment="fix: responsive styling in academic page">
+    <list default="true" id="8ebffd12-c487-4da2-aff9-ffdb30b7f5fd" name="Changes" comment="fix: generic autocomplete function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/components/Dialog/AcademicDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Dialog/AcademicDialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/components/Subject/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Subject/Search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/Select/AutoComplete.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/Select/AutoComplete.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/sections/About.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/sections/About.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +84,7 @@
       <workItem from="1679833554930" duration="989000" />
       <workItem from="1679834564341" duration="30462000" />
       <workItem from="1679916620983" duration="4590000" />
-      <workItem from="1679922439156" duration="34123000" />
+      <workItem from="1679922439156" duration="34668000" />
     </task>
     <task id="LOCAL-00001" summary="feat: re-styling and managing">
       <created>1678985258591</created>
@@ -117,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680012656193</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix: generic autocomplete function">
+      <created>1680082275348</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680082275348</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +133,7 @@
     <MESSAGE value="rearrange the code" />
     <MESSAGE value="fix: responsive styling" />
     <MESSAGE value="fix: responsive styling in academic page" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: responsive styling in academic page" />
+    <MESSAGE value="fix: generic autocomplete function" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: generic autocomplete function" />
   </component>
 </project>

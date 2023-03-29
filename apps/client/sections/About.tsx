@@ -4,16 +4,9 @@ import {fadeIn, staggerContainer} from '../utils/motion';
 import {useIntl} from 'react-intl';
 import {AboutGradient, HomeSection} from '../styled/global.styled';
 import {MotionContainer} from "../styled/home.styled";
-import {BasicCard} from "../components/Card/BasicCard";
 
 const About = () => {
   const intl = useIntl();
-  const chartsInformation = intl.messages[
-    'homepage.chart'
-    ] as unknown as Array<{
-    title: string;
-    number: string;
-  }>;
   return (
     <HomeSection>
       <AboutGradient/>
@@ -41,20 +34,6 @@ const About = () => {
         >
           {intl.messages['homepage.description_2']}
         </motion.p>
-        {/*<motion.div className='sm:flex  items-center gap-8'*/}
-        {/*            variants={fadeIn('up', 'tween', 0.2, 1)}*/}
-
-        {/*>*/}
-        {/*  {*/}
-        {/*    chartsInformation.map((chart, index) => (*/}
-        {/*      <BasicCard*/}
-        {/*        key={index}*/}
-        {/*        title={chart.title}*/}
-        {/*        number={chart.number}*/}
-        {/*      />*/}
-        {/*    ))*/}
-        {/*  }*/}
-        {/*</motion.div>*/}
       </MotionContainer>
     </HomeSection>
   );
