@@ -8,11 +8,13 @@ import {useLocale} from "@myworkspace/system-design";
 import {Button, Typography} from '@mui/material';
 import {useIntl} from "react-intl";
 import styled from 'styled-components'
-import {GroupedCities} from "../../components/CitySearch/Search";
 import {motion} from 'framer-motion';
 import {fadeIn} from "../../utils/motion";
-import {GroupedSubject} from "../../components/Subject/Search";
 import {useGetAcademicsBySearchTerms} from "../../API/academic/searchAcademic";
+import {AutoComplete} from "@myworkspace/system-design";
+import {dataToSelectOptions} from "@myworkspace/shared-hooks";
+import {getCityList} from "@myworkspace/shared-types";
+import {ListOptions} from "../../components/Dialog/optionAcademic";
 
 const Academic: FC = () => {
 
@@ -21,22 +23,33 @@ const Academic: FC = () => {
     {isApproved: false}
   );
   const locale = useLocale()
-  const [selectedCity, setSelectedCity] = useState('');
-  const [selectedSubject, setSelectedSubject] = useState('');
+  const [selectedFilter, setSelectedFilter] = useState({
+    city: "",
+    subject: '',
+  })
+
+  const onChangeAutoComplete = (value, event, key?) => {
+    setSelectedFilter({
+      ...selectedFilter,
+      [key]: event?.value || event?.label
+    })
+  }
   const {isOpen, onClose, onOpen, OnSubmit} = AcademicDialogLogic();
+  const citiesList = getCityList()
+  const citiesOption = dataToSelectOptions(citiesList, 'label', 'label')
+  const {subjectsOptions} = ListOptions()
+
   const filteredData = data?.filter((item) => {
-      if (!selectedCity && !selectedSubject) {
+      if (!selectedFilter.city && !selectedFilter.subject) {
         return true;
       }
-      if (selectedCity && !selectedSubject) {
-        return item.city === selectedCity;
+      if (selectedFilter.city && selectedFilter.subject) {
+        return selectedFilter.city == item.city && selectedFilter.subject === item.subject?.subject
       }
-      if (!selectedCity && selectedSubject) {
-        return item.subject?.subject === selectedSubject;
-      }
-      return item.city === selectedCity && item.subject?.subject === selectedSubject;
+      return item.city === selectedFilter.city || item.subject?.subject === selectedFilter.subject;
     }
   )
+
 
   return (
     <MainContainer dir={locale}>
@@ -67,10 +80,22 @@ const Academic: FC = () => {
           {intl.messages['academicpage.text']}
         </motion.p>
         <div className='flex flex-col sm:flex-row mx-auto w-full sm:justify-around items-center h-full'>
-          <GroupedCities size={"300px"} label={String(intl.messages['academicpage.dialog.city'])}
-                         onSelected={setSelectedCity}/>
-          <GroupedSubject size={"300px"} label={String(intl.messages['academicpage.dialog.subject'])}
-                          onSelected={setSelectedSubject}/>
+          <AutoComplete
+            w='300px'
+            onChange={(v, e) => onChangeAutoComplete(v, e, 'city')}
+            data={citiesOption}
+            value={selectedFilter.city}
+            freeSolo={false}
+            label={String(intl.messages['academicpage.dialog.city'])}
+          />
+          <AutoComplete
+            w='300px'
+            onChange={(v, e) => onChangeAutoComplete(v, e, 'subject')}
+            data={subjectsOptions || Array({value: "", label: ""})}
+            value={selectedFilter.subject}
+            freeSolo={false}
+            label={String(intl.messages['academicpage.dialog.subject'])}
+          />
 
         </div>
         <CardContainer>

@@ -7,7 +7,6 @@ import {FC} from "react";
 interface Props {
   label?: string
   size?: string
-
   onSelected: (value: string) => void
 }
 

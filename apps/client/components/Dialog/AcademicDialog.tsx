@@ -15,13 +15,13 @@ import {useIntl} from "react-intl";
 import {useLocale} from "@myworkspace/system-design";
 import {StyledForm} from '../../styled/academics.styled'
 import {StyledButton} from "../../pages/academic";
-import {GroupedCities} from "../CitySearch/Search";
 import styled from "styled-components";
 import {AutoComplete, GenericSelect} from '@myworkspace/system-design'
 import {ListOptions} from "./optionAcademic";
 import {dataToSelectOptions} from "@myworkspace/shared-hooks";
 import {getDegreeList} from "@myworkspace/shared-types";
 import {SelectChangeEvent} from "@mui/material/Select";
+import {getCityList} from "@myworkspace/shared-types";
 
 interface Props {
   handleClose: () => void;
@@ -55,8 +55,10 @@ export const AcademicDialog: FC<Props> = ({handleClose, OnSubmit, isOpen,}) => {
       }
     ]
     const degreeList = getDegreeList()
+    const citiesList = getCityList()
     const genderOption = dataToSelectOptions(genderList, 'name', 'id')
     const degreeOption = dataToSelectOptions(degreeList, 'name', 'id')
+    const citiesOption = dataToSelectOptions(citiesList, 'label', 'label')
     const intl = useIntl();
     const {subjectsOptions, companiesOptions, careersOptions,} = ListOptions()
     const required = intl.messages['academicpage.dialog.required'];
@@ -84,9 +86,10 @@ export const AcademicDialog: FC<Props> = ({handleClose, OnSubmit, isOpen,}) => {
     })
 
     const onChangeAutoComplete = (value, event, key?) => {
+      console.log(event, key)
       setAcademicDetail({
         ...academicDetail,
-        [key]: event?.value
+        [key]: event?.value || event?.label
       })
     }
 
@@ -135,8 +138,11 @@ export const AcademicDialog: FC<Props> = ({handleClose, OnSubmit, isOpen,}) => {
                   <ErrorMessage name="imageUrl"/>
                   <Field name="email" type="email" as={TextField} label={intl.messages['academicpage.dialog.email']}/>
                   <ErrorMessage name="email"/>
-                  <Field name="city" type="text" as={GroupedCities}
-                         onSelected={(v, e) => onChangeSelect(v, 'city')}
+                  <Field name="city" type="text" as={AutoComplete}
+                         onChange={(v, e) => onChangeAutoComplete(v, e, 'city')}
+                         data={citiesOption}
+                         freeSolo={false}
+                         value={academicDetail.city}
                          label={intl.messages['academicpage.dialog.city']}></Field>
                   <ErrorMessage name="city"/>
                   <Field name="degree" type="text" as={GenericSelect} label={intl.messages['academicpage.dialog.degree']}
@@ -146,15 +152,18 @@ export const AcademicDialog: FC<Props> = ({handleClose, OnSubmit, isOpen,}) => {
                   <Field name="subject" type="text" as={AutoComplete} value={academicDetail.subject}
                          onChange={(v, e) => onChangeAutoComplete(v, e, "subject")}
                          data={subjectsOptions}
+                         freeSolo={true}
                          label={intl.messages['academicpage.dialog.subject']}/>
                   <ErrorMessage name="subject"/>
                   <Field name="company" type="text" as={AutoComplete} value={academicDetail.company}
                          onChange={(v, e) => onChangeAutoComplete(v, e, "company")}
                          data={companiesOptions}
+                         freeSolo={true}
                          label={intl.messages['academicpage.dialog.company']}/>
                   <ErrorMessage name="company"/>
                   <Field name="career" type="text" as={AutoComplete} value={academicDetail.career}
                          onChange={(v, e) => onChangeAutoComplete(v, e, "career")}
+                         freeSolo={true}
                          data={careersOptions} label={intl.messages['academicpage.dialog.job']}/>
                   <ErrorMessage name="career"/>
                   <Field name="gender" className='gender' type="text" as={GenericSelect}
