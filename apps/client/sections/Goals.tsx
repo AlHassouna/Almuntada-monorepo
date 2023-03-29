@@ -11,6 +11,7 @@ import {useRouter} from "next/router";
 const Goals = () => {
   const intl = useIntl();
   const {locale} = useRouter();
+  const {div: Div} = motion
   const vmInfotmaiom = intl.messages[
     'homepage.vm'
     ] as unknown as Array<{
@@ -28,7 +29,7 @@ const Goals = () => {
         viewport={{once: false, amount: 0.25}}
         className='mx-auto flex lg:flex-row flex-col gap-8'
       >
-        <motion.div
+        <Div
           variants={planetVariants(getDirection(locale) === 'rtl' ? 'right' : 'left')}
           className={`flex-1 flex items-center justify-center `}
         >
@@ -37,8 +38,8 @@ const Goals = () => {
             alt="socialimpact"
             className="w-[90%] h-[90%] object-contain"
           />
-        </motion.div>
-        <motion.div
+        </Div>
+        <Div
           variants={fadeIn(getDirection(locale) === 'rtl' ? 'right' : 'left', 'tween', 0.2, 1)}
           className="flex-[0.75] flex justify-center flex-col"
         >
@@ -53,7 +54,7 @@ const Goals = () => {
               />
             ))}
           </div>
-        </motion.div>
+        </Div>
       </MContainer>
     </HomeSection>
   );

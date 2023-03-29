@@ -9,6 +9,7 @@ import {useRouter} from "next/router";
 
 const Impact = () => {
   const intl = useIntl();
+  const {div: Div, p: P} = motion
   const {locale} = useRouter();
   return (
     <HomeSection>
@@ -21,20 +22,20 @@ const Impact = () => {
         className='mx-auto flex lg:flex-row flex-col gap-8'
       >
 
-        <motion.div
+        <Div
           variants={fadeIn(getDirection(locale) === 'rtl' ? 'right' : 'left', 'tween', 0.2, 1)}
           className="flex-[0.75] flex justify-center flex-col"
         >
           <TypingText title={intl.messages['homepage.impact.title']} textStyles={'text-center'}/>
           <TitleText title={<>{intl.messages['homepage.impact.sub.title']}</>} textStyles={'text-center'}/>
-          <motion.p
+          <P
             variants={fadeIn('up', 'tween', 0.2, 1)}
             className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[orange]"
           >
             {intl.messages['homepage.impact.desc']}
-          </motion.p>
-        </motion.div>
-        <motion.div
+          </P>
+        </Div>
+        <Div
           variants={planetVariants(getDirection(locale) === 'rtl' ? 'left' : 'right')}
           className={`flex-1 flex items-center justify-center `}
         >
@@ -43,7 +44,7 @@ const Impact = () => {
             alt="impact"
             className="w-[90%] h-[90%] object-contain"
           />
-        </motion.div>
+        </Div>
       </MContainer>
     </HomeSection>
   );

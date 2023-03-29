@@ -7,6 +7,7 @@ import {MotionContainer} from "../styled/home.styled";
 
 const About = () => {
   const intl = useIntl();
+  const {p: P} = motion
   return (
     <HomeSection>
       <AboutGradient/>
@@ -19,13 +20,13 @@ const About = () => {
       >
         <TypingText title={`${intl.messages['homepage.about']}`} textStyles="text-center"/>
 
-        <motion.p
+        <P
           variants={fadeIn('up', 'tween', 0.2, 1)}
           className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[orange]"
         >
           {intl.messages['homepage.description']}
 
-        </motion.p>
+        </P>
         <TypingText title={`${intl.messages['homepage.about_2']}`} textStyles="text-center"/>
 
         <motion.p

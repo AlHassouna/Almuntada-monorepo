@@ -6,7 +6,7 @@ import {useIntl} from 'react-intl';
 
 const Hero = () => {
   const intl = useIntl();
-
+  const {div: Div} = motion
   return (
     <MainSection>
       <MotionContainer
@@ -19,14 +19,14 @@ const Hero = () => {
           <Heading variants={textVariant(1.1)}>
             {intl.messages['homepage.title']}
           </Heading>
-          <motion.div
+          <Div
             variants={textVariant(1.2)}
             className="flex flex-row justify-center items-center"
           >
             <SubHeading>
               {intl.messages['homepage.title_1']}
             </SubHeading>
-          </motion.div>
+          </Div>
         </div>
       </MotionContainer>
     </MainSection>

@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ebffd12-c487-4da2-aff9-ffdb30b7f5fd" name="Changes" comment="fix: generic autocomplete function">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8ebffd12-c487-4da2-aff9-ffdb30b7f5fd" name="Changes" comment="fix: removing comments and unnecessary components">
       <change beforePath="$PROJECT_DIR$/apps/client/sections/About.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/sections/About.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +83,7 @@
       <workItem from="1679833554930" duration="989000" />
       <workItem from="1679834564341" duration="30462000" />
       <workItem from="1679916620983" duration="4590000" />
-      <workItem from="1679922439156" duration="34668000" />
+      <workItem from="1679922439156" duration="34937000" />
     </task>
     <task id="LOCAL-00001" summary="feat: re-styling and managing">
       <created>1678985258591</created>
@@ -121,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680082275348</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix: removing comments and unnecessary components">
+      <created>1680089176832</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680089176832</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +140,7 @@
     <MESSAGE value="fix: responsive styling" />
     <MESSAGE value="fix: responsive styling in academic page" />
     <MESSAGE value="fix: generic autocomplete function" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: generic autocomplete function" />
+    <MESSAGE value="fix: removing comments and unnecessary components" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: removing comments and unnecessary components" />
   </component>
 </project>
