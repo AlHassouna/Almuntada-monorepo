@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ebffd12-c487-4da2-aff9-ffdb30b7f5fd" name="Changes" comment="fix: motion-framer syntax">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ec2-deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ec2-deploy.yml" afterDir="false" />
+    <list default="true" id="8ebffd12-c487-4da2-aff9-ffdb30b7f5fd" name="Changes" comment="feat: prep for prod">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +84,7 @@
       <workItem from="1679833554930" duration="989000" />
       <workItem from="1679834564341" duration="30462000" />
       <workItem from="1679916620983" duration="4590000" />
-      <workItem from="1679922439156" duration="40765000" />
+      <workItem from="1679922439156" duration="45967000" />
     </task>
     <task id="LOCAL-00001" summary="feat: re-styling and managing">
       <created>1678985258591</created>
@@ -136,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680090491499</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: prep for prod">
+      <created>1680176532060</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680176532060</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +157,7 @@
     <MESSAGE value="fix: generic autocomplete function" />
     <MESSAGE value="fix: removing comments and unnecessary components" />
     <MESSAGE value="fix: motion-framer syntax" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: motion-framer syntax" />
+    <MESSAGE value="feat: prep for prod" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: prep for prod" />
   </component>
 </project>
