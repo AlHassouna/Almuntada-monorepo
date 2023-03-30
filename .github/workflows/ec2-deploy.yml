@@ -3,7 +3,7 @@ name: Deploy to EC2 instance
 on:
   push:
     branches:
-      feat/021-backend-prod
+      feat/021-backend-prod 
 
 jobs:
   deploy:
