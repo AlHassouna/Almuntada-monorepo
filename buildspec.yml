@@ -7,3 +7,12 @@ phases:
   build:
     commands:
       - yarn
+  post_build:
+    commands:
+      - echo Build completed on `date`
+  artifacts:
+    files:
+      - apps/**/*
+      - node_modules/**/*
+      - dist/**/*
+      - package.json
