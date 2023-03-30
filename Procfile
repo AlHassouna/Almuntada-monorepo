@@ -1,1 +1,1 @@
-web: yarn start:server
+web: node dist/apps/server/main.js
