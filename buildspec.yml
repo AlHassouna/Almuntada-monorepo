@@ -2,6 +2,9 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 16
+  pre-build:
     commands:
       - curl -o- -L https://yarnpkg.com/install.sh | bash
   build:
@@ -16,3 +19,4 @@ phases:
       - node_modules/**/*
       - dist/**/*
       - package.json
+
