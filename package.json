@@ -6,6 +6,10 @@
     "**/@types/react": "^17.0.21",
     "**/@types/react-dom": "^17.0.9"
   },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "test": "npx nx run-many --all --target=test --parallel",
     "build-server": "nx build server",
