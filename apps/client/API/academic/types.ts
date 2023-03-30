@@ -57,7 +57,6 @@ export type AcademicField =
   | "subject"
   | "career";
 
-
 export type SubjectCreated = Omit<Subject, "createdAt" | "updatedAt">;
 
 export type AcademicUpdated = Partial<IAcademic>

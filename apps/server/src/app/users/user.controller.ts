@@ -4,7 +4,7 @@ import {
   Post,
   Body,
   UsePipes,
-  ValidationPipe, Query
+  ValidationPipe, Query, Put
 } from "@nestjs/common";
 import { UserService } from "./user.service";
 import { CreateUserDto } from "./dto/create-user.dto";
@@ -62,5 +62,10 @@ export class UserController {
   @Get("search")
   async findAllSearch(@Query() data: SearchUserDto): Promise<User[]> {
     return await this.userService.findAllSearch(data);
+  }
+
+  @Put()
+  async updateUser(@Query() id, @Body() data) {
+    return await this.userService.updateUser(id, data);
   }
 }

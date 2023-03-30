@@ -5,14 +5,24 @@ import {
   TableRow,
   TableCell,
   TableBody,
-  Paper
+  Paper, Skeleton, Typography
 } from "@mui/material";
-import { ITable } from "./types";
-import { ReactElement } from "react";
+import { IColumns, ITable } from "./types";
 
-export const Table = <T extends Record<string, unknown>>({ columns, data, style }: ITable<T>) => {
+export const Table = <T extends Record<string, unknown>>({
+                                                           columns,
+                                                           handler,
+                                                           filterBy,
+                                                           style,
+                                                           title
+
+                                                         }: ITable<T>) => {
+  const { data, isError, isLoading } = handler(filterBy);
+  console.log(data);
+  if (isLoading) return <Skeleton />;
   return (
     <Paper sx={style || { width: "100%", overflow: "hidden" }}>
+      <Typography variant="h4">{title}</Typography>
       <TableContainer>
         <MuTable>
           <TableHead>
@@ -26,18 +36,22 @@ export const Table = <T extends Record<string, unknown>>({ columns, data, style 
               ))}
             </TableRow>
           </TableHead>
-          <TableBody>
-            {data.map((row, index) => (
-              <TableRow key={index}>
-                {columns.map((column) => (
-                  <TableCell
-                    key={column.id}> {row[column.accessor as string] || column.cell?.(column.id)}  </TableCell>
+          {isLoading ? (<Skeleton />) :
+            (<TableBody>
+              {
+                data?.map((row, index) => (
+                  <TableRow key={index}>
+                    {columns?.map((column) => (
+                      <TableCell
+                        key={column?.id}> {row[column?.accessor as string] || column?.cell?.(row?.id as number)}  </TableCell>
+                    ))}
+                  </TableRow>
                 ))}
-              </TableRow>
-            ))}
-          </TableBody>
+            </TableBody>)
+          }
         </MuTable>
       </TableContainer>
+      {/* TODO: need to support the Pagination from the backend side*/}
       {/*<TablePagination*/}
       {/*  rowsPerPageOptions={[10, 25, 100]}*/}
       {/*  component="div"*/}

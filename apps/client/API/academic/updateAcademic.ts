@@ -1,6 +1,11 @@
 import { backendInstance } from "../api";
-import { useQuery } from "@tanstack/react-query";
-import { AcademicUpdated } from "./types";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { AcademicCreated, AcademicUpdated } from "./types";
+
+interface useMutationParams {
+  id: number;
+  data: AcademicUpdated;
+}
 
 const updateAcademic = async (id: number, data: AcademicUpdated) => {
   return await backendInstance.put("/users", data, {
@@ -10,6 +15,11 @@ const updateAcademic = async (id: number, data: AcademicUpdated) => {
   });
 };
 
-export const useUpdateAcademic = (id: number, data: AcademicUpdated) => {
-  return useQuery<object, Error>(["academic"], () => updateAcademic(id, data));
+export const useUpdateAcademic = () => {
+  const queryClient = useQueryClient();
+  return useMutation(({ id, data }: useMutationParams) => updateAcademic(id, data), {
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["academic"] });
+    }
+  });
 };

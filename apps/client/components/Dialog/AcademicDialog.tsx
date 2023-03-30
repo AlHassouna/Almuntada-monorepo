@@ -85,7 +85,6 @@ export const AcademicDialog: FC<Props> = ({ handleClose, OnSubmit, isOpen }) => 
     });
 
     const onChangeAutoComplete = (value, event, key?) => {
-      console.log(event, key);
       setAcademicDetail({
         ...academicDetail,
         [key]: event?.value || event?.label
