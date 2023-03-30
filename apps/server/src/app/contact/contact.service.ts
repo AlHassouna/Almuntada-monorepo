@@ -21,7 +21,4 @@ export class ContactService {
   findAll() {
     return this.contactRepository.find();
   }
-
-
 }
-

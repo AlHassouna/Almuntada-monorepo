@@ -1,16 +1,17 @@
-import {IAcademic, SearchData} from './types';
-import {backendInstance} from '../api';
-import {useQuery} from '@tanstack/react-query';
+import { IAcademic } from "./types";
+import { backendInstance } from "../api";
+import { useQuery } from "@tanstack/react-query";
 
 const getAcademicsBySearchTerms = async (
-  data: SearchData
+  data: Record<string, unknown>
 ): Promise<Array<IAcademic>> => {
-  return (await backendInstance.get('/users/search', {
+
+  return (await backendInstance.get("/users/search", {
     params: data
   })).data;
 };
-export const useGetAcademicsBySearchTerms = (data) => {
-  return useQuery<Array<IAcademic>, Error>(['academic'], () =>
-    getAcademicsBySearchTerms(data)
+export const useGetAcademicsBySearchTerms = (filterBy: Record<string, unknown>) => {
+  return useQuery<Array<IAcademic>, Error>(["academics", filterBy], async () =>
+    await getAcademicsBySearchTerms(filterBy)
   );
 };

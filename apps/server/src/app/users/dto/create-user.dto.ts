@@ -1,9 +1,6 @@
-import {ApiProperty} from '@nestjs/swagger';
-import {IsBoolean, IsEmail, IsNotEmpty, IsNumber, IsString, IsUrl, Max, Min} from 'class-validator';
-import {Type} from 'class-transformer';
-import {SubjectDto} from "./create-subject.dto";
-import {CompanyDto} from "./create-company.dto";
-import {CareerDto} from "./create-career.dto";
+import { ApiProperty } from "@nestjs/swagger";
+import { IsBoolean, IsEmail, IsNotEmpty, IsNumber, IsString, IsUrl, Max, Min } from "class-validator";
+import { Type } from "class-transformer";
 
 export class CreateUserDto {
   @ApiProperty()
@@ -15,7 +12,6 @@ export class CreateUserDto {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-
   lastName: string;
 
   @ApiProperty()

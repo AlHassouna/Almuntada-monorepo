@@ -1,9 +1,9 @@
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import {RevealWrapper} from 'next-reveal';
-import Typography from '@mui/material/Typography';
-import {FC} from 'react';
-import {useLocale} from "@myworkspace/system-design";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import { RevealWrapper } from "next-reveal";
+import Typography from "@mui/material/Typography";
+import { FC } from "react";
+import { useLocale } from "@lib/system-design";
 
 interface Props {
   title: string;
@@ -16,9 +16,9 @@ export const MediaCardThirdSection: FC<Props> = ({
                                                    description,
                                                    title,
                                                    subTitle,
-                                                   descriptions,
+                                                   descriptions
                                                  }) => {
-  const locale = useLocale()
+  const locale = useLocale();
   return (
     <RevealWrapper delay={100} duration={2000} reset={true}>
       <Card

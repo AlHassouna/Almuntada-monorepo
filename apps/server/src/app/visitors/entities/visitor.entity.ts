@@ -2,11 +2,10 @@ import {
   Column,
   Entity,
   PrimaryGeneratedColumn,
-  CreateDateColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+  CreateDateColumn
+} from "typeorm";
 
-@Entity('Visitors')
+@Entity("Visitors")
 export class Visitor {
   @PrimaryGeneratedColumn()
   id: number;
@@ -28,8 +27,6 @@ export class Visitor {
 
   @CreateDateColumn()
   createdAt: Date;
-
-
 
 
 }

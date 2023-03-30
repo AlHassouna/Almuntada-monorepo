@@ -1,9 +1,9 @@
-import {FC} from 'react';
-import {RevealWrapper} from 'next-reveal';
-import Typography from '@mui/material/Typography';
-import {AcademicCardBox, HiddenContent} from './card.styled';
-import CardMedia from '@mui/material/CardMedia';
-import {Career, Subject} from "../../API/academic/types";
+import { FC } from "react";
+import { RevealWrapper } from "next-reveal";
+import Typography from "@mui/material/Typography";
+import { AcademicCardBox } from "./card.styled";
+import CardMedia from "@mui/material/CardMedia";
+import { Career, Subject } from "../../API/academic/types";
 
 interface Props {
   firstName: string;
@@ -25,7 +25,7 @@ export const AcademicsCard: FC<Props> = ({
                                            degree,
                                            subject,
                                            career,
-                                           city,
+                                           city
                                          }) => {
   return (
     <RevealWrapper delay={100} duration={2000} reset={true}>
@@ -33,16 +33,16 @@ export const AcademicsCard: FC<Props> = ({
         <CardMedia
           sx={{
             height: 300,
-            filter: 'grayscale(100%)',
-            '&:hover': {
-              transition: 'all 0.5s ease',
-              filter: 'grayscale(0%)',
+            filter: "grayscale(100%)",
+            "&:hover": {
+              transition: "all 0.5s ease",
+              filter: "grayscale(0%)"
             }
           }}
           image={imageUrl}
           title={firstName}
         />
-        <Typography sx={{textAlign: "center"}} gutterBottom variant="h5" component="div">
+        <Typography sx={{ textAlign: "center" }} gutterBottom variant="h5" component="div">
           {`${firstName.toUpperCase()} ${lastName.toUpperCase()}`}
         </Typography>
         <Typography sx={{
@@ -59,13 +59,13 @@ export const AcademicsCard: FC<Props> = ({
         </Typography>
         <Typography
           sx={{
-            textAlign: 'center',
+            textAlign: "center"
           }}
           variant="body2"
           color="text.secondary"
         >
 
-          {`City: ${city}`} <br/>
+          {`City: ${city}`} <br />
           {`Email: ${email}`}
         </Typography>
       </AcademicCardBox>

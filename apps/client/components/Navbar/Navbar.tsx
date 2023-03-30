@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import {useRouter} from 'next/router';
-import {MenuIcon, CloseIcon} from '@myworkspace/system-design';
+import React, { useState } from "react";
+import { useRouter } from "next/router";
+import { MenuIcon, CloseIcon } from "@lib/system-design";
 import Logo from '../../assets/FinalLogo.png';
-import {useIntlShared} from './navbar.consts';
+import { useIntlShared } from "./navbar.consts";
 import {
   NavbarContainer,
   Gradient,

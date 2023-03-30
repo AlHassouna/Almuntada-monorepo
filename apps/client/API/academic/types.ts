@@ -10,6 +10,10 @@ export interface IAcademic {
   gender: string;
   career: Career;
   phone: string;
+  isApproved: boolean;
+  isBlocked: boolean;
+  isAgree: boolean;
+  company: Company;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -38,31 +42,21 @@ export interface Career {
   updatedAt: Date;
 }
 
-export type SearchData = Omit<IAcademic, 'age' | 'imageUrl' | 'phone' | 'createdAt' | 'updatedAt'>;
+export type SearchData = Omit<IAcademic, "age" | "imageUrl" | "phone" | "createdAt" | "updatedAt">;
 
-export type AcademicCreated = Omit<IAcademic, 'createdAt' | 'updatedAt'>;
+export type AcademicCreated = Omit<IAcademic, "createdAt" | "updatedAt">;
 
 export type AcademicField =
-  | 'firstName'
-  | 'lastName'
-  | 'age'
-  | 'imageUrl'
-  | 'email'
-  | 'city'
-  | 'degree'
-  | 'subject'
-  | 'career';
+  | "firstName"
+  | "lastName"
+  | "age"
+  | "imageUrl"
+  | "email"
+  | "city"
+  | "degree"
+  | "subject"
+  | "career";
 
-// export enum degree {
-//   AssociatesDegree,
-//
-//   BachelorsDegree,
-//
-//   MastersDegree,
-//
-//   DoctoralDegree,
-// }
+export type SubjectCreated = Omit<Subject, "createdAt" | "updatedAt">;
 
-export type SubjectCreated = Omit<Subject, 'createdAt' | 'updatedAt'>;
-
-
+export type AcademicUpdated = Partial<IAcademic>
