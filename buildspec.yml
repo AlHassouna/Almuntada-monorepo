@@ -13,10 +13,10 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-  artifacts:
-    files:
-      - apps/**/*
-      - node_modules/**/*
-      - dist/**/*
-      - package.json
+artifacts:
+  files:
+    - apps/**/*
+    - node_modules/**/*
+    - dist/**/*
+    - package.json
 
