@@ -1,0 +1,9 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - curl -o- -L https://yarnpkg.com/install.sh | bash
+  build:
+    commands:
+      - yarn
