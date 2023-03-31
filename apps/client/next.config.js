@@ -23,12 +23,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   webpack: (config, options) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      corejs: 'core-js',
-    };
     config.module.rules.push({
-
       test: /\.(ts|tsx)$/,
       use: [
         {
