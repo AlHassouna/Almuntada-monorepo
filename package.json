@@ -14,6 +14,7 @@
     "test": "npx nx run-many --all --target=test --parallel",
     "build-server": "nx build server",
     "build-nest": "nest build server",
+    "build-client": "nx build client",
     "start:client": "nx run client:serve",
     "start:server": "nx run server:serve",
     "start:prod": "nx run server:serve:prod",
