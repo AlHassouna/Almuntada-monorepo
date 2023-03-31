@@ -15,6 +15,10 @@
       }
     }
   },
+  "no-cloud": {
+    "runner": "@nrwl/workspace/src/tasks-runner/default-tasks-runner",
+    "options": {}
+  },
   "targetDefaults": {
     "build": {
       "dependsOn": [
