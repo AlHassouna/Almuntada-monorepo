@@ -18,7 +18,6 @@ export const Table = <T extends Record<string, unknown>>({
 
                                                          }: ITable<T>) => {
   const {data, isError, isLoading} = handler(filterBy);
-  console.log(data);
   return (
     <Paper sx={style || {width: "100%", overflow: "hidden"}}>
       <Typography variant="h4">{title}</Typography>

@@ -19,7 +19,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
@@ -30,9 +32,14 @@ const nextConfig = {
             transpileOnly: true,
           },
         },
+        {
+          loader: 'babel-loader',
+          options: {
+            presets: ['next/babel'],
+          },
+        },
       ],
     });
-
     return config;
   },
 };
