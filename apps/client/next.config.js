@@ -1,7 +1,7 @@
 //@ts-check
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { withNx } = require('@nrwl/next/plugins/with-nx');
+const {withNx} = require('@nrwl/next/plugins/with-nx');
 
 /**
  * @type {import('@nrwl/next/plugins/with-nx').WithNxOptions}
@@ -21,6 +21,26 @@ const nextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
+  },
+  webpack: (config, options) => {
+    config.module.rules.push({
+      test: /\.(ts|tsx)$/,
+      use: [
+        {
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true,
+          },
+        },
+        {
+          loader: 'babel-loader',
+          options: {
+            presets: ['next/babel'],
+          },
+        },
+      ],
+    });
+    return config;
   },
 };
 

@@ -3,9 +3,8 @@ name: Deploy to EC2 instance
 on:
   push:
     branches:
-      develop 
+      feat/021-backend-prod 
 
-# Install all pre in ec2 manully
 jobs:
   deploy:
     runs-on: ubuntu-latest
