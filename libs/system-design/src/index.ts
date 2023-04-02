@@ -5,3 +5,4 @@ export * from "./lib/locale/locale";
 export * from "./lib/Table/index";
 export * from './lib/slideshow/slide';
 export * from './lib/Select/index';
+export * from './lib/Cloudinary/index';
