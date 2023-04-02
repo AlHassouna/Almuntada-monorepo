@@ -15,9 +15,6 @@ export class Podcast {
   title: string;
 
   @Column()
-  description: string;
-
-  @Column()
   podcastUrl: string;
 
   @CreateDateColumn()

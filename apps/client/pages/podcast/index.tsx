@@ -1,12 +1,17 @@
 import {FC} from "react";
-import {MainContainer} from "../../styled/home.styled";
 
+import {DescPodcast} from '../../sections/DescPodcast'
+import PodcastCard from "../../components/Podcast/PodcastCard";
+import {useGetPodcast} from "../../API/podcast/getPodcasts";
 
 const Podcast: FC = () => {
+  const {data} = useGetPodcast();
   return (
-    <MainContainer>
-
-    </MainContainer>
+    <>
+      <DescPodcast/>
+      <PodcastCard title={data[0].title}
+                   podcastUrl={data[0].podcastUrl}/>
+    </>
   )
 }
 

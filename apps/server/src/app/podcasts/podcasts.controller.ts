@@ -10,17 +10,26 @@ import {
 
 import {PodcastsService} from './podcasts.service';
 import {CreatePodcastDto} from './dto/create-podcast.dto';
+import aws from 'aws-sdk';
 import {
   ApiBadRequestResponse,
   ApiCreatedResponse,
   ApiTags,
 } from '@nestjs/swagger';
+import * as process from "process";
+
+const config = {
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  region: process.env.AWS_REGION,
+}
 
 @ApiTags('Podcasts')
 @Controller('podcasts')
 export class PodcastsController {
   constructor(private readonly podcastsService: PodcastsService) {
   }
+
 
   @Post()
   @UsePipes(ValidationPipe)
@@ -34,11 +43,32 @@ export class PodcastsController {
     return this.podcastsService.create(createPodcastDto);
   }
 
+
   @Get()
   async getPodcasts() {
     const podcasts = await this.podcastsService.findAll();
     return podcasts;
   }
+
+  @Get('fromS3')
+  async getPodcastsKeyFromS3() {
+    try {
+      const s3 = new aws.S3(config);
+      const params = {
+        Bucket: process.env.AWS_BUCKET_NAME,
+        MaxKeys: 10,
+      };
+      const data = await s3.listObjectsV2(params).promise();
+      const createPodcast = {
+        title: data.Contents[0].Key,
+        podcastUrl: process.env.AWS_CLOUDFRONT_URL + data.Contents[0].Key,
+      }
+      return this.create(createPodcast);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
 
   @Get(':id')
   findOne(@Param('id') id: string) {
