@@ -1,5 +1,5 @@
-name: Build Backend
-on: [ push, pull_request ]
+name: Build Frontend
+on: [ pull_request ]
 jobs:
   build:
     strategy:
@@ -19,5 +19,5 @@ jobs:
         run: yarn install
       - name: Yarn ci
         run: yarn install --frozen-lockfile
-      - name: Build server
+      - name: Build client
         run: yarn build-client

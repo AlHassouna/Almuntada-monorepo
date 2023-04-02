@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="feat: start first ci-cd">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/build-frontend.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/node.js.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build-backend.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/build-backend.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build-backend.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/build-frontend.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build-frontend.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680455044954</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat: start first ci-cd">
+      <created>1680455328478</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1680455328478</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
