@@ -7,7 +7,7 @@ import {
   TableBody,
   Paper, Skeleton, Typography
 } from "@mui/material";
-import { IColumns, ITable } from "./types";
+import {IColumns, ITable} from "./types";
 
 export const Table = <T extends Record<string, unknown>>({
                                                            columns,
@@ -17,11 +17,10 @@ export const Table = <T extends Record<string, unknown>>({
                                                            title
 
                                                          }: ITable<T>) => {
-  const { data, isError, isLoading } = handler(filterBy);
-  console.log(data);
-  if (isLoading) return <Skeleton />;
+  const {data, isError, isLoading} = handler(filterBy);
+  if (isLoading) return <Skeleton/>;
   return (
-    <Paper sx={style || { width: "100%", overflow: "hidden" }}>
+    <Paper sx={style || {width: "100%", overflow: "hidden"}}>
       <Typography variant="h4">{title}</Typography>
       <TableContainer>
         <MuTable>
@@ -36,7 +35,7 @@ export const Table = <T extends Record<string, unknown>>({
               ))}
             </TableRow>
           </TableHead>
-          {isLoading ? (<Skeleton />) :
+          {isLoading ? (<Skeleton/>) :
             (<TableBody>
               {
                 data?.map((row, index) => (

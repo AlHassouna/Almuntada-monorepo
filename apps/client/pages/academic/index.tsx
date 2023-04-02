@@ -1,26 +1,26 @@
-import { FC, useState } from "react";
-import { AcademicsCard } from "../../components/Card/AcademicsCard";
-import { CardContainer, ImageContainer } from "../../styled/academics.styled";
-import { AcademicDialog } from "../../components/Dialog/AcademicDialog";
-import { AcademicDialogLogic } from "../../components/Dialog/dialogLogic";
-import { MainSection, MainContainer } from "../../styled/home.styled";
-import { useLocale } from "@lib/system-design";
-import { Button, Typography } from "@mui/material";
-import { useIntl } from "react-intl";
+import {FC, useState} from "react";
+import {AcademicsCard} from "../../components/Card/AcademicsCard";
+import {CardContainer, ImageContainer} from "../../styled/academics.styled";
+import {AcademicDialog} from "../../components/Dialog/AcademicDialog";
+import {AcademicDialogLogic} from "../../components/Dialog/dialogLogic";
+import {MainSection, MainContainer} from "../../styled/home.styled";
+import {useLocale} from "@lib/system-design";
+import {Button, Typography} from "@mui/material";
+import {useIntl} from "react-intl";
 import styled from "styled-components";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../utils/motion";
-import { useGetAcademicsBySearchTerms } from "../../API/academic/searchAcademic";
-import { AutoComplete } from "@lib/system-design";
-import { dataToSelectOptions } from "@lib/shared-hooks";
-import { getCityList } from "@lib/shared-types";
-import { ListOptions } from "../../components/Dialog/optionAcademic";
+import {motion} from "framer-motion";
+import {fadeIn} from "../../utils/motion";
+import {useGetAcademicsBySearchTerms} from "../../API/academic/searchAcademic";
+import {AutoComplete} from "@lib/system-design";
+import {dataToSelectOptions} from "@lib/shared-hooks";
+import {getCityList} from "@lib/shared-types";
+import {ListOptions} from "../../components/Dialog/optionAcademic";
 
 const Academic: FC = () => {
 
   const intl = useIntl();
-  const { data } = useGetAcademicsBySearchTerms(
-    { isApproved: true }
+  const {data} = useGetAcademicsBySearchTerms(
+    {isApproved: true}
   );
   const locale = useLocale();
   const [selectedFilter, setSelectedFilter] = useState({
@@ -34,9 +34,9 @@ const Academic: FC = () => {
       [key]: event?.value || event?.label
     });
   };
-  const { isOpen, onClose, onOpen, OnSubmit } = AcademicDialogLogic();
+  const {isOpen, onClose, onOpen, OnSubmit} = AcademicDialogLogic();
   const citiesOption = dataToSelectOptions(getCityList, "label", "label");
-  const { subjectsOptions } = ListOptions();
+  const {subjectsOptions} = ListOptions();
 
   const filteredData = data?.filter((item) => {
       if (!selectedFilter.city && !selectedFilter.subject) {
@@ -54,14 +54,14 @@ const Academic: FC = () => {
     <MainContainer dir={locale}>
       <ImageContainer>
         <Typography className="text-center" variant="h3" color="white">
-          {intl.formatMessage({ id: "academicpage.title" })}
+          {intl.formatMessage({id: "academicpage.title"})}
         </Typography>
         <Typography className="text-center" variant="h4" color="white">
-          {intl.formatMessage({ id: "academicpage.sub.title" })}
+          {intl.formatMessage({id: "academicpage.sub.title"})}
         </Typography>
 
         <StyledButton variant="outlined" onClick={onOpen}>
-          {intl.formatMessage({ id: "academicpage.button" })}
+          {intl.formatMessage({id: "academicpage.button"})}
         </StyledButton>
         {isOpen && (
           <AcademicDialog
@@ -90,7 +90,7 @@ const Academic: FC = () => {
           <AutoComplete
             w="300px"
             onChange={(v, e) => onChangeAutoComplete(v, e, "subject")}
-            data={subjectsOptions || Array({ value: "", label: "" })}
+            data={subjectsOptions || Array({value: "", label: ""})}
             value={selectedFilter.subject}
             freeSolo={false}
             label={String(intl.messages["academicpage.dialog.subject"])}
@@ -132,4 +132,4 @@ const StyledButton = styled(Button)`
   }
 `;
 
-export { StyledButton };
+export {StyledButton};

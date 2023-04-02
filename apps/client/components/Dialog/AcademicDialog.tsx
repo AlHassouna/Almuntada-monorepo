@@ -8,20 +8,22 @@ import {
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import { Formik, Field, ErrorMessage } from "formik";
-import { FC, useState } from "react";
+import {Formik, Field, ErrorMessage} from "formik";
+import {FC, useState} from "react";
 import * as Yup from "yup";
-import { useIntl } from "react-intl";
-import { useLocale } from "@lib/system-design";
-import { StyledForm } from "../../styled/academics.styled";
-import { StyledButton } from "../../pages/academic";
+import {useIntl} from "react-intl";
+import {useLocale} from "@lib/system-design";
+import {StyledForm} from "../../styled/academics.styled";
+import {StyledButton} from "../../pages/academic";
 import styled from "styled-components";
-import { AutoComplete, GenericSelect } from "@lib/system-design";
-import { ListOptions } from "./optionAcademic";
-import { dataToSelectOptions } from "@lib/shared-hooks";
-import { getDegreeList } from "@lib/shared-types";
-import { SelectChangeEvent } from "@mui/material/Select";
-import { getCityList } from "@lib/shared-types";
+import {AutoComplete, GenericSelect} from "@lib/system-design";
+import {ListOptions} from "./optionAcademic";
+import {dataToSelectOptions} from "@lib/shared-hooks";
+import {getDegreeList} from "@lib/shared-types";
+import {SelectChangeEvent} from "@mui/material/Select";
+import {getCityList} from "@lib/shared-types";
+import {FileUpload} from '@lib/system-design'
+import * as process from "process";
 
 interface Props {
   handleClose: () => void;
@@ -29,8 +31,8 @@ interface Props {
   isOpen: boolean;
 }
 
-export const AcademicDialog: FC<Props> = ({ handleClose, OnSubmit, isOpen }) => {
 
+export const AcademicDialog: FC<Props> = ({handleClose, OnSubmit, isOpen}) => {
     const initialValues = {
       firstName: "",
       lastName: "",
@@ -54,12 +56,11 @@ export const AcademicDialog: FC<Props> = ({ handleClose, OnSubmit, isOpen }) => 
         name: "Female"
       }
     ];
-
     const genderOption = dataToSelectOptions(genderList, "name", "id");
     const degreeOption = dataToSelectOptions(getDegreeList, "name", "id");
     const citiesOption = dataToSelectOptions(getCityList, "label", "label");
     const intl = useIntl();
-    const { subjectsOptions, companiesOptions, careersOptions } = ListOptions();
+    const {subjectsOptions, companiesOptions, careersOptions} = ListOptions();
     const required = intl.messages["academicpage.dialog.required"];
     const nameRegexWithSpaces = /^[a-zA-Z ]+$/;
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -76,7 +77,7 @@ export const AcademicDialog: FC<Props> = ({ handleClose, OnSubmit, isOpen }) => 
       gender: "",
       company: ""
     });
-
+    const [imageUrl, setImageUrl] = useState("");
     const validationSchema = Yup.object().shape({
       firstName: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
       lastName: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
@@ -97,7 +98,6 @@ export const AcademicDialog: FC<Props> = ({ handleClose, OnSubmit, isOpen }) => 
         [key]: event.target?.value || event
       });
     };
-
     const locale = useLocale();
     return (
       <StyledDialog maxWidth="sm" fullWidth open={isOpen} onClose={handleClose} className={locale}>
@@ -116,65 +116,67 @@ export const AcademicDialog: FC<Props> = ({ handleClose, OnSubmit, isOpen }) => 
               degree: academicDetail.degree,
               gender: academicDetail.gender,
               isAgree: checked,
+              imageUrl: imageUrl,
               company: academicDetail?.company,
               career: academicDetail?.career
             })}
           >
-            {({ handleSubmit }) => {
+            {({handleSubmit}) => {
               return (
                 <StyledForm onSubmit={handleSubmit}>
                   <Field name="firstName" type="text" as={TextField}
-                         label={intl.messages["academicpage.dialog.first.name"]} />
-                  <ErrorMessage name="firstName" />
+                         label={intl.messages["academicpage.dialog.first.name"]}/>
+                  <ErrorMessage name="firstName"/>
                   <Field name="lastName" type="text" as={TextField}
-                         label={intl.messages["academicpage.dialog.last.name"]} />
-                  <ErrorMessage name="lastName" />
-                  <Field name="age" type="number" as={TextField} label={intl.messages["academicpage.dialog.age"]} />
-                  <ErrorMessage name="age" />
-                  <Field name="imageUrl" type="text" as={TextField}
-                         label={intl.messages["academicpage.dialog.imageurl"]} />
-                  <ErrorMessage name="imageUrl" />
-                  <Field name="email" type="email" as={TextField} label={intl.messages["academicpage.dialog.email"]} />
-                  <ErrorMessage name="email" />
+                         label={intl.messages["academicpage.dialog.last.name"]}/>
+                  <ErrorMessage name="lastName"/>
+                  <Field name="age" type="number" as={TextField} label={intl.messages["academicpage.dialog.age"]}/>
+                  <ErrorMessage name="age"/>
+                  <Field name="email" type="email" as={TextField} label={intl.messages["academicpage.dialog.email"]}/>
+                  <ErrorMessage name="email"/>
                   <Field name="city" type="text" as={AutoComplete}
                          onChange={(v, e) => onChangeAutoComplete(v, e, "city")}
                          data={citiesOption}
                          freeSolo={false}
                          value={academicDetail.city}
                          label={intl.messages["academicpage.dialog.city"]}></Field>
-                  <ErrorMessage name="city" />
+                  <ErrorMessage name="city"/>
                   <Field name="degree" type="text" as={GenericSelect} label={intl.messages["academicpage.dialog.degree"]}
                          data={degreeOption}
-                         value={academicDetail.degree} onChange={(v) => onChangeSelect(v, "degree")} />
-                  <ErrorMessage name="degree" />
+                         value={academicDetail.degree} onChange={(v) => onChangeSelect(v, "degree")}/>
+                  <ErrorMessage name="degree"/>
                   <Field name="subject" type="text" as={AutoComplete} value={academicDetail.subject}
                          onChange={(v, e) => onChangeAutoComplete(v, e, "subject")}
                          data={subjectsOptions}
                          freeSolo={true}
-                         label={intl.messages["academicpage.dialog.subject"]} />
-                  <ErrorMessage name="subject" />
+                         label={intl.messages["academicpage.dialog.subject"]}/>
+                  <ErrorMessage name="subject"/>
                   <Field name="company" type="text" as={AutoComplete} value={academicDetail.company}
                          onChange={(v, e) => onChangeAutoComplete(v, e, "company")}
                          data={companiesOptions}
                          freeSolo={true}
-                         label={intl.messages["academicpage.dialog.company"]} />
-                  <ErrorMessage name="company" />
+                         label={intl.messages["academicpage.dialog.company"]}/>
+                  <ErrorMessage name="company"/>
                   <Field name="career" type="text" as={AutoComplete} value={academicDetail.career}
                          onChange={(v, e) => onChangeAutoComplete(v, e, "career")}
                          freeSolo={true}
-                         data={careersOptions} label={intl.messages["academicpage.dialog.job"]} />
-                  <ErrorMessage name="career" />
+                         data={careersOptions} label={intl.messages["academicpage.dialog.job"]}/>
+                  <ErrorMessage name="career"/>
                   <Field name="gender" className="gender" type="text" as={GenericSelect}
                          data={genderOption}
                          label={intl.messages["academicpage.dialog.sex"]} value={academicDetail.gender}
-                         onChange={(v, e) => onChangeSelect(v, "gender")} />
-                  <ErrorMessage name="gender" />
+                         onChange={(v, e) => onChangeSelect(v, "gender")}/>
+                  <ErrorMessage name="gender"/>
                   <Field name="phone" type="text" as={TextField}
-                         label={intl.messages["academicpage.dialog.phone"]} />
-                  <ErrorMessage name="phone" />
+                         label={intl.messages["academicpage.dialog.phone"]}/>
+                  <ErrorMessage name="phone"/>
+                  <Field name="imageUrl" type="text" as={FileUpload}
+                         setUrl={setImageUrl}
+                         label={intl.messages["academicpage.dialog.imageurl"]}/>
+                  <ErrorMessage name="imageUrl"/>
                   <Field type="checkbox" name="isAgree" as={FormGroup}>
                     <FormControlLabel
-                      control={<Checkbox checked={checked} onChange={handleChange} name="isAgree" />}
+                      control={<Checkbox checked={checked} onChange={handleChange} name="isAgree"/>}
                       label={intl.messages["academicpage.dialog.checkbox"]}
                     />
                   </Field>
