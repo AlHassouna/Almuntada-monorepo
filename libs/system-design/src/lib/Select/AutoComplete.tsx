@@ -41,7 +41,7 @@ export const AutoComplete: FC<Props> = ({label, value, onChange, data, freeSolo,
 
   const filterOptions = (options: SelectOptionType[], params: any) => {
     const filtered = filter(options, params);
-    const isExisting = options?.some((option: SelectOptionType) => option.label === params.inputValue);
+    const isExisting = options?.some((option) => option.label === params.inputValue);
     if (!isExisting && params.inputValue !== "") {
       filtered?.push({
         inputValue: params.inputValue,
@@ -62,23 +62,24 @@ export const AutoComplete: FC<Props> = ({label, value, onChange, data, freeSolo,
     }
   );
 
-  return <Autocomplete
-    sx={{width: w}}
-    value={value}
-    onChange={onChange}
-    filterOptions={freeSolo ? filterOptions : undefined}
-    selectOnFocus
-    id="free_solo"
-    clearOnBlur
-    handleHomeEndKeys
-    options={freeSolo ? data : options?.sort((a, b) => -b?.firstLetter?.localeCompare(a?.firstLetter))}
-    getOptionLabel={getOptionLabel}
-    renderOption={freeSolo ? (props, option: SelectOptionType) => <li {...props}>{option.label}</li> : undefined}
-    freeSolo={freeSolo}
-    groupBy={!freeSolo ? (option: SelectOptionType) => option?.firstLetter as string : undefined}
-    renderInput={(params) => <TextField {...params} label={label}/>}
-  />
-
+  return (
+    <Autocomplete
+      sx={{width: w}}
+      onChange={onChange}
+      filterOptions={freeSolo ? filterOptions : undefined}
+      selectOnFocus
+      id="free_solo"
+      clearOnBlur
+      handleHomeEndKeys
+      isOptionEqualToValue={(option, value) => option?.value === value?.value}
+      options={freeSolo ? data : options?.sort((a, b) => -b?.firstLetter?.localeCompare(a?.firstLetter))}
+      getOptionLabel={getOptionLabel}
+      renderOption={freeSolo ? (props, option) => <li {...props}>{option.label}</li> : undefined}
+      freeSolo={freeSolo}
+      groupBy={!freeSolo ? (option) => option?.firstLetter as string : undefined}
+      renderInput={(params) => <TextField {...params} label={label}/>}
+    />
+  );
 };
 
 export default Select;
