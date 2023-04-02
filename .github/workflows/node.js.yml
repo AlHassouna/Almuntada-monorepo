@@ -1,9 +1,5 @@
 name: Build Backend
-on:
-  push:
-    branches:
-      - develop
-      - feature/*
+on: [ push, pull_request ]
 jobs:
   build:
     strategy:
