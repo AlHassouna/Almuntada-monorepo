@@ -18,7 +18,7 @@ import {StyledButton} from "../../pages/academic";
 import styled from "styled-components";
 import {AutoComplete, GenericSelect} from "@lib/system-design";
 import {ListOptions} from "./optionAcademic";
-import {dataToSelectOptions} from "@lib/shared-hooks";
+import {DataToSelectOptions} from "@lib/shared-hooks";
 import {getDegreeList} from "@lib/shared-types";
 import {SelectChangeEvent} from "@mui/material/Select";
 import {getCityList} from "@lib/shared-types";
@@ -56,9 +56,9 @@ export const AcademicDialog: FC<Props> = ({handleClose, OnSubmit, isOpen}) => {
         name: "Female"
       }
     ];
-    const genderOption = dataToSelectOptions(genderList, "name", "id");
-    const degreeOption = dataToSelectOptions(getDegreeList, "name", "id");
-    const citiesOption = dataToSelectOptions(getCityList, "label", "label");
+    const genderOption = DataToSelectOptions(genderList, "name", "id");
+    const degreeOption = DataToSelectOptions(getDegreeList, "name", "id");
+    const citiesOption = DataToSelectOptions(getCityList, "label", "label");
     const intl = useIntl();
     const {subjectsOptions, companiesOptions, careersOptions} = ListOptions();
     const required = intl.messages["academicpage.dialog.required"];

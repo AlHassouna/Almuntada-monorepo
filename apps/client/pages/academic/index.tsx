@@ -12,7 +12,7 @@ import {motion} from "framer-motion";
 import {fadeIn} from "../../utils/motion";
 import {useGetAcademicsBySearchTerms} from "../../API/academic/searchAcademic";
 import {AutoComplete} from "@lib/system-design";
-import {dataToSelectOptions} from "@lib/shared-hooks";
+import {DataToSelectOptions} from "@lib/shared-hooks";
 import {getCityList} from "@lib/shared-types";
 import {ListOptions} from "../../components/Dialog/optionAcademic";
 
@@ -35,7 +35,7 @@ const Academic: FC = () => {
     });
   };
   const {isOpen, onClose, onOpen, OnSubmit} = AcademicDialogLogic();
-  const citiesOption = dataToSelectOptions(getCityList, "label", "label");
+  const citiesOption = DataToSelectOptions(getCityList, "label", "label");
   const {subjectsOptions} = ListOptions();
 
   const filteredData = data?.filter((item) => {
