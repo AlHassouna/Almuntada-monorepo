@@ -4,22 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ebffd12-c487-4da2-aff9-ffdb30b7f5fd" name="Changes" comment="feat: prep for prod">
+    <list default="true" id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="fix: fixing console problems and upload image to cloudinary">
+      <change afterPath="$PROJECT_DIR$/apps/client/sections/DescPodcast.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/lang/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/lang/ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/podcast/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/podcast/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
-      </list>
-    </option>
   </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
@@ -32,7 +27,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="2N5RatdSaiQ5mykw5iWyxXzig3Z" />
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectId" id="2N1CL9ABDNay1nLnvWKKHxxrGJU" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -42,122 +40,111 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/apps/client/public&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
     &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/apps/client/public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/libs/shared-hooks/src/lib/helpFunc" />
-      <recent name="$PROJECT_DIR$/apps/client/components/Dialog" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/apps/server" />
-      <recent name="$PROJECT_DIR$/apps/client/public" />
+      <recent name="$PROJECT_DIR$/apps/client" />
     </key>
+  </component>
+  <component name="RunManager" selected="npm.start:server">
+    <configuration name="start:client" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:client" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.start:server" />
+      <item itemvalue="npm.start:client" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start:client" />
+        <item itemvalue="npm.start:server" />
+        <item itemvalue="npm.start:client" />
+        <item itemvalue="npm.start:server" />
+        <item itemvalue="npm.start:server" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8ebffd12-c487-4da2-aff9-ffdb30b7f5fd" name="Changes" comment="" />
-      <created>1678952031012</created>
+      <changelist id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="" />
+      <created>1678822151227</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1678952031012</updated>
-      <workItem from="1678952033797" duration="76496000" />
-      <workItem from="1679477094925" duration="13682000" />
-      <workItem from="1679502186379" duration="27413000" />
-      <workItem from="1679833554930" duration="989000" />
-      <workItem from="1679834564341" duration="30462000" />
-      <workItem from="1679916620983" duration="4590000" />
-      <workItem from="1679922439156" duration="45967000" />
+      <updated>1678822151227</updated>
+      <workItem from="1678822153821" duration="38000" />
+      <workItem from="1678822206805" duration="220000" />
+      <workItem from="1678822441431" duration="834000" />
     </task>
-    <task id="LOCAL-00001" summary="feat: re-styling and managing">
-      <created>1678985258591</created>
+    <task id="LOCAL-00001" summary="fix: resolve issue and conflict">
+      <created>1680094738832</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1678985258591</updated>
+      <updated>1680094738832</updated>
     </task>
-    <task id="LOCAL-00002" summary="rearrange the code">
-      <created>1680010920575</created>
+    <task id="LOCAL-00002" summary="fix: fixing console problems and upload image to cloudinary">
+      <created>1680429398129</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1680010920575</updated>
+      <updated>1680429398129</updated>
     </task>
-    <task id="LOCAL-00003" summary="fix: responsive styling">
-      <created>1680011808747</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1680011808747</updated>
-    </task>
-    <task id="LOCAL-00004" summary="fix: responsive styling in academic page">
-      <created>1680012656193</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1680012656193</updated>
-    </task>
-    <task id="LOCAL-00005" summary="fix: generic autocomplete function">
-      <created>1680082275348</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1680082275348</updated>
-    </task>
-    <task id="LOCAL-00006" summary="fix: removing comments and unnecessary components">
-      <created>1680089176832</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1680089176832</updated>
-    </task>
-    <task id="LOCAL-00007" summary="fix: motion-framer syntax">
-      <created>1680090491499</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1680090491499</updated>
-    </task>
-    <task id="LOCAL-00008" summary="feat: prep for prod">
-      <created>1680176532060</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1680176532060</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: re-styling and managing" />
-    <MESSAGE value="rearrange the code" />
-    <MESSAGE value="fix: responsive styling" />
+    <MESSAGE value="fix: resolve the table issue" />
     <MESSAGE value="fix: responsive styling in academic page" />
-    <MESSAGE value="fix: generic autocomplete function" />
-    <MESSAGE value="fix: removing comments and unnecessary components" />
-    <MESSAGE value="fix: motion-framer syntax" />
-    <MESSAGE value="feat: prep for prod" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: prep for prod" />
+    <MESSAGE value="fix: resolve issue and conflict" />
+    <MESSAGE value="fix: fixing console problems and upload image to cloudinary" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: fixing console problems and upload image to cloudinary" />
   </component>
 </project>

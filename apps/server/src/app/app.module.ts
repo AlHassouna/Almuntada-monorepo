@@ -6,11 +6,14 @@ import {AppController} from './app.controller';
 import {AppService} from './app.service';
 import {PodcastsModule} from './podcasts/podcasts.module';
 import {ContactModule} from "./contact/contact.module";
+import {PimagesModule} from './pimages/pimages.module';
+
 @Module({
   imports: [
     UserModule,
     PodcastsModule,
     ContactModule,
+    PimagesModule,
     ConfigModule.forRoot({isGlobal: true, envFilePath: '.env'}),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],

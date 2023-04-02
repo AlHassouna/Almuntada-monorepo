@@ -12,18 +12,6 @@ export class CreatePodcastDto {
   @IsString()
   title: string;
 
-  // Description //
-
-  @ApiProperty({
-    description: 'The description of the podcast',
-    example: 'The Description',
-  })
-  @IsNotEmpty()
-  @IsString()
-
-  description: string;
-
-
   // Index Url //
 
 

@@ -9,29 +9,20 @@ import {
 import {Typography} from "@material-ui/core";
 import {motion} from "framer-motion";
 import {useRouter} from "next/router";
+import {IPimages} from "../../API/pimages/types";
 
 interface Props {
-  slides: Array<Slide>;
+  slides: Array<IPimages>;
   autoplay?: boolean;
   delay?: number;
-  onClick?: () => void;
 }
 
-interface Slide {
-  title: string;
-  description: string;
-  image: string;
-  button: {
-    text: string;
-    link: string;
-  };
-}
 
 const Slideshow: FC<Props> = ({
                                 slides,
                                 autoplay,
                                 delay,
-                                onClick
+
                               }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const router = useRouter();
@@ -61,13 +52,13 @@ const Slideshow: FC<Props> = ({
   return (
     <SlideshowContainer>
       <motion.div
-        key={currentSlide.image}
+        key={currentSlide.imgUrl}
         variants={imageVariants}
         animate="animate"
         transition={{duration: 1}}
       >
         <SlideshowImage>
-          <SliderImage property={currentSlide.image}
+          <SliderImage property={currentSlide.imgUrl}
           />
         </SlideshowImage>
 
@@ -85,15 +76,15 @@ const Slideshow: FC<Props> = ({
           <Typography variant="h2">
             {currentSlide.title}
           </Typography>
-          <Typography variant="h4">
-            {currentSlide.description}
-          </Typography>
-          <MuiButton variant="contained" color="primary"
-                     onClick={currentSlide.button.link ? () => router.push(currentSlide.button.link) : onClick
+          {/*<Typography variant="h4">*/}
+          {/*  {currentSlide.description}*/}
+          {/*</Typography>*/}
+          {/*<MuiButton variant="contained" color="primary"*/}
+          {/*           onClick={currentSlide.button.link ? () => router.push(currentSlide.button.link) : onClick*/}
 
-                     }>
-            {currentSlide.button.text}
-          </MuiButton>
+          {/*           }>*/}
+          {/*  {currentSlide.button.text}*/}
+          {/*</MuiButton>*/}
         </SlideshowText>
       </motion.div>
     </SlideshowContainer>
