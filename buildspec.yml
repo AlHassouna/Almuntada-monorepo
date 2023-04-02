@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+  pre_build:
+    commands:
+      - curl -o- -L https://yarnpkg.com/install.sh | bash
+  build:
+    commands:
+      - yarn
+      - yarn build-server
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - apps/**/*
+    - node_modules/**/*
+    - dist/**/*
+    - package.json
+    - Procfile
+

@@ -5,7 +5,7 @@ import {
   TableRow,
   TableCell,
   TableBody,
-  Paper, Skeleton, Typography
+  Paper, Typography
 } from "@mui/material";
 import {IColumns, ITable} from "./types";
 
@@ -18,7 +18,6 @@ export const Table = <T extends Record<string, unknown>>({
 
                                                          }: ITable<T>) => {
   const {data, isError, isLoading} = handler(filterBy);
-  if (isLoading) return <Skeleton/>;
   return (
     <Paper sx={style || {width: "100%", overflow: "hidden"}}>
       <Typography variant="h4">{title}</Typography>
@@ -35,19 +34,18 @@ export const Table = <T extends Record<string, unknown>>({
               ))}
             </TableRow>
           </TableHead>
-          {isLoading ? (<Skeleton/>) :
-            (<TableBody>
-              {
-                data?.map((row, index) => (
-                  <TableRow key={index}>
-                    {columns?.map((column) => (
-                      <TableCell
-                        key={column?.id}> {row[column?.accessor as string] || column?.cell?.(row?.id as number)}  </TableCell>
-                    ))}
-                  </TableRow>
+          (<TableBody>
+          {
+            data?.map((row: any, index: any) => (
+              <TableRow key={index}>
+                {columns?.map((column) => (
+                  <TableCell
+                    key={column?.id}> {row[column?.accessor as string] || column?.cell?.(row?.id as number)}  </TableCell>
                 ))}
-            </TableBody>)
-          }
+              </TableRow>
+            ))}
+        </TableBody>)
+
         </MuTable>
       </TableContainer>
       {/* TODO: need to support the Pagination from the backend side*/}
