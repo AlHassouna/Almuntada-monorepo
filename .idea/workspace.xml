@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="feat: start first ci-cd">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/node.js.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/node.js.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/build-frontend.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/node.js.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build-backend.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +47,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "code.cleanup.on.save": "true",
-    "last_opened_file_path": "/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/apps/client/public",
+    "last_opened_file_path": "/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/.github",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -59,6 +60,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.github" />
       <recent name="$PROJECT_DIR$/apps/client/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -215,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680454917500</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat: start first ci-cd">
+      <created>1680455044954</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1680455044954</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
