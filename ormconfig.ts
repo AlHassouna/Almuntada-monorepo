@@ -9,7 +9,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   port: 5432,
   host: DB_HOST,
   database: DB_NAME,
-  autoLoadEntities: true,
+  autoLoadEntities: false,
   synchronize: true,
   entities: [__dirname + '/../**/*.entity.{js,ts}'],
   migrations: [__dirname + '/../migrations/*.{js,ts}'],
