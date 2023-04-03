@@ -109,6 +109,7 @@
     "@nrwl/webpack": "15.8.5",
     "@nrwl/workspace": "15.8.5",
     "@testing-library/react": "13.4.0",
+    "@types/aws-sdk": "^2.7.0",
     "@types/faker": "^6.6.9",
     "@types/jest": "^29.4.0",
     "@types/node": "18.11.9",
