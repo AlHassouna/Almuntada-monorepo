@@ -1,11 +1,14 @@
-name: 'Auto Assign'
+name: pull-request
 on:
   pull_request:
-    types: [ opened, ready_for_review ]
-
+    types: [ opened, reopened ]
 jobs:
-  add-reviews:
+  assign:
     runs-on: ubuntu-latest
     steps:
-      - uses: kentaro-m/auto-assign-action@v1.2.5
+      - uses: delivery-much/actions-assigner@v1
+        with:
+          token: ${{ secrets.testToken }}
+          team-reviewers: backend
 
+#  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
