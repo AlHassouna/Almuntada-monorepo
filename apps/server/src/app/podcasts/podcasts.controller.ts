@@ -56,7 +56,6 @@ export class PodcastsController {
       const s3 = new S3Client(config);
       const command = new ListObjectsV2Command({
         Bucket: process.env.AWS_BUCKET_NAME,
-        MaxKeys: 10,
       });
       const data = await s3.send(command);
       const createPodcast = {
