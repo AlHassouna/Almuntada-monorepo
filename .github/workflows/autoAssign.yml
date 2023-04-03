@@ -1,7 +1,5 @@
 name: pull-request
-on:
-  pull_request:
-    types: [ opened, reopened ]
+on: [ pull_request ]
 jobs:
   assign:
     runs-on: ubuntu-latest
@@ -10,5 +8,3 @@ jobs:
         with:
           token: ${{ secrets.testToken }}
           team-reviewers: backend
-
-#  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
