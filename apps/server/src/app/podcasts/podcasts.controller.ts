@@ -10,7 +10,7 @@ import {
 
 import {PodcastsService} from './podcasts.service';
 import {CreatePodcastDto} from './dto/create-podcast.dto';
-import aws from 'aws-sdk';
+import {S3Client, ListObjectsV2Command} from "@aws-sdk/client-s3"
 import {
   ApiBadRequestResponse,
   ApiCreatedResponse,
@@ -53,12 +53,12 @@ export class PodcastsController {
   @Get('fromS3')
   async getPodcastsKeyFromS3() {
     try {
-      const s3 = new aws.S3(config);
-      const params = {
+      const s3 = new S3Client(config);
+      const command = new ListObjectsV2Command({
         Bucket: process.env.AWS_BUCKET_NAME,
         MaxKeys: 10,
-      };
-      const data = await s3.listObjectsV2(params).promise();
+      });
+      const data = await s3.send(command);
       const createPodcast = {
         title: data.Contents[0].Key,
         podcastUrl: process.env.AWS_CLOUDFRONT_URL + data.Contents[0].Key,
