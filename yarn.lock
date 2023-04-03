@@ -4144,6 +4144,22 @@ aws-sdk@^2.1348.0:
     uuid "8.0.0"
     xml2js "0.4.19"
 
+aws-sdk@^2.1348.0:
+  version "2.1348.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1348.0.tgz#edc5d40e59ece4c2c2b2e01629f159c2f2be5f9f"
+  integrity sha512-nyqAuSsrvXdDcumC8/a3XGn7Zd7u2ucroz9ZwvNkMC+V6L7pRxnNKzSZDgKw+vCfjrpHFyCsXyribqfNUpolDA==
+  dependencies:
+    buffer "4.9.2"
+    events "1.1.1"
+    ieee754 "1.1.13"
+    jmespath "0.16.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    util "^0.12.4"
+    uuid "8.0.0"
+    xml2js "0.4.19"
+
 aws-sign2@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -7711,6 +7727,11 @@ is-wsl@^2.2.0:
   integrity sha512-fKzAra0rGJUUBwGBgNkHZuToZcn+TtXHpeCgmkMJMMYx1sQDYaCSyjJBSCa2nH1DGm7s3n1oBnohoVTBaN7Lww==
   dependencies:
     is-docker "^2.0.0"
+
+isarray@^1.0.0, isarray@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
+  integrity sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==
 
 isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"

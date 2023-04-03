@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  BACKEND: 'http://localhost:8000/api',
+  BACKEND: 'https://almuntada.onrender.com/api',
 };
