@@ -1,18 +1,23 @@
-import {FC} from "react";
+import { FC } from "react";
 
-import {DescPodcast} from '../../sections/DescPodcast'
+import { DescPodcast } from "../../sections/DescPodcast";
 import PodcastCard from "../../components/Podcast/PodcastCard";
-import {useGetPodcast} from "../../API/podcast/getPodcasts";
+import { useGetPodcast } from "../../API/podcast/getPodcasts";
+import { Skeleton } from "@mui/material";
 
 const Podcast: FC = () => {
-  const {data} = useGetPodcast();
+  const { data, isLoading, isError } = useGetPodcast();
+  console.log(data);
   return (
-    <>
-      <DescPodcast/>
-      <PodcastCard title={data[0].title}
-                   podcastUrl={data[0].podcastUrl}/>
-    </>
-  )
-}
+    isLoading ? (<Skeleton />) : (
+      <>
+        <DescPodcast />
+        <PodcastCard title={data[0]?.title}
+                     podcastUrl={data[0]?.podcastUrl} />
+      </>
+    )
+
+  );
+};
 
 export default Podcast;
