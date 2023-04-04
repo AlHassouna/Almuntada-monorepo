@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="feat: start first ci-cd">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/build-backend.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build-backend.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/build-frontend.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build-frontend.yml" afterDir="false" />
+    <list default="true" id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="fix: fixing aws-sdk">
+      <change afterPath="$PROJECT_DIR$/apps/admin/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/admin/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/admin/jest.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/admin/middleware.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/admin/next-env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/admin/next.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/admin/project.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/admin/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/admin/tsconfig.spec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/components/Form/Form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Form/Form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,35 +53,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "code.cleanup.on.save": "true",
-    "last_opened_file_path": "/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/.github",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/.github&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/standard&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/.github" />
       <recent name="$PROJECT_DIR$/apps/client/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/admin" />
       <recent name="$PROJECT_DIR$/libs/shared-hooks/src/lib/helpFunc" />
       <recent name="$PROJECT_DIR$/apps/client/components/Dialog" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/apps/server" />
-      <recent name="$PROJECT_DIR$/apps/client/public" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start:server">
@@ -101,13 +115,15 @@
       <list>
         <item itemvalue="npm.start:client" />
         <item itemvalue="npm.start:server" />
+        <item itemvalue="npm.start:client" />
+        <item itemvalue="npm.start:server" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8ebffd12-c487-4da2-aff9-ffdb30b7f5fd" name="Changes" comment="" />
+      <changelist id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="fix: fixing lang podcasts" />
       <created>1678952031012</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -119,6 +135,11 @@
       <workItem from="1679834564341" duration="30462000" />
       <workItem from="1679916620983" duration="4590000" />
       <workItem from="1679922439156" duration="45967000" />
+      <workItem from="1680533167766" duration="7417000" />
+      <workItem from="1680597196073" duration="1117000" />
+      <workItem from="1680601779998" duration="481000" />
+      <workItem from="1680602277622" duration="279000" />
+      <workItem from="1680602567038" duration="671000" />
     </task>
     <task id="LOCAL-00001" summary="feat: re-styling and managing">
       <created>1678985258591</created>
@@ -232,7 +253,70 @@
       <option name="project" value="LOCAL" />
       <updated>1680455328478</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix: test">
+      <created>1680458163982</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1680458163982</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix: fixing lang podcasts">
+      <created>1680458433426</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1680458433426</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix: fixing lang podcasts">
+      <created>1680505447238</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1680505447238</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix: fixing aws-sdk">
+      <created>1680536515162</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1680536515162</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fix: fixing aws-sdk">
+      <created>1680537928898</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1680537928898</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fix: fixing aws-sdk">
+      <created>1680546046676</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1680546046676</updated>
+    </task>
+    <task id="LOCAL-00023" summary="fix: fixing aws-sdk">
+      <created>1680546771656</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680546771656</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fix: fixing aws-sdk">
+      <created>1680549275396</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1680549275396</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fix: fixing aws-sdk">
+      <created>1680550222845</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1680550222845</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +345,9 @@
     <MESSAGE value="feat: prep for prod" />
     <MESSAGE value="fix: fixing typos" />
     <MESSAGE value="feat: start first ci-cd" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: start first ci-cd" />
+    <MESSAGE value="fix: test" />
+    <MESSAGE value="fix: fixing lang podcasts" />
+    <MESSAGE value="fix: fixing aws-sdk" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: fixing aws-sdk" />
   </component>
 </project>

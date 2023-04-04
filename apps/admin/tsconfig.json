@@ -1,0 +1,73 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "types": [
+      "jest",
+      "node"
+    ],
+    "paths": {
+      "@components": [
+        "apps/admin/components"
+      ],
+      "@components/*": [
+        "apps/admin/components/*"
+      ],
+      "@hooks": [
+        "apps/admin/hooks"
+      ],
+      "@hooks/*": [
+        "apps/admin/hooks/*"
+      ],
+      "@layout": [
+        "apps/admin/layout"
+      ],
+      "@layout/*": [
+        "apps/admin/layout/*"
+      ],
+      "@lib": [
+        "apps/admin/lib"
+      ],
+      "@lib/*": [
+        "apps/admin/lib/*"
+      ],
+      "@models": [
+        "apps/admin/models"
+      ],
+      "@models/*": [
+        "apps/admin/models/*"
+      ],
+      "@pages": [
+        "apps/admin/pages"
+      ],
+      "@store": [
+        "apps/admin/store"
+      ],
+      "@styles/*": [
+        "apps/admin/styles/*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "next-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "jest.config.ts",
+    "/**/*.spec.ts",
+    "/**/*.test.ts"
+  ]
+}
