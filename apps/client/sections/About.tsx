@@ -24,7 +24,7 @@ const About = () => {
           variants={fadeIn('up', 'tween', 0.2, 1)}
           className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[orange]"
         >
-          {intl.messages['homepage.description']}
+          {intl.formatMessage({id: "homepage.description"})}
 
         </P>
         <TypingText title={`${intl.messages['homepage.about_2']}`} textStyles="text-center"/>
@@ -33,7 +33,8 @@ const About = () => {
           variants={fadeIn('up', 'tween', 0.2, 1)}
           className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[orange]"
         >
-          {intl.messages['homepage.description_2']}
+          {intl.formatMessage({id: "homepage.description_2"})}
+
         </motion.p>
       </MotionContainer>
     </HomeSection>

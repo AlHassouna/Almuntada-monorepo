@@ -28,7 +28,7 @@ interface Props {
 
 const filter = createFilterOptions<SelectOptionType>();
 
-export const AutoComplete: FC<Props> = ({label, value, onChange, data, freeSolo, w}) => {
+export const AutoComplete: FC<Props> = ({label, onChange, data, freeSolo, w}) => {
   const getOptionLabel = (option: SelectOptionType | string) => {
     if (typeof option === "string") {
       return option;
@@ -71,12 +71,12 @@ export const AutoComplete: FC<Props> = ({label, value, onChange, data, freeSolo,
       id="free_solo"
       clearOnBlur
       handleHomeEndKeys
-      isOptionEqualToValue={(option, value) => option?.value === value?.value}
+      isOptionEqualToValue={(option: SelectOptionType, value: SelectOptionType) => option?.value === value?.value}
       options={freeSolo ? data : options?.sort((a, b) => -b?.firstLetter?.localeCompare(a?.firstLetter))}
       getOptionLabel={getOptionLabel}
-      renderOption={freeSolo ? (props, option) => <li {...props}>{option.label}</li> : undefined}
+      renderOption={freeSolo ? (props, option: SelectOptionType) => <li {...props}>{option.label}</li> : undefined}
       freeSolo={freeSolo}
-      groupBy={!freeSolo ? (option) => option?.firstLetter as string : undefined}
+      groupBy={!freeSolo ? (option: SelectOptionType) => option?.firstLetter as string : undefined}
       renderInput={(params) => <TextField {...params} label={label}/>}
     />
   );

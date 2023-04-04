@@ -1,6 +1,6 @@
-import {useGetSubjects} from "../../API/academic/getSubjects";
-import {useGetCompanies} from "../../API/academic/getCompany";
-import {useGetCareers} from "../../API/academic/getCareers";
+import {useGetSubjects} from "@lib/system-design";
+import {useGetCompanies} from "@lib/system-design";
+import {useGetCareers} from "@lib/system-design";
 import {useMemo} from "react";
 import {DataToSelectOptions} from "@lib/shared-hooks";
 

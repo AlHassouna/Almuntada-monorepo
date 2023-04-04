@@ -10,7 +10,7 @@ import {useIntl} from "react-intl";
 import styled from "styled-components";
 import {motion} from "framer-motion";
 import {fadeIn} from "../../utils/motion";
-import {useGetAcademicsBySearchTerms} from "../../API/academic/searchAcademic";
+import {useGetAcademicsBySearchTerms} from "@lib/system-design";
 import {AutoComplete} from "@lib/system-design";
 import {DataToSelectOptions} from "@lib/shared-hooks";
 import {getCityList} from "@lib/shared-types";
@@ -76,7 +76,7 @@ const Academic: FC = () => {
           variants={fadeIn("up", "tween", 0.2, 1)}
           className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[orange] mb-4"
         >
-          {intl.messages["academicpage.text"]}
+          {intl.formatMessage({id: "academicpage.text"})}
         </motion.p>
         <div className="flex flex-col sm:flex-row mx-auto w-full sm:justify-around items-center h-full">
           <AutoComplete

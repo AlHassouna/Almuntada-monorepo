@@ -1,4 +1,4 @@
-import {usePostContactMutation} from "../../API/contact-us/postContact";
+import {usePostContactMutation} from "@lib/system-design";
 
 export const FormLogic = () => {
   const {mutate} = usePostContactMutation();

@@ -6,3 +6,4 @@ export * from "./lib/Table/index";
 export * from './lib/slideshow/slide';
 export * from './lib/Select/index';
 export * from './lib/Cloudinary/index';
+export * from './lib/API/index'

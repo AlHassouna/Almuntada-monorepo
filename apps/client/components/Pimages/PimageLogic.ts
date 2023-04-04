@@ -1,4 +1,4 @@
-import {usePostPimagesMutation} from "../../API/pimages/postPimages";
+import {usePostPimagesMutation} from "@lib/system-design";
 
 export const PimagesLogic = () => {
   const {mutate} = usePostPimagesMutation();

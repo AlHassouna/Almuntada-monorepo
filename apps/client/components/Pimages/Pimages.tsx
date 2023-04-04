@@ -1,5 +1,5 @@
 import {useIntl} from "react-intl";
-import {useGetPimages} from "../../API/pimages/getPimages";
+import {useGetPimages} from "../../../../libs/system-design/src/lib/API/pimages/getPimages";
 import Slideshow from '../Slideshow/Slideshow';
 
 export const Pimages = () => {

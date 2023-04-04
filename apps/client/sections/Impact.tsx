@@ -32,7 +32,8 @@ const Impact = () => {
             variants={fadeIn('up', 'tween', 0.2, 1)}
             className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[orange]"
           >
-            {intl.messages['homepage.impact.desc']}
+            {intl.formatMessage({id: "homepage.impact.desc"})}
+
           </P>
         </Div>
         <Div

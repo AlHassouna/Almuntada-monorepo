@@ -2,7 +2,7 @@ import React, {FC} from "react";
 import {Formik, Field, ErrorMessage} from "formik";
 import * as Yup from "yup";
 import {StyledHeading, StyledForm} from "../../styled/contact-us.styled"
-import {ContactUsCreated} from "../../API/contact-us/types";
+import {ContactUsCreated} from "../../../../libs/system-design/src/lib/API/contact-us/types";
 import {useIntl} from "react-intl";
 
 
@@ -32,7 +32,7 @@ const ContactForm: FC<ContactUsProps> = ({onSubmit}) => {
   }>;
   return (
     <div className='h-[80vh] '>
-      <StyledHeading>{intl.messages['contactpage.title']}</StyledHeading>
+      <StyledHeading>{intl.formatMessage({id: 'contactpage.title'})}</StyledHeading>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -41,7 +41,7 @@ const ContactForm: FC<ContactUsProps> = ({onSubmit}) => {
         {({isSubmitting}) => (
           <StyledForm>
             <div>
-              <label htmlFor="fullName">{intl.messages['contactpage.fullname']}</label>
+              <label htmlFor="fullName">{intl.formatMessage({id: 'contactpage.fullname'})}</label>
               <Field
                 name="fullName"
                 id="fullName"
@@ -52,7 +52,7 @@ const ContactForm: FC<ContactUsProps> = ({onSubmit}) => {
             </div>
 
             <div>
-              <label htmlFor="email">{intl.messages['contactpage.email']}</label>
+              <label htmlFor="email">{intl.formatMessage({id: 'contactpage.email'})}</label>
               <Field
                 type="email"
                 id="email"
@@ -62,7 +62,7 @@ const ContactForm: FC<ContactUsProps> = ({onSubmit}) => {
             </div>
 
             <div>
-              <label htmlFor="subject">{intl.messages['contactpage.subject']}</label>
+              <label htmlFor="subject">{intl.formatMessage({id: 'contactpage.subject'})}</label>
               <Field
                 as="select"
                 id="subject"
@@ -70,7 +70,7 @@ const ContactForm: FC<ContactUsProps> = ({onSubmit}) => {
               >
                 {
                   subjects.map((subject, index) => {
-                    return <option key={index} value={index}>{subject.name}</option>
+                    return <option key={index} value={subject.name}>{subject.name}</option>
                   })
                 }
               </Field>
@@ -78,7 +78,7 @@ const ContactForm: FC<ContactUsProps> = ({onSubmit}) => {
             </div>
 
             <div>
-              <label htmlFor="message">{intl.messages['contactpage.message']}</label>
+              <label htmlFor="message">{intl.formatMessage({id: 'contactpage.message'})}</label>
               <Field
                 as="textarea"
                 id="message"
@@ -88,7 +88,7 @@ const ContactForm: FC<ContactUsProps> = ({onSubmit}) => {
             </div>
 
             <button type="submit" disabled={isSubmitting}>
-              {intl.messages['contactpage.submit']}
+              {intl.formatMessage({id: 'contactpage.submit'})}
             </button>
           </StyledForm>
         )}

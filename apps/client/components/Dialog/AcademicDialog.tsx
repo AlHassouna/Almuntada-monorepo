@@ -23,7 +23,6 @@ import {getDegreeList} from "@lib/shared-types";
 import {SelectChangeEvent} from "@mui/material/Select";
 import {getCityList} from "@lib/shared-types";
 import {FileUpload} from '@lib/system-design'
-import * as process from "process";
 
 interface Props {
   handleClose: () => void;

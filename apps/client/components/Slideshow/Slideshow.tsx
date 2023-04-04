@@ -9,7 +9,7 @@ import {
 import {Typography} from "@material-ui/core";
 import {motion} from "framer-motion";
 import {useRouter} from "next/router";
-import {IPimages} from "../../API/pimages/types";
+import {IPimages} from "../../../../libs/system-design/src/lib/API/pimages/types";
 
 interface Props {
   slides: Array<IPimages>;
