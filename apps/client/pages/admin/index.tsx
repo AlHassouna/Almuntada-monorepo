@@ -2,11 +2,9 @@ import {FC, useMemo} from "react";
 import {Box, Button} from "@mui/material";
 import {AdminCard} from "../../components/AdminCard/AdminCard";
 import {IColumns, Table} from "@lib/system-design";
-import {useUpdateAcademic} from "../../API/academic/updateAcademic";
-import {AcademicUpdated} from "../../API/academic/types";
-import {useGetAcademicsBySearchTerms} from "../../API/academic/searchAcademic";
-import {UseQueryResult} from "@tanstack/react-query";
-
+import {useUpdateAcademic} from "@lib/system-design"
+import {AcademicUpdated} from "@lib/system-design";
+import {useGetAcademicsBySearchTerms} from "@lib/system-design";
 
 interface ICardInfo {
   counter: number;

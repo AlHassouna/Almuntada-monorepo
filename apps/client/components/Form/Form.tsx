@@ -2,7 +2,7 @@ import React, {FC} from "react";
 import {Formik, Field, ErrorMessage} from "formik";
 import * as Yup from "yup";
 import {StyledHeading, StyledForm} from "../../styled/contact-us.styled"
-import {ContactUsCreated} from "../../API/contact-us/types";
+import {ContactUsCreated} from "../../../../libs/system-design/src/lib/API/contact-us/types";
 import {useIntl} from "react-intl";
 
 
@@ -70,7 +70,7 @@ const ContactForm: FC<ContactUsProps> = ({onSubmit}) => {
               >
                 {
                   subjects.map((subject, index) => {
-                    return <option key={index} value={index}>{subject.name}</option>
+                    return <option key={index} value={subject.name}>{subject.name}</option>
                   })
                 }
               </Field>

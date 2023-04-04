@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {usePostAcademicMutation} from '../../API/academic/postAcademic';
+import {usePostAcademicMutation} from '@lib/system-design';
 
 export const AcademicDialogLogic = () => {
   const [isOpen, setIsOpen] = useState(false);

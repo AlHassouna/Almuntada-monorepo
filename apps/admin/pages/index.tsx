@@ -1,6 +1,6 @@
 import type {NextPage} from 'next'
 import Image from 'next/image'
-import {AdminLayout} from '@layout'
+import {AdminLayout} from '../layout/index'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
   faArrowDown,
@@ -176,7 +176,7 @@ const Home: NextPage = () => (
                   x: {
                     grid: {
                       display: false,
-                     
+
                     },
                     ticks: {
                       display: false,

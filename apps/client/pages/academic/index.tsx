@@ -10,7 +10,7 @@ import {useIntl} from "react-intl";
 import styled from "styled-components";
 import {motion} from "framer-motion";
 import {fadeIn} from "../../utils/motion";
-import {useGetAcademicsBySearchTerms} from "../../API/academic/searchAcademic";
+import {useGetAcademicsBySearchTerms} from "@lib/system-design";
 import {AutoComplete} from "@lib/system-design";
 import {DataToSelectOptions} from "@lib/shared-hooks";
 import {getCityList} from "@lib/shared-types";

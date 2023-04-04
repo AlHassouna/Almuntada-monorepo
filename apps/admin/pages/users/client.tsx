@@ -1,12 +1,12 @@
-import { GetServerSideProps, NextPage } from 'next'
-import { Card } from 'react-bootstrap'
-import { UserList } from '../../components/User'
-import { AdminLayout } from '@layout'
-import React, { useEffect, useState } from 'react'
-import { User } from '../../models/user'
-import { newResource, Resource } from '../../models/resource'
-import { transformResponseWrapper, useSWRAxios } from '@hooks'
-import { Pagination } from '../../components/Pagination'
+import {GetServerSideProps, NextPage} from 'next'
+import {Card} from 'react-bootstrap'
+import {UserList} from '../../components/User/UserList'
+import {AdminLayout} from '../../layout/index'
+import React, {useEffect, useState} from 'react'
+import {User} from '../../models/user'
+import {newResource, Resource} from '../../models/resource'
+import {transformResponseWrapper, useSWRAxios} from '../../hooks/index'
+import {Pagination} from '../../components/Pagination'
 
 type Props = {
   page: number;
@@ -26,13 +26,12 @@ const Client: NextPage<Props> = (props) => {
   const [order, setOrder] = useState(initOrder)
 
   const userListURL = `${process.env.NEXT_PUBLIC_POKEMON_LIST_API_BASE_URL}users` || ''
-  console.log(userListURL)
   const [fallbackResource, setFallbackResource] = useState<Resource<User>>(
     newResource([], 0, page, perPage),
   )
 
   // swr: data -> axios: data -> resource: data
-  const { data: { data: resource } } = useSWRAxios<Resource<User>>({
+  const {data: {data: resource}} = useSWRAxios<Resource<User>>({
     url: userListURL,
     params: {
       _page: page,
