@@ -1,5 +1,5 @@
 import {ApiProperty} from '@nestjs/swagger';
-import {IsNotEmpty, IsString} from 'class-validator';
+import {IsBoolean, IsNotEmpty, IsString} from 'class-validator';
 
 export class CreatePodcastDto {
   // Title //
@@ -13,14 +13,21 @@ export class CreatePodcastDto {
   title: string;
 
   // Index Url //
-
-
   @ApiProperty({
     description: 'The podcast url of the podcast',
     example: 'The Index Url',
   })
-
   @IsNotEmpty()
   @IsString()
   podcastUrl: string;
+
+
+  // Index Url //
+  @ApiProperty({
+    description: 'The IsActive of the podcast',
+    example: 'false',
+  })
+  @IsBoolean()
+  isActive: boolean;
+
 }

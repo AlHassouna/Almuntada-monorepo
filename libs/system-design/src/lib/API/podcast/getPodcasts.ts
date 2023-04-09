@@ -5,6 +5,6 @@ const getPodcasts = async () => {
   return (await backendInstance.get('/podcasts')).data;
 };
 
-const useGetPodcast = (auth?: string) => {
+export const useGetPodcasts = (auth?: string) => {
   return useQuery<object, Error>(['podcast'], getPodcasts);
 };

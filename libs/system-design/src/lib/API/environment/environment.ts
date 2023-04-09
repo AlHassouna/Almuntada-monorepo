@@ -1,4 +1,5 @@
-export const environment = {
-  production: false,
-  BACKEND: 'https://almuntada.onrender.com/api',
-};
+import {commonEnv} from "./environment.common";
+
+const env: Partial<typeof commonEnv> = {};
+
+export const environment = {...commonEnv, ...env};

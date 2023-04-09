@@ -1,10 +1,25 @@
 import {backendInstance} from '../api';
-import {useQuery} from '@tanstack/react-query';
+import {useMutation, useQueryClient} from "@tanstack/react-query";
+import {PodcastUpdated} from "./types";
 
-const updatePodcast = async () => {
-  return await backendInstance.put('/podcasts/:id');
+interface useMutationParams {
+  id: number;
+  data: PodcastUpdated;
+}
+
+const updatePodcast = async (id: number, data: PodcastUpdated) => {
+  return await backendInstance.put("/podcasts", data, {
+    params: {
+      id
+    }
+  });
 };
 
-const useGetPodcast = (auth?: string) => {
-  return useQuery<object, Error>(['podcast'], updatePodcast);
+export const useUpdatePodcast = () => {
+  const queryClient = useQueryClient();
+  return useMutation(({id, data}: useMutationParams) => updatePodcast(id, data), {
+    onSuccess: () => {
+      queryClient.invalidateQueries({queryKey: ["podcast"]});
+    }
+  });
 };

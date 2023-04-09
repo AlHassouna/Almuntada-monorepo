@@ -11,7 +11,7 @@ export const StyledHeading = styled.h1`
 export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  width: 30%;
   margin: 0 auto;
 
   div {

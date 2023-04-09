@@ -3,10 +3,11 @@ import {Card} from 'react-bootstrap'
 import {UserList} from '../../components/User/UserList'
 import {AdminLayout} from '../../layout/index'
 import React, {useEffect, useState} from 'react'
-import {User} from '../../models/user'
+import {IAcademic} from '@lib/system-design'
 import {newResource, Resource} from '../../models/resource'
 import {transformResponseWrapper, useSWRAxios} from '../../hooks/index'
 import {Pagination} from '../../components/Pagination'
+import {environment} from "@lib/system-design"
 
 type Props = {
   page: number;
@@ -25,13 +26,13 @@ const Client: NextPage<Props> = (props) => {
   const [sort, setSort] = useState(initSort)
   const [order, setOrder] = useState(initOrder)
 
-  const userListURL = `${process.env.NEXT_PUBLIC_POKEMON_LIST_API_BASE_URL}users` || ''
-  const [fallbackResource, setFallbackResource] = useState<Resource<User>>(
+  const userListURL = `${environment.NEXT_PUBLIC_POKEMON_LIST_API_BASE_URL}users` || ''
+  const [fallbackResource, setFallbackResource] = useState<Resource<IAcademic>>(
     newResource([], 0, page, perPage),
   )
 
   // swr: data -> axios: data -> resource: data
-  const {data: {data: resource}} = useSWRAxios<Resource<User>>({
+  const {data: {data: resource}} = useSWRAxios<Resource<IAcademic>>({
     url: userListURL,
     params: {
       _page: page,
@@ -39,7 +40,7 @@ const Client: NextPage<Props> = (props) => {
       _sort: sort,
       _order: order,
     },
-    transformResponse: transformResponseWrapper((d: User[], h) => {
+    transformResponse: transformResponseWrapper((d: IAcademic[], h) => {
       const total = h ? parseInt(h['x-total-count'], 10) : 0
       return newResource(d, total, page, perPage)
     }),

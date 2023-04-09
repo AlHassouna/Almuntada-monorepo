@@ -35,8 +35,6 @@ const CustomApp = ({Component, pageProps}: AppProps) => {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
-
-
       <IntlProvider locale={locale} messages={messages[locale]}>
         <main className="app" dir={getDirection(locale)}>
           <ThemeProvider theme={{dir: getDirection(locale)}}>
