@@ -7,6 +7,7 @@ import {IPodcast} from '@lib/system-design'
 import {newResource, Resource} from '../../models/resource'
 import {transformResponseWrapper, useSWRAxios} from '../../hooks/index'
 import {Pagination} from '../../components/Pagination'
+import {environment} from "@lib/system-design"
 
 type Props = {
   page: number;
@@ -25,7 +26,7 @@ const Client: NextPage<Props> = (props) => {
   const [sort, setSort] = useState(initSort)
   const [order, setOrder] = useState(initOrder)
 
-  const userListURL = `${process.env.NEXT_PUBLIC_POKEMON_LIST_API_BASE_URL}podcasts` || ''
+  const userListURL = `${environment.NEXT_PUBLIC_POKEMON_LIST_API_BASE_URL}podcasts` || ''
   const [fallbackResource, setFallbackResource] = useState<Resource<IPodcast>>(
     newResource([], 0, page, perPage),
   )

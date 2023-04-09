@@ -1,4 +1,5 @@
-export const environment = {
-  production: false,
-  BACKEND: 'http://localhost:8000/api',
-};
+import {commonEnv} from "./environment.common";
+
+const env: Partial<typeof commonEnv> = {};
+
+export const environment = {...commonEnv, ...env};

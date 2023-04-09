@@ -14,6 +14,7 @@ import {
   ApiCreatedResponse,
   ApiTags,
 } from '@nestjs/swagger';
+import {environment} from "@lib/system-design"
 
 @ApiTags('Podcasts')
 @Controller('podcasts')
@@ -44,7 +45,7 @@ export class PodcastsController {
   findOne(@Param('id') id: string) {
     const createPodcast = {
       title: "Episode" + id,
-      podcastUrl: process.env.AWS_CLOUDFRONT_URL + "Episode" + id + ".mp4",
+      podcastUrl: environment.AWS_CLOUDFRONT_URL + "Episode" + id + ".mp4",
       isActive: false
     }
     return this.create(createPodcast);
