@@ -1,7 +1,7 @@
 export const commonEnv = {
   production: false,
-  environmentName: "development",
-  apiUrl: 'http://localhost:8000/api',
+  environmentName: "",
+  apiUrl: "",
   DB_USERNAME: "hh123789",
   DB_NAME: "services_db",
   DB_HOST: "localhost",

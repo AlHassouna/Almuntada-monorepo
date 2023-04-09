@@ -16,7 +16,7 @@
     "build-nest": "nest build server",
     "build-client": "nx build client",
     "build-admin": "nx build admin",
-    "start:client": "nx run client:serve",
+    "start:client": "nx run client:serve --configuration=production",
     "start:server": "nx run server:serve",
     "start:admin": "nx run admin:serve",
     "start:prod": "nx run server:serve:prod",
