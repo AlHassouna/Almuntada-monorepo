@@ -1,4 +1,5 @@
 export interface IAcademic {
+  id: number;
   firstName: string;
   lastName: string;
   age: number;

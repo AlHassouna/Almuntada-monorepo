@@ -5,31 +5,21 @@ import {
   Body,
   Param,
   UsePipes,
-  ValidationPipe,
+  ValidationPipe, Put, Query,
 } from '@nestjs/common';
-
 import {PodcastsService} from './podcasts.service';
 import {CreatePodcastDto} from './dto/create-podcast.dto';
-import aws from 'aws-sdk';
 import {
   ApiBadRequestResponse,
   ApiCreatedResponse,
   ApiTags,
 } from '@nestjs/swagger';
 
-console.log(process.env);
-const config = {
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  region: process.env.AWS_REGION,
-}
-
 @ApiTags('Podcasts')
 @Controller('podcasts')
 export class PodcastsController {
   constructor(private readonly podcastsService: PodcastsService) {
   }
-
 
   @Post()
   @UsePipes(ValidationPipe)
@@ -50,28 +40,23 @@ export class PodcastsController {
     return podcasts;
   }
 
-  @Get('fromS3')
-  async getPodcastsKeyFromS3() {
-    try {
-      const s3 = new aws.S3(config);
-      const params = {
-        Bucket: process.env.AWS_BUCKET_NAME,
-        MaxKeys: 10,
-      };
-      const data = await s3.listObjectsV2(params).promise();
-      const createPodcast = {
-        title: data.Contents[0].Key,
-        podcastUrl: process.env.AWS_CLOUDFRONT_URL + data.Contents[0].Key,
-      }
-      return this.create(createPodcast);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.podcastsService.findOne(+id);
+    const createPodcast = {
+      title: "Episode" + id,
+      podcastUrl: process.env.AWS_CLOUDFRONT_URL + "Episode" + id + ".mp4",
+      isActive: false
+    }
+    return this.create(createPodcast);
+  }
+
+  @Put()
+  async updateUser(@Query() id, @Body() data) {
+    return await this.podcastsService.updatePodcast(id, data);
+  }
+
+  @Get('isActive/:isActiveValue')
+  async getPodcastByIsActive(@Param('isActiveValue') isActiveValue: boolean) {
+    return await this.podcastsService.getPodcastByIsActive(isActiveValue);
   }
 }

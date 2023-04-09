@@ -1,9 +1,9 @@
-import {FC, useState} from "react";
+import React, {FC, useState} from "react";
 import {AcademicsCard} from "../../components/Card/AcademicsCard";
-import {CardContainer, ImageContainer} from "../../styled/academics.styled";
+import {AcademicSection, CardContainer, ImageContainer} from "../../styled/academics.styled";
 import {AcademicDialog} from "../../components/Dialog/AcademicDialog";
 import {AcademicDialogLogic} from "../../components/Dialog/dialogLogic";
-import {MainSection, MainContainer} from "../../styled/home.styled";
+import {MainContainer} from "../../styled/home.styled";
 import {useLocale} from "@lib/system-design";
 import {Button, Typography} from "@mui/material";
 import {useIntl} from "react-intl";
@@ -15,6 +15,8 @@ import {AutoComplete} from "@lib/system-design";
 import {DataToSelectOptions} from "@lib/shared-hooks";
 import {getCityList} from "@lib/shared-types";
 import {ListOptions} from "../../components/Dialog/optionAcademic";
+import {MainSection} from "../../styled/global.styled";
+import Head from "next/head";
 
 const Academic: FC = () => {
 
@@ -22,6 +24,8 @@ const Academic: FC = () => {
   const {data} = useGetAcademicsBySearchTerms(
     {isApproved: true}
   );
+  const title = intl.formatMessage({id: 'page.home.head.title'});
+
   const locale = useLocale();
   const [selectedFilter, setSelectedFilter] = useState({
     city: "",
@@ -48,54 +52,60 @@ const Academic: FC = () => {
       return item.city === selectedFilter.city || item.subject?.subject === selectedFilter.subject;
     }
   );
-
-
   return (
     <MainContainer dir={locale}>
-      <ImageContainer>
-        <Typography className="text-center" variant="h3" color="white">
-          {intl.formatMessage({id: "academicpage.title"})}
-        </Typography>
-        <Typography className="text-center" variant="h4" color="white">
-          {intl.formatMessage({id: "academicpage.sub.title"})}
-        </Typography>
-
-        <StyledButton variant="outlined" onClick={onOpen}>
-          {intl.formatMessage({id: "academicpage.button"})}
-        </StyledButton>
-        {isOpen && (
-          <AcademicDialog
-            isOpen={isOpen}
-            OnSubmit={OnSubmit}
-            handleClose={onClose}
-          />
-        )}
-      </ImageContainer>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <AcademicSection>
+        <ImageContainer property="/academic.jpeg">
+          <Typography className="text-center" variant="h3" color="white">
+            {intl.formatMessage({id: "academicpage.title"})}
+          </Typography>
+          <Typography className="text-center" variant="h3" color="white">
+            {intl.formatMessage({id: "academicpage.sub.title"})}
+          </Typography>
+          <Typography className="text-center" variant="h3" color="white">
+            {intl.formatMessage({id: "academicpage.text"})}
+          </Typography>
+          <StyledButton variant="outlined" onClick={onOpen}>
+            {intl.formatMessage({id: "academicpage.button"})}
+          </StyledButton>
+          {isOpen && (
+            <AcademicDialog
+              isOpen={isOpen}
+              OnSubmit={OnSubmit}
+              handleClose={onClose}
+            />
+          )}
+        </ImageContainer>
+      </AcademicSection>
       <MainSection>
-        <motion.p
-          variants={fadeIn("up", "tween", 0.2, 1)}
-          className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[orange] mb-4"
-        >
-          {intl.formatMessage({id: "academicpage.text"})}
-        </motion.p>
-        <div className="flex flex-col sm:flex-row mx-auto w-full sm:justify-around items-center h-full">
-          <AutoComplete
-            w="300px"
-            onChange={(v, e) => onChangeAutoComplete(v, e, "city")}
-            data={citiesOption}
-            value={selectedFilter.city}
-            freeSolo={false}
-            label={String(intl.messages["academicpage.dialog.city"])}
-          />
-          <AutoComplete
-            w="300px"
-            onChange={(v, e) => onChangeAutoComplete(v, e, "subject")}
-            data={subjectsOptions || Array({value: "", label: ""})}
-            value={selectedFilter.subject}
-            freeSolo={false}
-            label={String(intl.messages["academicpage.dialog.subject"])}
-          />
-
+        <div>
+          <motion.p
+            variants={fadeIn("up", "tween", 0.2, 1)}
+            className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[orange] mb-4"
+          >
+            {intl.formatMessage({id: "academicpage.acdemics"})}
+          </motion.p>
+          <div className="flex flex-col sm:flex-row mx-auto w-full sm:justify-around items-center h-full">
+            <AutoComplete
+              w="300px"
+              onChange={(v, e) => onChangeAutoComplete(v, e, "city")}
+              data={citiesOption}
+              value={selectedFilter.city}
+              freeSolo={false}
+              label={String(intl.messages["academicpage.dialog.city"])}
+            />
+            <AutoComplete
+              w="300px"
+              onChange={(v, e) => onChangeAutoComplete(v, e, "subject")}
+              data={subjectsOptions || Array({value: "", label: ""})}
+              value={selectedFilter.subject}
+              freeSolo={false}
+              label={String(intl.messages["academicpage.dialog.subject"])}
+            />
+          </div>
         </div>
         <CardContainer>
           {filteredData?.map((item, id) => (

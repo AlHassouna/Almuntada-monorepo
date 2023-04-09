@@ -9,18 +9,46 @@ export const CardContainer = styled(Box)`
   justify-content: center;
   flex-wrap: wrap;
 `;
-
+export const AcademicSection = styled.section`
+  display: flex;
+  flex-direction: ${props => props.property || "column"};
+  height: 100vh;
+  justify-content: center;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+`;
 export const ImageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  background: linear-gradient(to left, rgba(127, 127, 138, 0.5), rgba(59, 83, 126)), url(/academic.jpeg);
-  height: 85vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  justify-content: center;
+  gap: 5rem;
+  background: url(${props => props.property});
+  height: 75vh;
+  z-index: 2;
+  background-position: bottom;
   width: 100%;
+`;
+export const ImageContainerAc = styled.div`
+  display: flex;
+  align-items: center;
+  background: url(${props => props.property});
+  height: 65vh;
+  z-index: 2;
+  width: 100%;
+  background-color: black;
+  background-blend-mode: luminosity;
+  object-fit: contain;
+  animation: moveBackground 20s linear infinite;
+  @keyframes moveBackground {
+    from {
+      background-position: center;
+    }
+    to {
+      background-position: 1000px 0;
+    }
 `;
 export const StyledForm = styled.form`
   display: flex;

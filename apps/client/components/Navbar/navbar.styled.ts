@@ -3,8 +3,8 @@ import Image from 'next/image';
 import {motion} from 'framer-motion';
 
 export const MotionContainer = styled(motion.div)`
-  position: relative;
-  height: 15vh;
+  position: absolute;
+  width: 100vw;
   @media (min-width: 640px) {
     padding: 2.5rem;
   }
@@ -29,7 +29,6 @@ export const Gradient = styled.div`
 `;
 
 export const LogoContainer = styled(Image)`
-
   width: 10vw;
   object-fit: contain;
   z-index: 20;
@@ -42,15 +41,12 @@ export const LogoContainer = styled(Image)`
 `
 export const NavbarContainer = styled.div`
   max-width: 1280px;
-  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
   @media (min-width: 1536px) {
     gap: 4rem;
-
   }
 `;
 

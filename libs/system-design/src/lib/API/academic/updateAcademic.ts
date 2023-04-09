@@ -1,6 +1,6 @@
 import {backendInstance} from "../api";
 import {useMutation, useQueryClient} from "@tanstack/react-query";
-import {AcademicCreated, AcademicUpdated} from "./types";
+import {AcademicUpdated} from "./types";
 
 interface useMutationParams {
   id: number;

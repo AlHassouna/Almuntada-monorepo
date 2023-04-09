@@ -52,6 +52,9 @@ export default function SidebarNav() {
       <SidebarNavItem icon={faCode} href="/contact/client">
         Contact-Us
       </SidebarNavItem>
+      <SidebarNavItem icon={faCode} href="/podcasts/client">
+        Podcasts
+      </SidebarNavItem>
     </ul>
   )
 }

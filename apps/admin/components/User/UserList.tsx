@@ -2,13 +2,13 @@ import {Dropdown, Table} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faEllipsisVertical} from '@fortawesome/free-solid-svg-icons'
 import React, {FC} from 'react'
-import {User} from '../../models/user'
+import {IAcademic} from '@lib/system-design'
 import {THSort} from '../TableSort'
 import {useUpdateAcademic} from '@lib/system-design'
 import {AcademicUpdated} from '@lib/system-design'
 
 type Props = {
-  users: User[];
+  users: IAcademic[];
 } & Pick<Parameters<typeof THSort>[0], 'setSort' | 'setOrder'>
 export const UserList: FC<Props> = (props) => {
   const {users, setSort, setOrder} = props
@@ -79,7 +79,7 @@ export const UserList: FC<Props> = (props) => {
                 <Dropdown.Item onClick={() => {
                   onClick(user?.id, {isApproved: false})
                 }}>Reject</Dropdown.Item>
-                
+
               </Dropdown.Menu>
             </Dropdown>
           </td>

@@ -2,11 +2,11 @@ import {Box} from "@mui/material";
 import {FC} from "react";
 
 interface Props {
-  title: string;
   podcastUrl: string;
+  title?: string
 }
 
-const PodcastCard: FC<Props> = ({title, podcastUrl}) => {
+const PodcastCard: FC<Props> = ({podcastUrl, title}) => {
   return (
     <Box sx={{
       display: 'flex',
@@ -14,13 +14,11 @@ const PodcastCard: FC<Props> = ({title, podcastUrl}) => {
       alignItems: 'center',
       justifyContent: 'center',
     }}>
-      <label>{title}</label>
       <iframe
         width="560"
         height="315"
         src={podcastUrl}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       >
       </iframe>

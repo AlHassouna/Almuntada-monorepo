@@ -17,6 +17,10 @@ export class Podcast {
   @Column()
   podcastUrl: string;
 
+  @Column({default: false})
+
+  isActive: boolean;
+
   @CreateDateColumn()
   createdAt: Date;
 

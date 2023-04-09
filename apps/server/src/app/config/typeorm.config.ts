@@ -18,23 +18,6 @@ export const typeOrmAsyncConfig: TypeOrmModuleAsyncOptions = {
       autoLoadEntities: true,
       synchronize: true,
       entities: [__dirname + '/../**/*.entity.{js,ts}'],
-      migrations: [__dirname + '/../migrations/*.{js,ts}'],
     };
   },
-};
-
-export const typeOrmConfig: TypeOrmModuleOptions = {
-  type: 'postgres',
-  host: process.env.DB_HOST,
-  port: 5432,
-  username: process.env.DB_USERNAME,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  entities: [__dirname + '/../**/*.entity.{js,ts}'],
-  migrations: [__dirname + '/../database/migrations/*{.ts,.js}'],
-  extra: {
-    charset: 'utf8mb4_unicode_ci',
-  },
-  synchronize: false,
-  logging: true,
 };

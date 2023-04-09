@@ -3,20 +3,23 @@ import styled from 'styled-components';
 export const MainSection = styled.section`
   display: flex;
   flex-direction: ${props => props.property || "column"};
-  height: 85vh;
+  height: 100vh;
   justify-content: center;
-
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     margin-top: 2rem;
   }
 `;
-
 export const HomeSection = styled.section`
   height: 100vh;
+  display: flex;
+  justify-content: center;
   z-index: 10;
-  position: relative;
-  margin-top: 2rem;
+  @media screen and (max-width: 1024px) {
+    height: max-content;
+    width: 90%;
+    margin: 0 auto;
+  }
 `;
 export const FlexCenter = styled.div`
   display: flex;
@@ -37,6 +40,17 @@ export const HeroGradient = styled.div`
 
 `;
 
+export const FingerGradient = styled.div`
+  //background: url("/fingerprint.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 600px;
+  height: 600px;
+  left: 40px;
+  z-index: -1;
+  position: absolute;
+
+`;
 export const AboutGradient = styled.div`
   z-index: 0;
   position: absolute;

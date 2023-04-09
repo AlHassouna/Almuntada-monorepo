@@ -1,9 +1,9 @@
 import {GetServerSideProps, NextPage} from 'next'
 import {Card} from 'react-bootstrap'
-import {UserList} from '../../components/User/UserList'
+import {PodcastsList} from '../../components/Podcats/index'
 import {AdminLayout} from '../../layout/index'
 import React, {useEffect, useState} from 'react'
-import {IAcademic} from '@lib/system-design'
+import {IPodcast} from '@lib/system-design'
 import {newResource, Resource} from '../../models/resource'
 import {transformResponseWrapper, useSWRAxios} from '../../hooks/index'
 import {Pagination} from '../../components/Pagination'
@@ -25,13 +25,13 @@ const Client: NextPage<Props> = (props) => {
   const [sort, setSort] = useState(initSort)
   const [order, setOrder] = useState(initOrder)
 
-  const userListURL = `${process.env.NEXT_PUBLIC_POKEMON_LIST_API_BASE_URL}users` || ''
-  const [fallbackResource, setFallbackResource] = useState<Resource<IAcademic>>(
+  const userListURL = `${process.env.NEXT_PUBLIC_POKEMON_LIST_API_BASE_URL}podcasts` || ''
+  const [fallbackResource, setFallbackResource] = useState<Resource<IPodcast>>(
     newResource([], 0, page, perPage),
   )
 
   // swr: data -> axios: data -> resource: data
-  const {data: {data: resource}} = useSWRAxios<Resource<IAcademic>>({
+  const {data: {data: resource}} = useSWRAxios<Resource<IPodcast>>({
     url: userListURL,
     params: {
       _page: page,
@@ -39,7 +39,7 @@ const Client: NextPage<Props> = (props) => {
       _sort: sort,
       _order: order,
     },
-    transformResponse: transformResponseWrapper((d: IAcademic[], h) => {
+    transformResponse: transformResponseWrapper((d: IPodcast[], h) => {
       const total = h ? parseInt(h['x-total-count'], 10) : 0
       return newResource(d, total, page, perPage)
     }),
@@ -64,8 +64,8 @@ const Client: NextPage<Props> = (props) => {
             setPerPage={setPerPage}
             setPage={setPage}
           />
-          <UserList
-            users={resource.data}
+          <PodcastsList
+            podcasts={resource.data}
             setSort={setSort}
             setOrder={setOrder}
           />
