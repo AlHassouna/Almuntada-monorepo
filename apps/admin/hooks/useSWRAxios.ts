@@ -6,7 +6,7 @@ import axios, {
   AxiosResponseTransformer,
 
 } from 'axios'
-import {environment} from "@lib/system-design"
+import {environment} from "../../../environment/environment"
 
 type AtLeast<T, K extends keyof T> = & Pick<T, K> & Partial<T>
 

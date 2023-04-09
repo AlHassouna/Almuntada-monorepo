@@ -29,12 +29,6 @@ const nextConfig = {
       test: /\.(ts|tsx)$/,
       use: [
         {
-          loader: 'ts-loader',
-          options: {
-            transpileOnly: true,
-          },
-        },
-        {
           loader: 'babel-loader',
           options: {
             presets: ['next/babel'],

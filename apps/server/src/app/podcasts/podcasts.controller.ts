@@ -14,7 +14,7 @@ import {
   ApiCreatedResponse,
   ApiTags,
 } from '@nestjs/swagger';
-import {environment} from "@lib/system-design"
+import {environment} from "../../../../../environment/environment"
 
 @ApiTags('Podcasts')
 @Controller('podcasts')

@@ -7,7 +7,7 @@ import {IPodcast} from '@lib/system-design'
 import {newResource, Resource} from '../../models/resource'
 import {transformResponseWrapper, useSWRAxios} from '../../hooks/index'
 import {Pagination} from '../../components/Pagination'
-import {environment} from "@lib/system-design"
+import {environment} from "../../../../environment/environment"
 
 type Props = {
   page: number;

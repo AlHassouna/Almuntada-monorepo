@@ -19,16 +19,16 @@
           "outputPath": "apps/client",
           "fileReplacements": [
             {
-              "replace": "libs/system-design/src/lib/API/environment/environment.ts",
-              "with": "libs/system-design/src/lib/API/environment/environment.dev.ts"
+              "replace": "environment/environment.ts",
+              "with": "environment/environment.dev.ts"
             }
           ]
         },
         "production": {
           "fileReplacements": [
             {
-              "replace": "libs/system-design/src/lib/API/environment/environment.ts",
-              "with": "libs/system-design/src/lib/API/environment/environment.prod.ts"
+              "replace": "environment/environment.ts",
+              "with": "environment/environment.prod.ts"
             }
           ]
         }
