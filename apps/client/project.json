@@ -16,7 +16,13 @@
       },
       "configurations": {
         "development": {
-          "outputPath": "apps/client"
+          "outputPath": "apps/client",
+          "fileReplacements": [
+            {
+              "replace": "libs/system-design/src/lib/API/environment/environment.ts",
+              "with": "libs/system-design/src/lib/API/environment/environment.dev.ts"
+            }
+          ]
         },
         "production": {
           "fileReplacements": [
