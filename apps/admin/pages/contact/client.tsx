@@ -7,7 +7,6 @@ import {newResource, Resource} from '../../models/resource'
 import {transformResponseWrapper, useSWRAxios} from '../../hooks/index'
 import {Pagination} from '../../components/Pagination'
 import {ContactList} from '../../components/Contact/ContactList'
-import {environment} from "../../../../environment/environment"
 
 type Props = {
   page: number;
@@ -26,7 +25,7 @@ const Client: NextPage<Props> = (props) => {
   const [sort, setSort] = useState(initSort)
   const [order, setOrder] = useState(initOrder)
 
-  const contactListURL = `${environment.NEXT_PUBLIC_POKEMON_LIST_API_BASE_URL}contact` || ''
+  const contactListURL = `${process.env.NEXT_PUBLIC_POKEMON_LIST_API_BASE_URL}contact` || ''
   const [fallbackResource, setFallbackResource] = useState<Resource<IContactUs>>(
     newResource([], 0, page, perPage),
   )

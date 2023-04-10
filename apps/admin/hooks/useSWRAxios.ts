@@ -6,7 +6,6 @@ import axios, {
   AxiosResponseTransformer,
 
 } from 'axios'
-import {environment} from "../../../environment/environment"
 
 type AtLeast<T, K extends keyof T> = & Pick<T, K> & Partial<T>
 
@@ -43,11 +42,11 @@ export default function useSWRAxios<T>(
         if (error.response?.status === 404) return
 
         // Only retry up to `maxRetry` times.
-        const maxRetry = parseInt(environment.NEXT_PUBLIC_API_MAX_RETRY ?? '5', 10)
+        const maxRetry = parseInt(process.env.NEXT_PUBLIC_API_MAX_RETRY ?? '5', 10)
         if (retryCount >= maxRetry) return
 
         // Retry after `retryInterval` seconds.
-        const retryInterval = parseInt(environment.NEXT_PUBLIC_API_RETRY_INTERVAL_IN_SECONDS ?? '5', 10)
+        const retryInterval = parseInt(process.env.NEXT_PUBLIC_API_RETRY_INTERVAL_IN_SECONDS ?? '5', 10)
         setTimeout(() => revalidate({retryCount}), retryInterval * 1000)
       },
     },

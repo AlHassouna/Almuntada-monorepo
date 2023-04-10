@@ -1,9 +1,6 @@
 .env
-
 node_modules
 dist
-
+environment
+.env.production
 .idea
-
-# Next.js
-.next

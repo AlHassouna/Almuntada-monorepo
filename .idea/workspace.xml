@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="fix: building">
-      <change beforePath="$PROJECT_DIR$/apps/client/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/babel.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment/environment.common.ts" beforeDir="false" afterPath="$PROJECT_DIR$/environment/environment.common.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment/environment.dev.ts" beforeDir="false" afterPath="$PROJECT_DIR$/environment/environment.dev.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/environment/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/pgsql/.eslintrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/pgsql/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/pgsql/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.prodaction" beforeDir="false" afterPath="$PROJECT_DIR$/.env.prodaction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/admin/hooks/useSWRAxios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admin/hooks/useSWRAxios.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/admin/pages/contact/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admin/pages/contact/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/admin/pages/podcasts/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admin/pages/podcasts/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/admin/pages/users/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admin/pages/users/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/podcasts/podcasts.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/podcasts/podcasts.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/API/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/API/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.base.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.base.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,26 +48,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "code.cleanup.on.save": "true",
-    "last_opened_file_path": "/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/apps/client",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/standard",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/apps/client&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/standard&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps/client" />
@@ -368,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681064489951</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="fix: building">
+      <created>1681120952208</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1681120952208</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
