@@ -20,7 +20,7 @@
           "fileReplacements": [
             {
               "replace": "environment/environment.ts",
-              "with": "environment/environment.dev.ts"
+              "with": "environment/environment.prod.ts"
             }
           ]
         },

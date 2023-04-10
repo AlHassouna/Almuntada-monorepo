@@ -1,5 +1,5 @@
 export const commonEnv = {
-  production: false,
+  production: undefined,
   environmentName: "",
   apiUrl: "",
   DB_USERNAME: "hh123789",
