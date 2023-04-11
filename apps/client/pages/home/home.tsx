@@ -6,11 +6,8 @@ import Impact from "../../sections/Impact";
 import Goals from "../../sections/Goals";
 import MissFix from "../../sections/MissFix";
 import Founders from "../../sections/Founders";
-import { decode } from "jsonwebtoken";
-import * as bcrypt from "bcrypt";
 
 const HomePage = () => {
-
   return (
     <div className="overflow-hidden pt-[5vh]">
       <Hero />
