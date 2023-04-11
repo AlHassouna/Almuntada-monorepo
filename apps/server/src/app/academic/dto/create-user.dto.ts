@@ -6,7 +6,6 @@ export class CreateUserDto {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-
   firstName: string;
 
   @ApiProperty()
@@ -17,7 +16,6 @@ export class CreateUserDto {
   @ApiProperty()
   @IsEmail()
   @IsString()
-
   email: string;
 
   @ApiProperty()
@@ -39,16 +37,16 @@ export class CreateUserDto {
   degree: string;
 
   @ApiProperty()
+  @IsString()
   subject: string;
 
   @ApiProperty()
-
+  @IsString()
   career: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-
   city: string;
 
 

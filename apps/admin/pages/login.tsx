@@ -1,42 +1,41 @@
-import { NextPage } from 'next'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-regular-svg-icons'
-import { faLock } from '@fortawesome/free-solid-svg-icons'
+import { NextPage } from "next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { faLock } from "@fortawesome/free-solid-svg-icons";
 import {
-  Button, Col, Container, Form, InputGroup, Row,
-} from 'react-bootstrap'
-import Link from 'next/link'
-import { SyntheticEvent, useState } from 'react'
-import { useRouter } from 'next/router'
-import axios from 'axios'
-import { deleteCookie, getCookie } from 'cookies-next'
+  Button, Col, Container, Form, InputGroup, Row
+} from "react-bootstrap";
+import Link from "next/link";
+import { SyntheticEvent, useState } from "react";
+import { useRouter } from "next/router";
+import axios from "axios";
+import { deleteCookie, getCookie } from "cookies-next";
 
 const Login: NextPage = () => {
-  const router = useRouter()
-  const [submitting, setSubmitting] = useState(false)
+  const router = useRouter();
+  const [submitting, setSubmitting] = useState(false);
 
   const getRedirect = () => {
-    const redirect = getCookie('redirect')
-    if (redirect) {
-      deleteCookie('redirect')
-      return redirect.toString()
-    }
-
-    return '/'
-  }
+    return "/";
+  };
 
   const login = async (e: SyntheticEvent) => {
-    e.stopPropagation()
-    e.preventDefault()
+    e.stopPropagation();
+    e.preventDefault();
+    setSubmitting(true);
 
-    setSubmitting(true)
-
-    const res = await axios.post('api/mock/login')
+    const res = await axios.get("http://localhost:8000/api/v1/auth", {
+      params: {
+        userName: "string",
+        password: "string",
+        accessToken: ""
+      }
+    });
     if (res.status === 200) {
-      router.push(getRedirect())
+      router.push(getRedirect());
     }
-    setSubmitting(false)
-  }
+    setSubmitting(false);
+  };
 
   return (
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center dark:bg-transparent">
@@ -121,7 +120,7 @@ const Login: NextPage = () => {
         </Row>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

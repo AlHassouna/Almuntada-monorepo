@@ -1,10 +1,10 @@
 import { faker as Faker } from "@faker-js/faker";
 import { define } from "typeorm-seeding";
 
-import { User } from "./user.entity";
+import { Academic } from "./academic.entity";
 
-define(User, (faker: typeof Faker) => {
-  const user = new User();
+define(Academic, (faker: typeof Faker) => {
+  const user = new Academic();
   user.firstName = faker.name.firstName();
   user.lastName = faker.name.lastName();
   user.age = Number(faker.random.numeric(2));

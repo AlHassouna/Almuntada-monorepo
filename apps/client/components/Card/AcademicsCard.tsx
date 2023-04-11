@@ -1,9 +1,9 @@
-import {FC} from "react";
-import {RevealWrapper} from "next-reveal";
+import { FC } from "react";
+import { RevealWrapper } from "next-reveal";
 import Typography from "@mui/material/Typography";
-import {AcademicCardBox} from "./card.styled";
+import { AcademicCardBox } from "./card.styled";
 import CardMedia from "@mui/material/CardMedia";
-import {Career, Subject} from "../../../../libs/system-design/src/lib/API/academic/types";
+import { Career, Subject } from "../../../../libs/system-design/src/lib/API/academic/types";
 
 interface Props {
   firstName: string;
@@ -27,6 +27,7 @@ export const AcademicsCard: FC<Props> = ({
                                            career,
                                            city
                                          }) => {
+
   return (
     <RevealWrapper delay={100} duration={2000} reset={true}>
       <AcademicCardBox>
@@ -42,7 +43,7 @@ export const AcademicsCard: FC<Props> = ({
           image={imageUrl}
           title={firstName}
         />
-        <Typography sx={{textAlign: "center"}} gutterBottom variant="h5" component="div">
+        <Typography sx={{ textAlign: "center" }} gutterBottom variant="h5" component="div">
           {`${firstName.toUpperCase()} ${lastName.toUpperCase()}`}
         </Typography>
         <Typography sx={{
@@ -65,7 +66,7 @@ export const AcademicsCard: FC<Props> = ({
           color="text.secondary"
         >
 
-          {`City: ${city}`} <br/>
+          {`City: ${city}`} <br />
           {`Email: ${email}`}
         </Typography>
       </AcademicCardBox>

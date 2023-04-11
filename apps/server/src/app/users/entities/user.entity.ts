@@ -1,67 +1,36 @@
-import {
-  Column,
-  Entity,
-  PrimaryGeneratedColumn,
-  CreateDateColumn,
-  UpdateDateColumn,
-  ManyToOne
-} from 'typeorm';
-import {Subject} from "./subject.entity";
-import {Company} from "./company.entity";
-import {Career} from "./career.entity";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-@Entity('users')
+export enum accessLevelPermissions {
+  VIEWER = "viewer",
+  ADMIN = "admin",
+  SUPERADMIN = "superadmin"
+}
+
+@Entity("user")
+
 export class User {
+
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({
-    nullable: false,
-  })
-  firstName: string;
+  @Column()
+  userName: string;
 
+  @Column()
+  password: string;
+
+  @Column()
+  firstName: string;
   @Column()
   lastName: string;
 
-  @Column()
-  email: string;
+  @Column({
+    type: "enum",
+    enum: accessLevelPermissions,
+    default: accessLevelPermissions.SUPERADMIN
+  })
+  adminPermissions: accessLevelPermissions;
 
-  @Column()
-  imageUrl: string;
-
-  @Column()
-  age: number;
-
-  @Column()
-  city: string;
-
-  @Column()
-  degree: string;
-
-
-  @ManyToOne(() => Subject, (subject) => subject.user)
-  subject: Subject;
-
-  @ManyToOne(() => Career, (career) => career.user)
-
-  career: Career;
-
-  @Column()
-  gender: string;
-
-  @Column()
-  phone: string;
-
-  @ManyToOne(() => Company, (company) => company.user)
-  company: Company;
-
-  @Column({type: "boolean", default: false})
-  isApproved: boolean;
-  @Column({type: "boolean", default: false})
-  isBlocked: boolean;
-
-  @Column()
-  isAgree: boolean;
   @CreateDateColumn()
   createdAt: Date;
 
