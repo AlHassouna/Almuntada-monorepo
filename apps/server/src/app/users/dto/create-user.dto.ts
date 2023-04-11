@@ -28,7 +28,7 @@ export class CreateUserDto {
 
   @ApiProperty()
   @Type(() => Date)
-  age: Date;
+  age: string;
 
   @ApiProperty()
   @IsNotEmpty()
