@@ -7,7 +7,9 @@ import {environment} from "@lib/system-design"
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: '*',
+    origin: true,
+    credentials: true,
+    exposedHeaders: ['Set-Cookie'],
   });
   const globalPrefix = 'api';
   const version = 'v1'

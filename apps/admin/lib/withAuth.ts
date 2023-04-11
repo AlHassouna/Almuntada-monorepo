@@ -1,7 +1,7 @@
-import { GetServerSideProps } from 'next'
-import { ParsedUrlQuery } from 'querystring'
-import { PreviewData } from 'next/types'
-import { serializeCookie } from './cookie'
+import { GetServerSideProps } from "next";
+import { ParsedUrlQuery } from "querystring";
+import { PreviewData } from "next/types";
+import { serializeCookie } from "./cookie";
 
 type WithAuth = <
   P extends { [key: string]: unknown } = { [key: string]: unknown },
@@ -21,19 +21,19 @@ type WithAuth = <
  * ```
  */
 const withAuth: WithAuth = (gssp) => async (context) => {
-  const { auth: authSession } = context.req.cookies
-
+  const { auth: authSession } = context.req.cookies;
+  console.log("context", context);
   if (!authSession) {
-    context.res.setHeader('Set-Cookie', serializeCookie('redirect', context.resolvedUrl, { path: '/' }))
+    context.res.setHeader("Set-Cookie", serializeCookie("redirect", context.resolvedUrl, { path: "/" }));
     return {
       redirect: {
-        destination: '/login',
-        permanent: false,
-      },
-    }
+        destination: "/login",
+        permanent: false
+      }
+    };
   }
 
-  return gssp(context) // Continue on to call `getServerSideProps` logic
-}
+  return gssp(context); // Continue on to call `getServerSideProps` logic
+};
 
-export default withAuth
+export default withAuth;

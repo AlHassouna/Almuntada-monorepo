@@ -1,16 +1,19 @@
-import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { Repository } from "typeorm";
-import { CreateUserDto } from "./dto/create-user.dto";
-import { User } from "./entities/user.entity";
-import { Subject } from "./entities/subject.entity";
-import { Company } from "./entities/company.entity";
-import { Career } from "./entities/career.entity";
+import {Inject, Injectable} from "@nestjs/common";
+import {InjectRepository} from "@nestjs/typeorm";
+import {Repository} from "typeorm";
+import {CreateUserDto} from "./dto/create-user.dto";
+import {Academic} from "./entities/academic.entity";
+import {Subject} from "./entities/subject.entity";
+import {Company} from "./entities/company.entity";
+import {Career} from "./entities/career.entity";
+import {AuthService} from "../auth/auth.service";
 
 @Injectable()
-export class UserService {
+export class AcademicService {
   constructor(
-    @InjectRepository(User) private readonly userRepository: Repository<User>,
+    @Inject(AuthService)
+    private readonly authService: AuthService,
+    @InjectRepository(Academic) private readonly academicRepository: Repository<Academic>,
     @InjectRepository(Subject) private readonly subjectRepository: Repository<Subject>,
     @InjectRepository(Company) private readonly companyRepository: Repository<Company>,
     @InjectRepository(Career) private readonly careerRepository: Repository<Career>
@@ -18,30 +21,30 @@ export class UserService {
   }
 
   async create(createUserDto: CreateUserDto) {
-    const { subject, company, career } = createUserDto;
-    const subjectEntity = await this.subjectRepository.findOne({ where: { subject } }) || this.subjectRepository.create({ subject });
+    const {subject, company, career} = createUserDto;
+    const subjectEntity = await this.subjectRepository.findOne({where: {subject}}) || this.subjectRepository.create({subject});
     const savedSubject = await this.subjectRepository.save(subjectEntity);
 
-    const companyEntity = await this.companyRepository.findOne({ where: { company } }) || this.companyRepository.create({ company });
+    const companyEntity = await this.companyRepository.findOne({where: {company}}) || this.companyRepository.create({company});
     const savedCompany = await this.companyRepository.save(companyEntity);
 
-    const careerEntity = await this.careerRepository.findOne({ where: { career } }) || this.careerRepository.create({ career });
+    const careerEntity = await this.careerRepository.findOne({where: {career}}) || this.careerRepository.create({career});
     const savedCareer = await this.careerRepository.save(careerEntity);
-
-    const newUser = this.userRepository.create({
+    createUserDto.phone = btoa(createUserDto.phone);
+    const newUser = this.academicRepository.create({
       ...createUserDto,
       subject: savedSubject,
       company: savedCompany,
       career: savedCareer
     });
 
-    return await this.userRepository.save(newUser);
+    return await this.academicRepository.save(newUser);
 
   }
 
 
   findAll() {
-    return this.userRepository.find({
+    return this.academicRepository.find({
       relations: {
         subject: true,
         career: true,
@@ -51,7 +54,7 @@ export class UserService {
   }
 
   async updateUser(id, data) {
-    return await this.userRepository.update(id, data);
+    return await this.academicRepository.update(id, data);
   }
 
   async findAllSubjects(): Promise<Subject[]> {
@@ -79,8 +82,8 @@ export class UserService {
   }
 
 
-  async findAllSearch(data): Promise<User[]> {
-    return await this.userRepository.find({
+  async findAllSearch(data): Promise<Academic[]> {
+    return await this.academicRepository.find({
         where:
         data,
         relations: {

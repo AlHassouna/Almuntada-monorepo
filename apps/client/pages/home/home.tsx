@@ -8,17 +8,16 @@ import MissFix from "../../sections/MissFix";
 import Founders from "../../sections/Founders";
 
 const HomePage = () => {
-
   return (
     <div className="overflow-hidden pt-[5vh]">
-      <Hero/>
-      <About/>
+      <Hero />
+      <About />
       <div className="relative">
-        <Vision/>
-        <Goals/>
-        <Impact/>
-        <MissFix/>
-        <Founders/>
+        <Vision />
+        <Goals />
+        <Impact />
+        <MissFix />
+        <Founders />
       </div>
 
     </div>
