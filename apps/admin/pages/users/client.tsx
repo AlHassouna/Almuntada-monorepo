@@ -26,7 +26,7 @@ const Client: NextPage<Props> = (props) => {
   const [sort, setSort] = useState(initSort)
   const [order, setOrder] = useState(initOrder)
 
-  const userListURL = `${environment.NEXT_PUBLIC_POKEMON_LIST_API_BASE_URL}users` || ''
+  const userListURL = `${environment.NEXT_PUBLIC_POKEMON_LIST_API_BASE_URL}academic` || ''
   const [fallbackResource, setFallbackResource] = useState<Resource<IAcademic>>(
     newResource([], 0, page, perPage),
   )

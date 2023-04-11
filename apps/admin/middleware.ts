@@ -1,10 +1,10 @@
-import type { NextRequest } from "next/server";
-import { NextResponse } from "next/server";
+import type {NextRequest} from "next/server";
+import {NextResponse} from "next/server";
 
 type Middleware = (request: NextRequest) => NextResponse
 
 const redirectIfAuthenticated: Middleware = (request) => {
-  const authSession = request.cookies.get("auth")?.value;
+  const authSession = request.cookies.get("jwt")?.value;
 
   if (authSession) {
     return NextResponse.redirect(new URL("/", request.url));
@@ -14,7 +14,7 @@ const redirectIfAuthenticated: Middleware = (request) => {
 };
 
 const authenticated: Middleware = (request) => {
-  const authSession = request.cookies.get("auth")?.value;
+  const authSession = request.cookies.get("jwt")?.value;
 
   if (!authSession) {
     const response = NextResponse.redirect(new URL("/login", request.url));

@@ -1,12 +1,12 @@
-import { Inject, Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { Repository } from "typeorm";
-import { CreateUserDto } from "./dto/create-user.dto";
-import { Academic } from "./entities/academic.entity";
-import { Subject } from "./entities/subject.entity";
-import { Company } from "./entities/company.entity";
-import { Career } from "./entities/career.entity";
-import { AuthService } from "../auth/auth.service";
+import {Inject, Injectable} from "@nestjs/common";
+import {InjectRepository} from "@nestjs/typeorm";
+import {Repository} from "typeorm";
+import {CreateUserDto} from "./dto/create-user.dto";
+import {Academic} from "./entities/academic.entity";
+import {Subject} from "./entities/subject.entity";
+import {Company} from "./entities/company.entity";
+import {Career} from "./entities/career.entity";
+import {AuthService} from "../auth/auth.service";
 
 @Injectable()
 export class AcademicService {
@@ -21,17 +21,16 @@ export class AcademicService {
   }
 
   async create(createUserDto: CreateUserDto) {
-    const { subject, company, career } = createUserDto;
-    const subjectEntity = await this.subjectRepository.findOne({ where: { subject } }) || this.subjectRepository.create({ subject });
+    const {subject, company, career} = createUserDto;
+    const subjectEntity = await this.subjectRepository.findOne({where: {subject}}) || this.subjectRepository.create({subject});
     const savedSubject = await this.subjectRepository.save(subjectEntity);
 
-    const companyEntity = await this.companyRepository.findOne({ where: { company } }) || this.companyRepository.create({ company });
+    const companyEntity = await this.companyRepository.findOne({where: {company}}) || this.companyRepository.create({company});
     const savedCompany = await this.companyRepository.save(companyEntity);
 
-    const careerEntity = await this.careerRepository.findOne({ where: { career } }) || this.careerRepository.create({ career });
+    const careerEntity = await this.careerRepository.findOne({where: {career}}) || this.careerRepository.create({career});
     const savedCareer = await this.careerRepository.save(careerEntity);
     createUserDto.phone = btoa(createUserDto.phone);
-    console.log(createUserDto.phone);
     const newUser = this.academicRepository.create({
       ...createUserDto,
       subject: savedSubject,

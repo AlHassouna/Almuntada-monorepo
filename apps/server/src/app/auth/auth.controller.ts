@@ -1,15 +1,15 @@
-import { Body, Controller, Get, Header, Post, Query, UseGuards } from "@nestjs/common";
-import { AuthService } from "./auth.service";
-import { UserInputDto } from "./dto/users.dto";
-import { ApiTags } from "@nestjs/swagger";
-import { LoginDto } from "./dto/auth.dto";
-import { Response as Res } from "express";
-import { serialize } from "cookie";
+import {Body, Controller, Post, Res} from "@nestjs/common";
+import {AuthService} from "./auth.service";
+import {UserInputDto} from "./dto/users.dto";
+import {ApiTags} from "@nestjs/swagger";
+import {LoginDto} from "./dto/auth.dto";
+import {Response} from "express";
+import {JwtService} from "@nestjs/jwt";
 
 @Controller("auth")
 @ApiTags("auth")
 export class AuthController {
-  constructor(private readonly authService: AuthService) {
+  constructor(private readonly authService: AuthService, private jwtService: JwtService) {
   }
 
   @Post("register")
@@ -17,9 +17,8 @@ export class AuthController {
     return this.authService.signUp(user);
   }
 
-  @Get()
-  @Header("Set-Cookie", serialize("auth", "Andy"))
-  LogIn(@Query() data: LoginDto) {
-    return this.authService.login(data);
+  @Post('login')
+  LogIn(@Body() data: LoginDto, @Res({passthrough: true}) res: Response) {
+    return this.authService.login(data, res);
   }
 }

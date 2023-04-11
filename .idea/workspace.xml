@@ -4,62 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="feat: add encryption to the phone number">
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/academic/entities/academic.entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/auth/auth.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/auth/auth.guard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/auth/auth.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/auth/auth.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/auth/const.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/auth/dto/auth.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/auth/dto/users.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/user.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/users.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/users.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/server/src/app/users/users.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/system-design/src/lib/API/admin/forgetPassword.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/system-design/src/lib/API/admin/getUser.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/system-design/src/lib/API/admin/postUser.ts" afterDir="false" />
+    <list default="true" id="46254600-a4cd-4fb3-98b2-926f3b94392a" name="Changes" comment="fix: next.config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/admin/lib/withAuth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admin/lib/withAuth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/admin/components/User/UserList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admin/components/User/UserList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/admin/layout/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admin/layout/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/admin/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admin/middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/admin/pages/api/health.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/admin/pages/api/mock/login.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/admin/pages/api/mock/logout.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/admin/pages/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admin/pages/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/admin/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admin/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/components/Card/AcademicsCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/components/Card/AcademicsCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/academic/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/pages/home/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/client/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/client/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/seeds/initialSeed.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-career.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/academic/dto/create-career.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-company.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/academic/dto/create-company.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-subject.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/academic/dto/create-subject.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/academic/dto/create-user.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/output-created-data.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/academic/dto/output-created-data.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/dto/search-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/academic/dto/search-user.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/entities/career.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/academic/entities/career.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/entities/company.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/academic/entities/company.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/entities/subject.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/academic/entities/subject.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/entities/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/users/entities/user.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/entities/users.factory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/academic/entities/users.factory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/academic/academic.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/academic/academic.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/server/src/app/users/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/academic/academic.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/getAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/getAcademic.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/getAcademics.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/getAcademics.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/getCareers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/getCareers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/getCompany.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/getCompany.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/getSubjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/getSubjects.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/postAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/postAcademic.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/searchAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/searchAcademic.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/updateAcademic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/API/academic/updateAcademic.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/system-design/src/lib/API/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/system-design/src/lib/API/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/admin/pages/users/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admin/pages/users/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/academic/academic.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/academic/academic.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/auth/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/auth/auth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/app/auth/dto/auth.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/app/auth/dto/auth.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/server/src/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="feat/029-backend-podcasts" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -109,7 +66,7 @@
     "nodejs_package_manager_path": "yarn",
     "rearrange.code.on.save": "true",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/Users/eliassalom/Desktop/project/Al-Manshaa-monorepo/node_modules/typescript/lib",
+    "ts.external.directory.path": "/Users/hassanhassouna/WebstormProjects/Al-Manshaa-monorepo/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
