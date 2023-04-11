@@ -15,7 +15,7 @@ import {AutoComplete} from "@lib/system-design";
 import {DataToSelectOptions} from "@lib/shared-hooks";
 import {getCityList} from "@lib/shared-types";
 import {ListOptions} from "../../components/Dialog/optionAcademic";
-import {MainSection} from "../../styled/global.styled";
+import {CardsSection, MainSection} from "../../styled/global.styled";
 import Head from "next/head";
 
 const Academic: FC = () => {
@@ -80,7 +80,7 @@ const Academic: FC = () => {
           )}
         </ImageContainer>
       </AcademicSection>
-      <MainSection>
+      <CardsSection>
         <div>
           <motion.p
             variants={fadeIn("up", "tween", 0.2, 1)}
@@ -123,7 +123,7 @@ const Academic: FC = () => {
           ))}
 
         </CardContainer>
-      </MainSection>
+      </CardsSection>
     </MainContainer>
 
   );

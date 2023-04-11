@@ -10,6 +10,14 @@ export const MainSection = styled.section`
     margin-top: 2rem;
   }
 `;
+export const CardsSection = styled.section`
+  display: flex;
+  flex-direction: ${props => props.property || "column"};
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+`;
 export const HomeSection = styled.section`
   height: 100vh;
   display: flex;

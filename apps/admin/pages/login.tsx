@@ -1,15 +1,15 @@
-import { NextPage } from 'next'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-regular-svg-icons'
-import { faLock } from '@fortawesome/free-solid-svg-icons'
+import {NextPage} from 'next'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faUser} from '@fortawesome/free-regular-svg-icons'
+import {faLock} from '@fortawesome/free-solid-svg-icons'
 import {
   Button, Col, Container, Form, InputGroup, Row,
 } from 'react-bootstrap'
 import Link from 'next/link'
-import { SyntheticEvent, useState } from 'react'
-import { useRouter } from 'next/router'
+import {SyntheticEvent, useState} from 'react'
+import {useRouter} from 'next/router'
 import axios from 'axios'
-import { deleteCookie, getCookie } from 'cookies-next'
+import {deleteCookie, getCookie} from 'cookies-next'
 
 const Login: NextPage = () => {
   const router = useRouter()
@@ -17,6 +17,7 @@ const Login: NextPage = () => {
 
   const getRedirect = () => {
     const redirect = getCookie('redirect')
+    console.log(redirect)
     if (redirect) {
       deleteCookie('redirect')
       return redirect.toString()

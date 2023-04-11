@@ -30,7 +30,7 @@ export class User {
   imageUrl: string;
 
   @Column()
-  age: number;
+  age: string;
 
   @Column()
   city: string;
