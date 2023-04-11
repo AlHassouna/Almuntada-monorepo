@@ -1,19 +1,21 @@
-import {NextPage} from 'next'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faUser} from '@fortawesome/free-regular-svg-icons'
-import {faLock} from '@fortawesome/free-solid-svg-icons'
+import {NextPage} from "next";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faUser} from "@fortawesome/free-regular-svg-icons";
+import {faLock} from "@fortawesome/free-solid-svg-icons";
 import {
-  Button, Col, Container, Form, InputGroup, Row,
-} from 'react-bootstrap'
-import Link from 'next/link'
-import {SyntheticEvent, useState} from 'react'
-import {useRouter} from 'next/router'
-import axios from 'axios'
+  Button, Col, Container, Form, InputGroup, Row
+} from "react-bootstrap";
+import Link from "next/link";
+import {SyntheticEvent, useState} from "react";
+import {useRouter} from "next/router";
+import axios from "axios";
 import {deleteCookie, getCookie} from 'cookies-next'
 
 const Login: NextPage = () => {
-  const router = useRouter()
-  const [submitting, setSubmitting] = useState(false)
+  const router = useRouter();
+  const [submitting, setSubmitting] = useState(false);
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
 
   const getRedirect = () => {
     const redirect = getCookie('redirect')
@@ -25,20 +27,24 @@ const Login: NextPage = () => {
 
     return '/'
   }
-
-  const login = async (e: SyntheticEvent) => {
+  const submit = async (e: SyntheticEvent) => {
     e.stopPropagation()
-    e.preventDefault()
+    e.preventDefault();
+    setSubmitting(true);
 
-    setSubmitting(true)
-
-    const res = await axios.post('api/mock/login')
-    if (res.status === 200) {
+    const res = await axios.post('http://localhost:8000/api/v1/auth/login', {
+        userName,
+        password,
+      },
+      {
+        withCredentials: true,
+      }
+    );
+    if (res.status === 201) {
       router.push(getRedirect())
     }
-    setSubmitting(false)
+    setSubmitting(false);
   }
-
   return (
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center dark:bg-transparent">
       <Container>
@@ -50,7 +56,7 @@ const Login: NextPage = () => {
                   <h1>Login</h1>
                   <p className="text-black-50">Sign In to your account</p>
 
-                  <form onSubmit={login}>
+                  <form onSubmit={submit}>
                     <InputGroup className="mb-3">
                       <InputGroup.Text>
                         <FontAwesomeIcon
@@ -65,6 +71,10 @@ const Login: NextPage = () => {
                         placeholder="Username"
                         aria-label="Username"
                         defaultValue="Username"
+                        onChange={e => {
+                          setUserName(e.target.value);
+                        }
+                        }
                       />
                     </InputGroup>
 
@@ -83,6 +93,10 @@ const Login: NextPage = () => {
                         placeholder="Password"
                         aria-label="Password"
                         defaultValue="Password"
+                        onChange={e => {
+                          setPassword(e.target.value);
+                        }
+                        }
                       />
                     </InputGroup>
 
@@ -122,7 +136,7 @@ const Login: NextPage = () => {
         </Row>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

@@ -16,22 +16,9 @@
       },
       "configurations": {
         "development": {
-          "outputPath": "apps/client",
-          "fileReplacements": [
-            {
-              "replace": "environment/environment.ts",
-              "with": "environment/environment.prod.ts"
-            }
-          ]
+          "outputPath": "apps/client"
         },
-        "production": {
-          "fileReplacements": [
-            {
-              "replace": "environment/environment.ts",
-              "with": "environment/environment.prod.ts"
-            }
-          ]
-        }
+        "production": {}
       }
     },
     "serve": {
@@ -39,8 +26,7 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "client:build",
-        "dev": true,
-        "port": 3000
+        "dev": true
       },
       "configurations": {
         "development": {

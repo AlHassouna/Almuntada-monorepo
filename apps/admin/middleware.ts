@@ -1,48 +1,48 @@
-import type { NextRequest } from 'next/server'
-import { NextResponse } from 'next/server'
+import type {NextRequest} from "next/server";
+import {NextResponse} from "next/server";
 
 type Middleware = (request: NextRequest) => NextResponse
 
 const redirectIfAuthenticated: Middleware = (request) => {
-  const authSession = request.cookies.get('auth')?.value
+  const authSession = request.cookies.get("jwt")?.value;
 
   if (authSession) {
-    return NextResponse.redirect(new URL('/', request.url))
+    return NextResponse.redirect(new URL("/", request.url));
   }
 
-  return NextResponse.next()
-}
+  return NextResponse.next();
+};
 
 const authenticated: Middleware = (request) => {
-  const authSession = request.cookies.get('auth')?.value
+  const authSession = request.cookies.get("jwt")?.value;
 
   if (!authSession) {
-    const response = NextResponse.redirect(new URL('/login', request.url))
+    const response = NextResponse.redirect(new URL("/login", request.url));
     response.cookies.set({
-      name: 'redirect',
-      value: request.url,
-    })
-    return response
+      name: "redirect",
+      value: request.url
+    });
+    return response;
   }
 
-  return NextResponse.next()
-}
+  return NextResponse.next();
+};
 
 export default function middleware(request: NextRequest) {
   if ([
-    '/login',
-    '/register',
+    "/login",
+    "/register"
   ].includes(request.nextUrl.pathname)) {
-    return redirectIfAuthenticated(request)
+    return redirectIfAuthenticated(request);
   }
 
   if ([
-    '/',
-    '/users',
-    '/users/client',
+    "/",
+    "/academic",
+    "/academic/client"
   ].includes(request.nextUrl.pathname)) {
-    return authenticated(request)
+    return authenticated(request);
   }
 
-  return NextResponse.next()
+  return NextResponse.next();
 }

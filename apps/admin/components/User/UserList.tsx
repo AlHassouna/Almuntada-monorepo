@@ -55,7 +55,7 @@ export const UserList: FC<Props> = (props) => {
           <td>{user.city}</td>
           <td>{user.degree}</td>
           <td>{user.gender}</td>
-          <td>{user.phone}</td>
+          <td>{atob(user.phone)}</td>
           <td>{user.subject.subject}</td>
           <td>{user.company.company}</td>
           <td>{user.career.career}</td>

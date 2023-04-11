@@ -3,22 +3,22 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   CreateDateColumn,
-  UpdateDateColumn, OneToMany,
-} from 'typeorm';
-import {User} from './user.entity';
+  UpdateDateColumn, OneToMany
+} from "typeorm";
+import { Academic } from "./academic.entity";
 
-@Entity('company')
+@Entity("company")
 
 export class Company {
 
   @PrimaryGeneratedColumn()
-  id: number
+  id: number;
 
   @Column()
   company: string;
 
-  @OneToMany(() => User, (user) => user.company)
-  user: User;
+  @OneToMany(() => Academic, (academic) => academic.company)
+  user: Academic;
   @CreateDateColumn()
   createdAt: Date;
 

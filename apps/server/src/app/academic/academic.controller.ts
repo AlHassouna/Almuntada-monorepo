@@ -6,7 +6,7 @@ import {
   UsePipes,
   ValidationPipe, Query, Put
 } from "@nestjs/common";
-import { UserService } from "./user.service";
+import { AcademicService } from "./academic.service";
 import { CreateUserDto } from "./dto/create-user.dto";
 import { Subject } from "./entities/subject.entity";
 import {
@@ -17,12 +17,12 @@ import {
 import { Company } from "./entities/company.entity";
 import { Career } from "./entities/career.entity";
 import { SearchUserDto } from "./dto/search-user.dto";
-import { User } from "./entities/user.entity";
+import { Academic } from "./entities/academic.entity";
 
-@ApiTags("Users")
-@Controller("users")
-export class UserController {
-  constructor(private readonly userService: UserService) {
+@ApiTags("Academic")
+@Controller("academic")
+export class AcademicController {
+  constructor(private readonly userService: AcademicService) {
   }
 
   @Post()
@@ -60,7 +60,7 @@ export class UserController {
   }
 
   @Get("search")
-  async findAllSearch(@Query() data: SearchUserDto): Promise<User[]> {
+  async findAllSearch(@Query() data: SearchUserDto): Promise<Academic[]> {
     return await this.userService.findAllSearch(data);
   }
 

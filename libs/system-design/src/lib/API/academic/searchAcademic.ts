@@ -1,12 +1,12 @@
-import {IAcademic} from "./types";
-import {backendInstance} from "../api";
-import {useQuery} from "@tanstack/react-query";
+import { IAcademic } from "./types";
+import { backendInstance } from "../api";
+import { useQuery } from "@tanstack/react-query";
 
 const getAcademicsBySearchTerms = async (
   data: Record<string, unknown>
 ): Promise<Array<IAcademic>> => {
 
-  return (await backendInstance.get("/users/search", {
+  return (await backendInstance.get("/academic/search", {
     params: data
   })).data;
 };
