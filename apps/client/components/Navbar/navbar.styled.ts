@@ -34,10 +34,8 @@ export const LogoContainer = styled(Image)`
   z-index: 20;
   cursor: pointer;
   @media screen and (max-width: 768px) {
-    width: 30vw;
+    width: 40vw;
   }
-
-
 `
 export const NavbarContainer = styled.div`
   max-width: 1280px;

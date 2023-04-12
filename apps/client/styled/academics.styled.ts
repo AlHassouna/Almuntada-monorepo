@@ -17,18 +17,6 @@ export const AcademicSection = styled.section`
     margin-top: 2rem;
   }
 `;
-export const ImageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5rem;
-  background: url(${props => props.property});
-  height: 75vh;
-  z-index: 2;
-  background-position: bottom;
-  width: 100%;
-`;
 export const ImageContainerAc = styled.div`
   display: flex;
   align-items: center;

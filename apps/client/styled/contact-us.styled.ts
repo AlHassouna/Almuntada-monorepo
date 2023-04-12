@@ -4,7 +4,6 @@ import styled from "styled-components";
 export const StyledHeading = styled.h1`
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 2rem;
   text-align: center;
 `;
 
@@ -13,6 +12,9 @@ export const StyledForm = styled(Form)`
   flex-direction: column;
   width: 30%;
   margin: 0 auto;
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 
   div {
     display: flex;

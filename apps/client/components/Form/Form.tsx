@@ -2,9 +2,9 @@ import React, {FC} from "react";
 import {Formik, Field, ErrorMessage} from "formik";
 import * as Yup from "yup";
 import {StyledHeading, StyledForm} from "../../styled/contact-us.styled"
-import {ContactUsCreated} from "../../../../libs/system-design/src/lib/API/contact-us/types";
+import {ContactUsCreated} from "@lib/system-design";
 import {useIntl} from "react-intl";
-import {MainSection} from "apps/client/styled/global.styled";
+import {MainSection} from "../../styled/global.styled";
 import Head from "next/head";
 
 
@@ -42,10 +42,15 @@ const ContactForm: FC<ContactUsProps> = ({onSubmit}) => {
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={values => onSubmit(values)}
+        onSubmit={async (values, {setSubmitting,resetForm}) => {
+          await onSubmit(values);
+          setSubmitting(false);
+          resetForm();
+        }
+        }
       >
-        {({isSubmitting}) => (
-          <StyledForm>
+        {({isSubmitting,handleSubmit}) => (
+          <StyledForm onSubmit={handleSubmit}>
             <div>
               <label htmlFor="fullName">{intl.formatMessage({id: 'contactpage.fullname'})}</label>
               <Field
