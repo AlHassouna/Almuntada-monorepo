@@ -9,7 +9,7 @@ import Link from "next/link";
 import {SyntheticEvent, useState} from "react";
 import {useRouter} from "next/router";
 import axios from "axios";
-import {deleteCookie, getCookie} from 'cookies-next'
+import {deleteCookie, getCookie,setCookie} from 'cookies-next'
 
 const Login: NextPage = () => {
   const router = useRouter();
@@ -19,12 +19,10 @@ const Login: NextPage = () => {
 
   const getRedirect = () => {
     const redirect = getCookie('redirect')
-    console.log(redirect)
     if (redirect) {
       deleteCookie('redirect')
       return redirect.toString()
     }
-
     return '/'
   }
   const submit = async (e: SyntheticEvent) => {
@@ -32,16 +30,17 @@ const Login: NextPage = () => {
     e.preventDefault();
     setSubmitting(true);
 
-    const res = await axios.post('http://localhost:8000/api/v1/auth/login', {
-        userName,
-        password,
-      },
-      {
-        withCredentials: true,
-      }
-    );
-    if (res.status === 201) {
-      router.push(getRedirect())
+    const res = await axios.get('http://localhost:8000/api/v1/auth', {
+   params: {
+      userName,
+     password,
+    },
+      withCredentials: true
+    });
+    if (res.status === 200) {
+      const {accessToken} = res.data
+      setCookie('jwt', accessToken)
+      await router.push(getRedirect())
     }
     setSubmitting(false);
   }

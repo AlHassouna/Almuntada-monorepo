@@ -1,9 +1,8 @@
-import { Body, Controller, Get, Post, Query, Res } from "@nestjs/common";
+import { Body, Controller, Get, Post, Query  } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { UserInputDto } from "./dto/users.dto";
 import { ApiTags } from "@nestjs/swagger";
 import { LoginDto } from "./dto/auth.dto";
-import { Response } from "express";
 import { JwtService } from "@nestjs/jwt";
 
 @Controller("auth")
@@ -18,7 +17,8 @@ export class AuthController {
   }
 
   @Get()
-  LogIn(@Query() data: LoginDto, @Res({ passthrough: true }) res: Response) {
-    return this.authService.login(data, res);
+   LogIn(@Query() data: LoginDto) {
+    return this.authService.login(data);
   }
 }
+

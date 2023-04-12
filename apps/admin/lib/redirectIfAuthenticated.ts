@@ -11,15 +11,6 @@ type RedirectIfAuthenticated = <
   gssp: GetServerSideProps<P, Q, D>
 ) => GetServerSideProps<P, Q, D>
 
-/**
- * Use with `GetServerSideProps`
- * eg:
- * ```
- * export const getServerSideProps: GetServerSideProps<Props> = redirectIfAuthenticated(async (context) => {
- *   ...
- * })
- * ```
- */
 const redirectIfAuthenticated: RedirectIfAuthenticated = (gssp) => async (context) => {
   const { auth: authSession } = context.req.cookies
   if (authSession) {

@@ -7,7 +7,6 @@ import {InjectRepository} from "@nestjs/typeorm";
 import {Repository} from "typeorm";
 import * as bcrypt from "bcrypt";
 import {User} from "../users/entities/user.entity";
-import {Response} from 'express'
 
 @Injectable()
 export class AuthService {
@@ -20,7 +19,7 @@ export class AuthService {
   createAccessToken(username: string, userId: number): { accessToken: string } {
     return {accessToken: this.jwtService.sign({username}, {expiresIn: 3600, secret: userId.toString()})};
   }
-  
+
   async signUp(user: UserInputDto) {
     const {userName, firstName, lastName} = user;
     const getUser = await this.usersService.findOne({where: {userName}});
@@ -40,7 +39,7 @@ export class AuthService {
     };
   }
 
-  async login(data: LoginDto, res: Response) {
+  async login(data: LoginDto) {
     const {userName, password} = data;
     const user = await this.usersService.findOne({where: {userName}});
     if (!user) throw new UnauthorizedException();
@@ -48,11 +47,9 @@ export class AuthService {
     const passwordValid = await bcrypt.compare(password, user.password);
     if (!passwordValid) throw new UnauthorizedException();
 
-    const jwt = await this.jwtService.signAsync({id: user.id});
-    res.cookie('jwt', jwt);
     return {
       ...user,
-      accessToken: jwt
+      accessToken: this.createAccessToken(user.userName, user.id).accessToken
     };
   }
 }
