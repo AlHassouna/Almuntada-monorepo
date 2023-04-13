@@ -1,6 +1,6 @@
-import { ApiProperty } from "@nestjs/swagger";
-import { IsBoolean, IsEmail, IsNotEmpty, IsNumber, IsString, IsUrl, Max, Min } from "class-validator";
-import { Type } from "class-transformer";
+import {ApiProperty} from "@nestjs/swagger";
+import {IsBoolean, IsEmail, IsNotEmpty, IsNumber, IsString, IsUrl, Max, Min} from "class-validator";
+import {Type} from "class-transformer";
 
 export class CreateUserDto {
   @ApiProperty()
@@ -25,11 +25,8 @@ export class CreateUserDto {
   imageUrl: string;
 
   @ApiProperty()
-  @IsNumber()
-  @Min(18)
-  @Max(70)
-  @Type(() => Number)
-  age: number;
+  @Type(() => Date)
+  age: string;
 
   @ApiProperty()
   @IsNotEmpty()

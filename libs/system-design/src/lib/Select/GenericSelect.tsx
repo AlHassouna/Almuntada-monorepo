@@ -14,7 +14,7 @@ interface SelectOptionType {
 interface Props {
   label: string;
   value: string;
-  onChange: (event: SelectChangeEvent<string>, child: ReactNode) => void;
+  onChange: (event: SelectChangeEvent<string>, child: ReactNode) => void
   data: SelectOptionType[];
 }
 
@@ -35,7 +35,7 @@ export const GenericSelect: FC<Props> = ({label, value, onChange, data}) => {
       </Select>
     </FormControl>
   </Box>
-  
+
 }
 
 

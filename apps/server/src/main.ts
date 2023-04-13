@@ -2,14 +2,12 @@ import {Logger} from '@nestjs/common';
 import {NestFactory} from '@nestjs/core';
 import {DocumentBuilder, SwaggerModule} from '@nestjs/swagger';
 import {AppModule} from './app/app.module';
-import {environment} from "@lib/system-design"
-
+import * as cookieParser from 'cookie-parser';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
     origin: true,
     credentials: true,
-    exposedHeaders: ['Set-Cookie'],
   });
   const globalPrefix = 'api';
   const version = 'v1'

@@ -7,10 +7,11 @@ const {withNx} = require('@nrwl/next/plugins/with-nx');
  * @type {import('@nrwl/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
-  // testing
-  distDir: '.next',
   nx: {
     svgr: false,
+  },
+  env: {
+    apiUrl: process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_API_URL : 'http://localhost:8000/api',
   },
   reactStrictMode: true,
   i18n: {
@@ -28,12 +29,6 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       use: [
-        {
-          loader: 'ts-loader',
-          options: {
-            transpileOnly: true,
-          },
-        },
         {
           loader: 'babel-loader',
           options: {

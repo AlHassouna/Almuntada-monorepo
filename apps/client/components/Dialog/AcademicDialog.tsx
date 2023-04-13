@@ -23,6 +23,8 @@ import {getDegreeList} from "@lib/shared-types";
 import {SelectChangeEvent} from "@mui/material/Select";
 import {getCityList} from "@lib/shared-types";
 import {FileUpload} from '@lib/system-design'
+import {Date} from '@lib/system-design'
+import {Dayjs} from 'dayjs'
 
 interface Props {
   handleClose: () => void;
@@ -64,6 +66,7 @@ export const AcademicDialog: FC<Props> = ({handleClose, OnSubmit, isOpen}) => {
     const nameRegexWithSpaces = /^[a-zA-Z ]+$/;
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     const [checked, setChecked] = useState(false);
+    const [date, setDate] = useState<Dayjs | null>(null);
     const handleChange = (event) => {
       setChecked(event.target.checked);
     };
@@ -74,13 +77,13 @@ export const AcademicDialog: FC<Props> = ({handleClose, OnSubmit, isOpen}) => {
       subject: "",
       career: "",
       gender: "",
-      company: ""
+      company: "",
+      age: undefined,
     });
     const [imageUrl, setImageUrl] = useState("");
     const validationSchema = Yup.object().shape({
       firstName: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
       lastName: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
-      age: Yup.string().required(String(required)),
       email: Yup.string().email("Invalid email address").matches(emailRegex, "Only English letters").required(String(required))
     });
 
@@ -111,6 +114,7 @@ export const AcademicDialog: FC<Props> = ({handleClose, OnSubmit, isOpen}) => {
             onSubmit={(values) => OnSubmit({
               ...values,
               city: academicDetail.city,
+              age: date.format('YYYY-MM-DD'),
               subject: academicDetail?.subject,
               degree: academicDetail.degree,
               gender: academicDetail.gender,
@@ -129,7 +133,9 @@ export const AcademicDialog: FC<Props> = ({handleClose, OnSubmit, isOpen}) => {
                   <Field name="lastName" type="text" as={TextField}
                          label={intl.messages["academicpage.dialog.last.name"]}/>
                   <ErrorMessage name="lastName"/>
-                  <Field name="age" type="number" as={TextField} label={intl.messages["academicpage.dialog.age"]}/>
+                  <Field name="age" type="number" as={Date} value={date}
+                         setValue={setDate}
+                         label={intl.messages["academicpage.dialog.age"]}/>
                   <ErrorMessage name="age"/>
                   <Field name="email" type="email" as={TextField} label={intl.messages["academicpage.dialog.email"]}/>
                   <ErrorMessage name="email"/>

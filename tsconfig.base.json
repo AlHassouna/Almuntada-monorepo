@@ -31,6 +31,9 @@
       ],
       "@lib/system-design": [
         "libs/system-design/src/index.ts"
+      ],
+      "@env": [
+        "environment/environment.ts"
       ]
     },
     "typeRoots": [
