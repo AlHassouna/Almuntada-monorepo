@@ -68,4 +68,9 @@ export class AcademicController {
   async updateUser(@Query() id, @Body() data) {
     return await this.userService.updateUser(id, data);
   }
+
+  @Get("emails")
+  async findAcademicsByEmail(): Promise<Academic[]> {
+    return await this.userService.findAllAcademicsEmails();
+  }
 }

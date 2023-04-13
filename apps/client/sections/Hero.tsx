@@ -1,4 +1,3 @@
-import {motion} from "framer-motion";
 import {MainSection} from "../styled/global.styled";
 import {Heading, MotionContainer, SubHeading} from "../styled/home.styled";
 import {staggerContainer, textVariant} from "../utils/motion";

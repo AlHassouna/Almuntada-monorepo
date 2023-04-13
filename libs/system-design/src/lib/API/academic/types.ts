@@ -43,6 +43,17 @@ export interface Career {
   updatedAt: Date;
 }
 
+export interface IEmails {
+  message : string;
+  subject : string;
+  emails?: Array<object>
+  email: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export type EmailsCreated = Omit<IEmails, 'createdAt' | 'updatedAt'>;
+
 export type SearchData = Omit<IAcademic, "age" | "imageUrl" | "phone" | "createdAt" | "updatedAt">;
 
 export type AcademicCreated = Omit<IAcademic, "createdAt" | "updatedAt">;

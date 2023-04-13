@@ -3,12 +3,11 @@ import { AuthService } from "./auth.service";
 import { UserInputDto } from "./dto/users.dto";
 import { ApiTags } from "@nestjs/swagger";
 import { LoginDto } from "./dto/auth.dto";
-import { JwtService } from "@nestjs/jwt";
 
 @Controller("auth")
 @ApiTags("auth")
 export class AuthController {
-  constructor(private readonly authService: AuthService, private jwtService: JwtService) {
+  constructor(private readonly authService: AuthService) {
   }
 
   @Post("register")

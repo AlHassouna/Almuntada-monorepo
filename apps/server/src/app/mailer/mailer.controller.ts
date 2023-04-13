@@ -1,34 +1,13 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { MailerService } from './mailer.service';
-import { CreateMailerDto } from './dto/create-mailer.dto';
-import { UpdateMailerDto } from './dto/update-mailer.dto';
-
-@Controller('mailer')
-export class MailerController {
-  constructor(private readonly mailerService: MailerService) {}
-
-  @Post()
-  create(@Body() createMailerDto: CreateMailerDto) {
-    return this.mailerService.create(createMailerDto);
-  }
-
-  @Get()
-  findAll() {
-    return this.mailerService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.mailerService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateMailerDto: UpdateMailerDto) {
-    return this.mailerService.update(+id, updateMailerDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.mailerService.remove(+id);
+import { Controller, Post, Body} from '@nestjs/common';
+import { MailService } from './mailer.service';
+import {ApiTags} from "@nestjs/swagger";
+@ApiTags('Mailer')
+@Controller('mail')
+export class MailController {
+  constructor(private readonly mailerService: MailService) {}
+  @Post('send')
+  async sendEmail(@Body() data ) {
+    const { email,subject,message} = data;
+    return await this.mailerService.sendMail(email,subject,message);
   }
 }

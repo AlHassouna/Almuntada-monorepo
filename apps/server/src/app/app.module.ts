@@ -8,7 +8,7 @@ import { PodcastsModule } from "./podcasts/podcasts.module";
 import { ContactModule } from "./contact/contact.module";
 import { typeOrmAsyncConfig } from "./config/typeorm.config";
 import { AuthModule } from "./auth/auth.module";
-
+import { MailModule} from "./mailer/mailer.module";
 @Module({
   imports: [
     AcademicModule,
@@ -16,7 +16,8 @@ import { AuthModule } from "./auth/auth.module";
     ContactModule,
     AuthModule,
     ConfigModule.forRoot({ isGlobal: true }),
-    TypeOrmModule.forRootAsync(typeOrmAsyncConfig)
+    TypeOrmModule.forRootAsync(typeOrmAsyncConfig),
+    MailModule
   ],
 
   controllers: [AppController],
