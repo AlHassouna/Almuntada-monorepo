@@ -1,6 +1,10 @@
 .env
+
 node_modules
 dist
-environment
-.env.production
 .idea
+environment
+# Next.js
+.next
+
+.DS_Store

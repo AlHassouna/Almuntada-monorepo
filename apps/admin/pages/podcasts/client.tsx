@@ -25,7 +25,7 @@ const Client: NextPage<Props> = (props) => {
   const [sort, setSort] = useState(initSort)
   const [order, setOrder] = useState(initOrder)
 
-  const userListURL = `${process.env.NEXT_PUBLIC_POKEMON_LIST_API_BASE_URL}podcasts` || ''
+  const userListURL = `${process.env.NEXT_PUBLIC_API_URL}/v1/podcasts` || ''
   const [fallbackResource, setFallbackResource] = useState<Resource<IPodcast>>(
     newResource([], 0, page, perPage),
   )

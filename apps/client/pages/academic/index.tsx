@@ -1,11 +1,11 @@
 import React, {FC, useState} from "react";
 import {AcademicsCard} from "../../components/Card/AcademicsCard";
-import {AcademicSection, CardContainer, ImageContainer} from "../../styled/academics.styled";
+import {AcademicSection, CardContainer} from "../../styled/academics.styled";
 import {AcademicDialog} from "../../components/Dialog/AcademicDialog";
 import {AcademicDialogLogic} from "../../components/Dialog/dialogLogic";
 import {MainContainer} from "../../styled/home.styled";
 import {useLocale} from "@lib/system-design";
-import {Button, Typography} from "@mui/material";
+import {Button} from "@mui/material";
 import {useIntl} from "react-intl";
 import styled from "styled-components";
 import {motion} from "framer-motion";
@@ -15,8 +15,9 @@ import {AutoComplete} from "@lib/system-design";
 import {DataToSelectOptions} from "@lib/shared-hooks";
 import {getCityList} from "@lib/shared-types";
 import {ListOptions} from "../../components/Dialog/optionAcademic";
-import {CardsSection, MainSection} from "../../styled/global.styled";
+import {CardsSection} from "../../styled/global.styled";
 import Head from "next/head";
+import Slideshow from "../../components/Slideshow/Slideshow";
 
 const Academic: FC = () => {
 
@@ -41,7 +42,9 @@ const Academic: FC = () => {
   const {isOpen, onClose, onOpen, OnSubmit} = AcademicDialogLogic();
   const citiesOption = DataToSelectOptions(getCityList, "label", "label");
   const {subjectsOptions} = ListOptions();
-
+  const slides = intl.messages[
+    "academicpage.slides"
+    ] as unknown as any
   const filteredData = data?.filter((item) => {
       if (!selectedFilter.city && !selectedFilter.subject) {
         return true;
@@ -58,30 +61,18 @@ const Academic: FC = () => {
         <title>{title}</title>
       </Head>
       <AcademicSection>
-        <ImageContainer property="/academic.jpeg">
-          <Typography className="text-center" variant="h3" color="white">
-            {intl.formatMessage({id: "academicpage.title"})}
-          </Typography>
-          <Typography className="text-center" variant="h3" color="white">
-            {intl.formatMessage({id: "academicpage.sub.title"})}
-          </Typography>
-          <Typography className="text-center" variant="h3" color="white">
-            {intl.formatMessage({id: "academicpage.text"})}
-          </Typography>
-          <StyledButton variant="outlined" onClick={onOpen}>
-            {intl.formatMessage({id: "academicpage.button"})}
-          </StyledButton>
-          {isOpen && (
+        <Slideshow slides={slides} delay={5000} autoplay={true} onClick={onOpen} />
+        {
+          isOpen && (
             <AcademicDialog
               isOpen={isOpen}
               OnSubmit={OnSubmit}
               handleClose={onClose}
             />
-          )}
-        </ImageContainer>
+          )
+        }
       </AcademicSection>
       <CardsSection>
-        <div>
           <motion.p
             variants={fadeIn("up", "tween", 0.2, 1)}
             className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[orange] mb-4"
@@ -106,7 +97,6 @@ const Academic: FC = () => {
               label={String(intl.messages["academicpage.dialog.subject"])}
             />
           </div>
-        </div>
         <CardContainer>
           {filteredData?.map((item, id) => (
             <AcademicsCard
