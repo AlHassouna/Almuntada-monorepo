@@ -7,6 +7,9 @@ import {IAcademic} from '@lib/system-design'
 import {newResource, Resource} from '../../models/resource'
 import {transformResponseWrapper, useSWRAxios} from '../../hooks/index'
 import {Pagination} from '../../components/Pagination'
+import EmailForm from "../../components/Form/Email";
+import {EmailLogic} from "../../components/Form/EmailLogic";
+import { Button } from '@mui/material'
 
 type Props = {
   page: number;
@@ -29,7 +32,7 @@ const Client: NextPage<Props> = (props) => {
   const [fallbackResource, setFallbackResource] = useState<Resource<IAcademic>>(
     newResource([], 0, page, perPage),
   )
-
+  const {isOpen, onClose, onOpen, onSubmit} = EmailLogic();
   // swr: data -> axios: data -> resource: data
   const {data: {data: resource}} = useSWRAxios<Resource<IAcademic>>({
     url: userListURL,
@@ -71,6 +74,25 @@ const Client: NextPage<Props> = (props) => {
           />
         </Card.Body>
       </Card>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'end',
+        marginTop: '10px',
+      }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'start',
+        }}
+        >
+          <Button variant="contained" color="primary" onClick={onOpen}>
+            Send Email
+          </Button>
+          {
+            isOpen &&
+        <EmailForm onSubmit={onSubmit} handleClose={onClose} isOpen={isOpen}/>
+          }
+        </div>
+      </div>
     </AdminLayout>
   )
 }

@@ -5,4 +5,6 @@ export class AppService {
   getData(): { message: string } {
     return { message: 'Welcome to server!' }
   }
+
+
 }
