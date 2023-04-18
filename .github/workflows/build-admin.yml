@@ -1,4 +1,4 @@
-name: Build Frontend
+name: Build Admin
 on: [ pull_request, push ]
 jobs:
   build:
@@ -19,5 +19,5 @@ jobs:
         run: yarn install
       - name: Yarn ci
         run: yarn install --frozen-lockfile
-      - name: Build client
-        run: yarn build-client
+      - name: Build server
+        run: yarn build-admin

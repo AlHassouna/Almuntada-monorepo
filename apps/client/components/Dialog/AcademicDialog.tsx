@@ -14,17 +14,22 @@ import * as Yup from "yup";
 import {useIntl} from "react-intl";
 import {useLocale} from "@lib/system-design";
 import {StyledForm} from "../../styled/academics.styled";
-import {StyledButton} from "../../pages/academic";
 import styled from "styled-components";
 import {AutoComplete, GenericSelect} from "@lib/system-design";
 import {ListOptions} from "./optionAcademic";
 import {DataToSelectOptions} from "@lib/shared-hooks";
 import {getDegreeList} from "@lib/shared-types";
-import {SelectChangeEvent} from "@mui/material/Select";
 import {getCityList} from "@lib/shared-types";
 import {FileUpload} from '@lib/system-design'
 import {Date} from '@lib/system-design'
-import {Dayjs} from 'dayjs'
+import * as React from "react";
+import CircularProgress from "@mui/material/CircularProgress";
+import {green} from "@mui/material/colors";
+import Button from "@mui/material/Button";
+import CheckIcon from '@mui/icons-material/Check';
+import Box from '@mui/material/Box';
+import dayjs from 'dayjs'
+import {Alerts} from '@lib/system-design'
 
 interface Props {
   handleClose: () => void;
@@ -33,18 +38,21 @@ interface Props {
 }
 
 
-export const AcademicDialog: FC<Props> = ({handleClose, OnSubmit, isOpen}) => {
+export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
     const initialValues = {
       firstName: "",
       lastName: "",
-      age: "",
+      age: undefined,
       phone: "",
       imageUrl: "",
       email: "",
       city: "",
       degree: "",
       subject: "",
-      career: ""
+      career: "",
+      gender: "",
+      company: "",
+      isAgree: false,
     };
 
     const genderList = [
@@ -64,43 +72,31 @@ export const AcademicDialog: FC<Props> = ({handleClose, OnSubmit, isOpen}) => {
     const {subjectsOptions, companiesOptions, careersOptions} = ListOptions();
     const required = intl.messages["academicpage.dialog.required"];
     const nameRegexWithSpaces = /^[a-zA-Z ]+$/;
+    const phoneRegex = /^[0-9]{10}$/;
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-    const [checked, setChecked] = useState(false);
-    const [date, setDate] = useState<Dayjs | null>(null);
-    const handleChange = (event) => {
-      setChecked(event.target.checked);
-    };
-
-    const [academicDetail, setAcademicDetail] = useState({
-      city: "",
-      degree: "",
-      subject: "",
-      career: "",
-      gender: "",
-      company: "",
-      age: undefined,
-    });
-    const [imageUrl, setImageUrl] = useState("");
+    const [data, setData] = useState<any>([]);
     const validationSchema = Yup.object().shape({
       firstName: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
       lastName: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
-      email: Yup.string().email("Invalid email address").matches(emailRegex, "Only English letters").required(String(required))
+      email: Yup.string().email("Invalid email address").matches(emailRegex, "Only English letters").required(String(required)),
+      phone: Yup.string().matches(phoneRegex, "Invalid phone number").required(String(required)),
+      city: Yup.string().ensure().required(String(required)),
+      degree: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
+      subject: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
+      career: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
+      age: Yup.string().required(String(required)),
+      company: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
+      imageUrl: Yup.string().required(String(required)),
+      gender: Yup.string().required(String(required)),
     });
-
-    const onChangeAutoComplete = (value, event, key?) => {
-      setAcademicDetail({
-        ...academicDetail,
-        [key]: event?.value || event?.label
-      });
-    };
-
-    const onChangeSelect = (event: SelectChangeEvent, key) => {
-      setAcademicDetail({
-        ...academicDetail,
-        [key]: event.target?.value || event
-      });
-    };
     const locale = useLocale();
+    const [loading, setLoading] = React.useState(false);
+    const timer = React.useRef<number>();
+    React.useEffect(() => {
+      return () => {
+        clearTimeout(timer.current);
+      };
+    }, []);
     return (
       <StyledDialog maxWidth="sm" fullWidth open={isOpen} onClose={handleClose} className={locale}>
         <DialogTitle>{intl.messages["academicpage.dialog.title"]}</DialogTitle>
@@ -111,92 +107,133 @@ export const AcademicDialog: FC<Props> = ({handleClose, OnSubmit, isOpen}) => {
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
-            onSubmit={(values) => OnSubmit({
-              ...values,
-              city: academicDetail.city,
-              age: date.format('YYYY-MM-DD'),
-              subject: academicDetail?.subject,
-              degree: academicDetail.degree,
-              gender: academicDetail.gender,
-              isAgree: checked,
-              imageUrl: imageUrl,
-              company: academicDetail?.company,
-              career: academicDetail?.career
-            })}
+            onSubmit={async (values) => {
+              if (!loading) {
+                setLoading(true);
+                const res = await OnSubmit({
+                  ...values,
+                })
+                setData(res)
+                timer.current = window.setTimeout(() => {
+                  setLoading(false);
+                })
+              }
+            }}
           >
-            {({handleSubmit}) => {
+            {(props) => {
               return (
-                <StyledForm onSubmit={handleSubmit}>
+                <StyledForm onSubmit={props.handleSubmit}>
                   <Field name="firstName" type="text" as={TextField}
                          label={intl.messages["academicpage.dialog.first.name"]}/>
                   <ErrorMessage name="firstName"/>
                   <Field name="lastName" type="text" as={TextField}
                          label={intl.messages["academicpage.dialog.last.name"]}/>
                   <ErrorMessage name="lastName"/>
-                  <Field name="age" type="number" as={Date} value={date}
-                         setValue={setDate}
+                  <Field name="age" as={Date}
+                         value={dayjs(props.values.age)}
+                         setValue={props.setFieldValue}
                          label={intl.messages["academicpage.dialog.age"]}/>
                   <ErrorMessage name="age"/>
                   <Field name="email" type="email" as={TextField} label={intl.messages["academicpage.dialog.email"]}/>
                   <ErrorMessage name="email"/>
-                  <Field name="city" type="text" as={AutoComplete}
-                         onChange={(v, e) => onChangeAutoComplete(v, e, "city")}
+                  <Field name="city" as={AutoComplete}
+                         setFieldValue={props.setFieldValue}
                          data={citiesOption}
                          freeSolo={false}
-                         value={academicDetail.city}
+                         handleBlur={props.handleBlur}
+                         value={props.values.city}
                          label={intl.messages["academicpage.dialog.city"]}></Field>
                   <ErrorMessage name="city"/>
-                  <Field name="degree" type="text" as={GenericSelect} label={intl.messages["academicpage.dialog.degree"]}
+                  <Field name="degree" as={GenericSelect} label={intl.messages["academicpage.dialog.degree"]}
                          data={degreeOption}
-                         value={academicDetail.degree} onChange={(v) => onChangeSelect(v, "degree")}/>
+                         value={props.values.degree} onChange={props.handleChange}/>
                   <ErrorMessage name="degree"/>
-                  <Field name="subject" type="text" as={AutoComplete} value={academicDetail.subject}
-                         onChange={(v, e) => onChangeAutoComplete(v, e, "subject")}
+                  <Field name="subject" as={AutoComplete} value={props.values.subject}
+                         setFieldValue={props.setFieldValue}
                          data={subjectsOptions}
                          freeSolo={true}
                          label={intl.messages["academicpage.dialog.subject"]}/>
                   <ErrorMessage name="subject"/>
-                  <Field name="company" type="text" as={AutoComplete} value={academicDetail.company}
-                         onChange={(v, e) => onChangeAutoComplete(v, e, "company")}
+                  <Field name="company" as={AutoComplete} value={props.values.company}
+                         setFieldValue={props.setFieldValue}
                          data={companiesOptions}
                          freeSolo={true}
                          label={intl.messages["academicpage.dialog.company"]}/>
                   <ErrorMessage name="company"/>
-                  <Field name="career" type="text" as={AutoComplete} value={academicDetail.career}
-                         onChange={(v, e) => onChangeAutoComplete(v, e, "career")}
+                  <Field name="career" as={AutoComplete} value={props.values.career}
+                         setFieldValue={props.setFieldValue}
                          freeSolo={true}
                          data={careersOptions} label={intl.messages["academicpage.dialog.job"]}/>
                   <ErrorMessage name="career"/>
-                  <Field name="gender" className="gender" type="text" as={GenericSelect}
+                  <Field name="gender" as={GenericSelect}
                          data={genderOption}
-                         label={intl.messages["academicpage.dialog.sex"]} value={academicDetail.gender}
-                         onChange={(v, e) => onChangeSelect(v, "gender")}/>
+                         label={intl.messages["academicpage.dialog.sex"]} value={props.values.gender}
+                         onBlur={props.handleBlur}
+                         onChange={props.handleChange}/>
                   <ErrorMessage name="gender"/>
-                  <Field name="phone" type="text" as={TextField}
+                  <Field name="phone" type='text' as={TextField}
                          label={intl.messages["academicpage.dialog.phone"]}/>
                   <ErrorMessage name="phone"/>
-                  <Field name="imageUrl" type="text" as={FileUpload}
-                         setUrl={setImageUrl}
+                  <Field name="imageUrl" as={FileUpload}
+                         value={props.values.imageUrl}
+                         setFiledValue={props.setFieldValue}
                          label={intl.messages["academicpage.dialog.imageurl"]}/>
                   <ErrorMessage name="imageUrl"/>
                   <Field type="checkbox" name="isAgree" as={FormGroup}>
                     <FormControlLabel
-                      control={<Checkbox checked={checked} onChange={handleChange} name="isAgree"/>}
+                      control={<Checkbox checked={props.values.isAgree}
+                                         onChange={() => props.setFieldValue('isAgree', !props.values.isAgree)}
+                                         name="isAgree"/>}
                       label={intl.messages["academicpage.dialog.checkbox"]}
                     />
                   </Field>
                   <div className="flex justify-center items-center">
-                    <StyledButton type="submit" disabled={!checked}>
-                      {
-                        intl.messages["academicpage.dialog.button"]
-                      }
-                    </StyledButton>
+                    <Box sx={{m: 1, position: 'relative'}}>
+                      <Button
+                        type="submit"
+                        disabled={!props.values.isAgree}
+                        sx={data.status === 201 ? {
+                          bgcolor: green[500] + '!important',
+                          width: '10vw!important',
+                          borderRadius: '24px!important',
+                          '&:hover': {
+                            bgcolor: green[700] + '!important',
+                          }
+                        } : {
+                          bgcolor: '#3f51b5!important',
+                          color: 'white',
+                          width: '10vw!important',
+                          borderRadius: '24px!important',
+                          '&:hover': {
+                            bgcolor: '#303f9f!important',
+                          }
+                        }
+                        }
+                      >
+                        {data?.status === 201 ? <CheckIcon/> : <>{intl.messages["academicpage.dialog.button"]}</>}
+                      </Button>
+                      {loading && (
+                        <CircularProgress
+                          size={25}
+                          sx={{
+                            color: green[500],
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            marginTop: '-12px',
+                            marginLeft: '-12px',
+                          }}
+                        />
+                      )}
+                    </Box>
                   </div>
                 </StyledForm>
               );
             }}
           </Formik>
         </DialogContent>
+        <Alerts success={intl.messages["academicpage.dialog.success"] as string}
+                error={intl.messages["academicpage.dialog.error"] as string} status={data?.status}/>
       </StyledDialog>
     );
   }

@@ -14,27 +14,27 @@ interface SelectOptionType {
 interface Props {
   label: string;
   value: string;
-  onChange: (event: SelectChangeEvent<string>, child: ReactNode) => void
+  onChange: (e: any) => void
+  name: string
   data: SelectOptionType[];
 }
 
-export const GenericSelect: FC<Props> = ({label, value, onChange, data}) => {
-  return <Box sx={{minWidth: 120}}>
-    <FormControl fullWidth>
-      <InputLabel id="demo-simple-select-label">{label}</InputLabel>
-      <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
-        value={value}
-        label={label}
-        onChange={onChange}
-      >
-        {data.map((value) => {
-          return <MenuItem key={value?.value} value={value?.label}>{value.label}</MenuItem>
-        })}
-      </Select>
-    </FormControl>
-  </Box>
+export const GenericSelect: FC<Props> = ({label, value, data, onChange, name}) => {
+  return <FormControl fullWidth>
+    <InputLabel id="demo-simple-select-label">{label}</InputLabel>
+    <Select
+      name={name}
+      labelId="demo-simple-select-label"
+      id="demo-simple-select"
+      value={value}
+      label={label}
+      onChange={onChange}
+    >
+      {data.map((value) => {
+        return <MenuItem key={value?.label} value={value?.label}>{value.label}</MenuItem>
+      })}
+    </Select>
+  </FormControl>
 
 }
 
