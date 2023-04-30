@@ -11,12 +11,16 @@ export const SliderImage = styled.img`
   width: 100%;
   height: 75vh;
   background-position: ${(props) => props.className};
-  background-image:     linear-gradient(
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.3)
-  ),url(${(props) => props.property});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3),
+  rgba(0, 0, 0, 0.3)), url(${(props) => props.property});
   -webkit-background-size: cover;
   background-repeat: no-repeat;
+  @media screen and (max-width: 1024px) {
+    height: 70vh;
+    margin-bottom: 12vh;
+    background-position: center;
+    background-size: contain;
+  }
 `;
 export const SlideshowText = styled.div`
   position: absolute;
@@ -29,7 +33,7 @@ export const SlideshowText = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  width:80vw;
+  width: 80vw;
 
   @media screen and (max-width: 1024px) {
     gap: 20px;

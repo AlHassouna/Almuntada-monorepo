@@ -18,17 +18,18 @@ interface SelectOptionType {
 interface Props {
   label: string;
   value: string;
-  onChange: (event: React.SyntheticEvent<Element, Event>, value: string | SelectOptionType | null) => void;
+  setFieldValue: (event: any, newValue: any) => void;
   data: SelectOptionType[];
   freeSolo: boolean;
-
+  name?: string
   w?: string;
+  handleBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 
 }
 
 const filter = createFilterOptions<SelectOptionType>();
 
-export const AutoComplete: FC<Props> = ({label, onChange, data, freeSolo, w}) => {
+export const AutoComplete: FC<Props> = ({label, setFieldValue, data, freeSolo, w, value, name, handleBlur}) => {
   const getOptionLabel = (option: SelectOptionType | string) => {
     if (typeof option === "string") {
       return option;
@@ -41,13 +42,13 @@ export const AutoComplete: FC<Props> = ({label, onChange, data, freeSolo, w}) =>
 
   const filterOptions = (options: SelectOptionType[], params: any) => {
     const filtered = filter(options, params);
-    const isExisting = options?.some((option) => option.label === params.inputValue);
+    const isExisting = options?.some((option) => option?.label === params?.inputValue);
     if (!isExisting && params.inputValue !== "") {
       filtered?.push({
-        inputValue: params.inputValue,
-        label: `Add "${params.inputValue}"`,
-        value: params.inputValue,
-        firstLetter: params.inputValue[0]
+        inputValue: params?.inputValue,
+        label: `Add "${params?.inputValue}"`,
+        value: params?.inputValue,
+        firstLetter: params?.inputValue[0]
       });
     }
 
@@ -65,12 +66,15 @@ export const AutoComplete: FC<Props> = ({label, onChange, data, freeSolo, w}) =>
   return (
     <Autocomplete
       sx={{width: w}}
-      onChange={onChange}
+      value={value || null}
+      onChange={(event, newValue: any) => {
+        if (freeSolo) setFieldValue(name, newValue?.value)
+        else setFieldValue(name, newValue?.label)
+      }}
       filterOptions={freeSolo ? filterOptions : undefined}
       selectOnFocus
-      id="free_solo"
       clearOnBlur
-      handleHomeEndKeys
+      onBlur={handleBlur}
       isOptionEqualToValue={(option: SelectOptionType, value: SelectOptionType) => option?.value === value?.value}
       options={freeSolo ? data : options?.sort((a, b) => -b?.firstLetter?.localeCompare(a?.firstLetter))}
       getOptionLabel={getOptionLabel}
@@ -81,5 +85,3 @@ export const AutoComplete: FC<Props> = ({label, onChange, data, freeSolo, w}) =>
     />
   );
 };
-
-export default Select;

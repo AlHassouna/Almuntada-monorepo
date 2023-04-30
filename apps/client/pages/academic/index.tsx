@@ -18,11 +18,12 @@ import {ListOptions} from "../../components/Dialog/optionAcademic";
 import {CardsSection} from "../../styled/global.styled";
 import Head from "next/head";
 import Slideshow from "../../components/Slideshow/Slideshow";
+import Skeleton from '@mui/material/Skeleton';
 
 const Academic: FC = () => {
 
   const intl = useIntl();
-  const {data} = useGetAcademicsBySearchTerms(
+  const {data, isLoading} = useGetAcademicsBySearchTerms(
     {isApproved: true}
   );
   const title = intl.formatMessage({id: 'page.home.head.title'});
@@ -33,10 +34,11 @@ const Academic: FC = () => {
     subject: ""
   });
 
-  const onChangeAutoComplete = (value, event, key?) => {
+  const onChangeAutoComplete = (key, event) => {
+    console.log(key, event, "event");
     setSelectedFilter({
       ...selectedFilter,
-      [key]: event?.value || event?.label
+      [key]: event
     });
   };
   const {isOpen, onClose, onOpen, OnSubmit} = AcademicDialogLogic();
@@ -61,7 +63,7 @@ const Academic: FC = () => {
         <title>{title}</title>
       </Head>
       <AcademicSection>
-        <Slideshow slides={slides} delay={5000} autoplay={true} onClick={onOpen} />
+        <Slideshow slides={slides} delay={5000} autoplay={true} onClick={onOpen}/>
         {
           isOpen && (
             <AcademicDialog
@@ -73,44 +75,49 @@ const Academic: FC = () => {
         }
       </AcademicSection>
       <CardsSection>
-          <motion.p
-            variants={fadeIn("up", "tween", 0.2, 1)}
-            className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[orange] mb-4"
-          >
-            {intl.formatMessage({id: "academicpage.acdemics"})}
-          </motion.p>
-          <div className="flex flex-col sm:flex-row mx-auto w-full sm:justify-around items-center h-full">
-            <AutoComplete
-              w="300px"
-              onChange={(v, e) => onChangeAutoComplete(v, e, "city")}
-              data={citiesOption}
-              value={selectedFilter.city}
-              freeSolo={false}
-              label={String(intl.messages["academicpage.dialog.city"])}
-            />
-            <AutoComplete
-              w="300px"
-              onChange={(v, e) => onChangeAutoComplete(v, e, "subject")}
-              data={subjectsOptions || Array({value: "", label: ""})}
-              value={selectedFilter.subject}
-              freeSolo={false}
-              label={String(intl.messages["academicpage.dialog.subject"])}
-            />
-          </div>
+        <motion.p
+          variants={fadeIn("up", "tween", 0.2, 1)}
+          className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[orange] mb-4"
+        >
+          {intl.formatMessage({id: "academicpage.acdemics"})}
+        </motion.p>
+        <div className="flex flex-col sm:flex-row mx-auto w-full sm:justify-around items-center h-full">
+          <AutoComplete
+            w="300px"
+            name="city"
+            setFieldValue={(v, e) => onChangeAutoComplete("city", e)}
+            data={citiesOption}
+            value={selectedFilter.city}
+            freeSolo={false}
+            label={String(intl.messages["academicpage.dialog.city"])}
+          />
+          <AutoComplete
+            w="300px"
+            name="subject"
+            setFieldValue={(v, e) => onChangeAutoComplete("subject", e)}
+            data={subjectsOptions || Array({value: "", label: ""})}
+            value={selectedFilter.subject}
+            freeSolo={false}
+            label={String(intl.messages["academicpage.dialog.subject"])}
+          />
+        </div>
         <CardContainer>
-          {filteredData?.map((item, id) => (
-            <AcademicsCard
-              key={id}
-              firstName={item.firstName}
-              lastName={item.lastName}
-              email={item.email}
-              imageUrl={item.imageUrl}
-              degree={item.degree}
-              subject={item.subject}
-              career={item.career}
-              city={item.city}
-            />
-          ))}
+          {isLoading ?
+            <Skeleton variant="rectangular" width={210} height={118}/>
+            :
+            filteredData?.map((item, id) => (
+              <AcademicsCard
+                key={id}
+                firstName={item.firstName}
+                lastName={item.lastName}
+                email={item.email}
+                imageUrl={item.imageUrl}
+                degree={item.degree}
+                subject={item.subject}
+                career={item.career}
+                city={item.city}
+              />
+            ))}
 
         </CardContainer>
       </CardsSection>
@@ -127,8 +134,8 @@ const StyledButton = styled(Button)`
   color: white;
 
   &:hover {
-    background-color: white;
-    color: #3f51b5;
+    background-color: #8792da;
+    color: black;
   }
 `;
 

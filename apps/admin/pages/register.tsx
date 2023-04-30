@@ -1,13 +1,13 @@
-import { NextPage } from 'next'
-import { faEnvelope, faUser } from '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLock } from '@fortawesome/free-solid-svg-icons'
+import {NextPage} from 'next'
+import {faEnvelope, faUser} from '@fortawesome/free-regular-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faLock} from '@fortawesome/free-solid-svg-icons'
 import {
   Button, Card, Col, Container, Form, InputGroup, Row,
 } from 'react-bootstrap'
-import { useRouter } from 'next/router'
-import { SyntheticEvent, useState } from 'react'
-import { deleteCookie, getCookie } from 'cookies-next'
+import {useRouter} from 'next/router'
+import {SyntheticEvent, useState} from 'react'
+import {deleteCookie, getCookie} from 'cookies-next'
 import axios from 'axios'
 
 const Register: NextPage = () => {
@@ -23,7 +23,6 @@ const Register: NextPage = () => {
 
     return '/'
   }
-
   const register = async (e: SyntheticEvent) => {
     e.stopPropagation()
     e.preventDefault()
@@ -49,7 +48,7 @@ const Register: NextPage = () => {
 
                 <form onSubmit={register}>
                   <InputGroup className="mb-3">
-                    <InputGroup.Text><FontAwesomeIcon icon={faUser} fixedWidth /></InputGroup.Text>
+                    <InputGroup.Text><FontAwesomeIcon icon={faUser} fixedWidth/></InputGroup.Text>
                     <Form.Control
                       name="username"
                       required
@@ -61,7 +60,7 @@ const Register: NextPage = () => {
 
                   <InputGroup className="mb-3">
                     <InputGroup.Text>
-                      <FontAwesomeIcon icon={faEnvelope} fixedWidth />
+                      <FontAwesomeIcon icon={faEnvelope} fixedWidth/>
                     </InputGroup.Text>
                     <Form.Control
                       type="email"
@@ -74,7 +73,7 @@ const Register: NextPage = () => {
                   </InputGroup>
 
                   <InputGroup className="mb-3">
-                    <InputGroup.Text><FontAwesomeIcon icon={faLock} fixedWidth /></InputGroup.Text>
+                    <InputGroup.Text><FontAwesomeIcon icon={faLock} fixedWidth/></InputGroup.Text>
                     <Form.Control
                       type="password"
                       name="password"
@@ -86,7 +85,7 @@ const Register: NextPage = () => {
                   </InputGroup>
 
                   <InputGroup className="mb-3">
-                    <InputGroup.Text><FontAwesomeIcon icon={faLock} fixedWidth /></InputGroup.Text>
+                    <InputGroup.Text><FontAwesomeIcon icon={faLock} fixedWidth/></InputGroup.Text>
                     <Form.Control
                       type="password"
                       name="password_repeat"

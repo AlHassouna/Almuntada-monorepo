@@ -50,37 +50,37 @@
   ],
   "academicpage.slides": [
     {
-      "image" : "https://yomnet.net//pics/news//2022/2/4/16439717703.jpg",
-      "title" : "مجلة الأكاديميين العرب",
-      "position" : "center",
-      "description" : "نشر بالمجلة الشهرية الأكاديمية خبر، حدث ، تهنئة ، وظيفة أو خدمة",
-      "button" : [
-        {
-          "text" : "تواصل معنا",
-          "link" : "/contact"
-        }
-      ]
-    },
-    {
-      "image" : "/academic.jpeg",
-      "title" : "الانضمام للقائمة",
-      "position": "bottom",
-      "description" : "طالب أكاديمي أو أكاديمي مهني ومعنى تنضم للقائمة",
-      "button" : [
-        {
-          "text" : "ابدأ الان"
-        }
-      ]
-    },
-    {
-      "image" : "/backpod.jpeg",
-      "title" : "سمعنا صوتك",
+      "image": "https://yomnet.net//pics/news//2022/2/4/16439717703.jpg",
+      "title": "مجلة الأكاديميين العرب",
       "position": "center",
-      "description" : "تسمع قصص اكاديميين بشاركوا من مجال وخبرتهم بودكاست سمعنا صوت",
-      "button" : [
+      "description": "نشر بالمجلة الشهرية الأكاديمية خبر، حدث ، تهنئة ، وظيفة أو خدمة",
+      "button": [
         {
-          "text" : "للاستماع الان",
-          "link" : "/podcast"
+          "text": "تواصل معنا",
+          "link": "/contact"
+        }
+      ]
+    },
+    {
+      "image": "/academic.jpeg",
+      "title": "الانضمام للقائمة",
+      "position": "bottom",
+      "description": "طالب أكاديمي أو أكاديمي مهني ومعنى تنضم للقائمة",
+      "button": [
+        {
+          "text": "ابدأ الان"
+        }
+      ]
+    },
+    {
+      "image": "/backpod.jpeg",
+      "title": "سمعنا صوتك",
+      "position": "center",
+      "description": "تسمع قصص اكاديميين بشاركوا من مجال وخبرتهم بودكاست سمعنا صوت",
+      "button": [
+        {
+          "text": "للاستماع الان",
+          "link": "/podcast"
         }
       ]
     }
@@ -102,6 +102,8 @@
   "academicpage.dialog.subject": "التخصص",
   "academicpage.dialog.job": "الوظيفة",
   "academicpage.dialog.button": "تسجيل",
+  "academicpage.dialog.success": "شكرا لك على الانضمام لقائمة الاكاديميين العرب",
+  "academicpage.dialog.error": "حدث خطأ ما، يرجى المحاولة مرة أخرى",
   "academicpage.dialog.required": "هذا الحقل مطلوب",
   "academicpage.dialog.sex": "الجنس",
   "academicpage.dialog.company": "اسم الشركة",
@@ -116,12 +118,14 @@
   "contactpage.required": "هذا الحقل مطلوب",
   "contactpage.dialog.title": "تم ارسال الرسالة بنجاح",
   "contactpage.subject": "الموضوع",
+  "contactpage.contact.success": "تم ارسال الرسالة بنجاح",
+  "contactpage.contact.error": "حدث خطأ ما،يرجى المحاولة مرة أخرى",
   "contactpage.subjects": [
     {
       "name": ""
     },
     {
-      "name" : "النشر في المجلة الشهرية"
+      "name": "النشر في المجلة الشهرية"
     },
     {
       "name": "طلب استضافة في البودكاست \"سمعنا صوتك\""

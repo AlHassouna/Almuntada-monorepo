@@ -9,3 +9,4 @@ export * from './lib/Cloudinary/index';
 export * from './lib/API/index'
 export * from './lib/Switch/index'
 export * from './lib/Date/index'
+export * from './lib/Alert/index'

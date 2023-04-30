@@ -6,6 +6,7 @@ export const CardContainer = styled(Box)`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  height: 50vh;
 `;
 export const AcademicSection = styled.section`
   display: flex;

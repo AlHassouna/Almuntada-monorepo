@@ -1,9 +1,9 @@
-import {usePostContactMutation} from "@lib/system-design";
+import {postContact} from "@lib/system-design";
 
 export const FormLogic = () => {
-  const {mutate} = usePostContactMutation();
   const onSubmit = async (data) => {
-    await mutate(data);
+    const res = await postContact(data);
+    return res;
   };
 
   return {onSubmit};
