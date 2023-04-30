@@ -97,6 +97,19 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
         clearTimeout(timer.current);
       };
     }, []);
+
+    const onSubmit = async (values) => {
+      if (!loading) {
+        setLoading(true);
+        const res = await OnSubmit({
+          ...values,
+        })
+        setData(res)
+        timer.current = window.setTimeout(() => {
+          setLoading(false);
+        })
+      }
+    }
     return (
       <StyledDialog maxWidth="sm" fullWidth open={isOpen} onClose={handleClose} className={locale}>
         <DialogTitle>{intl.messages["academicpage.dialog.title"]}</DialogTitle>
@@ -108,16 +121,7 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
             initialValues={initialValues}
             validationSchema={validationSchema}
             onSubmit={async (values) => {
-              if (!loading) {
-                setLoading(true);
-                const res = await OnSubmit({
-                  ...values,
-                })
-                setData(res)
-                timer.current = window.setTimeout(() => {
-                  setLoading(false);
-                })
-              }
+              await onSubmit(values);
             }}
           >
             {(props) => {
