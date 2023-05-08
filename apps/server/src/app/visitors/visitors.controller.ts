@@ -4,27 +4,27 @@ import {
   Post,
   Body,
   Param,
+  Req,
 } from '@nestjs/common';
-import { VisitorsService } from './visitors.service';
-import { CreateVisitorDto } from './dto/create-visitor.dto';
+import {Request} from 'express';
+import {VisitorsService} from './visitors.service';
+import {CreateVisitorDto} from './dto/create-visitor.dto';
+import {ApiTags} from "@nestjs/swagger";
 
+@ApiTags("Visitor")
 @Controller('visitors')
 export class VisitorsController {
-  constructor(private readonly visitorsService: VisitorsService) {}
+  constructor(private readonly visitorsService: VisitorsService) {
+  }
 
   @Post()
-  create(@Body() createVisitorDto: CreateVisitorDto) {
+  create(@Body() createVisitorDto: CreateVisitorDto, @Req() req: Request) {
+    createVisitorDto.ip = req.ip;
     return this.visitorsService.create(createVisitorDto);
   }
 
   @Get()
-  findAll() {
+  findAll(@Req() request: any) {
     return this.visitorsService.findAll();
   }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.visitorsService.findOne(+id)
-  }
-
 }
