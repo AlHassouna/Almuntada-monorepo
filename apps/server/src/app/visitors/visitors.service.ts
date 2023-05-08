@@ -7,14 +7,6 @@ import * as winston from 'winston';
 
 @Injectable()
 export class VisitorsService {
-  private logger = winston.createLogger({
-    level: 'info',
-    format: winston.format.json(),
-    transports: [
-      new winston.transports.File({filename: 'logs/visitors.log'})
-    ]
-  })
-
   constructor(
     @InjectRepository(Visitor) private readonly visitorRepository: Repository<Visitor>
   ) {
@@ -31,5 +23,5 @@ export class VisitorsService {
   findAll() {
     return this.visitorRepository.find()
   }
-  
+
 }
