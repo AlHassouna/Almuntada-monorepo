@@ -19,9 +19,8 @@ export class VisitorsController {
 
   @Post()
   create(@Body() createVisitorDto: CreateVisitorDto, @Req() req: Request) {
-    console.log(req.connection.remoteAddress, req.socket.remoteAddress)
-    createVisitorDto.ip = req.connection.remoteAddress || req.socket.remoteAddress;
-    ;
+    console.log(req.socket.remoteAddress)
+    createVisitorDto.ip = req.socket.remoteAddress;
     return this.visitorsService.create(createVisitorDto);
   }
 

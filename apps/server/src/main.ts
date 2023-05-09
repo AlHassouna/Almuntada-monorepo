@@ -2,15 +2,23 @@ import {Logger} from '@nestjs/common';
 import {NestFactory} from '@nestjs/core';
 import {DocumentBuilder, SwaggerModule} from '@nestjs/swagger';
 import {AppModule} from './app/app.module';
-import * as cookieParser from 'cookie-parser';
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.use((req, res, next) => {
+    if (req.headers['x-forwarded-for']) {
+      const [clientIp] = req.headers['x-forwarded-for'].split(',');
+      req.socket.remoteAddress = clientIp.trim();
+    }
+    next();
+  });
   app.enableCors({
     origin: true,
     credentials: true,
   });
   const globalPrefix = 'api';
   const version = 'v1'
+
   app.setGlobalPrefix(`${globalPrefix}/${version}`);
   const config = new DocumentBuilder()
     .setTitle('Al-Manshaah Project')
