@@ -9,7 +9,7 @@ import {ThemeProvider} from "styled-components";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import React, {useEffect, useRef} from "react";
 import Navbar from "../components/Navbar/Navbar";
-import {HomeLogic} from "./home/homeLogic";
+import {HomeLogic} from "../components/Home/homeLogic";
 import axios from "axios";
 
 
