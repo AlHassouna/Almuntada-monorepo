@@ -10,6 +10,7 @@ import {Request} from 'express';
 import {VisitorsService} from './visitors.service';
 import {CreateVisitorDto} from './dto/create-visitor.dto';
 import {ApiTags} from "@nestjs/swagger";
+import * as requestIp from 'request-ip';
 
 @ApiTags("Visitor")
 @Controller('visitors')
@@ -19,8 +20,9 @@ export class VisitorsController {
 
   @Post()
   create(@Body() createVisitorDto: CreateVisitorDto, @Req() req: Request) {
-    console.log(req.socket.remoteAddress)
-    createVisitorDto.ip = req.socket.remoteAddress;
+    const clientIp = requestIp.getClientIp(req);
+    console.log(clientIp)
+    createVisitorDto.ip = clientIp;
     return this.visitorsService.create(createVisitorDto);
   }
 

@@ -2,16 +2,11 @@ import {Logger} from '@nestjs/common';
 import {NestFactory} from '@nestjs/core';
 import {DocumentBuilder, SwaggerModule} from '@nestjs/swagger';
 import {AppModule} from './app/app.module';
+import * as requestIp from 'request-ip';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.use((req, res, next) => {
-    if (req.headers['x-forwarded-for']) {
-      const [clientIp] = req.headers['x-forwarded-for'].split(',');
-      req.socket.remoteAddress = clientIp.trim();
-    }
-    next();
-  });
+  app.use(requestIp.mw());
   app.enableCors({
     origin: true,
     credentials: true,
