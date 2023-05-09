@@ -11,19 +11,14 @@ export class CreateVisitorDto {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  device: string;
+  pathname: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  userAgent: string;
 
   @ApiProperty()
   @IsNotEmpty()
   location: string;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  count_visits: number;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsBoolean()
-  is_Vpn: boolean;
 }

@@ -11,9 +11,6 @@ const nextConfig = {
   nx: {
     svgr: false,
   },
-  env: {
-    apiUrl: process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_API_URL : 'http://localhost:8000/api',
-  },
   reactStrictMode: true,
   i18n: {
     locales: ['ar', 'en', 'he'],

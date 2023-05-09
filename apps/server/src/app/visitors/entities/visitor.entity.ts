@@ -14,16 +14,13 @@ export class Visitor {
   ip: string;
 
   @Column()
-  device: string;
+  userAgent: string;
 
   @Column()
   location: string;
 
   @Column()
-  count_visits: number;
-
-  @Column()
-  is_Vpn: boolean;
+  pathname: string;
 
   @CreateDateColumn()
   createdAt: Date;

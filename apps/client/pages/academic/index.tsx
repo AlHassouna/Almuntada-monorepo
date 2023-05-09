@@ -1,4 +1,4 @@
-import React, {FC, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import {AcademicsCard} from "../../components/Card/AcademicsCard";
 import {AcademicSection, CardContainer} from "../../styled/academics.styled";
 import {AcademicDialog} from "../../components/Dialog/AcademicDialog";
@@ -35,7 +35,6 @@ const Academic: FC = () => {
   });
 
   const onChangeAutoComplete = (key, event) => {
-    console.log(key, event, "event");
     setSelectedFilter({
       ...selectedFilter,
       [key]: event
@@ -44,6 +43,7 @@ const Academic: FC = () => {
   const {isOpen, onClose, onOpen, OnSubmit} = AcademicDialogLogic();
   const citiesOption = DataToSelectOptions(getCityList, "label", "label");
   const {subjectsOptions} = ListOptions();
+  const geDetailsUrl = process.env.NEXT_PUBLIC_API_DETAILS_URL
   const slides = intl.messages[
     "academicpage.slides"
     ] as unknown as any
@@ -57,6 +57,19 @@ const Academic: FC = () => {
       return item.city === selectedFilter.city || item.subject?.subject === selectedFilter.subject;
     }
   );
+  // const [details, setDetails] = useState()
+  // useEffect(() => {
+  //   fetch(geDetailsUrl)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setDetails({
+  //         ...data,
+  //         pathname: window.location.pathname,
+  //         userAgent: window.navigator.userAgent
+  //       })
+  //     })
+  //     .catch(err => console.log(err))
+  // }, [])
   return (
     <MainContainer dir={locale}>
       <Head>

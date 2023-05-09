@@ -40,11 +40,11 @@ const MissFix = () => {
           variants={planetVariants(getDirection(locale) === 'rtl' ? 'left' : 'right')}
           className={`flex-1 flex items-center justify-center `}
         >
-          <img
-            src="https://scontent.ftlv1-1.fna.fbcdn.net/v/t39.30808-6/315578906_436578082008882_3373234572066049404_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=CtkP2_6Yf4wAX_rsT3F&_nc_ht=scontent.ftlv1-1.fna&oh=00_AfCIZR4eQaIqocuGIR7MBHY7n35eLLXSEBHf6dKUEI7rXQ&oe=64372522"
-            alt="goals"
-            className="w-[80%] h-[80%] object-contain"
-          />
+          {/*<img*/}
+          {/*  src="https://scontent.ftlv1-1.fna.fbcdn.net/v/t39.30808-6/315578906_436578082008882_3373234572066049404_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=CtkP2_6Yf4wAX_rsT3F&_nc_ht=scontent.ftlv1-1.fna&oh=00_AfCIZR4eQaIqocuGIR7MBHY7n35eLLXSEBHf6dKUEI7rXQ&oe=64372522"*/}
+          {/*  alt="goals"*/}
+          {/*  className="w-[80%] h-[80%] object-contain"*/}
+          {/*/>*/}
         </Div>
       </MContainer>
     </HomeSection>

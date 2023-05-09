@@ -106,6 +106,8 @@
     "react-bootstrap": "^2.7.2",
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
+    "react-ga": "^3.3.1",
+    "react-hotjar": "^6.1.0",
     "react-intl": "^6.2.10",
     "react-paginate": "^8.1.4",
     "react-redux": "^8.0.5",
@@ -124,9 +126,10 @@
     "tslib": "^2.3.0",
     "typeorm": "^0.3.12",
     "typeorm-seeding": "^1.6.1",
-    "ua-parser-js": "^1.0.34",
+    "ua-parser-js": "^1.0.35",
     "webpack": "^5.76.1",
     "webpack-node-externals": "^3.0.0",
+    "winston": "^3.8.2",
     "yup": "^1.0.2"
   },
   "devDependencies": {
