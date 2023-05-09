@@ -3,8 +3,8 @@ import {
   Get,
   Post,
   Body,
-  Param,
   Req,
+  Headers
 } from '@nestjs/common';
 import {Request} from 'express';
 import {VisitorsService} from './visitors.service';
@@ -19,7 +19,9 @@ export class VisitorsController {
 
   @Post()
   create(@Body() createVisitorDto: CreateVisitorDto, @Req() req: Request) {
-    createVisitorDto.ip = req.ip;
+    console.log(req.connection.remoteAddress, req.socket.remoteAddress)
+    createVisitorDto.ip = req.connection.remoteAddress || req.socket.remoteAddress;
+    ;
     return this.visitorsService.create(createVisitorDto);
   }
 
