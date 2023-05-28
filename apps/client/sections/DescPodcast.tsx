@@ -15,7 +15,7 @@ export const DescPodcast = () => {
   const {p: P} = motion
   const {data, isLoading} = useGetPodcastByStatus(true);
   return (
-    <div className='pt-[20vh] overflow-hidden'>
+    <div className='pt-[20vh] overflow-hidden h-[100vh]'>
       <Head>
         <title>{title}</title>
       </Head>

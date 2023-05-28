@@ -5,7 +5,6 @@ import Logo from '../../assets/FinalLogo.png';
 import {useIntlShared} from "./navbar.consts";
 import {
   NavbarContainer,
-  Gradient,
   NavbarList,
   NavbarListItem,
   NavbarMenuIcon,
@@ -14,7 +13,7 @@ import {
   NavbarLanguageContainer,
   NavbarLanguage,
   NavbarMenuListMobile,
-  NavbarMenuListItemMobile
+  NavbarMenuListItemMobile,
 } from './navbar.styled';
 import {navVariants} from '../../utils/motion';
 
@@ -42,7 +41,6 @@ function Navbar() {
             </NavbarListItem>
           ))}
         </NavbarList>
-
         <NavbarLanguageContainer>
           {
             locales?.map((locale) => (

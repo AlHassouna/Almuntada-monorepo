@@ -11,6 +11,7 @@ import React, {useEffect, useRef} from "react";
 import Navbar from "../components/Navbar/Navbar";
 import {HomeLogic} from "../components/Home/homeLogic";
 import axios from "axios";
+import Footer from "../components/Footer/Footer";
 
 
 const messages = {
@@ -70,6 +71,7 @@ const CustomApp = ({Component, pageProps}: AppProps) => {
           <ThemeProvider theme={{dir: getDirection(locale)}}>
             <Navbar/>
             <Component {...pageProps} />
+            <Footer/>
           </ThemeProvider>
         </main>
       </IntlProvider>

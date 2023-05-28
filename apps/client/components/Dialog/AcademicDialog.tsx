@@ -30,6 +30,8 @@ import CheckIcon from '@mui/icons-material/Check';
 import Box from '@mui/material/Box';
 import dayjs from 'dayjs'
 import {Alerts} from '@lib/system-design'
+import {Close as CloseIcon} from '@mui/icons-material';
+import {IconButton} from '@mui/material';
 
 interface Props {
   handleClose: () => void;
@@ -111,8 +113,28 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
       }
     }
     return (
-      <StyledDialog maxWidth="sm" fullWidth open={isOpen} onClose={handleClose} className={locale}>
+      <StyledDialog maxWidth="sm" fullWidth open={isOpen} onClose={handleClose} className={locale}
+      >
         <DialogTitle>{intl.messages["academicpage.dialog.title"]}</DialogTitle>
+        <IconButton
+          edge="end"
+          color="inherit"
+          onClick={handleClose}
+          aria-label="close"
+          sx={{
+            position: 'absolute',
+            ...(locale === 'en' && {
+              right: 10,
+            }),
+            ...((locale === 'ar' || locale === 'he') && {
+              left: 0,
+            })
+            ,
+            top: theme => theme.spacing(1),
+          }}
+        >
+          <CloseIcon/>
+        </IconButton>
         <DialogContent>
           <DialogContentText>
             {intl.messages["academicpage.dialog.sub.title"]}
@@ -244,5 +266,5 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
 ;
 
 const StyledDialog = styled(Dialog)`
-  direction: ${(props) => props.className === "ar" ? "rtl" : "ltr"};
+  direction: ${(props) => props.className === "en" ? "ltr" : "rtl"};
 `;

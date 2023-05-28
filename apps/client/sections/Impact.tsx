@@ -12,8 +12,8 @@ const Impact = () => {
   const {div: Div, p: P} = motion
   const {locale} = useRouter();
   return (
-    <HomeSection>
-      <HeroGradient/>
+    <HomeSection property='#fbfcfe'>
+      {/*<HeroGradient/>*/}
       <MContainer
         variants={staggerContainer(0.1, 0.1)}
         initial="hidden"

@@ -12,8 +12,8 @@ const Vision = () => {
   const {locale} = useRouter();
   const {div: Div} = motion;
   return (
-    <HomeSection>
-      <HeroGradient/>
+    <HomeSection property='#fbfcfe'>
+      {/*<HeroGradient/>*/}
       <MContainer
         variants={staggerContainer(0.1, 0.1)}
         initial="hidden"

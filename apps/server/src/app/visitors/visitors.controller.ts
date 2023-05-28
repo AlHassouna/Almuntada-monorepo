@@ -19,11 +19,10 @@ export class VisitorsController {
   }
 
   @Post()
-  create(@Body() createVisitorDto: CreateVisitorDto, @Req() req: Request) {
+  async create(@Body() createVisitorDto: CreateVisitorDto, @Req() req: Request) {
     const clientIp = requestIp.getClientIp(req);
-    console.log(clientIp)
     createVisitorDto.ip = clientIp;
-    return this.visitorsService.create(createVisitorDto);
+    await this.visitorsService.create(createVisitorDto)
   }
 
   @Get()

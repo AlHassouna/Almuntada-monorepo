@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const MainSection = styled.section`
   display: flex;
-  flex-direction: ${props => props.property || "column"};
-  height: 100vh;
+  flex-direction: column;
+  height: 90vh;
   justify-content: center;
   @media screen and (max-width: 1024px) {
     flex-direction: column;
@@ -21,10 +21,12 @@ export const CardsSection = styled.section`
 export const HomeSection = styled.section`
   height: 100vh;
   display: flex;
+  background: ${props => props.property || "white"};
   justify-content: center;
   z-index: 10;
   @media screen and (max-width: 1024px) {
     height: max-content;
+    flex-direction: column;
     width: 90%;
     margin: 0 auto;
   }
@@ -37,28 +39,29 @@ export const FlexCenter = styled.div`
 
 export const HeroGradient = styled.div`
   background: linear-gradient(97.86deg,
-  rgba(180, 144, 55, 0.5) 0%,
-  rgba(224, 185, 89, 0.5) 53.65%,
-  rgba(224, 185, 89, 0.5) 100%);
-  filter: blur(190px);
-  width: 200px;
-  height: 438px;
-  left: 0;
+  rgb(84, 127, 204) 0%,
+  rgb(36, 57, 91) 53.65%,
+  rgb(84, 127, 204) 100%);
+  filter: blur(250px);
+  width: 500px;
+  height: 338px;
+  top: 35%;
+  right: 40%;
   position: absolute;
-
+`;
+export const AcademicGradient = styled.div`
+  background: linear-gradient(97.86deg,
+  rgba(224, 185, 89, 0.5) 0%,
+  rgba(234, 203, 126, 0.5) 53.65%,
+  rgba(255, 176, 0, 0.5) 100%);
+  filter: blur(250px);
+  width: 500px;
+  height: 338px;
+  top: 35%;
+  right: 40%;
+  position: absolute;
 `;
 
-export const FingerGradient = styled.div`
-  //background: url("/fingerprint.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 600px;
-  height: 600px;
-  left: 40px;
-  z-index: -1;
-  position: absolute;
-
-`;
 export const AboutGradient = styled.div`
   z-index: 0;
   position: absolute;
