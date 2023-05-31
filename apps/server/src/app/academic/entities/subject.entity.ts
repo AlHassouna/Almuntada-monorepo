@@ -19,6 +19,7 @@ export class Subject {
 
   @OneToMany(() => Academic, (academic) => academic.subject)
   user: Academic;
+
   @CreateDateColumn()
   createdAt: Date;
 

@@ -43,7 +43,6 @@ export class Academic {
   subject: Subject;
 
   @ManyToOne(() => Career, (career) => career.user)
-
   career: Career;
 
   @Column()

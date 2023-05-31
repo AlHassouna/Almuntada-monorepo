@@ -47,7 +47,7 @@ const CustomApp = ({Component, pageProps}: AppProps) => {
           await onFetch({
             pathname: url ? url : '/',
             userAgent: matches[1],
-            location: visitorLocation.data.results[0]?.formatted_address
+            location: visitorLocation.data.results[0]?.address_components.find(component => component.types.includes('country'))?.long_name || '',
           })
         })
 

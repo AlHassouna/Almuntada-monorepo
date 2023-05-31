@@ -3,6 +3,7 @@ import {useMutation, useQueryClient} from "@tanstack/react-query";
 import {VisitorCreated, IVisitor} from "./types";
 
 export const postVisitor = async (data: VisitorCreated): Promise<IVisitor> => {
+  console.log(data);
   return await backendInstance.post("/visitors", data)
 };
 
