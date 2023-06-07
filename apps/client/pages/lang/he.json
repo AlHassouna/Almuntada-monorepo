@@ -1,16 +1,13 @@
 {
-  "page.home.head.title": " אלמונתדא - החותם האקדמי הערבי",
-  "navbar.home": " בית",
-  "navbar.podcast": " פודקאסט ",
-  "navbar.academic": " רשימה האקדמיים",
-  "navbar.contact": " צור קשר",
-  "navbar.lang": " שפה",
+  "page.home.head.title": "אלמונתדא - החותם האקדמי הערבי",
+  "navbar.podcast": "פודקאסט",
+  "navbar.academic": "רשימה האקדמיים",
+  "navbar.contact": "צור קשר",
   "homepage.joinus": " הצטרפו אלינו",
-  "homepage.title": " פורום",
-  "homepage.title_1": " טביעת אצבע אקדמית ערבית",
-  "homepage.title_2": " לשיתוף ותמיכה",
+  "homepage.title": "הפורום",
+  "homepage.title_1": "טביעת אצבע אקדמית ערבית",
   "homepage.about": "על המיזם",
-  "homepage.description": " אלמונתדא – החותם האקדמי הערבי הוא פורום המאגד אקדמאים ערבים מתחומים שונים במטרת קידום השכלה גבוהה בקהילה הערבית, זאת על ידי בניית פלטפורמה שתאפשר שיתוף ידע, ניסיון ויצירת הזדמנויות. בנוסף, הפורום שואף להיות אסמכתא לדור הבא העתיד להמשיך לתואר אקדמי ",
+  "homepage.description": "להעניק לאקדמאים אפשרות להקים רשת חברתית אקדמית ערבית ולחלוק מידע אקדמי.",
   "homepage.about_2": " אנו מאמינים כי חינוך בכלל ואקדמי בפרט נחשבים לאחד האמצעים לצמצום פערי העוני.",
   "homepage.description_2": " מחקרים מראים כי אחוז האקדמאים הערבים נמוך מאחוז האקדמאים היהודים בארץ. החברה הערבית מתמודדת עם אתגרים רבים הבאים המשתקפים בפערים חברתיים-כלכליים, הבאים לידי ביטוי גם במערכת החינוך בכלל ובאפשרויות התעסוקה בפרט. קריאת הפורום שלנו רוצה להצטרף לקולות המאבק בעוני. \t ",
   "homepage.impact.sub.title": " אנו יוצרים את העתיד",
@@ -21,7 +18,6 @@
   "homepage.message.desc": " הפורום שואף לצמצם את הפערים החברתיים על ידי מתן פלטפורמה תומכת ומשתפת.",
   "homepage.missfix.sub.title": " הערכה ותמיכה",
   "homepage.missfix.desc": "בספטמבר 2022 התקיימה תחרות \" Miss Fix \" לשינוי חברתי מטעם \" שדלת נישים \"בחסות המרכז לבנקאות חברתית של בנק הפועלים. התחרות נוצרה מתוך של הצורך לתת מקום ליופי החברתי, ולנשים הפועלות בחברה על ידי קידום ערכי צדק חברתי, שוויון, קיימות, בריאות, טכנולוגיה וזכויות אדם, כדי לתת במה ליזמות בתחומים שונים ולבנות חברה המקדמת ומעוררת השראה לפעילות חברתית של נשים. 183 נשים השתתפו בתחרות עם מיזמים שונים מספר המצביעים לפרויקטים עלה על 70,000 בתחרות, מה שהוביל לבחירת 3 מיזמים, \"הפורום\" זכה במקום השני. בתמונה מייסדת ומנהלת הפרויקט, גב' אלא חסונה.",
-  "homepage.founders.title": " הכירו אותנו",
   "homepage.goals.title": " היעדים שלנו",
   "homepage.goals": [
     {
@@ -38,83 +34,77 @@
   "homepage.founders": [
     {
       "name": " חסן חסונה",
-      "desc": "מייסד שותף ומנהל טכנולוגיה ",
-      "image": "https://media.licdn.com/dms/image/C4D03AQF1zOe2Pjku0w/profile-displayphoto-shrink_800_800/0/1662553255489?e=1683763200&v=beta&t=ImQbGUktavmUk2000VSUE "
+      "desc": "בעל תואר ראשון ניהול מערכות מידע המכללה האקדמית תל אביב יפו",
+      "image": "/hassan.jpeg"
     },
     {
       "name": " אלא חסונה ",
-      "desc": "מייסדת ומנהלת ",
-      "image ": "https://media.licdn.com/dms/image/C4D03AQF29U_yrJJibA/profile-displayphoto-shrink_800_800/0/1655839867728?e=1683763200&v=beta&t=OlYacFTUGAxgONQVKVQVGXGOOQGQVQVQVGXGOOQGQVQVGXGOO"
+      "desc": "בעלת תואר ראשון כלכלה וניהול – האקדמית תל אביב יפו , רישיון משווק פנסיוני מטעם משרד האוצר, תואר שני מנהל עסקים אוניברסיטת בן גוריון , דוקטורנטית לניהול – אוניברסיטת בר אילן.",
+      "image": "ala.jpeg"
     }
   ],
-  " academicpage. slides ": [
+  "homepage.cofounders.title": "חברי וועד",
+  "homepage.cofounders": [
     {
-      "image": "https://yomnet.net//pics/news//2022/2/4/16439717703.jpg ",
-      "title": " פורסה - מגזין של אקדמאים ערבים ",
-      "position": "מרכז ",
-      "description": " חדשות, אירוע, ברכות, עבודה או שירות שפורסמו במגזין האקדמי",
-      "button ": [
-        {
-          "text": " צור קשר",
-          "link": "/צור קשר "
-        }
-      ]
+      "name": "הנאא עדסי",
+      "desc": "בעלת תואר ראשון ביולוגיה , תואר שני ביוכימיה ודוקטורנטית במדעי הביולוגיה וביוכימיה אוניברסיטת תל אביב.",
+      "image": "/hanaa.jpeg"
     },
     {
-      "image": "/academic.jpeg ",
-      "title": " הצטרף לרשימה",
-      "position": "תחתית ",
-      "description ": " סטודנט אקדמי או אקדמאי מקצועי ומעוניין להצטרף לרשימת האקדמאיים",
-      "button": [
-        {
-          "text": " התחל עכשיו"
-        }
-      ]
+      "name": "אחמד חסונה",
+      "desc": "בעל תואר ראשון חינוך חברתי מכללת אור יהודה , , תואר שני במנהל וארגון מערכות חינוך פורמליות ובלתי פורמליות.  מכללת קריית אונו.",
+      "image": "/ahmad.jpeg"
     },
     {
-      "image": "/backpod.jpeg ",
-      "title ": " השמע את קולך",
-      "position": "מרכז ",
-      "description": " אקדמאים מומחים משתפים את סיפורם וחולקים איתנו מהידע והניסיון שלהם בפודקאסט, השמע את קולך",
-      "button": [
-        {
-          "text": " להאזין עכשיו",
-          "link": "/פודקאסט "
-        }
-      ]
+      "name": "כיאן בסול",
+      "desc": "בעלת תואר ראשון ברוקחות מטעם האוניברסיטה העברית בירושלים. ותואר שני במשפטים מטעם אוניברסיטת בר-אילן.",
+      "image": "/kayan.jpeg"
+    },
+    {
+      "name": "נהד אבו דין",
+      "desc": "סטודנטית לתואר ראשון בחינוך בלתי פורמלי, ובישול טיפולי, מומחית בלימודי תכנות נוירו-לשוני.",
+      "image": "/nahed.jpeg"
+    },
+    {
+      "name": "ניקולס זכאכ",
+      "desc": "בעל תואר ראשון בסיעוד במכללה האקדמית תל אביב יפו ובוגר תואר ראשון במנהל מערכות בריאות במכללה האקדמית רמת גן.",
+      "image": "/nicolas.jpeg"
+    },
+    {
+      "name": "ספא אבו סבית",
+      "desc": "בעלת תואר ראשון מאוניברסיטת בן גוריון בתחום הכימיה וסטודנטית לתואר שני במנהל עסקים.",
+      "image": "/safaa.jpeg"
     }
   ],
-  "academicpage.title": " סטודנט אקדמאי ומעוניין לאתר אקדמאי מומחה בתחום רלוונטי שאתה לומד",
-  "academicpage.sub.title": " אקדמאי מומחה ומעוניין בשיתוף פעולה עם אקדמאים מהתחום שלך או מתחום אחר",
-  "academicpage.text": "מעסיק ומחפש סטודנטים או אקדמאים מומחים מהאוכלוסייה הערבית הערבים מקצועיים \\ n הגעתם למקום הנכון \\ n רשימת אקדמאים ערבים לפי מקום והתמחות ",
+  "academicpage.title": "רשימת האקדמאים הערבים",
+  "academicpage.text": "עוצמת התקשורת והתמיכה בינינו כחברה ערבית היא סוד השינוי החברתי לטובה, הצטרפו אלינו לרשימת האקדמאים הערבים מכל האזורים ברחבי הארץ ומהתחומים השונים.\n",
   "academicpage.acdemics": " רשימת האקדמאים הערבים לפי מקום ומומחיות ",
-  "academicpage.button": " התחל עכשיו",
-  "academicpage.dialog.title": " הרשמה",
-  "academicpage.dialog.sub.title": " נא למלא את המידע הבא בשפה האנגלית בלבד",
-  "academicpage.dialog.first.name": " שם פרטי",
-  "academicpage.dialog.last.name": " שם משפחה ",
-  "academicpage.dialog.email": " דואר אלקטרוני",
-  "academicpage.dialog.age": " גיל ",
-  "academicpage.dialog.imageurl": " בחר תמונת פרופיל",
-  "academicpage.dialog.city": " מיקום מגורים",
-  "academicpage.dialog.degree": " תואר",
-  "academicpage.dialog.subject": " התמחות ",
-  "academicpage.dialog.job": " עבודה",
-  "academicpage.dialog.button": " הרשמה",
-  "academicpage.dialog.required": " שדה זה חובה ",
-  "academicpage.dialog.sex": " מגדר",
-  "academicpage.dialog.company": " שם חברה",
-  "academicpage.dialog.phone": " מספר טלפון",
+  "academicpage.dialog.title": "הרשמה",
+  "academicpage.dialog.sub.title": "נא למלא את המידע הבא בשפה האנגלית בלבד",
+  "academicpage.dialog.first.name": "שם פרטי",
+  "academicpage.dialog.last.name": "שם משפחה",
+  "academicpage.dialog.email": "דואר אלקטרוני",
+  "academicpage.dialog.age": "גיל",
+  "academicpage.dialog.imageurl": "בחר תמונת פרופיל",
+  "academicpage.dialog.city": "מיקום מגורים",
+  "academicpage.dialog.degree": "תואר",
+  "academicpage.dialog.subject": "התמחות",
+  "academicpage.dialog.job": "עבודה",
+  "academicpage.dialog.button": "הרשמה",
+  "academicpage.dialog.required": "שדה זה חובה",
+  "academicpage.dialog.sex": "מגדר",
+  "academicpage.dialog.company": "שם חברה",
+  "academicpage.dialog.phone": "מספר טלפון",
   "academicpage.dialog.checkbox": " אני מאשר שהמידע שסיפקתי הוא אמין ומדויק, אני מסכים לשאת באחריות לפרסום מידע לא אמין, ואני מסכים להציג את תמונת הפרופיל שלי, שאין לה זכויות יוצרים כלשהן. פורסם באתר ובמאגר הפורום ערבי אקדמי ושותפיו.",
-  "contactpage.title": " צור קשר",
-  "contactpage.text": " כדי ליצור איתנו קשר, אנא מלא את הטופס הבא",
-  "contactpage.submit": " שלח",
-  "contactpage.fullname": " שם מלא",
-  "contactpage.email": " דואר אלקטרוני",
-  "contactpage.message": " הודעה",
-  "contactpage.required": " שדה זה חובה",
-  "contactpage.dialog.title": " בקשתך להצטרפות נשלחה בהצלחה",
-  "contactpage.subject": " נושא",
+  "contactpage.title": "צור קשר",
+  "contactpage.text": "כדי ליצור איתנו קשר, אנא מלא את הטופס הבא",
+  "contactpage.submit": "שלח",
+  "contactpage.fullname": "שם מלא",
+  "contactpage.email": "דואר אלקטרוני",
+  "contactpage.message": "הודעה",
+  "contactpage.required": "שדה זה חובה",
+  "contactpage.dialog.title": "בקשתך להצטרפות נשלחה בהצלחה",
+  "contactpage.subject": "נושא",
   "contactpage.subjects": [
     {
       "name": ""
@@ -145,5 +135,6 @@
     }
   ],
   "podcastpage.desc": "פודקאסט \" השמע את קולך\", תוכנית אירוח ייחודית ואישית שמטרתה לחפש מומחים אקדמיים מהאוכלוסייה הערבית המעוניינים לחלוק את ניסיונם עם הקהילה שלהם ולדון בנושאים אקדמיים ומקצועיים .",
-  "podcastpage.subdesc": " מעוניינים להתארח אצלנו בפודקאסט . השאירו את הפרטים שלכם וניצור איתכם קשר לתיאום מועד."
+  "podcastpage.subdesc": " מעוניינים להתארח אצלנו בפודקאסט . השאירו את הפרטים שלכם וניצור איתכם קשר לתיאום מועד.",
+  "footer.contactus": " צור קשר"
 }

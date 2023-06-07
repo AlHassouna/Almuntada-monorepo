@@ -16,10 +16,11 @@ import {LogoContainer} from "../Navbar/navbar.styled";
 import Logo from "../../assets/FinalLogo.png";
 import React from "react";
 import {useRouter} from "next/router";
+import {useIntl} from "react-intl";
 
 const Footer = () => {
   const router = useRouter();
-
+  const intl = useIntl()
   return (
     <>
       <FooterContainer>
@@ -38,13 +39,15 @@ const Footer = () => {
         </LogoAndLinksContainer>
         <ContactUs>
           <ContactUsTitle>
-            Contact Us
+            {
+              intl.formatMessage({id: "footer.contactus"})
+            }
           </ContactUsTitle>
           <ContactUsText>
             <ContactUsContainer>
               <Phone/>
               <span>
-              +962 6 535 8855
+            052-9086918
               </span>
             </ContactUsContainer>
             <ContactUsContainer>
@@ -57,7 +60,14 @@ const Footer = () => {
         </ContactUs>
       </FooterContainer>
       <FooterCopyRight>
-        Copyrights. Al-Hassouna - 2023 All rights Reserved
+        <div>
+          Copyrights. Al-Hassouna - 2023 All rights Reserved
+        </div>
+        <div>
+          <a target='_blank' href="/terms.pdf">
+            Privacy Policy & Terms of Use
+          </a>
+        </div>
       </FooterCopyRight>
     </>
   )

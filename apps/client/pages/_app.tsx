@@ -37,18 +37,21 @@ const CustomApp = ({Component, pageProps}: AppProps) => {
   useEffect(() => {
     const matches = regex.exec(window.navigator.userAgent);
     const handleStart = (url: string) => {
+
       if (!isMounted.current) {
         isMounted.current = true
       }
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(async ({coords}) => {
           const {latitude, longitude} = coords;
+
           const visitorLocation = await axios.post(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${googleMapsApi}`)
           await onFetch({
             pathname: url ? url : '/',
             userAgent: matches[1],
             location: visitorLocation.data.results[0]?.address_components.find(component => component.types.includes('country'))?.long_name || '',
           })
+          console.log(visitorLocation.data.results[0])
         })
 
       }

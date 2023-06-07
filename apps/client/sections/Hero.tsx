@@ -38,10 +38,9 @@ const Hero = () => {
             {intl.formatMessage({id: "homepage.title_1"})}
           </SubHeading>
           <Text variants={textVariant(1)}>
-            adfslajndflkanflkdsflkdnalkfna
-            adfslajndflkanflkdsflkdnalkfna
-            adfslajndflkanflkdsflkdnalkfna
-            adfslajndflkanflkdsflkdnalkfna
+            {
+              intl.formatMessage({id: "homepage.description"})
+            }
           </Text>
           <Button variants={textVariant(1.2)} onClick={onOpen}>
             {intl.formatMessage({id: "homepage.joinus"})}

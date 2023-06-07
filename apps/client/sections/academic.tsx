@@ -1,5 +1,5 @@
 import {MainSection, AcademicGradient} from "../styled/global.styled";
-import {Heading, MotionContainer, SubHeading, Text, Button, PersonImage} from "../styled/home.styled";
+import {Heading, MotionContainer, Text, Button, PersonImage} from "../styled/home.styled";
 import {planetVariants, staggerContainer, textVariant} from "../utils/motion";
 import {useIntl} from "react-intl";
 import React from "react";
@@ -29,18 +29,12 @@ const AcademicS = () => {
         >
           <PersonImage src='/backaca.png' alt='Person'/>
         </Div>
-        <div className="flex justify-center flex-col gap-8 sm:w-1/2">
+        <div className="flex justify-center flex-col gap-12 sm:w-1/2">
           <Heading variants={textVariant(0.5)}>
-            {intl.formatMessage({id: "homepage.title"})}
+            {intl.formatMessage({id: "academicpage.title"})}
           </Heading>
-          <SubHeading variants={textVariant(0.8)}>
-            {intl.formatMessage({id: "homepage.title_1"})}
-          </SubHeading>
           <Text variants={textVariant(1)}>
-            adfslajndflkanflkdsflkdnalkfna
-            adfslajndflkanflkdsflkdnalkfna
-            adfslajndflkanflkdsflkdnalkfna
-            adfslajndflkanflkdsflkdnalkfna
+            {intl.formatMessage({id: "academicpage.text"})}
           </Text>
           <Button variants={textVariant(1.2)} onClick={onOpen}>
             {intl.formatMessage({id: "homepage.joinus"})}
