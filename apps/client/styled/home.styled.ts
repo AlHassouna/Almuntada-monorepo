@@ -45,7 +45,6 @@ export const Heading = styled(motion.h1)`
   font-weight: bold;
   text-transform: uppercase;
   color: #172759;
-  line-height: 24.4px;
   font-size: 90px;
   @media screen and (max-width: 1024px) {
     font-size: 40px;
@@ -66,9 +65,8 @@ export const SubHeading = styled(motion.h1)`
   }
 `;
 export const Text = styled(motion.p)`
-  font-size: 18px;
+  font-size: 28px;
   color: #172759;
-  line-height: 28px;
   margin: 0;
   margin-bottom: 1rem;
   font-weight: 400;

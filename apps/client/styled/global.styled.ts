@@ -19,11 +19,12 @@ export const CardsSection = styled.section`
   }
 `;
 export const HomeSection = styled.section`
-  height: 100vh;
+  height: ${props => props.property || "100vh"};
   display: flex;
   background: ${props => props.property || "white"};
   justify-content: center;
   z-index: 10;
+  margin-bottom: 20px;
   @media screen and (max-width: 1024px) {
     height: max-content;
     flex-direction: column;

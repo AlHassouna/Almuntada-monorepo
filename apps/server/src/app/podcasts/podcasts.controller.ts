@@ -5,7 +5,7 @@ import {
   Body,
   Param,
   UsePipes,
-  ValidationPipe, Put, Query,
+  ValidationPipe, Put, Query, Delete,
 } from '@nestjs/common';
 import {PodcastsService} from './podcasts.service';
 import {CreatePodcastDto} from './dto/create-podcast.dto';
@@ -30,6 +30,7 @@ export class PodcastsController {
     description: 'The record has not been created.',
   })
   create(@Body() createPodcastDto: CreatePodcastDto) {
+
     return this.podcastsService.create(createPodcastDto);
   }
 
@@ -40,10 +41,10 @@ export class PodcastsController {
     return podcasts;
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
+  @Post(':id/:title')
+  async findOne(@Param('id') id: string, @Param('title') title: string) {
     const createPodcast = {
-      title: "Episode" + id,
+      title: title,
       podcastUrl: process.env.AWS_CLOUDFRONT_URL + "Episode" + id + ".mp4",
       isActive: false
     }
@@ -58,5 +59,10 @@ export class PodcastsController {
   @Get('isActive/:isActiveValue')
   async getPodcastByIsActive(@Param('isActiveValue') isActiveValue: boolean) {
     return await this.podcastsService.getPodcastByIsActive(isActiveValue);
+  }
+
+  @Delete()
+  async deleteAllPodcasts() {
+    return await this.podcastsService.deleteAllPodcasts();
   }
 }

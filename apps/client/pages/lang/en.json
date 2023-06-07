@@ -1,15 +1,13 @@
 {
   "page.home.head.title": "Al-Muntada - The Arab Academic Imprint",
-  "navbar.home": "Home Page",
   "navbar.podcast": "Podcast",
   "navbar.academic": "List of Academics",
   "navbar.contact": "Contact Us",
   "homepage.joinus": "Join Us",
   "homepage.title": "Al-Muntada",
   "homepage.title_1": "The Arab Academic Imprint",
-  "homepage.title_2": "For cooperation, participation and support ",
   "homepage.about": "About the Project",
-  "homepage.description": "Al-Muntada – The Arab Academic Imprint is a forum aiming for the advancement of academic achievements in the Arabic community. It does so by providing a platform for Arab academics of various educational backgrounds to meet, network, exchange experiences and create new opportunities.  Moreover, the forum aims to place itself as the main reference for the younger generation hoping to pursue an academic degree.",
+  "homepage.description": "To provide academics with the opportunity to establish an Arab academic network and to share all academic information.",
   "homepage.about_2": "We believe that education in general and taking part in an academic journey in specific is considered one of the means for shrinking the gaps of poverty.  ",
   "homepage.description_2": "Studies have shown that the percentage of Arab academics is lower than Jewish academics in the country. \nThe Arab society faces many challenges represented in the socio-economic gaps, which is also reflected in the educational system in general and in the employment opportunities in specific.  Our forum would like to join the voices calling for fighting poverty.\n",
   "homepage.impact.sub.title": "We are the ones making the future",
@@ -20,7 +18,6 @@
   "homepage.message.desc": "This forum stives for closing the social gaps though being a supportive and cooperative platform.",
   "homepage.missfix.sub.title": "Acknowledgment and support",
   "homepage.missfix.desc": "The “Miss Fix” competition for social impact was held in September 2022, a competition held by the women’ lobby “Shdulat Nashim” sponsored by “Bank Hapoalim”.\nThe competition is set to allow shedding light on social initiatives as well as to women taking part in such initiatives. The fundamental values on which the competition evaluates the participating initiatives are: social justice, equality, sustainability, health, technology and human rights. These values would allow for a variety of initiatives to take part in the competition, focusing on those led by women entrepreneurs. \n183 women had participated in the 2022 competition, presenting a variety of initiatives. Over 70 thousand voters had voted for the various initiates in that competition. The “Al-Muntada” project won 2nd place.\n",
-  "homepage.founders.title": "Meet us",
   "homepage.goals.title": "Our goals ",
   "homepage.goals": [
     {
@@ -37,22 +34,51 @@
   "homepage.founders": [
     {
       "name": "Hassan Hassouna",
-      "title": "Co-Founder & Technology Manager",
-      "desc": "حسن حسونة ، حاصل على لقب اول إدارة نظم المعلومات الكلية الأكاديمية تل أبيب - يافا . صاحب خبرة في تطوير وإنشاء مواقع الويب مع باستخدام أحدث التقنيات في السوق، سواء على جانب قاعدة بيانات باستخدام السحابة الالكترونية ومن جانب الزبون. صاحب خبرة مثبتة في إلادارة ,التخطيط, اتخاذ .لقرارات ومهارات البيع والتسويق",
-      "image": "https://media.licdn.com/dms/image/C4D03AQF1zOe2Pjku0w/profile-displayphoto-shrink_800_800/0/1662553255489?e=1683763200&v=beta&t=ImifO4UEu38bxSOaGmgk2kUktQMWSd2a0eK6LReyvbU"
+      "desc": "A graduate of a bachelor degree in Information Systems Management from Tel Aviv-Yafo Academic College.",
+      "image": "/hassan.jpeg"
     },
     {
-      "name": "الاء حسونة",
-      "title": "Founder & Manager",
-      "desc": "آلاء حسونة طالبة دكتوراة في الإدارة جامعة بار ايلان , لقب اول الاقتصاد والإدارة تخصص ريادة الأعمال، لقب ثاني إدارة الأعمال تخصص تسويق . صاحبة خبرة واسعة في ريادة الأعمال والمبادرات الاجتماعية، صاحبة خبرة في الإدارة أكثر من 12 عا مً ا في مجال المبيعات ,التخطيط والميزانية ومعرفة العمليات والوظائف التجارية )المالية، الموارد البشرية، المشتريات( القدرة التحليلية، مهارات الاتصال الممتازة، المهارات التنظيمية والقيادية المتميزة.",
-      "image": "https://media.licdn.com/dms/image/C4D03AQF29U_yrJJibA/profile-displayphoto-shrink_800_800/0/1655839867728?e=1683763200&v=beta&t=OlYZf3jA792K5vFacgTgQUGd6xJPEONxp1OOZOBaq1A"
+      "name": "Ala Hasouna",
+      "desc": "a bachelor's degree in economics and management from Tel Aviv-Yafo Academic, a pension marketer's license from the Ministry of Finance, a master's degree in business administration from Ben Gurion University and a doctoral degree in management from Bar Ilan University. ",
+      "image": "/ala.jpeg"
     }
   ],
-  "academicpage.title": "طالب جامعي ومعني تتواصل مع اكاديمي مهني بمجال معني تتعلمه",
-  "academicpage.sub.title": "اكاديمي مهني ومعني تعمل شراكات مع اكاديميين من مجالك او من مجال مختلف",
-  "academicpage.text": "مشغل وتبحث عن اكاديميين عرب مهنين \nوصلت للمكان الصحيح \nقائمة الاكاديميين العرب حسب المكان والتخصص \n",
+  "homepage.cofounders.title": "Board members",
+  "homepage.cofounders": [
+    {
+      "name": "Hanaa adsi",
+      "desc": "A biology graduate with a master's in biochemistry, Hanaa is currently pursuing a doctoral degree in biological sciences and biochemistry at Tel Aviv University.",
+      "image": "/hanaa.jpeg"
+    },
+    {
+      "name": "Ahmed Hasona",
+      "desc": "A graduate of Or Yehuda College with a bachelor's degree in social education, and a master's degree in management and organization of formal and informal education systems, of krait ono.",
+      "image": "/ahmad.jpeg"
+    },
+    {
+      "name": "Kayan Bsoul",
+      "desc": "A graduate of a bachelor degree in pharmacy, B.Sc.Pharm by the Hebrew university of Jerusalem. Also a graduate of  Masters in Law from Bar Ilan university.  ",
+      "image": "/kayan.jpeg"
+    },
+    {
+      "name": "Nahad Abu Din",
+      "desc": "a student pursuing a bachelor's degree in informal education, is an expert in neurolinguistic programming.",
+      "image": "/nahed.jpeg"
+    },
+    {
+      "name": "Nicholas Zakach",
+      "desc": "a Tel Aviv Jaffa Academic College graduate and Ramat Gan Academic College graduate, holds a bachelor's degree in nursing and health systems",
+      "image": "/nicolas.jpeg"
+    },
+    {
+      "name": "Safa Abu-Sbeet",
+      "desc": "BSc degree from Ben Gurion University in the field of Chemistry and is now a student for a master's degree in business administration.",
+      "image": "/safaa.jpeg"
+    }
+  ],
+  "academicpage.title": "The Arab Academic list",
+  "academicpage.text": " Our ability to communicate and collaborate with one another as an Arab society is the key to societal change for the better. Join us for a listing of Arab academics from countries and regions worldwide",
   "academicpage.acdemics": "List of Arab academics by location and specialization",
-  "academicpage.button": "ابدأ الان",
   "academicpage.dialog.title": "Register as an academic",
   "academicpage.dialog.sub.title": "Please fill in the following details to register as an academic in English",
   "academicpage.dialog.first.name": "First Name",
@@ -109,5 +135,6 @@
     }
   ],
   "podcastpage.desc": "Podcast \"We heard your voice\". An individual and talk show program aimed at researching academic personalities from the Arab community who wish to share their experience with their community and discuss academic and professional issues.",
-  "podcastpage.subdesc": "Meaning participate in a podcast meeting with us. Leave your details and we will contact you"
+  "podcastpage.subdesc": "Meaning participate in a podcast meeting with us. Leave your details and we will contact you",
+  "footer.contactus": "Contact Us"
 }

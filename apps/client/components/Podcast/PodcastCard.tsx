@@ -3,16 +3,18 @@ import {FC} from "react";
 
 interface Props {
   podcastUrl: string;
-  title?: string
+  title?: string,
+  direction?: 'row' | 'row-reverse'
 }
 
-const PodcastCard: FC<Props> = ({podcastUrl, title}) => {
+const PodcastCard: FC<Props> = ({podcastUrl, title, direction}) => {
   return (
     <Box sx={{
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: direction,
       alignItems: 'center',
-      justifyContent: 'center',
+      width: '100%',
+      justifyContent: 'space-around',
     }}>
       <iframe
         width="560"
@@ -22,6 +24,9 @@ const PodcastCard: FC<Props> = ({podcastUrl, title}) => {
         allowFullScreen
       >
       </iframe>
+      <span className='font-bold text-[20px] text-[black]'>
+        {title}
+      </span>
     </Box>
   )
 }
