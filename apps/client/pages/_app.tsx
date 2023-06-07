@@ -12,6 +12,8 @@ import Navbar from "../components/Navbar/Navbar";
 import {HomeLogic} from "../components/Home/homeLogic";
 import axios from "axios";
 import Footer from "../components/Footer/Footer";
+import { postVisitor } from "@lib/system-design";
+import { usePostGoogleMutation } from "../../../libs/system-design/src/lib/API/google/postGoogle";
 
 
 const messages = {
@@ -28,12 +30,10 @@ export function getDirection(locale) {
 }
 
 const CustomApp = ({Component, pageProps}: AppProps) => {
-  const {onFetch} = HomeLogic()
   const router = useRouter()
-
   const regex = /\(([^)]+)\)/;
   const isMounted = useRef(false)
-  const googleMapsApi = process.env.NEXT_PUBLIC_GOOGLE_API_KEY
+  const { mutate } = usePostGoogleMutation()
   useEffect(() => {
     const matches = regex.exec(window.navigator.userAgent);
     const handleStart = (url: string) => {
@@ -44,16 +44,15 @@ const CustomApp = ({Component, pageProps}: AppProps) => {
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(async ({coords}) => {
           const {latitude, longitude} = coords;
-
+          // TODO: you neet to change this code by using the API call function and make a new one to use google as a service
           const visitorLocation = await axios.post(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${googleMapsApi}`)
-          await onFetch({
+          await postVisitor({
             pathname: url ? url : '/',
             userAgent: matches[1],
             location: visitorLocation.data.results[0]?.address_components.find(component => component.types.includes('country'))?.long_name || '',
           })
           console.log(visitorLocation.data.results[0])
         })
-
       }
     }
     if (!isMounted.current) {

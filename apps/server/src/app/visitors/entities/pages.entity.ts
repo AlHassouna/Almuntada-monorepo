@@ -3,6 +3,7 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeor
 
 @Entity('pages')
 export class Pages{
+  // TODO: check this code
   @PrimaryGeneratedColumn()
   id: number;
 

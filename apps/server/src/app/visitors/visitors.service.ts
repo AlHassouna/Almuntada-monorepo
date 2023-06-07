@@ -12,6 +12,8 @@ export class VisitorsService {
   }
 
   create(createVisitorDto: CreateVisitorDto) {
+    // TODO: check this code
+
     //     const {ip,pathname,userAgent,location} = createVisitorDto;
     //     const subjectEntity = await this.subjectRepository.findOne({where: {subject}}) || this.subjectRepository.create({subject});
     //     const savedSubject = await this.subjectRepository.save(subjectEntity);
@@ -40,9 +42,11 @@ export class VisitorsService {
   findAll() {
     return this.visitorRepository.find()
   }
+  // TODO: check this code
   async getCountriesCounter(){
 
   }
+  // TODO: check this code
   getVisitorsCounter(){
 
   }

@@ -9,6 +9,7 @@ import { Country } from "./country.entity";
 
 @Entity("Visitors")
 export class Visitor {
+  // TODO: check this code
   @PrimaryGeneratedColumn()
   id: number;
 

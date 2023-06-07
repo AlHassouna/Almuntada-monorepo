@@ -6,6 +6,7 @@ import {
 } from "typeorm";
 @Entity("Country")
 export class Country {
+  // TODO: check this code
   @PrimaryGeneratedColumn()
   id: number;
 
