@@ -27,7 +27,6 @@ export const MotionContainer = styled(motion.div)`
   width: 100%;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
   @media (min-width: 1024px) {
     width: 80%;
   }
@@ -45,58 +44,84 @@ export const MContainer = styled(motion.div)`
 export const Heading = styled(motion.h1)`
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 44px;
-  color: white;
-  text-shadow: -2px -2px 0 #172759,
-    2px -2px 0 #172759,
-  -2px 2px 0 #172759,
-  2px 2px 0 #172759;
-  @media (min-width: 640px) {
-    font-size: 60px;
+  color: #172759;
+  font-size: 90px;
+  @media screen and (max-width: 1024px) {
+    font-size: 40px;
+    text-align: center;
     line-height: 74.4px;
-  }
-
-  @media (min-width: 768px) {
-    font-size: 100px;
-    line-height: 114.4px;
-  }
-
-  @media (min-width: 1024px) {
-    font-size: 120px;
-
   }
 `;
 
 export const SubHeading = styled(motion.h1)`
-  text-align: center;
   font-weight: bold;
-  font-size: 44px;
-  line-height: 64.4px;
-  color: white;
-  text-shadow: -2px -2px 0 #172759,
-    2px -2px 0 #172759,
-  -2px 2px 0 #172759,
-  2px 2px 0 #172759;
-  @media (min-width: 640px) {
-    font-size: 60px;
+  text-transform: uppercase;
+  color: #172759;
+  font-size: 60px;
+  @media screen and (max-width: 1024px) {
+    text-align: center;
+    font-size: 40px;
     line-height: 74.4px;
-  }
-
-  @media (min-width: 768px) {
-    font-size: 70px;
-    line-height: 114.4px;
-  }
-
-  @media (min-width: 1024px) {
-    font-size: 80px;
-
   }
 `;
 export const Text = styled(motion.p)`
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 28px;
+  color: #172759;
   margin: 0;
   margin-bottom: 1rem;
   font-weight: 400;
+  @media screen and (max-width: 1024px) {
+    text-align: center;
+  }
 `;
 
+export const Container = styled.div`
+  position: relative;
+  width: 488px;
+  height: 488px;
+  overflow: hidden;
+`;
+
+export const BorderRadius = styled.div`
+  background: #172759;
+  width: 488px;
+  height: 488px;
+  animation-name: borderRadius;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+
+  @keyframes borderRadius {
+    0% {
+      border-radius: 52% 48% 51% 49% / 32% 45% 55% 68%;
+    }
+    100% {
+      border-radius: 74% 26% 65% 35% / 42% 57% 43% 58%;
+    }
+  }
+`;
+export const PersonImage = styled.img`
+  height: 100%;
+`;
+export const Button = styled(motion.button)`
+  background: #172759;
+  color: white;
+  border-radius: 14px;
+  width: 200px;
+  height: 60px;
+  padding: .7rem;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 30.24px;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.4s ease-in-out;
+    background: #e1e1e1;
+    color: #172759;
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin: 0 auto;
+  }
+`

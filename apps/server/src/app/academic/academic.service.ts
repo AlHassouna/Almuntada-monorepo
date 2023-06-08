@@ -94,6 +94,7 @@ export class AcademicService {
       }
     );
   }
+
   async findAllAcademicsEmails(): Promise<Academic[]> {
     return await this.academicRepository.find({
       select: ['email']

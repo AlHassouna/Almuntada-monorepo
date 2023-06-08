@@ -2,8 +2,9 @@ import {
   Column,
   Entity,
   PrimaryGeneratedColumn,
-  CreateDateColumn
+  CreateDateColumn, ManyToOne
 } from "typeorm";
+import {Country} from "./country.entity";
 
 @Entity("Visitors")
 export class Visitor {
@@ -16,14 +17,15 @@ export class Visitor {
   @Column()
   userAgent: string;
 
-  @Column()
-  location: string;
+  @Column({nullable: true})
+  languages: string;
+
+  @ManyToOne(() => Country, (country) => country.visitor)
+  country: Country;
 
   @Column()
   pathname: string;
 
   @CreateDateColumn()
   createdAt: Date;
-
-
 }

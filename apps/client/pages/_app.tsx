@@ -9,8 +9,9 @@ import {ThemeProvider} from "styled-components";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import React, {useEffect, useRef} from "react";
 import Navbar from "../components/Navbar/Navbar";
-import {HomeLogic} from "../components/Home/homeLogic";
-import axios from "axios";
+import Footer from "../components/Footer/Footer";
+import {postVisitor} from "@lib/system-design";
+import {getAddress} from "@lib/system-design";
 
 
 const messages = {
@@ -27,29 +28,26 @@ export function getDirection(locale) {
 }
 
 const CustomApp = ({Component, pageProps}: AppProps) => {
-  const {onFetch} = HomeLogic()
   const router = useRouter()
-
   const regex = /\(([^)]+)\)/;
   const isMounted = useRef(false)
-  const googleMapsApi = process.env.NEXT_PUBLIC_GOOGLE_API_KEY
   useEffect(() => {
     const matches = regex.exec(window.navigator.userAgent);
     const handleStart = (url: string) => {
+
       if (!isMounted.current) {
         isMounted.current = true
       }
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(async ({coords}) => {
           const {latitude, longitude} = coords;
-          const visitorLocation = await axios.post(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${googleMapsApi}`)
-          await onFetch({
+          const address = await getAddress({latitude, longitude})
+          await postVisitor({
             pathname: url ? url : '/',
             userAgent: matches[1],
-            location: visitorLocation.data.results[0]?.formatted_address
+            location: address.results[0]?.address_components
           })
-        })
-
+        });
       }
     }
     if (!isMounted.current) {
@@ -70,6 +68,7 @@ const CustomApp = ({Component, pageProps}: AppProps) => {
           <ThemeProvider theme={{dir: getDirection(locale)}}>
             <Navbar/>
             <Component {...pageProps} />
+            <Footer/>
           </ThemeProvider>
         </main>
       </IntlProvider>

@@ -1,150 +1,140 @@
 {
-  "page.home.head.title": "المنشاة - المنتدى الاكاديمي العربي",
-  "navbar.home": "الصفحة الرئيسية",
-  "navbar.podcast": "بودكاست",
-  "navbar.academic": "قائمة الاكاديميين",
-  "navbar.contact": "تواصل معنا",
-  "navbar.lang": "اللغة",
-  "homepage.title": "المنتدى",
-  "homepage.title_1": "البصمة الاكاديمية العربية ",
-  "homepage.title_2": "للتعاون, المشاركة والدعم",
-  "homepage.about": "عن المشروع",
-  "homepage.description": "المنتدى الاكاديمي العربي هو منتدى يجمع الاكاديميين العرب من شتى المجالات وقائم على تطوير التعليم العالي بالمجتمع العربي عبر المشاركة, تبادل الخبرات وايجاد الفرص. كما ويطمح ان يكون مرجعًا لجيل القادم الراغب في التعليم الاكاديمي العالي .",
-  "homepage.about_2": "نحن ايضا ننضم إلى الهدف العالمي المتمثل في القضاء على الفقر",
-  "homepage.description_2": "عرف الفقر بأنه الافتقار إلى الاحتياجات الأساسية ,الغذاء ,الماء ,الرعاية الطبية , الأمن والتعليم. . تثبت الدراسات أن نسبة الأكاديميين من السكان العرب أقل من نسبة السكان اليهود الأكاديميين، هناك العديد من الحواجز والفجوات بين السكان العرب والسكان اليهود بما في ذلك اللغة والفجوات في الوضع الاجتماعي والاقتصادي نؤمن أن الأكاديمية هي أحدى المفاتيح القضاء على الفقر.\t",
-  "homepage.impact.sub.title": "نحن من نصنع المستقبل",
-  "homepage.impact.desc": "هناك العديد من التحديات التي يواجها الوسط العربي، تلك التحديات تنعكس في فجوات الوضع الاجتماعي والاقتصادي، الفجوات التعليمية واللغوية. نحن نؤمن ان الأكاديمية وال وعلى هذا الاساس نشأت المنتدى لسد هذه الفجوات، مع خلق نظام إيجابي يؤثر على السكان العرب. \"تثبت الدراسات أن الانخراط في العمل الاجتماعي يؤدي إلى التفكير الإيجابي ويقلل من العنف والجريمة. التركيز على الإيجابية سيوفر الأمن المالي والعقلي ويؤثر على طريقة الحياة.\"",
-  "homepage.vision.sub.title": "رؤيتنا",
-  "homepage.vision.desc": "\"المنصة الأكاديمية العربية الرائدة محلياً وإقليمياً في وضع بصمة أكاديمية عربية مميزة بشتى المجالات.\"",
-  "homepage.message.sub.title": "نحن نعمل على تحقيق رؤيتنا من خلال رسالتنا",
-  "homepage.message.desc": "تلبية احتياجات المجتمع العربي للاندماج بالأكاديمية وتوسيع افاق المجتمع العربي لعدم الانحصار بمجالات محددة والتواصل والدعم المشترك لتأهيل الجيل الاكاديمي القادم للانخراط بسوق العمل بشتى المجلات.",
-  "homepage.missfix.sub.title": "الأثر الاجتماعي",
-  "homepage.missfix.desc": "في سبتمبر 2022 ، أقيمت مسابقة \"Miss Fix\" للتغيير الاجتماعي للوبي النساء \"شدولات نشيم\" تحت رعاية مركز الخدمات المصرفية الاجتماعية التابع لبنك هبوعليم. تم إنشاء المسابقة من منطلق الحاجة لإعطاء مساحة للجمال الذي يحدث في العمل الاجتماعي ، وللنساء العاملات في المجتمع من خلال تعزيز قيم العدالة الاجتماعية ,المساواة ,الاستدامة ,الصحة ,التكنولوجيا وحقوق الإنسان , لإعطاء منصة لريادة الأعمال في مختلف المجالات وبناء مجتمع يعزز ويحفز العمل النسائي المهم اجتماعيا. شارك بالمسابقة 183 امرأة مع مشاريع مختلفة وقد ازداد عدد المصوتين للمشاريع عن 70 ألفًا في المنافسة مما أدى إلى اختيار 3 مشاريع رائدة ، وفاز المشروع \"المنتدى\" بالمركز الثاني ، في الصورة مؤسسة ومديرة المشروع السيدة الاء حسونه.",
-  "homepage.founders.title": "تعرفوا علينا",
-  "homepage.goals.title": "اهدافنا",
+  "page.home.head.title": "Al-Muntada - The Arab Academic Imprint",
+  "navbar.podcast": "Podcast",
+  "navbar.academic": "List of Academics",
+  "navbar.contact": "Contact Us",
+  "homepage.joinus": "Join Us",
+  "homepage.title": "Al-Muntada",
+  "homepage.title_1": "The Arab Academic Imprint",
+  "homepage.about": "About the Project",
+  "homepage.description": "To provide academics with the opportunity to establish an Arab academic network and to share all academic information.",
+  "homepage.about_2": "We believe that education in general and taking part in an academic journey in specific is considered one of the means for shrinking the gaps of poverty.  ",
+  "homepage.description_2": "Studies have shown that the percentage of Arab academics is lower than Jewish academics in the country. \nThe Arab society faces many challenges represented in the socio-economic gaps, which is also reflected in the educational system in general and in the employment opportunities in specific.  Our forum would like to join the voices calling for fighting poverty.\n",
+  "homepage.impact.sub.title": "We are the ones making the future",
+  "homepage.impact.desc": "The concepts of social impact of the project and its’ value through mutual cooperation, as well as the creation of common financial and emotional values for a community of Arab academics.   ",
+  "homepage.vision.sub.title": "Our vision",
+  "homepage.vision.desc": "An Arab Academic Platform created to leave a social trace in local leadership.",
+  "homepage.message.sub.title": "Our message ",
+  "homepage.message.desc": "This forum stives for closing the social gaps though being a supportive and cooperative platform.",
+  "homepage.missfix.sub.title": "Acknowledgment and support",
+  "homepage.missfix.desc": "The “Miss Fix” competition for social impact was held in September 2022, a competition held by the women’ lobby “Shdulat Nashim” sponsored by “Bank Hapoalim”.\nThe competition is set to allow shedding light on social initiatives as well as to women taking part in such initiatives. The fundamental values on which the competition evaluates the participating initiatives are: social justice, equality, sustainability, health, technology and human rights. These values would allow for a variety of initiatives to take part in the competition, focusing on those led by women entrepreneurs. \n183 women had participated in the 2022 competition, presenting a variety of initiatives. Over 70 thousand voters had voted for the various initiates in that competition. The “Al-Muntada” project won 2nd place.\n",
+  "homepage.goals.title": "Our goals ",
   "homepage.goals": [
     {
-      "desc": "زيادة نسبة الأكاديميين العرب كل عام  بنسبة 40% بثلاث سنوات القادمة"
+      "desc": "Management and operation: \nAl-Muntada is a social platform for academy students as well as academy graduates in the Arab society. The platform is constantly growing and evolving as is open for new members wanting to take part in knowledge sharing, cooperation, and much more.   \n"
     },
     {
-      "desc": "جمع الأكاديميين القائمين في بالوسط لخلق التعاون بينهم."
+      "desc": "Academic podcast “let’s hear you”:\nThe podcast will host academics who will be sharing their experience in the academy as well as in their career. The podcast aims to raise awareness for the possibilities that the Arab community could seek in the studies field, as well as in possible career paths.\n"
     },
     {
-      "desc": "اتاحه معلومات تخص الأكاديمية للمستخدم العربي في مكان واحد"
+      "desc": "Information services: \nAl-Muntada platform will allow members to share information and knowledge about the academic life and possible career paths.\n"
     }
   ],
-  "homepage.founder.title": "طاقم المشروع",
+  "homepage.founder.title": "Founders",
   "homepage.founders": [
     {
-      "name": "حسن حسونة",
-      "title": "Co-Founder & Technology Manager",
-      "desc": "حسن حسونة ، حاصل على لقب اول إدارة نظم المعلومات الكلية الأكاديمية تل أبيب - يافا . صاحب خبرة في تطوير وإنشاء مواقع الويب مع باستخدام أحدث التقنيات في السوق، سواء على جانب قاعدة بيانات باستخدام السحابة الالكترونية ومن جانب الزبون. صاحب خبرة مثبتة في إلادارة ,التخطيط, اتخاذ .لقرارات ومهارات البيع والتسويق",
-      "image": "https://media.licdn.com/dms/image/C4D03AQF1zOe2Pjku0w/profile-displayphoto-shrink_800_800/0/1662553255489?e=1683763200&v=beta&t=ImifO4UEu38bxSOaGmgk2kUktQMWSd2a0eK6LReyvbU"
+      "name": "Hassan Hassouna",
+      "desc": "A graduate of a bachelor degree in Information Systems Management from Tel Aviv-Yafo Academic College.",
+      "image": "/hassan.jpeg"
     },
     {
-      "name": "الاء حسونة",
-      "title": "Founder & Manager",
-      "desc": "آلاء حسونة طالبة دكتوراة في الإدارة جامعة بار ايلان , لقب اول الاقتصاد والإدارة تخصص ريادة الأعمال، لقب ثاني إدارة الأعمال تخصص تسويق . صاحبة خبرة واسعة في ريادة الأعمال والمبادرات الاجتماعية، صاحبة خبرة في الإدارة أكثر من 12 عا مً ا في مجال المبيعات ,التخطيط والميزانية ومعرفة العمليات والوظائف التجارية )المالية، الموارد البشرية، المشتريات( القدرة التحليلية، مهارات الاتصال الممتازة، المهارات التنظيمية والقيادية المتميزة.",
-      "image": "https://media.licdn.com/dms/image/C4D03AQF29U_yrJJibA/profile-displayphoto-shrink_800_800/0/1655839867728?e=1683763200&v=beta&t=OlYZf3jA792K5vFacgTgQUGd6xJPEONxp1OOZOBaq1A"
+      "name": "Ala Hasouna",
+      "desc": "a bachelor's degree in economics and management from Tel Aviv-Yafo Academic, a pension marketer's license from the Ministry of Finance, a master's degree in business administration from Ben Gurion University and a doctoral degree in management from Bar Ilan University. ",
+      "image": "/ala.jpeg"
     }
   ],
-  "academicpage.slides": [
+  "homepage.cofounders.title": "Board members",
+  "homepage.cofounders": [
     {
-      "image" : "https://yomnet.net//pics/news//2022/2/4/16439717703.jpg",
-      "title" : "مجلة الأكاديميين العرب",
-      "position" : "center",
-      "description" : "نشر بالمجلة الشهرية الأكاديمية خبر، حدث ، تهنئة ، وظيفة أو خدمة",
-      "button" : [
-        {
-          "text" : "تواصل معنا",
-          "link" : "/contact"
-        }
-      ]
+      "name": "Hanaa adsi",
+      "desc": "A biology graduate with a master's in biochemistry, Hanaa is currently pursuing a doctoral degree in biological sciences and biochemistry at Tel Aviv University.",
+      "image": "/hanaa.jpeg"
     },
     {
-      "image" : "/academic.jpeg",
-      "title" : "الانضمام للقائمة",
-      "position": "bottom",
-      "description" : "طالب أكاديمي أو أكاديمي مهني ومعنى تنضم للقائمة",
-      "button" : [
-        {
-          "text" : "ابدأ الان"
-        }
-      ]
+      "name": "Ahmed Hasona",
+      "desc": "A graduate of Or Yehuda College with a bachelor's degree in social education, and a master's degree in management and organization of formal and informal education systems, of krait ono.",
+      "image": "/ahmad.jpeg"
     },
     {
-      "image" : "/backpod.jpeg",
-      "title" : "سمعنا صوتك",
-      "position": "center",
-      "description" : "تسمع قصص اكاديميين بشاركوا من مجال وخبرتهم بودكاست سمعنا صوت",
-      "button" : [
-        {
-          "text" : "للاستماع الان",
-          "link" : "/podcast"
-        }
-      ]
+      "name": "Kayan Bsoul",
+      "desc": "A graduate of a bachelor degree in pharmacy, B.Sc.Pharm by the Hebrew university of Jerusalem. Also a graduate of  Masters in Law from Bar Ilan university.  ",
+      "image": "/kayan.jpeg"
+    },
+    {
+      "name": "Nahad Abu Din",
+      "desc": "a student pursuing a bachelor's degree in informal education, is an expert in neurolinguistic programming.",
+      "image": "/nahed.jpeg"
+    },
+    {
+      "name": "Nicholas Zakach",
+      "desc": "a Tel Aviv Jaffa Academic College graduate and Ramat Gan Academic College graduate, holds a bachelor's degree in nursing and health systems",
+      "image": "/nicolas.jpeg"
+    },
+    {
+      "name": "Safa Abu-Sbeet",
+      "desc": "BSc degree from Ben Gurion University in the field of Chemistry and is now a student for a master's degree in business administration.",
+      "image": "/safaa.jpeg"
     }
   ],
-  "academicpage.title": "طالب جامعي ومعني تتواصل مع اكاديمي مهني بمجال معني تتعلمه",
-  "academicpage.sub.title": "اكاديمي مهني ومعني تعمل شراكات مع اكاديميين من مجالك او من مجال مختلف",
-  "academicpage.text": "مشغل وتبحث عن اكاديميين عرب مهنين \nوصلت للمكان الصحيح \nقائمة الاكاديميين العرب حسب المكان والتخصص \n",
-  "academicpage.acdemics": "قائمة الاكاديميين العرب حسب المكان والتخصص",
-  "academicpage.button": "ابدأ الان",
-  "academicpage.dialog.title": "تسجيل",
-  "academicpage.dialog.sub.title": "الرجاء تعبئة البيانات التالية باستخدام اللغة الانجليزيه فقط",
-  "academicpage.dialog.first.name": "الاسم الاول",
-  "academicpage.dialog.last.name": "الاسم الاخير",
-  "academicpage.dialog.email": "البريد الالكتروني",
-  "academicpage.dialog.age": "العمر",
-  "academicpage.dialog.imageurl": "اختر صورة للملف الشخصي",
-  "academicpage.dialog.city": "المدينة",
-  "academicpage.dialog.degree": "الدرجة العلمية",
-  "academicpage.dialog.subject": "التخصص",
-  "academicpage.dialog.job": "الوظيفة",
-  "academicpage.dialog.button": "تسجيل",
-  "academicpage.dialog.required": "هذا الحقل مطلوب",
-  "academicpage.dialog.sex": "الجنس",
-  "academicpage.dialog.company": "اسم الشركة",
-  "academicpage.dialog.phone": "رقم الهاتف",
-  "academicpage.dialog.checkbox": "أؤكد أن المعلومات التي قدمتها موثوقة ودقيقة ، كما وأوافق على تحمل مسؤولية نشر معلومات غير موثوقة ، كذلك اوافق على نشر صورة ملفي الشخصي، التي لا تملك أي حقوق نسخ ، علنًا على الموقع وعلى التطبيق قاعدة بيانات المنتدى الأكاديمي  العربي.",
-  "contactpage.title": "تواصل معنا",
-  "contactpage.text": "للتواصل معنا يرجى ملئ النموذج التالي",
-  "contactpage.submit": "ارسال",
-  "contactpage.fullname": "الاسم الكامل",
-  "contactpage.email": "البريد الالكتروني",
-  "contactpage.message": "الرسالة",
-  "contactpage.required": "هذا الحقل مطلوب",
-  "contactpage.dialog.title": "تم ارسال الرسالة بنجاح",
-  "contactpage.subject": "الموضوع",
+  "academicpage.title": "The Arab Academic list",
+  "academicpage.text": " Our ability to communicate and collaborate with one another as an Arab society is the key to societal change for the better. Join us for a listing of Arab academics from countries and regions worldwide",
+  "academicpage.acdemics": "List of Arab academics by location and specialization",
+  "academicpage.dialog.title": "Register as an academic",
+  "academicpage.dialog.sub.title": "Please fill in the following details to register as an academic in English",
+  "academicpage.dialog.first.name": "First Name",
+  "academicpage.dialog.last.name": "Last Name",
+  "academicpage.dialog.email": "Email",
+  "academicpage.dialog.age": "Age",
+  "academicpage.dialog.imageurl": "Choose Image",
+  "academicpage.dialog.city": "City",
+  "academicpage.dialog.degree": "Degree",
+  "academicpage.dialog.subject": "Subject",
+  "academicpage.dialog.job": "Career",
+  "academicpage.dialog.button": "Register",
+  "academicpage.dialog.required": "Required",
+  "academicpage.dialog.sex": "Gender",
+  "academicpage.dialog.company": "Company",
+  "academicpage.dialog.phone": "Phone Number",
+  "academicpage.dialog.checkbox": "I confirm that the information I have provided is reliable and accurate and I agree to bear the responsibility for publishing unreliable information. I also agree to publish my profile picture, which does not have any copy rights, publicly on the website and on the application database of the Arab Academic Forum.",
+  "contactpage.title": "Contact Us",
+  "contactpage.text": "For contact us please fill the form below",
+  "contactpage.submit": "Submit",
+  "contactpage.fullname": "Full Name",
+  "contactpage.email": "Email",
+  "contactpage.message": "Message",
+  "contactpage.required": "Required",
+  "contactpage.dialog.title": "The message has been sent successfully",
+  "contactpage.subject": "Subject",
   "contactpage.subjects": [
     {
       "name": ""
     },
     {
-      "name" : "النشر في المجلة الشهرية"
+      "name": "Publication in the monthly magazine"
     },
     {
-      "name": "طلب استضافة في البودكاست \"سمعنا صوتك\""
+      "name": "Podcast Hosting Request \"We Heard Your Voice\""
     },
     {
-      "name": "تعاون للمشغلين او المؤسسات"
+      "name": "Cooperation of operators or institutions"
     },
     {
-      "name": "استشارة لاختيار مجال تعليم ومؤسسة أكاديمية\n"
+      "name": "Find a workshop or training"
     },
     {
-      "name": "ابحث عن  ورشة عمل أو تدريب \n"
+      "name": "Advice for choosing a career"
     },
     {
-      "name": "ابحث عن وظيفة\n"
+      "name": "Find a job"
     },
     {
-      "name": "ابحث عن منح"
+      "name": "Find a scholarship"
     },
     {
-      "name": "اخرى"
+      "name": "Other"
     }
   ],
-  "podcastpage.desc": "بودكاست \"سمعنا صوتك \". برنامج فردي وحواري هدفه البحث شخصيات اكاديمية من المجتمع العربي الذين يرغبون بمشاركة خبرتهم لمجتمعهم ويناقش مواضيع اكاديمية ومهنية . ",
-  "podcastpage.subdesc": "معني تشارك بلقاء بودكاست معنا . اترك تفاصيلك وسنقوم بالتواصل معك "
+  "podcastpage.desc": "Podcast \"We heard your voice\". An individual and talk show program aimed at researching academic personalities from the Arab community who wish to share their experience with their community and discuss academic and professional issues.",
+  "podcastpage.subdesc": "Meaning participate in a podcast meeting with us. Leave your details and we will contact you",
+  "footer.contactus": "Contact Us"
 }

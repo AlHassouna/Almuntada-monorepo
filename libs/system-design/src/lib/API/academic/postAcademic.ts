@@ -7,6 +7,7 @@ export const postAcademic = async (data: AcademicCreated): Promise<IAcademic> =>
 };
 
 export const usePostAcademicMutation = () => {
+  // TODO: you need to fix this function by adding type for thr return value
   const queryClient = useQueryClient();
   return useMutation((data: AcademicCreated) => postAcademic(data), {
     onSuccess: () => {

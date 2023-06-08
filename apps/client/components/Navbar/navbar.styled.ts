@@ -38,11 +38,10 @@ export const LogoContainer = styled(Image)`
   }
 `
 export const NavbarContainer = styled.div`
-  max-width: 1280px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   @media (min-width: 1536px) {
     gap: 4rem;
   }
@@ -50,6 +49,7 @@ export const NavbarContainer = styled.div`
 
 export const NavbarList = styled.ul`
   display: none;
+  align-items: center;
   @media screen and (min-width: 768px) {
     display: flex;
     z-index: 40;
@@ -186,3 +186,5 @@ export const NavbarMenuListItemMobile = styled.li`
     display: none;
   }
 `;
+
+

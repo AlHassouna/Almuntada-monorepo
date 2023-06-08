@@ -12,7 +12,6 @@ interface Props {
 }
 
 export const SwitchLabels: React.FC<Props> = ({label, id, onChange, checked}) => {
-  console.log(checked)
   return (
     <FormGroup>
       <FormControlLabel

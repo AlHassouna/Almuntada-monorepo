@@ -15,7 +15,7 @@ export const DescPodcast = () => {
   const {p: P} = motion
   const {data, isLoading} = useGetPodcastByStatus(true);
   return (
-    <div className='pt-[20vh] overflow-hidden'>
+    <div className='pt-[20vh] overflow-hidden pb-[17vh]'>
       <Head>
         <title>{title}</title>
       </Head>
@@ -48,12 +48,12 @@ export const DescPodcast = () => {
                 <PodcastCard
                   key={index}
                   podcastUrl={podcast.podcastUrl}
+                  direction={index % 2 === 0 ? 'row' : 'row-reverse'}
+                  title={podcast.title}
                 />
               )
             })
-
         }
-
       </MotionContainer>
     </div>
   )

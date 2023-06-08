@@ -17,8 +17,8 @@ import {getCityList} from "@lib/shared-types";
 import {ListOptions} from "../../components/Dialog/optionAcademic";
 import {CardsSection} from "../../styled/global.styled";
 import Head from "next/head";
-import Slideshow from "../../components/Slideshow/Slideshow";
 import Skeleton from '@mui/material/Skeleton';
+import AcademicS from "../../sections/academic";
 
 const Academic: FC = () => {
 
@@ -40,13 +40,8 @@ const Academic: FC = () => {
       [key]: event
     });
   };
-  const {isOpen, onClose, onOpen, OnSubmit} = AcademicDialogLogic();
   const citiesOption = DataToSelectOptions(getCityList, "label", "label");
   const {subjectsOptions} = ListOptions();
-  const geDetailsUrl = process.env.NEXT_PUBLIC_API_DETAILS_URL
-  const slides = intl.messages[
-    "academicpage.slides"
-    ] as unknown as any
   const filteredData = data?.filter((item) => {
       if (!selectedFilter.city && !selectedFilter.subject) {
         return true;
@@ -57,35 +52,13 @@ const Academic: FC = () => {
       return item.city === selectedFilter.city || item.subject?.subject === selectedFilter.subject;
     }
   );
-  // const [details, setDetails] = useState()
-  // useEffect(() => {
-  //   fetch(geDetailsUrl)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setDetails({
-  //         ...data,
-  //         pathname: window.location.pathname,
-  //         userAgent: window.navigator.userAgent
-  //       })
-  //     })
-  //     .catch(err => console.log(err))
-  // }, [])
   return (
     <MainContainer dir={locale}>
       <Head>
         <title>{title}</title>
       </Head>
       <AcademicSection>
-        <Slideshow slides={slides} delay={5000} autoplay={true} onClick={onOpen}/>
-        {
-          isOpen && (
-            <AcademicDialog
-              isOpen={isOpen}
-              OnSubmit={OnSubmit}
-              handleClose={onClose}
-            />
-          )
-        }
+        <AcademicS/>
       </AcademicSection>
       <CardsSection>
         <motion.p

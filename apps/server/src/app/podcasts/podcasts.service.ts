@@ -35,4 +35,8 @@ export class PodcastsService {
       }
     });
   }
+
+  async deleteAllPodcasts() {
+    return await this.podcastRepository.delete({});
+  }
 }

@@ -7,21 +7,17 @@ import {useLocale} from "@lib/system-design";
 
 interface Props {
   name: string;
-  title: string;
   desc: string;
   image: string;
 }
 
-export const FounderCard: FC<Props> = ({name, title, desc, image}) => {
+export const FounderCard: FC<Props> = ({name, desc, image}) => {
   const locale = useLocale();
   return (
-    <Card sx={{maxWidth: 345, textAlign: "center", height: 600}}>
+    <Card sx={{width: 300, textAlign: "center"}}>
       <CardMedia sx={{height: 300, filter: "grayscale(100%)"}} image={image} title={name}/>
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {title}
-        </Typography>
-        <Typography variant="h3" color="text.secondary">
+        <Typography variant="h3" color="black">
           {name}
         </Typography>
         <Typography
@@ -29,7 +25,7 @@ export const FounderCard: FC<Props> = ({name, title, desc, image}) => {
             textAlign: locale === "en" ? "left" : "right"
           }}
           variant="body2"
-          color="text.secondary"
+          color="gray"
         >
           {desc}
         </Typography>
