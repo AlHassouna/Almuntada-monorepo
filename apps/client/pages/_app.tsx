@@ -59,6 +59,7 @@ const CustomApp = ({Component, pageProps}: AppProps) => {
     }
   }, [router])
 
+
   const {locale} = useRouter();
   const queryClient = new QueryClient();
   return (
