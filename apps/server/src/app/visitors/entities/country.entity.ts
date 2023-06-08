@@ -2,25 +2,29 @@ import {
   Column,
   Entity,
   PrimaryGeneratedColumn,
-  CreateDateColumn
+  CreateDateColumn, OneToMany
 } from "typeorm";
+import {Visitor} from "./visitor.entity";
+
 @Entity("Country")
 export class Country {
-  // TODO: check this code
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  countryName: string;
+  @OneToMany(() => Visitor, (visitor) => visitor.country)
+  visitor: Visitor;
 
-  @Column()
+  @Column({nullable: true})
+  country: string;
+
+  @Column({nullable: true})
   countryCode: string;
 
-  @Column()
-  area:string[]
+  @Column("text", {array: true, nullable: true})
+  area: string[];
 
-  @Column()
-  countryCount:number;
+  @Column({nullable: true})
+  countryCount: number;
 
   @CreateDateColumn()
   createdAt: Date;

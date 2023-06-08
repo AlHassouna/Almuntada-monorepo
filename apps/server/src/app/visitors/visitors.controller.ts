@@ -4,7 +4,6 @@ import {
   Post,
   Body,
   Req,
-  Headers
 } from '@nestjs/common';
 import {Request} from 'express';
 import {VisitorsService} from './visitors.service';

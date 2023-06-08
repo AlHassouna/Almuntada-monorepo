@@ -2,53 +2,62 @@ import {Injectable} from '@nestjs/common';
 import {InjectRepository} from '@nestjs/typeorm';
 import {Repository} from 'typeorm';
 import {CreateVisitorDto} from './dto/create-visitor.dto';
+import {Country} from './entities/country.entity';
 import {Visitor} from "./entities/visitor.entity";
 
 @Injectable()
 export class VisitorsService {
   constructor(
-    @InjectRepository(Visitor) private readonly visitorRepository: Repository<Visitor>
+    @InjectRepository(Visitor) private readonly visitorRepository: Repository<Visitor>,
+    @InjectRepository(Country) private readonly countryRepository: Repository<Country>,
   ) {
   }
 
-  create(createVisitorDto: CreateVisitorDto) {
-    // TODO: check this code
+  async create(createVisitorDto: CreateVisitorDto) {
+    const {location} = createVisitorDto;
+    const countryName = location.at(-1)['long_name'];
+    const countryCode = location.at(-1)['short_name'];
+    const area = location[0]['long_name'];
+    
+    let country = await this.countryRepository.findOne({where: {countryCode}});
 
-    //     const {ip,pathname,userAgent,location} = createVisitorDto;
-    //     const subjectEntity = await this.subjectRepository.findOne({where: {subject}}) || this.subjectRepository.create({subject});
-    //     const savedSubject = await this.subjectRepository.save(subjectEntity);
-    //
-    //     const companyEntity = await this.companyRepository.findOne({where: {company}}) || this.companyRepository.create({company});
-    //     const savedCompany = await this.companyRepository.save(companyEntity);
-    //
-    //     const careerEntity = await this.careerRepository.findOne({where: {career}}) || this.careerRepository.create({career});
-    //     const savedCareer = await this.careerRepository.save(careerEntity);
-    //     createUserDto.phone = btoa(createUserDto.phone);
-    //     const newUser = this.academicRepository.create({
-    //       ...createUserDto,
-    //       subject: savedSubject,
-    //       company: savedCompany,
-    //       career: savedCareer
-    //     });
-    //
-    //     return await this.academicRepository.save(newUser);
-    const newVisitor = this.visitorRepository.create({
-      ...createVisitorDto,
-      createdAt: new Date()
-    })
-    return this.visitorRepository.save(newVisitor)
+    if (!country) {
+      country = this.countryRepository.create({
+        country: countryName,
+        countryCode,
+        area: [area],
+        countryCount: 1,
+      });
+
+      await this.countryRepository.save(country);
+    } else {
+      country.area.push(area);
+      country.countryCount += 1;
+
+      await this.countryRepository.save(country);
+    }
+    const visitor = this.visitorRepository.create({
+      ip: createVisitorDto.ip,
+      userAgent: createVisitorDto.userAgent,
+      languages: createVisitorDto.languages,
+      country,
+      pathname: createVisitorDto.pathname,
+    });
+
+    await this.visitorRepository.save(visitor);
+
+    return visitor;
   }
 
   findAll() {
-    return this.visitorRepository.find()
-  }
-  // TODO: check this code
-  async getCountriesCounter(){
-
-  }
-  // TODO: check this code
-  getVisitorsCounter(){
-
+    return this.visitorRepository.find();
   }
 
+  async getCountriesCounter() {
+    return this.countryRepository.count();
+  }
+
+  async getVisitorsCounter() {
+    return this.visitorRepository.count();
+  }
 }

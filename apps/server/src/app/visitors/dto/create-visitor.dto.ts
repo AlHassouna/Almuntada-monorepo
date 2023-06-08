@@ -1,5 +1,6 @@
 import {ApiProperty} from '@nestjs/swagger';
-import { IsNotEmpty, IsIP, IsString, IsOptional } from "class-validator";
+import {IsNotEmpty, IsIP, IsString, IsOptional} from "class-validator";
+import {Country} from '../entities/country.entity';
 
 export class CreateVisitorDto {
   @ApiProperty()
@@ -20,5 +21,10 @@ export class CreateVisitorDto {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  location: string;
+  location: Array<object>;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  languages: string;
 }

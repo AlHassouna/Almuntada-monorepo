@@ -9,11 +9,9 @@ import {ThemeProvider} from "styled-components";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import React, {useEffect, useRef} from "react";
 import Navbar from "../components/Navbar/Navbar";
-import {HomeLogic} from "../components/Home/homeLogic";
-import axios from "axios";
 import Footer from "../components/Footer/Footer";
-import { postVisitor } from "@lib/system-design";
-import { usePostGoogleMutation } from "../../../libs/system-design/src/lib/API/google/postGoogle";
+import {postVisitor} from "@lib/system-design";
+import {getAddress} from "@lib/system-design";
 
 
 const messages = {
@@ -33,7 +31,6 @@ const CustomApp = ({Component, pageProps}: AppProps) => {
   const router = useRouter()
   const regex = /\(([^)]+)\)/;
   const isMounted = useRef(false)
-  const { mutate } = usePostGoogleMutation()
   useEffect(() => {
     const matches = regex.exec(window.navigator.userAgent);
     const handleStart = (url: string) => {
@@ -44,15 +41,13 @@ const CustomApp = ({Component, pageProps}: AppProps) => {
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(async ({coords}) => {
           const {latitude, longitude} = coords;
-          // TODO: you neet to change this code by using the API call function and make a new one to use google as a service
-          const visitorLocation = await axios.post(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${googleMapsApi}`)
+          const address = await getAddress({latitude, longitude})
           await postVisitor({
             pathname: url ? url : '/',
             userAgent: matches[1],
-            location: visitorLocation.data.results[0]?.address_components.find(component => component.types.includes('country'))?.long_name || '',
+            location: address.results[0]?.address_components
           })
-          console.log(visitorLocation.data.results[0])
-        })
+        });
       }
     }
     if (!isMounted.current) {
