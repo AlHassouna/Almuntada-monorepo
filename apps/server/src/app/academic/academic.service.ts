@@ -100,4 +100,14 @@ export class AcademicService {
       select: ['email']
     });
   }
+
+  async getUserByIsActive(isApproved: boolean) {
+    return await this.academicRepository.find({
+      where: {
+        isApproved: isApproved
+      }
+    });
+  }
+
 }
+

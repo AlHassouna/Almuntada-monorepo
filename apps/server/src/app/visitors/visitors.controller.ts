@@ -28,4 +28,6 @@ export class VisitorsController {
   findAll(@Req() request: any) {
     return this.visitorsService.findAll();
   }
+
+  
 }

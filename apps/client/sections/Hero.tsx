@@ -39,7 +39,7 @@ const Hero = () => {
           </SubHeading>
           <Text variants={textVariant(1)}>
             {
-              intl.formatMessage({id: "homepage.description"})
+              intl.formatMessage({id: "homepage.subtitle"})
             }
           </Text>
           <Button variants={textVariant(1.2)} onClick={onOpen}>

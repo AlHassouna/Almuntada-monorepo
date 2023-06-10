@@ -14,11 +14,12 @@ export class VisitorsService {
   }
 
   async create(createVisitorDto: CreateVisitorDto) {
+    console.log(createVisitorDto)
     const {location} = createVisitorDto;
     const countryName = location.at(-1)['long_name'];
     const countryCode = location.at(-1)['short_name'];
     const area = location[0]['long_name'];
-    
+
     let country = await this.countryRepository.findOne({where: {countryCode}});
 
     if (!country) {
@@ -40,17 +41,21 @@ export class VisitorsService {
       ip: createVisitorDto.ip,
       userAgent: createVisitorDto.userAgent,
       languages: createVisitorDto.languages,
-      country,
+      country: country,
       pathname: createVisitorDto.pathname,
     });
-
+    console.log(visitor)
     await this.visitorRepository.save(visitor);
 
     return visitor;
   }
 
   findAll() {
-    return this.visitorRepository.find();
+    return this.visitorRepository.find({
+      relations: {
+        country: true,
+      }
+    });
   }
 
   async getCountriesCounter() {

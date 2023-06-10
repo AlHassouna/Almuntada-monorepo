@@ -4,20 +4,20 @@ import {
   Post,
   Body,
   UsePipes,
-  ValidationPipe, Query, Put
+  ValidationPipe, Query, Put, Param
 } from "@nestjs/common";
-import { AcademicService } from "./academic.service";
-import { CreateUserDto } from "./dto/create-user.dto";
-import { Subject } from "./entities/subject.entity";
+import {AcademicService} from "./academic.service";
+import {CreateUserDto} from "./dto/create-user.dto";
+import {Subject} from "./entities/subject.entity";
 import {
   ApiBadRequestResponse,
   ApiCreatedResponse,
   ApiTags
 } from "@nestjs/swagger";
-import { Company } from "./entities/company.entity";
-import { Career } from "./entities/career.entity";
-import { SearchUserDto } from "./dto/search-user.dto";
-import { Academic } from "./entities/academic.entity";
+import {Company} from "./entities/company.entity";
+import {Career} from "./entities/career.entity";
+import {SearchUserDto} from "./dto/search-user.dto";
+import {Academic} from "./entities/academic.entity";
 
 @ApiTags("Academic")
 @Controller("academic")
@@ -72,5 +72,10 @@ export class AcademicController {
   @Get("emails")
   async findAcademicsByEmail(): Promise<Academic[]> {
     return await this.userService.findAllAcademicsEmails();
+  }
+
+  @Get('isApproved/:isApproved')
+  async getPodcastByIsActive(@Param('isApproved') isApproved: boolean) {
+    return await this.userService.getUserByIsActive(isApproved);
   }
 }
