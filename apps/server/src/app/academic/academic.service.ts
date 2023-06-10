@@ -105,6 +105,11 @@ export class AcademicService {
     return await this.academicRepository.find({
       where: {
         isApproved: isApproved
+      },
+      relations: {
+        subject: true,
+        career: true,
+        company: true
       }
     });
   }
