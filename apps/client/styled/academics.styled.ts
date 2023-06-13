@@ -7,11 +7,13 @@ export const CardContainer = styled(Box)`
   justify-content: center;
   flex-wrap: wrap;
   height: 50vh;
+  @media screen and (max-width: 1024px) {
+    height: max-content;
+  }
 `;
 export const AcademicSection = styled.section`
   display: flex;
   flex-direction: ${props => props.property || "column"};
-  height: 100vh;
   justify-content: center;
   @media screen and (max-width: 1024px) {
     flex-direction: column;

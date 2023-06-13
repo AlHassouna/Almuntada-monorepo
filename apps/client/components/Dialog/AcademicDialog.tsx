@@ -258,8 +258,10 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
             }}
           </Formik>
         </DialogContent>
-        <Alerts success={intl.messages["academicpage.dialog.success"] as string}
-                error={intl.messages["academicpage.dialog.error"] as string} status={data?.status}/>
+        {
+          <Alerts success={intl.messages["academicpage.dialog.success"] as string}
+                  error={intl.messages["academicpage.dialog.error"] as string} status={data?.status}/>
+        }
       </StyledDialog>
     );
   }

@@ -7,6 +7,7 @@ import {useIntl} from "react-intl";
 import {MainSection} from "../../styled/global.styled";
 import Head from "next/head";
 import {Alerts} from '@lib/system-design'
+import {MainContainer} from "../../styled/home.styled";
 
 interface ContactUsProps {
   onSubmit: (values: ContactUsCreated) => void;
@@ -34,11 +35,11 @@ const ContactForm: FC<ContactUsProps> = ({onSubmit}) => {
     name: string;
   }>;
   return (
-    <>
+    <MainContainer>
       <Head>
         <title>{title}</title>
       </Head>
-      <MainSection>
+      <div className='flex flex-col justify-center h-[100vh] '>
         <StyledHeading>{intl.formatMessage({id: 'contactpage.title'})}</StyledHeading>
         <Formik
           initialValues={initialValues}
@@ -109,8 +110,8 @@ const ContactForm: FC<ContactUsProps> = ({onSubmit}) => {
           <Alerts success={intl.messages["contactpage.contact.success"] as string}
                   error={intl.messages["contactpage.contact.error"] as string} status={response?.status}/>
         </div>
-      </MainSection>
-    </>
+      </div>
+    </MainContainer>
 
   );
 }

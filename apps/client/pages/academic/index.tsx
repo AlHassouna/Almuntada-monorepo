@@ -1,8 +1,6 @@
-import React, {FC, useEffect, useState} from "react";
+import React, {FC, useState} from "react";
 import {AcademicsCard} from "../../components/Card/AcademicsCard";
 import {AcademicSection, CardContainer} from "../../styled/academics.styled";
-import {AcademicDialog} from "../../components/Dialog/AcademicDialog";
-import {AcademicDialogLogic} from "../../components/Dialog/dialogLogic";
 import {MainContainer} from "../../styled/home.styled";
 import {useLocale} from "@lib/system-design";
 import {Button} from "@mui/material";

@@ -12,7 +12,6 @@ interface SelectOptionType {
   label: string;
   value?: string;
   firstLetter?: string;
-
 }
 
 interface Props {

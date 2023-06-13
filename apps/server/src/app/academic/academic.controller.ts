@@ -78,4 +78,5 @@ export class AcademicController {
   async getPodcastByIsActive(@Param('isApproved') isApproved: boolean) {
     return await this.userService.getUserByIsActive(isApproved);
   }
+  
 }

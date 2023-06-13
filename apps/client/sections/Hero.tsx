@@ -30,7 +30,7 @@ const Hero = () => {
         whileInView="show"
         viewport={{once: false, amount: 0.65}}
       >
-        <div className="flex justify-center flex-col gap-8 sm:w-1/2">
+        <div className="flex justify-center flex-col gap-3 sm:w-1/2">
           <Heading variants={textVariant(0.5)}>
             {intl.formatMessage({id: "homepage.title"})}
           </Heading>
@@ -44,8 +44,6 @@ const Hero = () => {
           </Text>
           <Button variants={textVariant(1.2)} onClick={onOpen}>
             {intl.formatMessage({id: "homepage.joinus"})}
-            {
-            }
           </Button>
           <AcademicDialog
             isOpen={isOpen}

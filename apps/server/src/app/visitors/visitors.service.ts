@@ -14,11 +14,12 @@ export class VisitorsService {
   }
 
   async create(createVisitorDto: CreateVisitorDto) {
-    console.log(createVisitorDto)
+    console.log("visitor dto", createVisitorDto)
     const {location} = createVisitorDto;
     const countryName = location.at(-1)['long_name'];
     const countryCode = location.at(-1)['short_name'];
-    const area = location[0]['long_name'];
+    const city = location.at(-3)['long_name'];
+    const street = location.at(1)['long_name'];
 
     let country = await this.countryRepository.findOne({where: {countryCode}});
 
@@ -26,15 +27,14 @@ export class VisitorsService {
       country = this.countryRepository.create({
         country: countryName,
         countryCode,
-        area: [area],
+        city,
+        street,
         countryCount: 1,
       });
 
       await this.countryRepository.save(country);
     } else {
-      country.area.push(area);
       country.countryCount += 1;
-
       await this.countryRepository.save(country);
     }
     const visitor = this.visitorRepository.create({
@@ -44,7 +44,6 @@ export class VisitorsService {
       country: country,
       pathname: createVisitorDto.pathname,
     });
-    console.log(visitor)
     await this.visitorRepository.save(visitor);
 
     return visitor;
@@ -56,13 +55,5 @@ export class VisitorsService {
         country: true,
       }
     });
-  }
-
-  async getCountriesCounter() {
-    return this.countryRepository.count();
-  }
-
-  async getVisitorsCounter() {
-    return this.visitorRepository.count();
   }
 }

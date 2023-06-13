@@ -42,6 +42,11 @@ const CustomApp = ({Component, pageProps}: AppProps) => {
         navigator.geolocation.getCurrentPosition(async ({coords}) => {
           const {latitude, longitude} = coords;
           const address = await getAddress({latitude, longitude})
+          if (url.includes('he') || url.includes('en')) {
+            url = url.split('/')[2]
+          } else {
+            url = url.split('/')[1]
+          }
           await postVisitor({
             pathname: url ? url : '/',
             userAgent: matches[1],
