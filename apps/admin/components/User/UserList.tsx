@@ -1,11 +1,13 @@
 import {Dropdown, Table} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faEllipsisVertical} from '@fortawesome/free-solid-svg-icons'
-import React, {FC} from 'react'
+import React, {FC, useState} from 'react'
 import {IAcademic} from '@lib/system-design'
 import {THSort} from '../TableSort'
 import {useUpdateAcademic, FileUpload} from '@lib/system-design'
 import {AcademicUpdated} from '@lib/system-design'
+import {Date} from '@lib/system-design'
+import dayjs from 'dayjs'
 
 type Props = {
   users: IAcademic[];
@@ -88,7 +90,7 @@ export const UserList: FC<Props> = (props) => {
               <td>
                 <input onChange={(e) => {
                   onFieldChange(user?.id, 'firstName', e.target.value)
-                }} type="text" value={editedFields[user.id]?.firstName || user.firstName}/>
+                }} type="text" value={editedFields[user.id]?.firstName} placeholder={user?.firstName}/>
               </td>
             ) : (
               <td>{user.firstName}</td>
@@ -99,9 +101,9 @@ export const UserList: FC<Props> = (props) => {
               <td>
                 <input onChange={
                   (e) => {
-                    onFieldChange(user.id, 'lastName', e.target.value)
+                    onFieldChange(user?.id, 'lastName', e.target.value)
                   }
-                } type="text" value={editedFields[user.id]?.lastName || user.lastName}/>
+                } type="text" value={editedFields[user.id]?.lastName} placeholder={user?.lastName}/>
               </td>
             ) : (
               <td>{user.lastName}</td>
@@ -114,7 +116,7 @@ export const UserList: FC<Props> = (props) => {
                   (e) => {
                     onFieldChange(user.id, 'email', e.target.value)
                   }
-                } type="text" value={editedFields[user.id]?.email || user.email}/>
+                } type="text" value={editedFields[user.id]?.email} placeholder={user?.email}/>
               </td>
             ) : (
               <td>{user.email}</td>
@@ -123,11 +125,8 @@ export const UserList: FC<Props> = (props) => {
           {
             isEditable && userEdit.id === user?.id ? (
               <td>
-                <input onChange={
-                  (e) => {
-                    onFieldChange(user.id, 'age', e.target.value)
-                  }
-                } type="text" value={user.age}/>
+                <Date name='age' value={dayjs(editedFields[user.id]?.age)}
+                      setValue={(e) => onFieldChange(user.id, 'age', e)}/>
               </td>
             ) : (
               <td>{user.age}</td>
@@ -140,7 +139,7 @@ export const UserList: FC<Props> = (props) => {
                   (e) => {
                     onFieldChange(user.id, 'city', e.target.value)
                   }
-                } type="text" value={editedFields[user.id]?.city || user.city}/>
+                } type="text" value={editedFields[user.id]?.city} placeholder={user.city}/>
               </td>
             ) : (
               <td>{user.city}</td>
@@ -153,7 +152,7 @@ export const UserList: FC<Props> = (props) => {
                   (e) => {
                     onFieldChange(user.id, 'degree', e.target.value)
                   }
-                } type="text" value={editedFields[user.id]?.degree || user.degree}/>
+                } type="text" value={editedFields[user.id]?.degree} placeholder={user.degree}/>
               </td>
             ) : (
               <td>{user.degree}</td>
@@ -166,7 +165,7 @@ export const UserList: FC<Props> = (props) => {
                   (e) => {
                     onFieldChange(user.id, 'gender', e.target.value)
                   }
-                } type="text" value={editedFields[user?.id]?.gender || user.gender}/>
+                } type="text" value={editedFields[user?.id]?.gender} placeholder={user.gender}/>
               </td>
             ) : (
               <td>{user.gender}</td>
@@ -179,7 +178,7 @@ export const UserList: FC<Props> = (props) => {
                   (e) => {
                     onFieldChange(user.id, 'phone', e.target.value)
                   }
-                } type="text" value={editedFields[user.id]?.phone || user.phone}/>
+                } type="text" value={editedFields[user.id]?.phone} placeholder={user.phone}/>
               </td>
             ) : (
               <td>{atob(user.phone)}</td>
@@ -192,7 +191,7 @@ export const UserList: FC<Props> = (props) => {
                   (e) => {
                     onFieldChange(user.id, 'subject', e.target.value)
                   }
-                } type="text" value={editedFields[user.id]?.subject || user.subject.subject}/>
+                } type="text" value={editedFields[user.id]?.subject} placeholder={user.subject.subject}/>
               </td>
             ) : (
               <td>{user.subject.subject}</td>
@@ -205,7 +204,7 @@ export const UserList: FC<Props> = (props) => {
                   (e) => {
                     onFieldChange(user.id, 'company', e.target.value)
                   }
-                } type="text" value={editedFields[user.id]?.company || user.company.company}/>
+                } type="text" value={editedFields[user.id]?.company} placeholder={user.company.company}/>
               </td>
             ) : (
               <td>{user.company.company}</td>
@@ -218,7 +217,7 @@ export const UserList: FC<Props> = (props) => {
                   (e) => {
                     onFieldChange(user.id, 'career', e.target.value)
                   }
-                } type="text" value={editedFields[user.id]?.career || user.career.career}/>
+                } type="text" value={editedFields[user.id]?.career} placeholder={user.career.career}/>
               </td>
             ) : (
               <td>{user.career.career}</td>

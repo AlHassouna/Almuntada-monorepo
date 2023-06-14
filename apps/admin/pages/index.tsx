@@ -67,7 +67,6 @@ const Home: NextPage = () => {
     }
     , [visitorsData])
 
-  console.log(locationDate)
 
   return (
     <AdminLayout>
