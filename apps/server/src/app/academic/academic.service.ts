@@ -31,6 +31,15 @@ export class AcademicService {
     const careerEntity = await this.careerRepository.findOne({where: {career}}) || this.careerRepository.create({career});
     const savedCareer = await this.careerRepository.save(careerEntity);
     createUserDto.phone = btoa(createUserDto.phone);
+
+    // checking if the user already exists in the database
+    const user = await this.academicRepository.findOne({where: {email: createUserDto.email}});
+    if (user) {
+      return {
+        message: 'User already exists, please try again with another email'
+      };
+    }
+
     const newUser = this.academicRepository.create({
       ...createUserDto,
       subject: savedSubject,
