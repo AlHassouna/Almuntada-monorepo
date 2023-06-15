@@ -4,7 +4,7 @@ import {
   Post,
   Body,
   UsePipes,
-  ValidationPipe, Query, Put, Param
+  ValidationPipe, Query, Put, Param, Res
 } from "@nestjs/common";
 import {AcademicService} from "./academic.service";
 import {CreateUserDto} from "./dto/create-user.dto";
@@ -18,6 +18,7 @@ import {Company} from "./entities/company.entity";
 import {Career} from "./entities/career.entity";
 import {SearchUserDto} from "./dto/search-user.dto";
 import {Academic} from "./entities/academic.entity";
+import {Response} from 'express'
 
 @ApiTags("Academic")
 @Controller("academic")
@@ -78,5 +79,5 @@ export class AcademicController {
   async getPodcastByIsActive(@Param('isApproved') isApproved: boolean) {
     return await this.userService.getUserByIsActive(isApproved);
   }
-  
+
 }

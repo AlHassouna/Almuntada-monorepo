@@ -110,6 +110,10 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
         timer.current = window.setTimeout(() => {
           setLoading(false);
         })
+        timer.current = window.setTimeout(() => {
+          setData([])
+        }, 2000)
+        
       }
     }
     return (
@@ -215,42 +219,44 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
                   </Field>
                   <div className="flex justify-center items-center">
                     <Box sx={{m: 1, position: 'relative'}}>
-                      <Button
-                        type="submit"
-                        disabled={!props.values.isAgree}
-                        sx={data.status === 201 ? {
-                          bgcolor: green[500] + '!important',
-                          width: '10vw!important',
-                          borderRadius: '24px!important',
-                          '&:hover': {
-                            bgcolor: green[700] + '!important',
-                          }
-                        } : {
-                          bgcolor: '#3f51b5!important',
-                          color: 'white',
-                          width: '10vw!important',
-                          borderRadius: '24px!important',
-                          '&:hover': {
-                            bgcolor: '#303f9f!important',
-                          }
-                        }
-                        }
-                      >
-                        {data?.status === 201 ? <CheckIcon/> : <>{intl.messages["academicpage.dialog.button"]}</>}
-                      </Button>
-                      {loading && (
-                        <CircularProgress
-                          size={25}
-                          sx={{
-                            color: green[500],
-                            position: 'absolute',
-                            top: '50%',
-                            left: '50%',
-                            marginTop: '-12px',
-                            marginLeft: '-12px',
-                          }}
-                        />
-                      )}
+                      {loading ? (
+                          <CircularProgress
+                            size={25}
+                            sx={{
+                              color: green[500],
+                              position: 'absolute',
+                              top: '50%',
+                              left: '50%',
+                              marginTop: '-12px',
+                              marginLeft: '-12px',
+                            }}
+                          />
+                        ) :
+                        data?.data?.status === 201 ? <CheckIcon/> :
+                          <Button
+                            type="submit"
+                            disabled={!props.values.isAgree}
+                            sx={data?.data?.status === 201 ? {
+                              bgcolor: green[500] + '!important',
+                              width: '10vw!important',
+                              borderRadius: '24px!important',
+                              '&:hover': {
+                                bgcolor: green[700] + '!important',
+                              }
+                            } : {
+                              bgcolor: '#3f51b5!important',
+                              color: 'white',
+                              width: '10vw!important',
+                              borderRadius: '24px!important',
+                              '&:hover': {
+                                bgcolor: '#303f9f!important',
+                              }
+                            }
+                            }
+                          >
+                            {intl.messages["academicpage.dialog.button"]}
+                          </Button>
+                      }
                     </Box>
                   </div>
                 </StyledForm>
@@ -260,7 +266,8 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
         </DialogContent>
         {
           <Alerts success={intl.messages["academicpage.dialog.success"] as string}
-                  error={intl.messages["academicpage.dialog.error"] as string} status={data?.status}/>
+                  error={intl.messages["academicpage.dialog.error"] as string}
+                  email={intl.messages["academicpage.dialog.error.email"] as string} status={data?.data?.status}/>
         }
       </StyledDialog>
     );

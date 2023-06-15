@@ -9,9 +9,10 @@ interface Props {
   success: string;
   error: string;
   status: number;
+  email: string;
 }
 
-export const Alerts: React.FC<Props> = ({success, error, status}) => {
+export const Alerts: React.FC<Props> = ({success, error, status, email}) => {
   const [open, setOpen] = useState(true);
 
 
@@ -57,6 +58,24 @@ export const Alerts: React.FC<Props> = ({success, error, status}) => {
             }
           >
             {error}
+          </Alert>
+        ) : status === 409 ? (
+          <Alert
+            severity="error"
+            action={
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                size="small"
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                <CloseIcon fontSize="inherit"/>
+              </IconButton>
+            }
+          >
+            {email}
           </Alert>
         ) : null}
       </Collapse>
