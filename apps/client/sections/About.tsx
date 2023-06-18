@@ -32,9 +32,8 @@ const About = () => {
             className="object-contain"
           />
         </Div>
-        <Div className='sm:w-1/2 w-3/4'>
+        <Div className='sm:w-1/2'>
           <TitleText title={`${intl.messages['homepage.about']}`} textStyles="text-center"/>
-
           <P
             variants={fadeIn('up', 'tween', 0.2, 1)}
             className="mt-[8px] font-normal sm:text-[22px] text-[30px] text-center text-[black]"

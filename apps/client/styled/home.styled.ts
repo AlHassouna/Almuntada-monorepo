@@ -68,9 +68,8 @@ export const Heading = styled(motion.h1)`
     line-height: 74.4px;
   }
   @media screen and (max-width: 425px) {
-    font-size: 30px;
+    font-size: 70px;
     text-align: center;
-    line-height: 74.4px;
   }
 `;
 
@@ -90,7 +89,7 @@ export const SubHeading = styled(motion.h1)`
     line-height: 74.4px;
   }
   @media screen and (max-width: 425px) {
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
     line-height: 74.4px;
   }
@@ -102,6 +101,11 @@ export const Text = styled(motion.p)`
   font-weight: 400;
   @media screen and (max-width: 1024px) {
     text-align: center;
+  }
+  @media screen and (max-width: 425px) {
+    font-size: 18px;
+    width: 80%;
+    margin: 0 auto;
   }
 `;
 
