@@ -52,19 +52,23 @@ export const Heading = styled(motion.h1)`
   font-weight: bold;
   text-transform: uppercase;
   color: #172759;
-  font-size: 80px;
+  font-size: 100px;
+  @media screen and (max-width: 1474px) {
+    font-size: 80px;
+    line-height: 74.4px;
+  }
   @media screen and (max-width: 1024px) {
-    font-size: 40px;
+    font-size: 60px;
     text-align: center;
     line-height: 74.4px;
   }
   @media screen and (max-width: 768px) {
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
     line-height: 74.4px;
   }
   @media screen and (max-width: 425px) {
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
     line-height: 74.4px;
   }

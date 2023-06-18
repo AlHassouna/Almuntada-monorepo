@@ -6,7 +6,6 @@ export const CardContainer = styled(Box)`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  height: 50vh;
   @media screen and (max-width: 1024px) {
     height: max-content;
   }

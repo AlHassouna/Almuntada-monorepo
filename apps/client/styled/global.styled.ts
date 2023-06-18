@@ -5,6 +5,7 @@ export const MainSection = styled.section`
   flex-direction: column;
   justify-content: center;
   margin: 2rem 0;
+  height: 100vh;
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     margin-top: 2rem;
