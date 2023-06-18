@@ -52,9 +52,9 @@ export const Heading = styled(motion.h1)`
   font-weight: bold;
   text-transform: uppercase;
   color: #172759;
-  font-size: 100px;
+  font-size: 80px;
   @media screen and (max-width: 1474px) {
-    font-size: 80px;
+    font-size: 40px;
     line-height: 74.4px;
   }
   @media screen and (max-width: 1024px) {
