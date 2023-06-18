@@ -9,7 +9,7 @@ import Link from "next/link";
 import {SyntheticEvent, useState} from "react";
 import {useRouter} from "next/router";
 import axios from "axios";
-import {deleteCookie, getCookie,setCookie} from 'cookies-next'
+import {deleteCookie, getCookie, setCookie} from 'cookies-next'
 
 const Login: NextPage = () => {
   const router = useRouter();
@@ -30,11 +30,11 @@ const Login: NextPage = () => {
     e.preventDefault();
     setSubmitting(true);
 
-    const res = await axios.get('http://localhost:8000/api/v1/auth', {
-   params: {
-      userName,
-     password,
-    },
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/v1/auth`, {
+      params: {
+        userName,
+        password,
+      },
       withCredentials: true
     });
     if (res.status === 200) {
@@ -44,6 +44,7 @@ const Login: NextPage = () => {
     }
     setSubmitting(false);
   }
+
   return (
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center dark:bg-transparent">
       <Container>

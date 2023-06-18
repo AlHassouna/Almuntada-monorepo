@@ -18,7 +18,6 @@ export const FileUpload: React.FC<Props> = ({setFiledValue, label, name}) => {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("upload_preset", "almuntad_preset_h1s2a3");
-
     return new Promise<string>((resolve, reject) => {
       const xhr = new XMLHttpRequest();
 

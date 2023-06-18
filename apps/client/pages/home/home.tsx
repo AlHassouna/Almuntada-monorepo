@@ -9,7 +9,7 @@ import Founders from "../../sections/Founders";
 
 const HomePage = () => {
   return (
-    <div className="overflow-hidden pt-[5vh]">
+    <div className="overflow-hidden ">
       <Hero/>
       <About/>
       <div className="relative">

@@ -1,8 +1,8 @@
-import { Body, Controller, Get, Post, Query  } from "@nestjs/common";
-import { AuthService } from "./auth.service";
-import { UserInputDto } from "./dto/users.dto";
-import { ApiTags } from "@nestjs/swagger";
-import { LoginDto } from "./dto/auth.dto";
+import {Body, Controller, Get, Post, Query, Headers, UnauthorizedException} from "@nestjs/common";
+import {AuthService} from "./auth.service";
+import {UserInputDto} from "./dto/users.dto";
+import {ApiTags} from "@nestjs/swagger";
+import {LoginDto} from "./dto/auth.dto";
 
 @Controller("auth")
 @ApiTags("auth")
@@ -16,8 +16,13 @@ export class AuthController {
   }
 
   @Get()
-   LogIn(@Query() data: LoginDto) {
+  LogIn(@Query() data: LoginDto) {
     return this.authService.login(data);
+  }
+
+  @Get('validate')
+  validate(@Headers('authorization') authorization: string) {
+    return this.authService.validateToken(authorization);
   }
 }
 

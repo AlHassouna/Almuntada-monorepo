@@ -6,6 +6,3 @@ export const DataToSelectOptions = <T>(dataList: T[], nameKey: keyof T, idKey: k
 };
 
 // print hello world
-
-
-

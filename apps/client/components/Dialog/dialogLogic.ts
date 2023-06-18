@@ -11,8 +11,8 @@ export const AcademicDialogLogic = () => {
     setTimeout(() => {
       onClose();
     }, 2500);
-
     return res;
+
   }
   return {
     isOpen,

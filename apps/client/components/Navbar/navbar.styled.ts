@@ -34,7 +34,7 @@ export const LogoContainer = styled(Image)`
   z-index: 20;
   cursor: pointer;
   @media screen and (max-width: 768px) {
-    width: 40vw;
+    width: 30vw;
   }
 `
 export const NavbarContainer = styled.div`
@@ -42,6 +42,7 @@ export const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 40;
   @media (min-width: 1536px) {
     gap: 4rem;
   }

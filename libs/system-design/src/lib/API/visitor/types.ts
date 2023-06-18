@@ -1,9 +1,7 @@
-import {IAddressComponent} from "../google/type";
-
 export interface IVisitor {
   userAgent: string;
   pathname: string;
-  location: object
+  country: Array<object>;
 }
 
 export type VisitorCreated = Omit<IVisitor, "createdAt" | "updatedAt">;

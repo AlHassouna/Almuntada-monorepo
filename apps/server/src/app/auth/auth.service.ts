@@ -52,4 +52,12 @@ export class AuthService {
       accessToken: this.createAccessToken(user.userName, user.id).accessToken
     };
   }
+
+  async validateToken(authorization: string) {
+    const token = authorization.replace("Bearer ", "");
+    const {username} = this.jwtService.decode(token) as { username: string };
+    const user = await this.usersService.findOne({where: {userName: username}});
+    if (!user) throw new UnauthorizedException();
+    return user;
+  }
 }

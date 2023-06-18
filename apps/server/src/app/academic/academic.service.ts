@@ -31,6 +31,15 @@ export class AcademicService {
     const careerEntity = await this.careerRepository.findOne({where: {career}}) || this.careerRepository.create({career});
     const savedCareer = await this.careerRepository.save(careerEntity);
     createUserDto.phone = btoa(createUserDto.phone);
+
+    const user = await this.academicRepository.findOne({where: {email: createUserDto.email}});
+    if (user) {
+      return {
+        status: 409,
+        message: "User already exists"
+      }
+    }
+
     const newUser = this.academicRepository.create({
       ...createUserDto,
       subject: savedSubject,
@@ -38,8 +47,12 @@ export class AcademicService {
       career: savedCareer
     });
 
-    return await this.academicRepository.save(newUser);
+    await this.academicRepository.save(newUser);
 
+    return {
+      status: 201,
+      message: "User created successfully"
+    }
   }
 
 
@@ -100,4 +113,18 @@ export class AcademicService {
       select: ['email']
     });
   }
+
+  async getUserByIsActive(isApproved: boolean) {
+    return await this.academicRepository.find({
+      where: {
+        isApproved: isApproved
+      },
+      relations: {
+        subject: true,
+        career: true,
+        company: true
+      }
+    });
+  }
+
 }

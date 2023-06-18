@@ -20,8 +20,11 @@ export class Country {
   @Column({nullable: true})
   countryCode: string;
 
-  @Column("text", {array: true, nullable: true})
-  area: string[];
+  @Column({nullable: true})
+  city: string;
+
+  @Column({nullable: true})
+  street: string;
 
   @Column({nullable: true})
   countryCount: number;

@@ -14,50 +14,46 @@ export class VisitorsService {
   }
 
   async create(createVisitorDto: CreateVisitorDto) {
+    console.log("visitor dto", createVisitorDto)
     const {location} = createVisitorDto;
     const countryName = location.at(-1)['long_name'];
     const countryCode = location.at(-1)['short_name'];
-    const area = location[0]['long_name'];
-    
+    const city = location.at(-3)['long_name'];
+    const street = location.at(1)['long_name'];
+
     let country = await this.countryRepository.findOne({where: {countryCode}});
 
     if (!country) {
       country = this.countryRepository.create({
         country: countryName,
         countryCode,
-        area: [area],
+        city,
+        street,
         countryCount: 1,
       });
 
       await this.countryRepository.save(country);
     } else {
-      country.area.push(area);
       country.countryCount += 1;
-
       await this.countryRepository.save(country);
     }
     const visitor = this.visitorRepository.create({
       ip: createVisitorDto.ip,
       userAgent: createVisitorDto.userAgent,
       languages: createVisitorDto.languages,
-      country,
+      country: country,
       pathname: createVisitorDto.pathname,
     });
-
     await this.visitorRepository.save(visitor);
 
     return visitor;
   }
 
   findAll() {
-    return this.visitorRepository.find();
-  }
-
-  async getCountriesCounter() {
-    return this.countryRepository.count();
-  }
-
-  async getVisitorsCounter() {
-    return this.visitorRepository.count();
+    return this.visitorRepository.find({
+      relations: {
+        country: true,
+      }
+    });
   }
 }

@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const MainSection = styled.section`
   display: flex;
   flex-direction: column;
-  height: 90vh;
   justify-content: center;
+  margin: 2rem 0;
+  height: 100vh;
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     margin-top: 2rem;
@@ -16,10 +17,10 @@ export const CardsSection = styled.section`
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     margin-top: 2rem;
+    height: max-content;
   }
 `;
 export const HomeSection = styled.section`
-  height: ${props => props.property || "100vh"};
   display: flex;
   background: ${props => props.property || "white"};
   justify-content: center;
@@ -64,7 +65,6 @@ export const AcademicGradient = styled.div`
 `;
 
 export const AboutGradient = styled.div`
-  z-index: 0;
   position: absolute;
   width: 200px;
   height: 438px;
