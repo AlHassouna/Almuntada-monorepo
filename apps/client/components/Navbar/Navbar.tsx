@@ -65,17 +65,19 @@ function Navbar() {
               {name}
             </NavbarMenuListItemMobile>
           ))}
-          {
-            locales?.map((locale) => (
-              <NavbarMenuListItemMobile key={locale} onClick={() => {
-                router.push(router.pathname, router.pathname, {locale});
-                setIsOpen(false);
-              }
-              }>
-                {locale}
-              </NavbarMenuListItemMobile>
-            ))
-          }
+          <div className='flex absolute bottom-0'>
+            {
+              locales?.map((locale) => (
+                <NavbarMenuListItemMobile key={locale} onClick={() => {
+                  router.push(router.pathname, router.pathname, {locale});
+                  setIsOpen(false);
+                }
+                }>
+                  {locale}
+                </NavbarMenuListItemMobile>
+              ))
+            }
+          </div>
         </NavbarMenuListMobile>
       </NavbarContainer>
     </MotionContainer>

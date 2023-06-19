@@ -175,7 +175,7 @@ export const NavbarMenuListMobile = styled.ul<{ isOpen: boolean }>`
 `;
 
 export const NavbarMenuListItemMobile = styled.li`
-  padding: 0 1rem;
+  padding: 1rem;
   cursor: pointer;
 
   &:hover {
