@@ -12,7 +12,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import {postVisitor} from "@lib/system-design";
 import {getAddress} from "@lib/system-design";
-
+import Head from 'next/head';
 
 const messages = {
   ar,

@@ -17,6 +17,8 @@ export const DescPodcast = () => {
   return (
     <MainContainer>
       <Head>
+        <meta property='og:image'
+              content='https://res.cloudinary.com/dieieuuby/image/upload/v1687169761/FinalLogo_jwfwun.png'/>
         <title>{title}</title>
       </Head>
       <AboutGradient/>

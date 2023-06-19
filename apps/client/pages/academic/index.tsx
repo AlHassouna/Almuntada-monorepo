@@ -53,6 +53,8 @@ const Academic: FC = () => {
   return (
     <MainContainer dir={locale}>
       <Head>
+        <meta property='og:image'
+              content='https://res.cloudinary.com/dieieuuby/image/upload/v1687169761/FinalLogo_jwfwun.png'/>
         <title>{title}</title>
       </Head>
       <AcademicSection>
