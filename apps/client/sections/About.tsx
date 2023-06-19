@@ -36,7 +36,7 @@ const About = () => {
           <TitleText title={`${intl.messages['homepage.about']}`} textStyles="text-center"/>
           <P
             variants={fadeIn('up', 'tween', 0.2, 1)}
-            className="mt-[8px] font-normal sm:text-[22px] text-[30px] text-center text-[black]"
+            className="mt-[8px] font-normal sm:text-[22px] sm:text-[30px] text-[25px] text-center text-[black]"
           >
             {intl.formatMessage({id: "homepage.description"})}
 
@@ -45,7 +45,7 @@ const About = () => {
 
           <motion.p
             variants={fadeIn('up', 'tween', 0.2, 1)}
-            className="mt-[8px] font-normal sm:text-[22px] text-[30px] text-center text-[black]"
+            className="mt-[8px] font-normal sm:text-[22px] sm:text-[30px] text-[25px] text-center text-[black]"
           >
             {intl.formatMessage({id: "homepage.description_2"})}
 
