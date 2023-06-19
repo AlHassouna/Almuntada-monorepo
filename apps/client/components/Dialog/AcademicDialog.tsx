@@ -67,6 +67,7 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
         name: "Female"
       }
     ];
+
     const genderOption = DataToSelectOptions(genderList, "name", "id");
     const degreeOption = DataToSelectOptions(getDegreeList, "name", "id");
     const citiesOption = DataToSelectOptions(getCityList, "label", "label");
@@ -179,18 +180,24 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
                          value={props.values.degree} onChange={props.handleChange}/>
                   <ErrorMessage name="degree"/>
                   <Field name="subject" as={AutoComplete} value={props.values.subject}
+                         addNew={intl.messages["addNewLine"]}
+                         locale={locale}
                          setFieldValue={props.setFieldValue}
                          data={subjectsOptions}
                          freeSolo={true}
                          label={intl.messages["academicpage.dialog.subject"]}/>
                   <ErrorMessage name="subject"/>
                   <Field name="company" as={AutoComplete} value={props.values.company}
+                         addNew={intl.messages["addNewLine"]}
+                         locale={locale}
                          setFieldValue={props.setFieldValue}
                          data={companiesOptions}
                          freeSolo={true}
                          label={intl.messages["academicpage.dialog.company"]}/>
                   <ErrorMessage name="company"/>
                   <Field name="career" as={AutoComplete} value={props.values.career}
+                         addNew={intl.messages["addNewLine"]}
+                         locale={locale}
                          setFieldValue={props.setFieldValue}
                          freeSolo={true}
                          data={careersOptions} label={intl.messages["academicpage.dialog.job"]}/>

@@ -22,13 +22,16 @@ interface Props {
   name?: string
   w?: string;
   handleBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  addNew?: string
+  locale?: string
+
 
 }
 
 const filter = createFilterOptions<SelectOptionType>();
 
 export const
-  AutoComplete: FC<Props> = ({label, setFieldValue, data, freeSolo, w, value, name, handleBlur}) => {
+  AutoComplete: FC<Props> = ({label, setFieldValue, data, locale, freeSolo, addNew, w, value, name, handleBlur}) => {
     const getOptionLabel = (option: SelectOptionType | string) => {
       if (typeof option === "string") {
         return option;
@@ -45,7 +48,7 @@ export const
       if (!isExisting && params.inputValue !== "") {
         filtered?.push({
           inputValue: params?.inputValue,
-          label: `Add "${params?.inputValue}"`,
+          label: `${addNew} "${params?.inputValue}"`,
           value: params?.inputValue,
           firstLetter: params?.inputValue[0]
         });
@@ -77,7 +80,8 @@ export const
         isOptionEqualToValue={(option: SelectOptionType, value: SelectOptionType) => option?.value === value?.value}
         options={freeSolo ? data : options?.sort((a, b) => -b?.firstLetter?.localeCompare(a?.firstLetter))}
         getOptionLabel={getOptionLabel}
-        renderOption={freeSolo ? (props, option: SelectOptionType) => <li {...props}>{option.label}</li> : undefined}
+        renderOption={freeSolo ? (props, option: SelectOptionType) => <li
+          dir={locale === 'en' ? 'ltr' : "rtl"} {...props}>{option.label}</li> : undefined}
         freeSolo={freeSolo}
         groupBy={!freeSolo ? (option: SelectOptionType) => option?.firstLetter as string : undefined}
         renderInput={(params) => <TextField {...params} label={label}/>}
