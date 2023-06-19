@@ -37,6 +37,8 @@ const ContactForm: FC<ContactUsProps> = ({onSubmit}) => {
   return (
     <MainContainer>
       <Head>
+        <meta property='og:image'
+              content='https://res.cloudinary.com/dieieuuby/image/upload/v1687169761/FinalLogo_jwfwun.png'/>
         <title>{title}</title>
       </Head>
       <div className='flex flex-col justify-center h-[100vh] '>

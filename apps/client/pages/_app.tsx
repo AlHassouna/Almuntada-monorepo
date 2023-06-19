@@ -69,10 +69,6 @@ const CustomApp = ({Component, pageProps}: AppProps) => {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
-      <Head>
-        <meta property='og:image'
-              content='https://res.cloudinary.com/dieieuuby/image/upload/v1687169761/FinalLogo_jwfwun.png'/>
-      </Head>
       <IntlProvider locale={locale} messages={messages[locale]}>
         <main className="app" dir={getDirection(locale)}>
           <ThemeProvider theme={{dir: getDirection(locale)}}>
