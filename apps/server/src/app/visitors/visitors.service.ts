@@ -17,8 +17,8 @@ export class VisitorsService {
     const {location} = createVisitorDto;
     const countryName = location.at(-1)['long_name'];
     const countryCode = location.at(-1)['short_name'];
-    const city = location.at(-3)['long_name'];
-    const street = location.at(1)['long_name'];
+    const city = location.find((item) => item['types'].includes('locality'))['long_name'];
+    const street = location.find((item) => item['types'].includes('neighborhood'))['long_name'];
 
     let country = await this.countryRepository.findOne({where: {countryCode}});
 
@@ -26,8 +26,8 @@ export class VisitorsService {
       country = this.countryRepository.create({
         country: countryName,
         countryCode,
-        city,
-        street,
+        city: [city],
+        street: [street],
         countryCount: 1,
       });
 
