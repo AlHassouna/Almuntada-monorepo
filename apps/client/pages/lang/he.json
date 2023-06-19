@@ -62,6 +62,11 @@
       "image": "/kayan.jpeg"
     },
     {
+      "name": "סונדוס גוטי",
+      "desc": "בוגרת תואר ראשון בתקשורת וקולנוע מאוניברסיטת תל אביב.",
+      "image": "/soundos.jpg"
+    },
+    {
       "name": "נהד אבו דין",
       "desc": "סטודנטית לתואר ראשון בחינוך בלתי פורמלי, ובישול טיפולי, מומחית בלימודי תכנות נוירו-לשוני.",
       "image": "/nahed.jpeg"
@@ -107,6 +112,8 @@
   "contactpage.email": "דואר אלקטרוני",
   "contactpage.message": "הודעה",
   "contactpage.required": "שדה זה חובה",
+  "contactpage.contact.success": "ההודעה נשלחה בהצלחה",
+  "contactpage.contact.error": "שגיאה בשליחת ההודעה, נא לנסות שנית מאוחר יותר",
   "contactpage.dialog.title": "בקשתך להצטרפות נשלחה בהצלחה",
   "contactpage.subject": "נושא",
   "contactpage.subjects": [

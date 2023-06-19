@@ -62,6 +62,11 @@
       "image": "/kayan.jpeg"
     },
     {
+      "name": "Soundos Gutty",
+      "desc": "A graduate of a bachelor degree in Communication and Cinema from Tel Aviv University.",
+      "image": "/soundos.jpg"
+    },
+    {
       "name": "Nahad Abu Din",
       "desc": "a student pursuing a bachelor's degree in informal education, is an expert in neurolinguistic programming.",
       "image": "/nahed.jpeg"
@@ -105,6 +110,8 @@
   "contactpage.submit": "Submit",
   "contactpage.fullname": "Full Name",
   "contactpage.email": "Email",
+  "contactpage.contact.success": "Your message has been sent successfully",
+  "contactpage.contact.error": "Error in sending message please try again later",
   "contactpage.message": "Message",
   "contactpage.required": "Required",
   "contactpage.dialog.title": "The message has been sent successfully",
