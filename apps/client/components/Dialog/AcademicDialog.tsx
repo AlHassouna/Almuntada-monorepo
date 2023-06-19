@@ -236,7 +236,7 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
                         data?.data?.status === 201 ? <CheckIcon/> :
                           <Button
                             type="submit"
-                            disabled={!props.values.isAgree}
+                            disabled={!props.values.isAgree || !props.values.imageUrl}
                             sx={data?.data?.status === 201 ? {
                               bgcolor: green[500] + '!important',
                               width: '10vw!important',
