@@ -8,9 +8,10 @@ interface Props {
   value: Dayjs;
   name: string
   setValue: (name: string, val: string) => void;
+  label: string;
 }
 
-export const Date: React.FC<Props> = ({value, setValue, name}) => {
+export const Date: React.FC<Props> = ({value, setValue, name, label}) => {
   const handleDateChange = (date: Dayjs | null) => {
     if (date) {
       const formattedDate = date.format('YYYY-MM-DD');
@@ -22,7 +23,7 @@ export const Date: React.FC<Props> = ({value, setValue, name}) => {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DatePicker
-        value={value || null} format='YYYY-MM-DD' onChange={handleDateChange}/>
+        value={value || null} format='YYYY-MM-DD' label={label} onChange={handleDateChange}/>
     </LocalizationProvider>
   );
 }
