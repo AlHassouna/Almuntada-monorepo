@@ -7,13 +7,14 @@ import CircularProgress, {
 interface Props {
   setFiledValue: (name: string, newValue: string) => void;
   label: string;
-  name: string
+  name: string;
+  desc?: string;
 }
 
-export const FileUpload: React.FC<Props> = ({setFiledValue, label, name}) => {
+export const FileUpload: React.FC<Props> = ({setFiledValue, label, name, desc}) => {
   const [progress, setProgress] = React.useState(10);
   const [inProgress, setInProgress] = React.useState(false);
-
+  const [isUploaded, setIsUploaded] = React.useState('');
   const uploadImage = (file: File) => {
     const formData = new FormData();
     formData.append("file", file);
@@ -44,26 +45,53 @@ export const FileUpload: React.FC<Props> = ({setFiledValue, label, name}) => {
     });
   };
   return (
-    <div className='flex w-full items-center '>
-      <Button variant="contained" component="label" sx={{
-        marginLeft: '1vw',
-        height: '5vh',
-      }}>
-        {label}
-        <input hidden name={name} type="file" id='file' onChange={async (e) => {
-          setInProgress(true);
-          const target = e.target as HTMLInputElement;
-          const file: File = (target.files as FileList)[0];
-          const fileUrl = await uploadImage(file);
-          setInProgress(false);
-          setFiledValue(name, fileUrl)
-        }
-        }/>
-      </Button>
+    <>
+      <div className='flex w-full items-center'>
+        <Button variant="contained" component="label" sx={{
+          minHeight: '5vh',
+        }}>
+          {label}
+          <input hidden name={name} type="file" id='file' onChange={async (e) => {
+            setInProgress(true);
+            const target = e.target as HTMLInputElement;
+            const file: File = (target.files as FileList)[0];
+            const fileUrl = await uploadImage(file);
+            setInProgress(false);
+            setIsUploaded(fileUrl)
+            setFiledValue(name, fileUrl)
+          }
+          }/>
+        </Button>
+        <div className='flex item-center justify-center gap-3'>
+          <p style={{
+            marginLeft: '1rem',
+            fontSize: '.8rem',
+            color: 'gray'
+          }}>
+            {desc}
+          </p>
+        </div>
+      </div>
       {
-        inProgress && <CircularProgressWithLabel value={progress}/>
+        inProgress ? <div className='flex items-center gap-5'>
+            <CircularProgressWithLabel value={progress}/>
+            <p style={{
+              fontSize: '.8rem',
+              color: 'gray'
+            }}>
+              Uploading...
+            </p>
+          </div>
+          : isUploaded ? <p style={{
+              fontSize: '.8rem',
+              color: 'gray'
+            }}>
+              Uploaded Successfully
+            </p>
+            : null
       }
-    </div>
+    </>
+
   )
 }
 
