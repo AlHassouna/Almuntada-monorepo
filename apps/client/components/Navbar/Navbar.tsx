@@ -65,7 +65,7 @@ function Navbar() {
               {name}
             </NavbarMenuListItemMobile>
           ))}
-          <div className='flex absolute bottom-0'>
+          <div className='flex absolute top-10'>
             {
               locales?.map((locale) => (
                 <NavbarMenuListItemMobile key={locale} onClick={() => {

@@ -9,7 +9,7 @@ interface Props {
   success: string;
   error: string;
   status: number;
-  email: string;
+  email?: string;
 }
 
 export const Alerts: React.FC<Props> = ({success, error, status, email}) => {
