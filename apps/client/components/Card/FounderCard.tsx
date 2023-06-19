@@ -14,7 +14,7 @@ interface Props {
 export const FounderCard: FC<Props> = ({name, desc, image}) => {
   const locale = useLocale();
   return (
-    <Card sx={{width: 300, textAlign: "center"}}>
+    <Card sx={{width: 300, textAlign: "center", height: 470}}>
       <CardMedia sx={{height: 300, filter: "grayscale(100%)"}} image={image} title={name}/>
       <CardContent>
         <Typography variant="h3" color="black">

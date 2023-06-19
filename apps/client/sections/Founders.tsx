@@ -47,7 +47,7 @@ const Founders = () => {
         </div>
         <TitleText title={`${intl.messages['homepage.cofounders.title']}`} textStyles="text-center"/>
         <div
-          className="flex flex-wrap justify-center gap-8"
+          className="flex flex-wrap justify-center gap-8 mb-3"
         >
           {coFounders.map((coFounder, index) => (
             <FounderCard key={index} name={coFounder.name} desc={coFounder.desc} image={coFounder.image}/>
