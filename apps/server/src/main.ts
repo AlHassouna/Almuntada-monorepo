@@ -8,13 +8,13 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(requestIp.mw());
   app.enableCors({
-    origin: true,
+    origin: 'https://almuntada.org',
     credentials: true,
   });
   const globalPrefix = 'api';
   const version = 'v1'
 
-  // app.setGlobalPrefix(`${globalPrefix}/${version}`);
+  app.setGlobalPrefix(`${globalPrefix}/${version}`);
   // const config = new DocumentBuilder()
   //   .setTitle('Al-Manshaah Project')
   //   .setDescription('Using swagger to manage all the endpoints')
