@@ -14,7 +14,6 @@ export class VisitorsService {
   }
 
   async create(createVisitorDto: CreateVisitorDto) {
-    console.log("visitor dto", createVisitorDto)
     const {location} = createVisitorDto;
     const countryName = location.at(-1)['long_name'];
     const countryCode = location.at(-1)['short_name'];
