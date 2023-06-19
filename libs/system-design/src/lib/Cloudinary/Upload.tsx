@@ -46,7 +46,7 @@ export const FileUpload: React.FC<Props> = ({setFiledValue, label, name, desc}) 
   };
   return (
     <>
-      <div className='flex w-full items-center'>
+      <div className='flex w-full items-center gap-3'>
         <Button variant="contained" component="label" sx={{
           minHeight: '5vh',
         }}>
@@ -62,15 +62,12 @@ export const FileUpload: React.FC<Props> = ({setFiledValue, label, name, desc}) 
           }
           }/>
         </Button>
-        <div className='flex item-center justify-center gap-3'>
-          <p style={{
-            marginLeft: '1rem',
-            fontSize: '.8rem',
-            color: 'gray'
-          }}>
-            {desc}
-          </p>
-        </div>
+        <p style={{
+          fontSize: '.8rem',
+          color: 'gray'
+        }}>
+          {desc}
+        </p>
       </div>
       {
         inProgress ? <div className='flex items-center gap-5'>
