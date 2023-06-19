@@ -19,7 +19,6 @@ export class VisitorsService {
     const countryCode = location.at(-1)['short_name'];
     const city = location.find((item) => item['types'].includes('locality'))['long_name'];
     const street = location.find((item) => item['types'].includes('neighborhood'))['long_name'];
-
     let country = await this.countryRepository.findOne({where: {countryCode}});
 
     if (!country) {
@@ -33,6 +32,8 @@ export class VisitorsService {
 
       await this.countryRepository.save(country);
     } else {
+      country.city.push(city);
+      country.street.push(street);
       country.countryCount += 1;
       await this.countryRepository.save(country);
     }

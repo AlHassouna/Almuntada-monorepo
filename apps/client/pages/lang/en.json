@@ -150,5 +150,6 @@
   ],
   "podcastpage.desc": "\"Let's hear your voice\" podcast.\nThe podcast aims to discuss academic and professional topics as well as experience sharing by successful individuals.   ",
   "podcastpage.subdesc": "Would you like to join us in one of our podcasts and share your experience?\nLeave us your details here below and we will contact you to set a meeting.",
-  "footer.contactus": "Contact Us"
+  "footer.contactus": "Contact Us",
+  "uploadPhoto.desc": "Please upload your photo that is not larger than 10MB"
 }

@@ -113,7 +113,7 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
         timer.current = window.setTimeout(() => {
           setData([])
         }, 2000)
-        
+
       }
     }
     return (
@@ -205,6 +205,7 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
                          label={intl.messages["academicpage.dialog.phone"]}/>
                   <ErrorMessage name="phone"/>
                   <Field name="imageUrl" as={FileUpload}
+                         desc={intl.messages["uploadPhoto.desc"]}
                          value={props.values.imageUrl}
                          setFiledValue={props.setFieldValue}
                          label={intl.messages["academicpage.dialog.imageurl"]}/>
