@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import InputAdornment from '@mui/material/InputAdornment';
 import Checkbox from "@mui/material/Checkbox";
 import {Formik, Field, ErrorMessage} from "formik";
 import {FC, useState} from "react";
@@ -71,6 +72,7 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
     const genderOption = DataToSelectOptions(genderList, "name", "id");
     const degreeOption = DataToSelectOptions(getDegreeList, "name", "id");
     const citiesOption = DataToSelectOptions(getCityList, "label", "label");
+    const genericImage = 'https://res.cloudinary.com/dieieuuby/image/upload/v1687254047/Generic-profile-picture_bbeusm.webp'
     const intl = useIntl();
     const {subjectsOptions, companiesOptions, careersOptions} = ListOptions();
     const required = intl.messages["academicpage.dialog.required"];
@@ -89,7 +91,7 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
       career: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
       age: Yup.string().required(String(required)),
       company: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
-      imageUrl: Yup.string().required(String(required)),
+      imageUrl: Yup.string().optional(),
       gender: Yup.string().required(String(required)),
     });
     const locale = useLocale();
@@ -148,24 +150,57 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
             initialValues={initialValues}
             validationSchema={validationSchema}
             onSubmit={async (values) => {
+              if (values.imageUrl === "") {
+                values.imageUrl = genericImage
+              }
               await onSubmit(values);
             }}
           >
             {(props) => {
               return (
-                <StyledForm onSubmit={props.handleSubmit}>
+                <StyledForm
+                  onSubmit={props.handleSubmit}>
                   <Field name="firstName" type="text" as={TextField}
+                         sx={{
+                           "& label": {
+                             right: locale === 'en' ? 'unset' : '35px',
+                             transformOrigin: locale === 'en' ? 'left' : 'right',
+                           },
+                           "& legend": {
+                             textAlign: locale === 'en' ? 'left' : 'right',
+                           }
+                         }}
                          label={intl.messages["academicpage.dialog.first.name"]}/>
                   <ErrorMessage name="firstName"/>
                   <Field name="lastName" type="text" as={TextField}
+                         sx={{
+                           "& label": {
+                             right: locale === 'en' ? 'unset' : '35px',
+                             transformOrigin: locale === 'en' ? 'left' : 'right',
+                           },
+                           "& legend": {
+                             textAlign: locale === 'en' ? 'left' : 'right',
+                           }
+                         }}
                          label={intl.messages["academicpage.dialog.last.name"]}/>
                   <ErrorMessage name="lastName"/>
                   <Field name="age" as={Date}
                          value={dayjs(props.values.age)}
+                         locale={locale}
                          setValue={props.setFieldValue}
                          label={intl.messages["academicpage.dialog.age"]}/>
                   <ErrorMessage name="age"/>
-                  <Field name="email" type="email" as={TextField} label={intl.messages["academicpage.dialog.email"]}/>
+                  <Field name="email" type="email" as={TextField}
+                         sx={{
+                           "& label": {
+                             right: locale === 'en' ? 'unset' : '35px',
+                             transformOrigin: locale === 'en' ? 'left' : 'right',
+                           },
+                           "& legend": {
+                             textAlign: locale === 'en' ? 'left' : 'right',
+                           }
+                         }}
+                         label={intl.messages["academicpage.dialog.email"]}/>
                   <ErrorMessage name="email"/>
                   <Field name="city" as={AutoComplete}
                          setFieldValue={props.setFieldValue}
@@ -182,6 +217,7 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
                   <Field name="subject" as={AutoComplete} value={props.values.subject}
                          addNew={intl.messages["addNewLine"]}
                          locale={locale}
+                         helperText={intl.messages["helperText"]}
                          setFieldValue={props.setFieldValue}
                          data={subjectsOptions}
                          freeSolo={true}
@@ -189,6 +225,7 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
                   <ErrorMessage name="subject"/>
                   <Field name="company" as={AutoComplete} value={props.values.company}
                          addNew={intl.messages["addNewLine"]}
+                         helperText={intl.messages["helperText"]}
                          locale={locale}
                          setFieldValue={props.setFieldValue}
                          data={companiesOptions}
@@ -197,18 +234,29 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
                   <ErrorMessage name="company"/>
                   <Field name="career" as={AutoComplete} value={props.values.career}
                          addNew={intl.messages["addNewLine"]}
+                         helperText={intl.messages["helperText"]}
                          locale={locale}
                          setFieldValue={props.setFieldValue}
                          freeSolo={true}
                          data={careersOptions} label={intl.messages["academicpage.dialog.job"]}/>
                   <ErrorMessage name="career"/>
                   <Field name="gender" as={GenericSelect}
+                         locale={locale}
                          data={genderOption}
                          label={intl.messages["academicpage.dialog.sex"]} value={props.values.gender}
                          onBlur={props.handleBlur}
                          onChange={props.handleChange}/>
                   <ErrorMessage name="gender"/>
                   <Field name="phone" type='text' as={TextField}
+                         sx={{
+                           "& label": {
+                             right: locale === 'en' ? 'unset' : '35px',
+                             transformOrigin: locale === 'en' ? 'left' : 'right',
+                           },
+                           "& legend": {
+                             textAlign: locale === 'en' ? 'left' : 'right',
+                           }
+                         }}
                          label={intl.messages["academicpage.dialog.phone"]}/>
                   <ErrorMessage name="phone"/>
                   <Field name="imageUrl" as={FileUpload}
@@ -243,10 +291,10 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
                         data?.data?.status === 201 ? <CheckIcon/> :
                           <Button
                             type="submit"
-                            disabled={!props.values.isAgree || !props.values.imageUrl}
+                            disabled={!props.values.isAgree}
                             sx={data?.data?.status === 201 ? {
                               bgcolor: green[500] + '!important',
-                              width: '10vw!important',
+                              padding: '10px 20px',
                               borderRadius: '24px!important',
                               '&:hover': {
                                 bgcolor: green[700] + '!important',
@@ -254,7 +302,8 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
                             } : {
                               bgcolor: '#3f51b5!important',
                               color: 'white',
-                              width: '10vw!important',
+                              padding: '10px 20px',
+                              width: '200px',
                               borderRadius: '24px!important',
                               '&:hover': {
                                 bgcolor: '#303f9f!important',

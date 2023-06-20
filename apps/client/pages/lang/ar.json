@@ -91,7 +91,7 @@
   "academicpage.dialog.last.name": "اسم العائلة",
   "academicpage.dialog.email": "البريد الالكتروني",
   "academicpage.dialog.age": "تاريخ الولادة",
-  "academicpage.dialog.imageurl": "اختر صورة للملف الشخصي",
+  "academicpage.dialog.imageurl": "اختر صورة للملف الشخصي (اختياري)",
   "academicpage.dialog.city": "مكان الإقامه",
   "academicpage.dialog.degree": "اللقب",
   "academicpage.dialog.subject": "التخصص",
@@ -152,7 +152,8 @@
   "podcastpage.subdesc": "تريدون الاشتراك بلقاء بودكاست معنا . اتركوا تفاصيلكم وسنقوم بالتواصل معكم لتحديد موعد ",
   "footer.contactus": "تواصل معنا",
   "uploadPhoto.desc": "الرجاء اختيار صورة للملف الشخصي بحجم لا يتجاوز ١٠ ميغا بايت",
-  "addNewLine": "اضغط هنا لاضافة"
+  "addNewLine": "اضغط هنا لاضافة",
+  "helperText": "اذا لم تجد ما تبحث عنه يمكنك الاضافة، اكتب اسم الخيار الذي تريد اضافته واضغط على زر اضافة"
 }
 
 

@@ -91,7 +91,7 @@
   "academicpage.dialog.last.name": "שם משפחה",
   "academicpage.dialog.email": "דואר אלקטרוני",
   "academicpage.dialog.age": "תאריך לידה",
-  "academicpage.dialog.imageurl": "בחר תמונת פרופיל",
+  "academicpage.dialog.imageurl": "בחר תמונת פרופיל (לא חובה)",
   "academicpage.dialog.city": "מיקום מגורים",
   "academicpage.dialog.degree": "תואר",
   "academicpage.dialog.subject": "התמחות",
@@ -152,5 +152,6 @@
   "podcastpage.subdesc": " מעוניינים להתארח אצלנו בפודקאסט . השאירו את הפרטים שלכם וניצור איתכם קשר לתיאום מועד.",
   "footer.contactus": " צור קשר",
   "uploadPhoto.desc": "אנא ביחרו תמונה לפרופיל שלא עולה על 10 מגה בפורמט",
-  "addNewLine": "לחץ כאן על מנת להוסיף את"
+  "addNewLine": "לחץ כאן להוספה",
+  "helperText": "אם הנושא שלך לא מופיע ברשימה, אנא ציין אותו בשדה הבא ולחץ על הוספה"
 }
