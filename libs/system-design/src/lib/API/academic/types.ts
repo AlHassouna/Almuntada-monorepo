@@ -19,6 +19,16 @@ export interface IAcademic {
   updatedAt: Date;
 }
 
+
+export interface IRes {
+  data: IDetails
+}
+
+interface IDetails {
+  status: number;
+  message: string;
+}
+
 export interface Subject {
   id: number;
   subject: string;
@@ -44,8 +54,8 @@ export interface Career {
 }
 
 export interface IEmails {
-  message : string;
-  subject : string;
+  message: string;
+  subject: string;
   emails?: Array<object>
   email: string;
   createdAt: Date;

@@ -1,8 +1,8 @@
 import {backendInstance} from "../api";
 import {useMutation, useQueryClient} from "@tanstack/react-query";
-import {AcademicCreated, IAcademic} from "./types";
+import {AcademicCreated, IAcademic, IRes} from "./types";
 
-export const postAcademic = async (data: AcademicCreated): Promise<IAcademic> => {
+export const postAcademic = async (data: AcademicCreated): Promise<IRes> => {
   return await backendInstance.post("/academic", data)
 };
 

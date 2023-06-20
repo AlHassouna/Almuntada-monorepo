@@ -108,6 +108,7 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
         setLoading(true);
         const res = await OnSubmit({
           ...values,
+          email: values.email.toLowerCase(),
         })
         setData(res)
         timer.current = window.setTimeout(() => {
