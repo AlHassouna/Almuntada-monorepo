@@ -32,7 +32,7 @@ export class AcademicService {
     const savedCareer = await this.careerRepository.save(careerEntity);
     createUserDto.phone = btoa(createUserDto.phone);
 
-    const user = await this.academicRepository.findOne({where: {email: createUserDto.email}});
+    const user = await this.academicRepository.findOne({where: {email: createUserDto.email.toLowerCase()}});
     if (user) {
       return {
         status: 409,

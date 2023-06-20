@@ -8,10 +8,13 @@ export const AcademicDialogLogic = () => {
 
   const OnSubmit = async (data) => {
     const res = await postAcademic(data)
-    setTimeout(() => {
-      onClose();
-    }, 2500);
+    if (res?.data?.status === 201) {
+      setTimeout(() => {
+        onClose();
+      }, 2500);
+    }
     return res;
+
 
   }
   return {
