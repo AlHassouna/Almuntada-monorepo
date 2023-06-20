@@ -8,8 +8,8 @@ interface Props {
   value: Dayjs;
   name: string
   setValue: (name: string, val: string) => void;
-  label: string;
-  locale: string;
+  label?: string;
+  locale?: string;
 }
 
 export const Date: React.FC<Props> = ({value, setValue, name, label, locale}) => {
