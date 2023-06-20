@@ -5,6 +5,7 @@ import {
   TextField,
 } from "@mui/material";
 import {FC} from "react";
+import {useRouter} from "next/router";
 
 interface SelectOptionType {
   inputValue?: string;
@@ -23,15 +24,25 @@ interface Props {
   w?: string;
   handleBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
   addNew?: string
-  locale?: string
-
-
+  helperText?: string
 }
 
 const filter = createFilterOptions<SelectOptionType>();
 
 export const
-  AutoComplete: FC<Props> = ({label, setFieldValue, data, locale, freeSolo, addNew, w, value, name, handleBlur}) => {
+  AutoComplete: FC<Props> = ({
+                               label,
+                               setFieldValue,
+                               data,
+                               helperText,
+                               freeSolo,
+                               addNew,
+                               w,
+                               value,
+                               name,
+                               handleBlur
+                             }) => {
+    const {locale} = useRouter();
     const getOptionLabel = (option: SelectOptionType | string) => {
       if (typeof option === "string") {
         return option;
@@ -67,7 +78,14 @@ export const
 
     return (
       <Autocomplete
-        sx={{width: w}}
+        sx={{
+          width: w,
+          '& div': {
+            '& div': {
+              position: locale === 'en' ? '' : 'relative',
+            }
+          }
+        }}
         value={value || null}
         onChange={(event, newValue: any) => {
           if (freeSolo) setFieldValue(name, newValue?.value)
@@ -84,7 +102,21 @@ export const
           dir={locale === 'en' ? 'ltr' : "rtl"} {...props}>{option.label}</li> : undefined}
         freeSolo={freeSolo}
         groupBy={!freeSolo ? (option: SelectOptionType) => option?.firstLetter as string : undefined}
-        renderInput={(params) => <TextField {...params} label={label}/>}
+        renderInput={(params) => <TextField
+          helperText={freeSolo ? helperText : undefined}
+          sx={{
+            "& label": {
+              right: locale === 'en' ? 'unset!important' : '35px',
+              transformOrigin: locale === 'en' ? 'left!important' : 'right',
+            },
+            "& legend": {
+              textAlign: locale === 'en' ? 'left' : 'right',
+            }, "& p": {
+              textAlign: locale === 'en' ? 'left' : 'right',
+              marginTop: '3px'
+            }
+          }}
+          {...params} label={label}/>}
       />
     );
   };
