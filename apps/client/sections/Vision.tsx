@@ -1,7 +1,7 @@
 import {motion} from "framer-motion";
 import {TitleText} from "../components/CustomText/TypingText";
 import {staggerContainer, fadeIn, planetVariants} from "../utils/motion";
-import {HeroGradient, HomeSection} from "../styled/global.styled";
+import {HomeSection} from "../styled/global.styled";
 import {MContainer} from "../styled/home.styled";
 import {useIntl} from "react-intl";
 import {getDirection} from "../pages/_app";
