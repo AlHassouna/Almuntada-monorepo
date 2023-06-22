@@ -12,6 +12,7 @@ interface SelectOptionType {
   label: string;
   value?: string;
   firstLetter?: string;
+  disabled: boolean;
 }
 
 interface Props {
@@ -61,21 +62,32 @@ export const
           inputValue: params?.inputValue,
           label: `${addNew} "${params?.inputValue}"`,
           value: params?.inputValue,
-          firstLetter: params?.inputValue[0]
+          firstLetter: params?.inputValue[0],
+          disabled: false
         });
       }
 
       return filtered;
     };
-    const options = data?.map((item) => {
+    const options = [
+      ...(helperText ? [{
+        inputValue: "",
+        label: helperText,
+        value: "",
+        firstLetter: "",
+        disabled: true
+      }
+      ] : []),
+      ...(data?.map((item) => {
         const firstLetter = item?.label[0]?.toUpperCase();
         return {
           firstLetter: /[0-9]/.test(firstLetter) ? "0-9" : firstLetter,
-          label: item?.label
+          label: item?.label,
+          value: item?.value,
+          disabled: item?.disabled
         };
-      }
-    );
-
+      }) || []),
+    ];
     return (
       <Autocomplete
         sx={{
@@ -96,14 +108,16 @@ export const
         clearOnBlur
         onBlur={handleBlur}
         isOptionEqualToValue={(option: SelectOptionType, value: SelectOptionType) => option?.value === value?.value}
-        options={freeSolo ? data : options?.sort((a, b) => -b?.firstLetter?.localeCompare(a?.firstLetter))}
+        options={options}
         getOptionLabel={getOptionLabel}
-        renderOption={freeSolo ? (props, option: SelectOptionType) => <li
-          dir={locale === 'en' ? 'ltr' : "rtl"} {...props}>{option.label}</li> : undefined}
+        renderOption={(props, option: SelectOptionType) =>
+          <li
+            {...props}>{option.label}</li>
+        }
         freeSolo={freeSolo}
-        groupBy={!freeSolo ? (option: SelectOptionType) => option?.firstLetter as string : undefined}
+        getOptionDisabled={(option: SelectOptionType) => option?.disabled}
+        groupBy={(option: SelectOptionType) => option?.firstLetter as string}
         renderInput={(params) => <TextField
-          helperText={freeSolo ? helperText : undefined}
           sx={{
             "& label": {
               right: locale === 'en' ? 'unset!important' : '35px',
