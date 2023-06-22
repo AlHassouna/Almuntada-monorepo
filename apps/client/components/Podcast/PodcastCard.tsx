@@ -16,9 +16,12 @@ const PodcastCard: FC<Props> = ({podcastUrl, title, direction}) => {
       backgroundColor: '#F5F5F5',
       height: '50vh',
       width: '100%',
-      justifyContent: 'space-around',
+      justifyContent: 'space-between',
+      padding: '0 15%',
+      '@media (max-width: 768px)': {
+        flexDirection: 'column-reverse',
+      }
     }}
-         className='flex sm:flex-row flex-col-reverse gap-5'
     >
       <iframe
         width="660"
