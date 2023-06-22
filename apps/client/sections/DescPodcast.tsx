@@ -1,7 +1,7 @@
 import {useIntl} from "react-intl";
 import {motion} from "framer-motion";
 import {MainContainer, MotionContainer} from "../styled/home.styled";
-import {AboutGradient} from '../styled/global.styled';
+import {AboutGradient, HomeSection} from '../styled/global.styled';
 import {fadeIn, staggerContainer} from "../utils/motion";
 import PodcastCard from "../components/Podcast/PodcastCard";
 import {Skeleton} from "@mui/material";
@@ -22,7 +22,7 @@ export const DescPodcast = () => {
         <title>{title}</title>
       </Head>
       <AboutGradient/>
-      <div className='flex h-[100vh] justify-center'>
+      <div className='flex h-[50vh] justify-center'>
         <MotionContainer
           variants={staggerContainer(0.1, 0.1)}
           initial="hidden"

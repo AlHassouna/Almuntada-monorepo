@@ -17,17 +17,17 @@ export class VisitorsController {
   constructor(private readonly visitorsService: VisitorsService) {
   }
 
-  @Post()
-  async create(@Body() createVisitorDto: CreateVisitorDto, @Req() req: Request) {
-    const clientIp = requestIp.getClientIp(req);
-    createVisitorDto.ip = clientIp;
-    await this.visitorsService.create(createVisitorDto)
-  }
-
-  @Get()
-  findAll(@Req() request: any) {
-    return this.visitorsService.findAll();
-  }
+  // @Post()
+  // async create(@Body() createVisitorDto: CreateVisitorDto, @Req() req: Request) {
+  //   const clientIp = requestIp.getClientIp(req);
+  //   createVisitorDto.ip = clientIp;
+  //   await this.visitorsService.create(createVisitorDto)
+  // }
+  //
+  // @Get()
+  // findAll(@Req() request: any) {
+  //   return this.visitorsService.findAll();
+  // }
 
   
 }
