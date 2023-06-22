@@ -16,10 +16,11 @@ const PodcastCard: FC<Props> = ({podcastUrl, title, direction}) => {
       backgroundColor: '#F5F5F5',
       height: '50vh',
       width: '100%',
-      justifyContent: 'space-between',
-      padding: '0 15%',
+      justifyContent: 'space-around',
       '@media (max-width: 768px)': {
         flexDirection: 'column-reverse',
+        alignItems: 'center',
+        justifyContent: 'center',
       }
     }}
     >
