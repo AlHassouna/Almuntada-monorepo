@@ -33,7 +33,7 @@ const PodcastCard: FC<Props> = ({podcastUrl, title, direction}) => {
         className='sm:w-[660px] sm:h-[355px] w-3/4 h-1/2'
       >
       </iframe>
-      <span className='font-bold sm:text-[60px] text-[40px] text-[black]'>
+      <span className='font-bold sm:text-[60px] text-[40px] text-[black] text-center '>
         {title}
       </span>
     </Box>
