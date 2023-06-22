@@ -18,7 +18,6 @@ export const UserList: FC<Props> = (props) => {
   const [userEdit, setUserEdit] = React.useState<IAcademic | null>(null);
   const {users, setSort, setOrder} = props
   const {mutate} = useUpdateAcademic();
-
   const sortedUsersById = users.sort((a, b) => a.id - b.id);
   const onClick = (id: number, data: AcademicUpdated) => {
     mutate({id, data});
