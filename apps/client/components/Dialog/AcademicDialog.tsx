@@ -7,7 +7,6 @@ import {
 } from "@mui/material";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import InputAdornment from '@mui/material/InputAdornment';
 import Checkbox from "@mui/material/Checkbox";
 import {Formik, Field, ErrorMessage} from "formik";
 import {FC, useState} from "react";
@@ -77,6 +76,7 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
     const {subjectsOptions, companiesOptions, careersOptions} = ListOptions();
     const required = intl.messages["academicpage.dialog.required"];
     const nameRegexWithSpaces = /^[a-zA-Z ]+$/;
+    const subjectsRegex = /^[a-zA-Z &]+$/;
     const phoneRegex = /^[0-9]{10}$/;
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     const [data, setData] = useState<any>([]);
@@ -87,10 +87,10 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
       phone: Yup.string().matches(phoneRegex, "Invalid phone number").required(String(required)),
       city: Yup.string().ensure().required(String(required)),
       degree: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
-      subject: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
-      career: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
+      subject: Yup.string().matches(subjectsRegex, "Only English letters").required(String(required)),
+      career: Yup.string().matches(subjectsRegex, "Only English letters").required(String(required)),
       age: Yup.string().required(String(required)),
-      company: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
+      company: Yup.string().matches(subjectsRegex, "Only English letters").required(String(required)),
       imageUrl: Yup.string().optional(),
       gender: Yup.string().required(String(required)),
     });

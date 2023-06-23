@@ -108,7 +108,7 @@ export const
         clearOnBlur
         onBlur={handleBlur}
         isOptionEqualToValue={(option: SelectOptionType, value: SelectOptionType) => option?.value === value?.value}
-        options={options}
+        options={options?.sort((a, b) => -b?.firstLetter?.localeCompare(a?.firstLetter))}
         getOptionLabel={getOptionLabel}
         renderOption={(props, option: SelectOptionType) =>
           <li
