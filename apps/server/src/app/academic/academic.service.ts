@@ -22,14 +22,27 @@ export class AcademicService {
 
   async create(createUserDto: CreateUserDto) {
     const {subject, company, career} = createUserDto;
-    const subjectEntity = await this.subjectRepository.findOne({where: {subject}}) || this.subjectRepository.create({subject});
+
+    createUserDto.subject = createUserDto.subject.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
+    createUserDto.company = createUserDto.company.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
+    createUserDto.career = createUserDto.career.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
+
+
+    const subjectEntity = await this.subjectRepository.findOne({where: {subject}}) || this.subjectRepository.create({
+      subject: createUserDto.subject
+    });
     const savedSubject = await this.subjectRepository.save(subjectEntity);
 
-    const companyEntity = await this.companyRepository.findOne({where: {company}}) || this.companyRepository.create({company});
+    const companyEntity = await this.companyRepository.findOne({where: {company}}) || this.companyRepository.create({
+      company: createUserDto.company
+    });
     const savedCompany = await this.companyRepository.save(companyEntity);
 
-    const careerEntity = await this.careerRepository.findOne({where: {career}}) || this.careerRepository.create({career});
+    const careerEntity = await this.careerRepository.findOne({where: {career}}) || this.careerRepository.create({
+      career: createUserDto.career
+    });
     const savedCareer = await this.careerRepository.save(careerEntity);
+
     createUserDto.phone = btoa(createUserDto.phone);
 
     const user = await this.academicRepository.findOne({where: {email: createUserDto.email.toLowerCase()}});
