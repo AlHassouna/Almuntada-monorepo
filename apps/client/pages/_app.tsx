@@ -12,7 +12,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import {postVisitor} from "@lib/system-design";
 import {getAddress} from "@lib/system-design";
-import {Maintenance} from "./maintanince";
+import {Maintenance} from "./maintanince/mainta";
 
 const messages = {
   ar,
@@ -73,9 +73,8 @@ const CustomApp = ({Component, pageProps}: AppProps) => {
         <main className="app" dir={getDirection(locale)}>
           <ThemeProvider theme={{dir: getDirection(locale)}}>
             {/*<Navbar/>*/}
-            {/*<Component {...pageProps} />*/}
+            <Component {...pageProps} />
             {/*<Footer/>*/}
-            <Maintenance/>
           </ThemeProvider>
         </main>
       </IntlProvider>

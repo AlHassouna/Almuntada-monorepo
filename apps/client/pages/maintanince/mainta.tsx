@@ -3,7 +3,7 @@ import {NextPage} from 'next';
 import Logo from '../../assets/FinalLogo.png'
 import Image from 'next/image';
 
-export const Maintenance: NextPage = () => {
+const Maintenance: NextPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
@@ -19,3 +19,6 @@ export const Maintenance: NextPage = () => {
     </div>
   );
 }
+
+
+export default Maintenance;
