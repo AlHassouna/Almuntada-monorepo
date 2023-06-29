@@ -4,6 +4,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
+import TelegramIcon from '@mui/icons-material/Telegram';
 
 export const FooterContainer = styled.div`
   margin: 1rem auto;
@@ -123,3 +124,20 @@ export const Email = styled(EmailIcon)`
     color: #315ba4;
   }
 `;
+
+
+export const Telegram = styled(TelegramIcon)`
+  color: #315ba4;
+  font-size: 2rem;
+  cursor: pointer;
+
+  &:hover {
+    color: #315ba4;
+  }
+`;
+
+export const Tiktok = styled.img`
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+`

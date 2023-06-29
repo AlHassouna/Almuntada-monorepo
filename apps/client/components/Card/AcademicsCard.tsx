@@ -1,16 +1,15 @@
-import { FC } from "react";
-import { RevealWrapper } from "next-reveal";
+import {FC} from "react";
+import {RevealWrapper} from "next-reveal";
 import Typography from "@mui/material/Typography";
-import { AcademicCardBox } from "./card.styled";
+import {AcademicCardBox} from "./card.styled";
 import CardMedia from "@mui/material/CardMedia";
-import { Career, Subject } from "../../../../libs/system-design/src/lib/API/academic/types";
+import {Career, Subject} from "@lib/system-design";
 
 interface Props {
   firstName: string;
   lastName: string;
   email: string;
   imageUrl: string;
-  degree: string;
   subject: Subject;
   career: Career;
   city: string;
@@ -21,11 +20,10 @@ export const AcademicsCard: FC<Props> = ({
                                            firstName,
                                            lastName,
                                            email,
-                                           imageUrl,
-                                           degree,
                                            subject,
                                            career,
-                                           city
+                                           city,
+                                           imageUrl
                                          }) => {
 
   return (
@@ -43,14 +41,14 @@ export const AcademicsCard: FC<Props> = ({
           image={imageUrl}
           title={firstName}
         />
-        <Typography sx={{ textAlign: "center" }} gutterBottom variant="h5" component="div">
+        <Typography sx={{textAlign: "center"}} gutterBottom variant="h5" component="div">
           {`${firstName.toUpperCase()} ${lastName.toUpperCase()}`}
         </Typography>
         <Typography sx={{
           textAlign: "center"
         }
         } variant="subtitle1" color="text.secondary">
-          {`${degree} ${subject.subject}`}
+          {` ${subject.subject}`}
         </Typography>
         <Typography sx={{
           textAlign: "center"
@@ -66,7 +64,7 @@ export const AcademicsCard: FC<Props> = ({
           color="text.secondary"
         >
 
-          {`City: ${city}`} <br />
+          {`City: ${city}`} <br/>
           {`Email: ${email}`}
         </Typography>
       </AcademicCardBox>
