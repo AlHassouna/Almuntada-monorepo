@@ -16,12 +16,7 @@ export const AcademicDialogLogic = () => {
         onClose();
       }, 2500);
     }
-    return {
-      sendConfirmEmail,
-      res
-    };
-
-
+    return res
   }
   return {
     isOpen,
