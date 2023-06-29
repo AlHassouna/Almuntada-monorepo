@@ -66,7 +66,6 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
         name: "Female"
       }
     ];
-
     const genderOption = DataToSelectOptions(genderList, "name", "id");
     const citiesOption = DataToSelectOptions(getCityList, "label", "label");
     const degreeOption = DegreeToSelectOptions(degrees, "english", "hebrew", "arabic");

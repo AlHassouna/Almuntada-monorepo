@@ -77,15 +77,15 @@ const Academic: FC = () => {
             freeSolo={false}
             label={String(intl.messages["academicpage.dialog.city"])}
           />
-          {/*<AutoComplete*/}
-          {/*  w="300px"*/}
-          {/*  name="subject"*/}
-          {/*  setFieldValue={(v, e) => onChangeAutoComplete("subject", e)}*/}
-          {/*  data={subjectsOptions || Array({value: "", label: ""})}*/}
-          {/*  value={selectedFilter.subject}*/}
-          {/*  freeSolo={false}*/}
-          {/*  label={String(intl.messages["academicpage.dialog.subject"])}*/}
-          {/*/>*/}
+          <AutoComplete
+            w="300px"
+            name="subject"
+            setFieldValue={(v, e) => onChangeAutoComplete("subject", e)}
+            data={subjectsOptions || Array({value: "", label: ""})}
+            value={selectedFilter.subject}
+            freeSolo={false}
+            label={String(intl.messages["academicpage.dialog.subject"])}
+          />
         </div>
         <CardContainer>
           {isLoading ?
@@ -98,7 +98,6 @@ const Academic: FC = () => {
                 lastName={item.lastName}
                 email={item.email}
                 imageUrl={item.imageUrl}
-                degree={item.degree}
                 subject={item.subject}
                 career={item.career}
                 city={item.city}
