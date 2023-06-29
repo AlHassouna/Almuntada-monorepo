@@ -82,6 +82,213 @@
       "image": "/safaa.jpeg"
     }
   ],
+  "Subjects": [
+    {
+      "label": "Arts and Humanities",
+      "subSubjects": [
+        {
+          "label": "History",
+          "subSubSubjects": [
+            "Ancient History",
+            "Medieval History",
+            "Modern History",
+            "Israeli History"
+          ]
+        },
+        {
+          "label": "Languages and Literature",
+          "subSubSubjects": [
+            "Hebrew Literature",
+            "English Literature",
+            "Comparative Literature",
+            "Linguistics"
+          ]
+        },
+        {
+          "label": "Philosophy",
+          "subSubSubjects": [
+            "Ethics",
+            "Epistemology",
+            "Metaphysics",
+            "Political Philosophy"
+          ]
+        },
+        {
+          "label": "Fine Arts",
+          "subSubSubjects": [
+            "Drawing and Painting",
+            "Sculpture",
+            "Photography",
+            "Digital Art"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Social Sciences",
+      "subSubjects": [
+        {
+          "label": "Psychology",
+          "subSubSubjects": [
+            "Cognitive Psychology",
+            "Developmental Psychology",
+            "Social Psychology",
+            "Clinical Psychology"
+          ]
+        },
+        {
+          "label": "Sociology",
+          "subSubSubjects": [
+            "Social Theory",
+            "Criminology",
+            "Gender Studies",
+            "Urban Sociology"
+          ]
+        },
+        {
+          "label": "Economics",
+          "subSubSubjects": [
+            "Microeconomics",
+            "Macroeconomics",
+            "International Economics",
+            "Econometrics"
+          ]
+        },
+        {
+          "label": "Political Science",
+          "subSubSubjects": [
+            "International Relations",
+            "Comparative Politics",
+            "Political Theory",
+            "Public Administration"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Natural Sciences",
+      "subSubjects": [
+        {
+          "label": "Physics",
+          "subSubSubjects": [
+            "Classical Mechanics",
+            "Quantum Mechanics",
+            "Electromagnetism",
+            "Astrophysics"
+          ]
+        },
+        {
+          "label": "Chemistry",
+          "subSubSubjects": [
+            "Organic Chemistry",
+            "Inorganic Chemistry",
+            "Physical Chemistry",
+            "Analytical Chemistry"
+          ]
+        },
+        {
+          "label": "Biology",
+          "subSubSubjects": [
+            "Cellular Biology",
+            "Genetics",
+            "Ecology",
+            "Microbiology"
+          ]
+        },
+        {
+          "label": "Mathematics",
+          "subSubSubjects": [
+            "Calculus",
+            "Linear Algebra",
+            "Probability Theory",
+            "Number Theory"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Engineering and Technology",
+      "subSubjects": [
+        {
+          "label": "Computer Science",
+          "subSubSubjects": [
+            "Algorithms",
+            "Database Systems",
+            "Artificial Intelligence",
+            "Computer Networks"
+          ]
+        },
+        {
+          "label": "Electrical Engineering",
+          "subSubSubjects": [
+            "Circuit Analysis",
+            "Signal Processing",
+            "Power Systems",
+            "Control Systems"
+          ]
+        },
+        {
+          "label": "Mechanical Engineering",
+          "subSubSubjects": [
+            "Thermodynamics",
+            "Fluid Mechanics",
+            "Mechanics of Materials",
+            "Machine Design"
+          ]
+        },
+        {
+          "label": "Civil Engineering",
+          "subSubSubjects": [
+            "Structural Analysis",
+            "Transportation Engineering",
+            "Geotechnical Engineering",
+            "Construction Management"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Health Sciences",
+      "subSubjects": [
+        {
+          "label": "Medicine",
+          "subSubSubjects": [
+            "Anatomy",
+            "Physiology",
+            "Pharmacology",
+            "Medical Ethics"
+          ]
+        },
+        {
+          "label": "Nursing",
+          "subSubSubjects": [
+            "Medical-Surgical Nursing",
+            "Pediatric Nursing",
+            "Mental Health Nursing",
+            "Community Health Nursing"
+          ]
+        },
+        {
+          "label": "Pharmacy",
+          "subSubSubjects": [
+            "Pharmaceutical Chemistry",
+            "Pharmacotherapy",
+            "Pharmacokinetics",
+            "Pharmacy Practice"
+          ]
+        },
+        {
+          "label": "Dentistry",
+          "subSubSubjects": [
+            "Oral Anatomy",
+            "Endodontics",
+            "Oral Pathology",
+            "Orthodontics"
+          ]
+        }
+      ]
+    }
+  ],
   "academicpage.title": "The Arab Academic list",
   "academicpage.text": "Our ability to communicate and collaborate with one another as an Arab society is the key to societal change for the better. Join us for a listing of Arab academics of various academic backgrounds and specializations from all around the country.",
   "academicpage.acdemics": "List of Arab academics by location and specialization",

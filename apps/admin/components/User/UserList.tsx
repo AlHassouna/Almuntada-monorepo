@@ -1,7 +1,7 @@
 import {Dropdown, Table} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faEllipsisVertical} from '@fortawesome/free-solid-svg-icons'
-import React, {FC, useState} from 'react'
+import React, {FC} from 'react'
 import {IAcademic} from '@lib/system-design'
 import {THSort} from '../TableSort'
 import {useUpdateAcademic, FileUpload} from '@lib/system-design'
@@ -52,7 +52,7 @@ export const UserList: FC<Props> = (props) => {
         <th><THSort name="email" setSort={setSort} setOrder={setOrder}>Email</THSort></th>
         <th><THSort name="age" setSort={setSort} setOrder={setOrder}>Age</THSort></th>
         <th><THSort name="city" setSort={setSort} setOrder={setOrder}>City</THSort></th>
-        <th><THSort name="degree" setSort={setSort} setOrder={setOrder}>Degree</THSort></th>
+        {/*<th><THSort name="degree" setSort={setSort} setOrder={setOrder}>Degree</THSort></th>*/}
         <th><THSort name="gender" setSort={setSort} setOrder={setOrder}>Gender</THSort></th>
         <th><THSort name="phone" setSort={setSort} setOrder={setOrder}>Phone</THSort></th>
         <th><THSort name="subject" setSort={setSort} setOrder={setOrder}>Subject</THSort></th>
@@ -146,19 +146,19 @@ export const UserList: FC<Props> = (props) => {
               <td>{user.city}</td>
             )
           }
-          {
-            isEditable && userEdit.id === user?.id ? (
-              <td>
-                <input onChange={
-                  (e) => {
-                    onFieldChange(user.id, 'degree', e.target.value)
-                  }
-                } type="text" value={editedFields[user.id]?.degree} placeholder={user.degree}/>
-              </td>
-            ) : (
-              <td>{user.degree}</td>
-            )
-          }
+          {/*{*/}
+          {/*  isEditable && userEdit.id === user?.id ? (*/}
+          {/*    <td>*/}
+          {/*      <input onChange={*/}
+          {/*        (e) => {*/}
+          {/*          onFieldChange(user.id, 'degree', e.target.value)*/}
+          {/*        }*/}
+          {/*      } type="text" value={editedFields[user.id]?.degree} placeholder={user.degree}/>*/}
+          {/*    </td>*/}
+          {/*  ) : (*/}
+          {/*    <td>{user.degree}</td>*/}
+          {/*  )*/}
+          {/*}*/}
           {
             isEditable && userEdit.id === user?.id ? (
               <td>

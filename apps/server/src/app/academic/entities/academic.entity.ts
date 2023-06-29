@@ -6,9 +6,9 @@ import {
   UpdateDateColumn,
   ManyToOne
 } from "typeorm";
-import { Subject } from "./subject.entity";
-import { Company } from "./company.entity";
-import { Career } from "./career.entity";
+import {Subject} from "./subject.entity";
+import {Company} from "./company.entity";
+import {Career} from "./career.entity";
 
 @Entity("academic")
 export class Academic {
@@ -35,8 +35,8 @@ export class Academic {
   @Column()
   city: string;
 
-  @Column()
-  degree: string;
+  // @Column()
+  // degree: string;
 
 
   @ManyToOne(() => Subject, (subject) => subject.user)
@@ -54,9 +54,9 @@ export class Academic {
   @ManyToOne(() => Company, (company) => company.user)
   company: Company;
 
-  @Column({ type: "boolean", default: false })
+  @Column({type: "boolean", default: false})
   isApproved: boolean;
-  @Column({ type: "boolean", default: false })
+  @Column({type: "boolean", default: false})
   isBlocked: boolean;
 
   @Column()

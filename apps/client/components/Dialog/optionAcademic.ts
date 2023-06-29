@@ -5,14 +5,14 @@ import {useMemo} from "react";
 import {DataToSelectOptions} from "@lib/shared-hooks";
 
 export const ListOptions = () => {
-  const {data: subjectList} = useGetSubjects();
+  // const {data: subjectList} = useGetSubjects();
   const {data: companiesList} = useGetCompanies();
   const {data: careersList} = useGetCareers();
 
 
-  const subjectsOptions = useMemo(() => (
-    DataToSelectOptions(subjectList, "subject", "subject")
-  ), [subjectList]);
+  // const subjectsOptions = useMemo(() => (
+  //   DataToSelectOptions(subjectList, "subject", "subject")
+  // ), [subjectList]);
 
   const companiesOptions = useMemo(() => (
     DataToSelectOptions(companiesList, "company", "company")
@@ -24,7 +24,7 @@ export const ListOptions = () => {
 
 
   return {
-    subjectsOptions,
+    // subjectsOptions,
     companiesOptions,
     careersOptions
   };

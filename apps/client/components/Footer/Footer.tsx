@@ -10,13 +10,17 @@ import {
   LogoAndLinksContainer,
   Email,
   Phone,
-  ContactUsContainer
+  ContactUsContainer,
+  Tiktok,
+  Telegram
 } from "./footer.styled";
 import {LogoContainer} from "../Navbar/navbar.styled";
 import Logo from "../../assets/FinalLogo.png";
 import React from "react";
 import {useRouter} from "next/router";
 import {useIntl} from "react-intl";
+import TiktokIcon from '../../public/tiktok.png'
+import Image from 'next/image'
 
 const Footer = () => {
   const router = useRouter();
@@ -31,10 +35,20 @@ const Footer = () => {
             onClick={() => router.push('/')}
           />
           <LinksContainer>
-            <Facebook onClick={() => router.push('https://www.facebook.com/Almuntada.ac')}/>
-            <LinkedIn onClick={() => router.push('https://www.linkedin.com/company/almuntada')}/>
-            <Instagram
-              onClick={() => router.push('https://www.instagram.com/almuntada_/?fbclid=IwAR1SIvAHoEaeXCxT1pDt1mzbfSL_8A7tOeBpB-GSRur81TELRu28gdgtG5I')}/>
+            <Facebook target="_blank" onClick={() => router.push('https://www.facebook.com/Almuntada.ac')}/>
+            <LinkedIn target="_blank" onClick={() => router.push('https://www.linkedin.com/company/almuntada')}/>
+            <Instagram target="_blank"
+                       onClick={() => router.push('https://www.instagram.com/almuntada_/?fbclid=IwAR1SIvAHoEaeXCxT1pDt1mzbfSL_8A7tOeBpB-GSRur81TELRu28gdgtG5I')}/>
+            <Telegram target="_blank" onClick={() => router.push('https://t.me/almuntata')}/>
+            <div>
+              <Image style={{
+                width: '30px',
+                height: '30px',
+                cursor: 'pointer',
+                fill: 'white'
+              }} src={TiktokIcon} alt='tiktok'
+                     onClick={() => router.push('https://www.tiktok.com/@almuntada.ac?_t=8d8iCV5K44g&_r=1')}/>
+            </div>
           </LinksContainer>
         </LogoAndLinksContainer>
         <ContactUs>
