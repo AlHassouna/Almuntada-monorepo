@@ -9,7 +9,7 @@ export const AcademicDialogLogic = () => {
 
   const OnSubmit = async (data) => {
     const res = await postAcademic(data)
-    const sendConfirmEmail = await mutate(data);
+    await mutate(data);
 
     if (res?.data?.status === 201) {
       setTimeout(() => {
