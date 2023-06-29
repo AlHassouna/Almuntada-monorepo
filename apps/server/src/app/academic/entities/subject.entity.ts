@@ -5,7 +5,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn, OneToMany
 } from "typeorm";
-import { Academic } from "./academic.entity";
+import {Academic} from "./academic.entity";
 
 @Entity("subject")
 

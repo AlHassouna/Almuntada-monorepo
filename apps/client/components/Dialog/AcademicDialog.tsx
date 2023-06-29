@@ -16,9 +16,7 @@ import {useLocale} from "@lib/system-design";
 import {StyledForm} from "../../styled/academics.styled";
 import styled from "styled-components";
 import {AutoComplete, GenericSelect} from "@lib/system-design";
-import {ListOptions} from "./optionAcademic";
-import {DataToSelectOptions} from "@lib/shared-hooks";
-import {getDegreeList} from "@lib/shared-types";
+import {DataToSelectOptions, DegreeToSelectOptions} from "@lib/shared-hooks";
 import {getCityList} from "@lib/shared-types";
 import {FileUpload} from '@lib/system-design'
 import {Date} from '@lib/system-design'
@@ -32,6 +30,8 @@ import dayjs from 'dayjs'
 import {Alerts} from '@lib/system-design'
 import {Close as CloseIcon} from '@mui/icons-material';
 import {IconButton} from '@mui/material';
+import {ListOptions} from "./optionAcademic";
+import {degrees} from './degrees.consts'
 
 interface Props {
   handleClose: () => void;
@@ -49,7 +49,6 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
       imageUrl: "",
       email: "",
       city: "",
-      degree: "",
       subject: "",
       career: "",
       gender: "",
@@ -69,11 +68,11 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
     ];
 
     const genderOption = DataToSelectOptions(genderList, "name", "id");
-    const degreeOption = DataToSelectOptions(getDegreeList, "name", "id");
     const citiesOption = DataToSelectOptions(getCityList, "label", "label");
+    const degreeOption = DegreeToSelectOptions(degrees, "english", "hebrew", "arabic");
     const genericImage = 'https://res.cloudinary.com/dieieuuby/image/upload/v1687254047/Generic-profile-picture_bbeusm.webp'
     const intl = useIntl();
-    const {subjectsOptions, companiesOptions, careersOptions} = ListOptions();
+    const {companiesOptions, careersOptions} = ListOptions();
     const required = intl.messages["academicpage.dialog.required"];
     const nameRegexWithSpaces = /^[a-zA-Z ]+$/;
     const subjectsRegex = /^[a-zA-Z &]+$/;
@@ -86,8 +85,7 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
       email: Yup.string().email("Invalid email address").matches(emailRegex, "Only English letters").required(String(required)),
       phone: Yup.string().matches(phoneRegex, "Invalid phone number").required(String(required)),
       city: Yup.string().ensure().required(String(required)),
-      degree: Yup.string().matches(nameRegexWithSpaces, "Only English letters").required(String(required)),
-      subject: Yup.string().matches(subjectsRegex, "Only English letters").required(String(required)),
+      subject: Yup.string().ensure().required(String(required)),
       career: Yup.string().matches(subjectsRegex, "Only English letters").required(String(required)),
       age: Yup.string().required(String(required)),
       company: Yup.string().matches(subjectsRegex, "Only English letters").required(String(required)),
@@ -211,19 +209,21 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
                          value={props.values.city}
                          label={intl.messages["academicpage.dialog.city"]}></Field>
                   <ErrorMessage name="city"/>
-                  <Field name="degree" as={GenericSelect} label={intl.messages["academicpage.dialog.degree"]}
-                         data={degreeOption}
-                         value={props.values.degree} onChange={props.handleChange}/>
-                  <ErrorMessage name="degree"/>
                   <Field name="subject" as={AutoComplete} value={props.values.subject}
-                         addNew={intl.messages["addNewLine"]}
                          locale={locale}
-                         helperText={intl.messages["helperText"]}
                          setFieldValue={props.setFieldValue}
-                         data={subjectsOptions}
+                         data={degreeOption}
+                         isDegree={true}
+                         label={intl.messages["academicpage.dialog.degree"]}/>
+                  <ErrorMessage name="degree"/>
+                  <Field name="career" as={AutoComplete} value={props.values.career}
+                         addNew={intl.messages["addNewLine"]}
+                         helperText={intl.messages["helperText"]}
+                         locale={locale}
+                         setFieldValue={props.setFieldValue}
                          freeSolo={true}
-                         label={intl.messages["academicpage.dialog.subject"]}/>
-                  <ErrorMessage name="subject"/>
+                         data={careersOptions} label={intl.messages["academicpage.dialog.job"]}/>
+                  <ErrorMessage name="career"/>
                   <Field name="company" as={AutoComplete} value={props.values.company}
                          addNew={intl.messages["addNewLine"]}
                          helperText={intl.messages["helperText"]}
@@ -233,14 +233,6 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
                          freeSolo={true}
                          label={intl.messages["academicpage.dialog.company"]}/>
                   <ErrorMessage name="company"/>
-                  <Field name="career" as={AutoComplete} value={props.values.career}
-                         addNew={intl.messages["addNewLine"]}
-                         helperText={intl.messages["helperText"]}
-                         locale={locale}
-                         setFieldValue={props.setFieldValue}
-                         freeSolo={true}
-                         data={careersOptions} label={intl.messages["academicpage.dialog.job"]}/>
-                  <ErrorMessage name="career"/>
                   <Field name="gender" as={GenericSelect}
                          locale={locale}
                          data={genderOption}

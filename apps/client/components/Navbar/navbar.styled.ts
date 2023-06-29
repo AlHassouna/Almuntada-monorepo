@@ -31,7 +31,7 @@ export const Gradient = styled.div`
 export const LogoContainer = styled(Image)`
   width: 10vw;
   object-fit: contain;
-  z-index: 20;
+  z-index: 30;
   cursor: pointer;
   @media screen and (max-width: 768px) {
     width: 30vw;
@@ -42,7 +42,7 @@ export const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 40;
+  z-index: 60;
   @media (min-width: 1536px) {
     gap: 4rem;
   }
@@ -87,6 +87,7 @@ export const NavbarLanguageContainer = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 40;
   height: 60px;
   @media screen and (max-width: 768px) {
     display: none;

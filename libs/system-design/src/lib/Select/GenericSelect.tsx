@@ -17,9 +17,10 @@ interface Props {
   onChange: (e: any) => void
   name: string
   data: SelectOptionType[];
+  setSubject: (e: any) => void
 }
 
-export const GenericSelect: FC<Props> = ({label, value, data, onChange, name}) => {
+export const GenericSelect: FC<Props> = ({label, value, data, onChange, name, setSubject}) => {
   const {locale} = useRouter();
   return <FormControl sx={{
     "& label": {
@@ -36,7 +37,6 @@ export const GenericSelect: FC<Props> = ({label, value, data, onChange, name}) =
   }} fullWidth>
     <InputLabel id="demo-simple-select-label">{label}</InputLabel>
     <Select
-
       name={name}
       labelId="demo-simple-select-label"
       id="demo-simple-select"
@@ -44,7 +44,7 @@ export const GenericSelect: FC<Props> = ({label, value, data, onChange, name}) =
       label={label}
       onChange={onChange}
     >
-      {data.map((value) => {
+      {data?.map((value) => {
         return <MenuItem key={value?.label} value={value?.label}>{value.label}</MenuItem>
       })}
     </Select>

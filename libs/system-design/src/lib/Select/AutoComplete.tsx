@@ -13,6 +13,8 @@ interface SelectOptionType {
   value?: string;
   firstLetter?: string;
   disabled: boolean;
+  hebrew?: string;
+  arabic?: string;
 }
 
 interface Props {
@@ -26,6 +28,7 @@ interface Props {
   handleBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
   addNew?: string
   helperText?: string
+  isDegree?: boolean
 }
 
 const filter = createFilterOptions<SelectOptionType>();
@@ -41,7 +44,8 @@ export const
                                w,
                                value,
                                name,
-                               handleBlur
+                               handleBlur,
+                               isDegree
                              }) => {
     const {locale} = useRouter();
     const getOptionLabel = (option: SelectOptionType | string) => {
@@ -63,28 +67,29 @@ export const
           label: `${addNew} "${params?.inputValue}"`,
           value: params?.inputValue,
           firstLetter: params?.inputValue[0],
-          disabled: false
+          disabled: false,
         });
       }
 
       return filtered;
     };
+
     const options = [
       ...(helperText ? [{
         inputValue: "",
         label: helperText,
         value: "",
         firstLetter: "",
-        disabled: true
+        disabled: true,
       }
       ] : []),
       ...(data?.map((item) => {
-        const firstLetter = item?.label[0]?.toUpperCase();
+        const firstLetter = item?.label[0]?.toUpperCase() || "";
         return {
           firstLetter: /[0-9]/.test(firstLetter) ? "0-9" : firstLetter,
-          label: item?.label,
-          value: item?.value,
-          disabled: item?.disabled
+          label: isDegree ? locale === 'en' ? item?.label : locale === 'he' ? item?.hebrew : item?.arabic : item?.label,
+          value: isDegree ? item?.label : item?.value,
+          disabled: item?.disabled,
         };
       }) || []),
     ];
@@ -100,15 +105,15 @@ export const
         }}
         value={value || null}
         onChange={(event, newValue: any) => {
-          if (freeSolo) setFieldValue(name, newValue?.value)
-          else setFieldValue(name, newValue?.label)
+          if (freeSolo) setFieldValue(name, newValue?.inputValue || newValue?.value)
+          else setFieldValue(name, newValue?.value)
         }}
         filterOptions={freeSolo ? filterOptions : undefined}
         selectOnFocus
         clearOnBlur
         onBlur={handleBlur}
         isOptionEqualToValue={(option: SelectOptionType, value: SelectOptionType) => option?.value === value?.value}
-        options={options?.sort((a, b) => -b?.firstLetter?.localeCompare(a?.firstLetter))}
+        options={freeSolo ? options : options.sort((a, b) => -b.firstLetter.localeCompare(a.firstLetter))}
         getOptionLabel={getOptionLabel}
         renderOption={(props, option: SelectOptionType) =>
           <li
@@ -116,7 +121,6 @@ export const
         }
         freeSolo={freeSolo}
         getOptionDisabled={(option: SelectOptionType) => option?.disabled}
-        groupBy={(option: SelectOptionType) => option?.firstLetter as string}
         renderInput={(params) => <TextField
           sx={{
             "& label": {

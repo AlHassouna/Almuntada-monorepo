@@ -18,7 +18,6 @@ import {Company} from "./entities/company.entity";
 import {Career} from "./entities/career.entity";
 import {SearchUserDto} from "./dto/search-user.dto";
 import {Academic} from "./entities/academic.entity";
-import {Response} from 'express'
 
 @ApiTags("Academic")
 @Controller("academic")

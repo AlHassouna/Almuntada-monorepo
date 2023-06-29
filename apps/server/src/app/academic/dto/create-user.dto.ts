@@ -28,10 +28,10 @@ export class CreateUserDto {
   @Type(() => Date)
   age: string;
 
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  degree: string;
+  // @ApiProperty()
+  // @IsNotEmpty()
+  // @IsString()
+  // degree: string;
 
   @ApiProperty()
   @IsString()
