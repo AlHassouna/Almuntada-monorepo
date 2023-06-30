@@ -69,19 +69,6 @@ export class AcademicService {
   }
 
   async updateUser(id, data) {
-    const {subject, company, career} = data;
-    const subjectEntity = await this.subjectRepository.findOne({where: {subject}}) || this.subjectRepository.create({subject});
-    const savedSubject = await this.subjectRepository.save(subjectEntity);
-
-    const companyEntity = await this.companyRepository.findOne({where: {company}}) || this.companyRepository.create({company});
-    const savedCompany = await this.companyRepository.save(companyEntity);
-
-    const careerEntity = await this.careerRepository.findOne({where: {career}}) || this.careerRepository.create({career});
-    const savedCareer = await this.careerRepository.save(careerEntity);
-
-    data.subject = savedSubject;
-    data.company = savedCompany;
-    data.career = savedCareer;
     return await this.academicRepository.update(id, data);
   }
 
