@@ -18,6 +18,7 @@ export const UserList: FC<Props> = (props) => {
   const [userEdit, setUserEdit] = React.useState<IAcademic | null>(null);
   const {users, setSort, setOrder} = props
   const {mutate} = useUpdateAcademic();
+  const sortedUsersById = users.sort((a, b) => a.id - b.id);
   const onClick = (id: number, data: AcademicUpdated) => {
     mutate({id, data});
   };
@@ -51,6 +52,7 @@ export const UserList: FC<Props> = (props) => {
         <th><THSort name="email" setSort={setSort} setOrder={setOrder}>Email</THSort></th>
         <th><THSort name="age" setSort={setSort} setOrder={setOrder}>Age</THSort></th>
         <th><THSort name="city" setSort={setSort} setOrder={setOrder}>City</THSort></th>
+        {/*<th><THSort name="degree" setSort={setSort} setOrder={setOrder}>Degree</THSort></th>*/}
         <th><THSort name="gender" setSort={setSort} setOrder={setOrder}>Gender</THSort></th>
         <th><THSort name="phone" setSort={setSort} setOrder={setOrder}>Phone</THSort></th>
         <th><THSort name="subject" setSort={setSort} setOrder={setOrder}>Subject</THSort></th>
@@ -60,7 +62,7 @@ export const UserList: FC<Props> = (props) => {
       </tr>
       </thead>
       <tbody>
-      {users.map((user) => (
+      {sortedUsersById.map((user) => (
         <tr key={user.id}>
           <td>{user.id}</td>
           {
