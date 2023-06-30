@@ -35,9 +35,6 @@ export class Academic {
   @Column()
   city: string;
 
-  // @Column()
-  // degree: string;
-
 
   @ManyToOne(() => Subject, (subject) => subject.user)
   subject: Subject;
