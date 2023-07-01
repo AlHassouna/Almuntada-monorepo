@@ -1,8 +1,8 @@
 import {useState} from 'react';
-import {postAcademic, usePostConfirmationEmailMutation} from '@lib/system-design';
+import {postAcademic, usePostSignupEmailMutation} from '@lib/system-design';
 
 export const AcademicDialogLogic = () => {
-  const {mutate} = usePostConfirmationEmailMutation();
+  const {mutate} = usePostSignupEmailMutation();
   const [isOpen, setIsOpen] = useState(false);
   const onOpen = () => setIsOpen(true)
   const onClose = () => setIsOpen(false)

@@ -1,18 +1,20 @@
 import {Dropdown, Table} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faEllipsisVertical} from '@fortawesome/free-solid-svg-icons'
-import React, {FC, useState} from 'react'
+import React, {FC} from 'react'
 import {IAcademic} from '@lib/system-design'
 import {THSort} from '../TableSort'
 import {useUpdateAcademic, FileUpload} from '@lib/system-design'
 import {AcademicUpdated} from '@lib/system-design'
 import {Date} from '@lib/system-design'
 import dayjs from 'dayjs'
+import {usePostConfirmationEmailMutation} from '@lib/system-design'
 
 type Props = {
   users: IAcademic[];
 } & Pick<Parameters<typeof THSort>[0], 'setSort' | 'setOrder'>
 export const UserList: FC<Props> = (props) => {
+  const {mutate: postConfirmationEmail} = usePostConfirmationEmailMutation();
   const [isEditable, setIsEditable] = React.useState(false);
   const [editedFields, setEditedFields] = React.useState({});
   const [userEdit, setUserEdit] = React.useState<IAcademic | null>(null);
@@ -52,7 +54,6 @@ export const UserList: FC<Props> = (props) => {
         <th><THSort name="email" setSort={setSort} setOrder={setOrder}>Email</THSort></th>
         <th><THSort name="age" setSort={setSort} setOrder={setOrder}>Age</THSort></th>
         <th><THSort name="city" setSort={setSort} setOrder={setOrder}>City</THSort></th>
-        {/*<th><THSort name="degree" setSort={setSort} setOrder={setOrder}>Degree</THSort></th>*/}
         <th><THSort name="gender" setSort={setSort} setOrder={setOrder}>Gender</THSort></th>
         <th><THSort name="phone" setSort={setSort} setOrder={setOrder}>Phone</THSort></th>
         <th><THSort name="subject" setSort={setSort} setOrder={setOrder}>Subject</THSort></th>
@@ -225,6 +226,7 @@ export const UserList: FC<Props> = (props) => {
 
               <Dropdown.Menu>
                 <Dropdown.Item onClick={() => {
+                  postConfirmationEmail(user as any)
                   onClick(user?.id, {isApproved: true})
                 }}>Approve</Dropdown.Item>
 

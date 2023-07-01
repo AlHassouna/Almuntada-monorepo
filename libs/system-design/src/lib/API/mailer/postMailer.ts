@@ -11,6 +11,19 @@ const postConfirmationEmail = async (data: EmailsCreated): Promise<IEmails> => {
   return await backendInstance.post('/mail/send-confirmation-email', data);
 }
 
+
+const postSignupEmail = async (data: EmailsCreated): Promise<IEmails> => {
+  return await backendInstance.post('/mail/send-signup-email', data);
+}
+
+export const usePostSignupEmailMutation = () => {
+  const queryClient = useQueryClient();
+  return useMutation((data: EmailsCreated) => postSignupEmail(data), {
+    onSuccess: () => {
+      queryClient.invalidateQueries({queryKey: ['mailer']});
+    },
+  });
+}
 export const usePostMailMutation = () => {
   const queryClient = useQueryClient();
   return useMutation((data: EmailsCreated) => postEmails(data), {
