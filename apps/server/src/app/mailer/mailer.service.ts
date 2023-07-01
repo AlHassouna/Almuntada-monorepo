@@ -26,4 +26,13 @@ export class MailService {
       template: 'confirmation-email',
     })
   }
+
+  async sendSignupEmail(email: string) {
+    await this.mailerService.sendMail({
+      to: email,
+      from: process.env.USER_GMAIL,
+      subject: 'شكر لطلب الانضمام لقائمة الاكاديميين بجمعية المنتدى - البصمة الاكاديمية العربية!',
+      template: 'sign-up',
+    })
+  }
 }

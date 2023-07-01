@@ -19,5 +19,11 @@ export class MailController {
     const {email} = data;
     return await this.mailerService.sendConfirmationEmail(email);
   }
+
+  @Post('send-signup-email')
+  async sendSignupEmail(@Body() data) {
+    const {email} = data;
+    return await this.mailerService.sendSignupEmail(email);
+  }
 }
 
