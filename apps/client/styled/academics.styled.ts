@@ -39,8 +39,16 @@ export const ImageContainerAc = styled.div`
     }
 `;
 export const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem 1rem;
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 1rem 1rem;
+  }
+`;
+export const FieldContainer = styled.div`
+  /* For larger screens, the field container takes half of the row (1fr) */
+  grid-column: span 2;
 `;

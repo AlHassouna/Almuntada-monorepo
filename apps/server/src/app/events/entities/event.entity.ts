@@ -1,38 +1,41 @@
 import {
-  Column,
-  Entity,
-  PrimaryGeneratedColumn,
-  CreateDateColumn,
+    Column,
+    Entity,
+    PrimaryGeneratedColumn,
+    CreateDateColumn,
 } from 'typeorm';
 
 @Entity('events')
 export class Event {
 
-  @PrimaryGeneratedColumn()
-  id: number;
+    @PrimaryGeneratedColumn()
+    id: number;
 
-  @Column()
+    @Column()
+    name: string;
 
-  name: string;
+    @Column()
+    organizer: string;
 
-  @Column()
+    @Column()
+    location: string
 
-  organizer : string;
+    @Column()
+    information: string
 
-  @Column()
+    @Column({
+        type: 'date',
+        nullable: true
+    })
+    dateOfEvent: string
 
-  location: string
+    @Column()
+    image: string
 
-  @Column()
+    @Column({default: false})
+    isActive: boolean
 
-  information:string
-
-  @Column()
-
-  dateOfEvent: Date
-
-  @CreateDateColumn()
-
-  createdAt: Date
+    @CreateDateColumn()
+    createdAt: Date
 
 }

@@ -29,29 +29,31 @@ export const Gradient = styled.div`
 `;
 
 export const LogoContainer = styled(Image)`
-  width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
   object-fit: contain;
-  z-index: 30;
   cursor: pointer;
-  @media screen and (max-width: 768px) {
-    width: 30vw;
-  }
+
 `
 export const NavbarContainer = styled.div`
   margin: 0 auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  z-index: 60;
-  @media (min-width: 1536px) {
-    gap: 4rem;
-  }
+  align-items: center;
+  background-color: ${props => props.property};
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 `;
 
 export const NavbarList = styled.ul`
   display: none;
   align-items: center;
-  @media screen and (min-width: 768px) {
+  position: relative;
+  @media screen and (min-width: 1024px) {
     display: flex;
     z-index: 40;
 
@@ -60,12 +62,14 @@ export const NavbarList = styled.ul`
 
 export const NavbarListItem = styled.li`
   padding: 0 1rem;
+  color: ${props => props.property};
   cursor: pointer;
   font-weight: 800;
   font-size: 24px;
   line-height: 30.24px;
 
   &:hover {
+    color: #3496ae;
     transform: scale(1.05);
     transition: all 0.2s ease-in-out;
   }
@@ -73,8 +77,9 @@ export const NavbarListItem = styled.li`
 
 export const NavbarMenuIcon = styled.div`
   display: none;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     display: flex;
+    color: ${props => props.property};
     width: 100%;
     justify-content: flex-end;
     cursor: pointer;
@@ -84,23 +89,25 @@ export const NavbarMenuIcon = styled.div`
 
 
 export const NavbarLanguageContainer = styled.nav`
+  background-color: ${props => props.property};
+  color: white;
+  padding: 1rem 4rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 40;
-  height: 60px;
-  @media screen and (max-width: 768px) {
+  justify-content: flex-end;
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 `;
 
 export const NavbarLanguage = styled.a`
   text-decoration: none;
+  color: ${props => props.property};
   font-size: 16px;
   font-weight: bold;
   padding: 0 16px;
 
   &:hover {
+    color: #3496ae;
     cursor: pointer;
     transform: scale(1.05);
     transition: all 0.2s ease-in-out;
@@ -115,7 +122,7 @@ export const NavbarToggleIcon = styled.div`
   height: 32px;
   cursor: pointer;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 `;
@@ -170,7 +177,7 @@ export const NavbarMenuListMobile = styled.ul<{ isOpen: boolean }>`
   transition: all 0.5s ease-in-out;
   transform: ${({isOpen}) =>
     isOpen ? 'translateX(0)' : 'translateX(-100%)'};
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     display: none;
   }
 `;
@@ -184,7 +191,7 @@ export const NavbarMenuListItemMobile = styled.li`
     transition: all 0.2s ease-in-out;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     display: none;
   }
 `;

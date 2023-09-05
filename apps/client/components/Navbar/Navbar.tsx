@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useRouter} from "next/router";
-import {MenuIcon, CloseIcon} from "@lib/system-design";
-import Logo from '../../assets/FinalLogo.png';
+import {MenuIcon, CloseIcon, CustomButton} from "@lib/system-design";
+import Logo from '../../assets/FinalLogo2.png';
 import {useIntlShared} from "./navbar.consts";
 import {
   NavbarContainer,
@@ -9,26 +9,20 @@ import {
   NavbarListItem,
   NavbarMenuIcon,
   LogoContainer,
-  MotionContainer,
-  NavbarLanguageContainer,
-  NavbarLanguage,
   NavbarMenuListMobile,
   NavbarMenuListItemMobile,
 } from './navbar.styled';
-import {navVariants} from '../../utils/motion';
+import {TemporaryDrawer} from "@lib/system-design";
 
 function Navbar() {
   const links = useIntlShared();
   const router = useRouter();
+  const pathname = router.pathname;
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const {locales} = useRouter()
   return (
-    <MotionContainer
-      variants={navVariants}
-      initial="hidden"
-      whileInView="show"
-    >
-      <NavbarContainer>
+    <header className='w-full sm:fixed z-10'>
+      <NavbarContainer property={pathname === '/' ? '#06143f' : 'white'}>
         <LogoContainer
           src={Logo}
           alt="logo"
@@ -36,21 +30,25 @@ function Navbar() {
         />
         <NavbarList>
           {links.map(({name, id, link}) => (
-            <NavbarListItem key={id} onClick={() => router.push(`${link}`)}>
-              {name}
-            </NavbarListItem>
+            id === 5 ?
+              pathname === '/' ?
+                <CustomButton handleClick={() => router.push('/joinus')} btnType={"button"}
+                              containerStyles='text-xl text-white rounded-full border border-[white] p-2 min-w-[130px] transition delay-150 duration-300 ease-in-out  hover:border-[#d09225] hover:bg-[#d09225] hover:text-black'
+                              key={id} title={name}/> :
+                <CustomButton handleClick={
+                  () => router.push('/joinus')
+                } title={name} btnType={'button'}
+                              containerStyles='text-xl text-black rounded-full border border-[black] p-2 min-w-[130px] transition delay-150 duration-300 ease-in-out  hover:border-[#d09225] hover:bg-[#d09225] hover:text-black'
+                              key={id}/> :
+              <NavbarListItem property={pathname === '/' ? 'white' : '#06143f'} key={id}
+                              onClick={() => router.push(`${link}`)}>
+                {name}
+              </NavbarListItem>
           ))}
+          <TemporaryDrawer/>
+
         </NavbarList>
-        <NavbarLanguageContainer>
-          {
-            locales?.map((locale) => (
-              <NavbarLanguage key={locale} onClick={() => router.push(router.pathname, router.pathname, {locale})}>
-                {locale}
-              </NavbarLanguage>
-            ))
-          }
-        </NavbarLanguageContainer>
-        <NavbarMenuIcon onClick={() => setIsOpen(!isOpen)}>
+        <NavbarMenuIcon property={pathname === '/' ? 'white' : '#06143f'} onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <CloseIcon/> : <MenuIcon/>}
         </NavbarMenuIcon>
         <NavbarMenuListMobile isOpen={isOpen}>
@@ -80,7 +78,7 @@ function Navbar() {
           </div>
         </NavbarMenuListMobile>
       </NavbarContainer>
-    </MotionContainer>
+    </header>
 
   );
 }

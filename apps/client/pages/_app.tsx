@@ -7,11 +7,9 @@ import en from "./lang/en.json";
 import he from "./lang/he.json";
 import {ThemeProvider} from "styled-components";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import React, {useEffect, useRef} from "react";
+import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
-import {postVisitor} from "@lib/system-design";
-import {getAddress} from "@lib/system-design";
 
 const messages = {
   ar,
@@ -27,42 +25,6 @@ export function getDirection(locale) {
 }
 
 const CustomApp = ({Component, pageProps}: AppProps) => {
-  const router = useRouter()
-  const regex = /\(([^)]+)\)/;
-  const isMounted = useRef(false)
-  // useEffect(() => {
-  //   const matches = regex.exec(window.navigator.userAgent);
-  //   const handleStart = (url: string) => {
-  //
-  //     if (!isMounted.current) {
-  //       isMounted.current = true
-  //     }
-  //     if ("geolocation" in navigator) {
-  //       navigator.geolocation.getCurrentPosition(async ({coords}) => {
-  //         const {latitude, longitude} = coords;
-  //         const address = await getAddress({latitude, longitude})
-  //         if (url.includes('he') || url.includes('en')) {
-  //           url = url.split('/')[2]
-  //         } else {
-  //           url = url.split('/')[1]
-  //         }
-  //         await postVisitor({
-  //           pathname: url ? url : '/',
-  //           userAgent: matches[1],
-  //           location: address.results[0]?.address_components
-  //         })
-  //       });
-  //     }
-  //   }
-  //   if (!isMounted.current) {
-  //     handleStart('/')
-  //   }
-  //   router.events.on('routeChangeStart', handleStart)
-  //   return () => {
-  //     router.events.off('routeChangeStart', handleStart)
-  //   }
-  // }, [router])
-
 
   const {locale} = useRouter();
   const queryClient = new QueryClient();

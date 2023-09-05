@@ -51,7 +51,7 @@ export const MContainer = styled(motion.div)`
 export const Heading = styled(motion.h1)`
   font-weight: bold;
   text-transform: uppercase;
-  color: #172759;
+  color: ${props => props.property || "white"};
   font-size: 80px;
   @media screen and (max-width: 1474px) {
     font-size: 40px;
@@ -76,7 +76,7 @@ export const Heading = styled(motion.h1)`
 export const SubHeading = styled(motion.h1)`
   font-weight: bold;
   text-transform: uppercase;
-  color: #172759;
+  color: ${props => props.property || "white"};
   font-size: 40px;
   @media screen and (max-width: 1024px) {
     text-align: center;
@@ -95,17 +95,24 @@ export const SubHeading = styled(motion.h1)`
   }
 `;
 export const Text = styled(motion.p)`
-  font-size: 28px;
-  color: #172759;
+  font-size: ${props => props.id || "80px"};
+  color: ${props => props.property || "white"};
   margin: 0;
   font-weight: 400;
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1440px) {
     text-align: center;
+    font-size: ${props => props.about || "40px"};
+    line-height: 74.4px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
+    text-align: center;
+    line-height: 74.4px;
   }
   @media screen and (max-width: 425px) {
-    font-size: 18px;
-    width: 80%;
-    margin: 0 auto;
+    font-size: 30px;
+    text-align: center;
+    line-height: 74.4px;
   }
 `;
 
@@ -134,7 +141,7 @@ export const BorderRadius = styled.div`
   }
 `;
 export const PersonImage = styled.img`
-  width: 100%;
+  width: 85%;
   @media screen and (max-width: 1374px) {
     display: none;
   }

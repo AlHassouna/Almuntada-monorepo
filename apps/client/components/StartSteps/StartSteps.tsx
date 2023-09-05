@@ -12,7 +12,7 @@ const StartSteps = ({number, text}) => (
     <FlexCenter
       className='w-[400px]'
     >
-      <p className="flex-1 font-normal text-[20px] text-[black] leading-[32.4px]">
+      <p className="flex-1 font-normal text-[20px] text-[white] leading-[32.4px]">
         {text}
       </p>
     </FlexCenter>

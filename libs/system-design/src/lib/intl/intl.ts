@@ -20,6 +20,17 @@ function useIntlShared() {
       name: intl.formatMessage({id: 'navbar.contact'}),
       link: '/contact',
     },
+    {
+      id: 4,
+      name: intl.formatMessage({id: 'navbar.events'}),
+      link: '/events',
+    },
+    {
+      id: 5,
+      name: intl.formatMessage({id: 'homepage.joinus'}),
+      link: '/joinus'
+    },
+
   ];
 
   return links;

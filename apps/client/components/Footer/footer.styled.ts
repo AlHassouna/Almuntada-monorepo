@@ -11,10 +11,10 @@ export const FooterContainer = styled.div`
   padding: 0 15rem;
   display: flex;
   flex-direction: row-reverse;
-  height: 25vh;
+  height: 55vh;
   align-items: center;
   justify-content: space-between;
-  background: #fcfcfc;
+  background: #06143f;
   @media screen and (max-width: 768px) {
     width: 100vw;
     padding: 0rem;
@@ -23,14 +23,11 @@ export const FooterContainer = styled.div`
 `;
 export const FooterCopyRight = styled.div`
   margin: 0 auto;
-  padding: 0 15rem;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   color: white;
-  height: 10vh;
   align-items: center;
   justify-content: space-between;
-  background: #315ba4;
   @media screen and (max-width: 768px) {
     width: 100vw;
     padding: 0rem;
@@ -45,39 +42,30 @@ export const LinksContainer = styled.div`
 
 
 export const LogoAndLinksContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  height: 50%;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 
 export const Facebook = styled(FacebookIcon)`
-  color: #315ba4;
+  color: white;
   font-size: 2rem;
   cursor: pointer;
-
-  &:hover {
-    color: #315ba4;
-  }
 `;
 
 export const LinkedIn = styled(LinkedInIcon)`
-  color: #315ba4;
+  color: white;
   font-size: 2rem;
   cursor: pointer;
 
-  &:hover {
-    color: #315ba4;
-  }
 `;
 
 export const Instagram = styled(InstagramIcon)`
-  color: #315ba4;
+  color: white;
   font-size: 2rem;
   cursor: pointer;
-
-  &:hover {
-    color: #315ba4;
-  }
 `;
 
 export const ContactUs = styled.div`
@@ -90,12 +78,12 @@ export const ContactUs = styled.div`
 
 export const ContactUsTitle = styled.h3`
   font-size: 1.5rem;
-  color: #315ba4;
+  color: white;
 `
 
 export const ContactUsText = styled.div`
   font-size: 1rem;
-  color: #315ba4;
+  color: white;
 `
 
 export const ContactUsContainer = styled.div`
@@ -107,33 +95,23 @@ export const ContactUsContainer = styled.div`
 
 
 export const Phone = styled(PhoneIcon)`
-  color: #315ba4;
+  color: white;
   font-size: 2rem;
   cursor: pointer;
-
-  &:hover {
-    color: #315ba4;
-  }
 `;
 export const Email = styled(EmailIcon)`
-  color: #315ba4;
+  color: white;
   font-size: 2rem;
   cursor: pointer;
 
-  &:hover {
-    color: #315ba4;
-  }
 `;
 
 
 export const Telegram = styled(TelegramIcon)`
-  color: #315ba4;
+  color: white;
   font-size: 2rem;
   cursor: pointer;
 
-  &:hover {
-    color: #315ba4;
-  }
 `;
 
 export const Tiktok = styled.img`

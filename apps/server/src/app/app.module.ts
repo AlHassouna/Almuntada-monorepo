@@ -10,6 +10,7 @@ import {typeOrmAsyncConfig} from "./config/typeorm.config";
 import {AuthModule} from "./auth/auth.module";
 import {MailModule} from "./mailer/mailer.module";
 import {VisitorsModule} from "./visitors/visitors.module";
+import {EventsModule} from "./events/events.module";
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import {VisitorsModule} from "./visitors/visitors.module";
     ContactModule,
     AuthModule,
     VisitorsModule,
+    EventsModule,
     ConfigModule.forRoot({isGlobal: true}),
     TypeOrmModule.forRootAsync(typeOrmAsyncConfig),
     MailModule

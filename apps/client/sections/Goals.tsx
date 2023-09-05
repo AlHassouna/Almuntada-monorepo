@@ -21,8 +21,7 @@ const Goals = () => {
     photo: string;
   }>;
   return (
-    <HomeSection>
-      <HeroGradient/>
+    <HomeSection property={"#06143f"}>
       <MContainer
         variants={staggerContainer(0.1, 0.1)}
         initial="hidden"
@@ -47,13 +46,13 @@ const Goals = () => {
           </div>
         </Div>
         <Div
-          variants={planetVariants(getDirection(locale) === 'rtl' ? 'left' : 'right')}
+          variants={fadeIn(getDirection(locale) === 'rtl' ? 'left' : 'right', 'tween', 0.5, 1)}
           className={`flex-1 flex items-center justify-center `}
         >
           <img
             src="/goals.png"
             alt="goals"
-            className="w-[90%] h-[90%] object-contain"
+            className="sm:w-[90%] sm:h-[90%] sm:object-contain hidden sm:block"
           />
         </Div>
       </MContainer>

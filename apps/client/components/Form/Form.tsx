@@ -41,7 +41,7 @@ const ContactForm: FC<ContactUsProps> = ({onSubmit}) => {
               content='https://res.cloudinary.com/dieieuuby/image/upload/v1687169761/FinalLogo_jwfwun.png'/>
         <title>{title}</title>
       </Head>
-      <div className='flex flex-col justify-center h-[100vh] '>
+      <div className='flex flex-col justify-center h-[100vh]'>
         <StyledHeading>{intl.formatMessage({id: 'contactpage.title'})}</StyledHeading>
         <Formik
           initialValues={initialValues}

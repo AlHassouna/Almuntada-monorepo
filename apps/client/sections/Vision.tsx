@@ -12,8 +12,7 @@ const Vision = () => {
   const {locale} = useRouter();
   const {div: Div} = motion;
   return (
-    <HomeSection property='#fbfcfe'>
-      {/*<HeroGradient/>*/}
+    <HomeSection>
       <MContainer
         variants={staggerContainer(0.1, 0.1)}
         initial="hidden"
@@ -22,18 +21,18 @@ const Vision = () => {
         className="mx-auto flex lg:flex-row flex-col gap-8"
       >
         <Div
-          variants={planetVariants(getDirection(locale) === "rtl" ? "right" : "left")}
+          variants={fadeIn(getDirection(locale) === 'rtl' ? 'left' : 'right', 'tween', 0.5, 1)}
           className={`flex-1 flex items-center justify-center `}
         >
           <img
-            src="/socialimpact.png"
+            src="/hero.png"
             alt="socialimpact"
-            className="w-[90%] h-[90%] object-contain"
+            className="sm:w-[90%] sm:h-[90%] sm:object-contain hidden sm:block"
           />
         </Div>
         <Div
           variants={fadeIn(getDirection(locale) === "rtl" ? "right" : "left", "tween", 0.2, 1)}
-          className="flex-[0.75] flex justify-center flex-col"
+          className="flex-[0.75] flex justify-center flex-col sm:mt-0 mt-80"
         >
           <TitleText title={<>{intl.messages["homepage.vision.sub.title"]}</>} textStyles={"text-center"}/>
           <div className="mt-[31px] flex flex-col w-full gap-[24px] ">

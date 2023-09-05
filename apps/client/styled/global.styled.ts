@@ -4,11 +4,10 @@ export const MainSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2rem 0;
   height: 100vh;
+  background: ${props => props.property || "white"};
   @media screen and (max-width: 1024px) {
     flex-direction: column;
-    margin-top: 2rem;
   }
 `;
 export const CardsSection = styled.section`
@@ -24,7 +23,6 @@ export const HomeSection = styled.section`
   display: flex;
   background: ${props => props.property || "white"};
   justify-content: center;
-  z-index: 10;
   margin-bottom: 20px;
   @media screen and (max-width: 1024px) {
     height: max-content;

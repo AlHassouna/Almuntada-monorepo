@@ -2,12 +2,15 @@
   "page.home.head.title": "Al-Muntada - The Arab Academic Imprint",
   "navbar.podcast": "Podcast",
   "navbar.academic": "List of Academics",
+  "navbar.language": "Language",
   "navbar.contact": "Contact Us",
+  "navbar.events": "Events",
   "homepage.joinus": "Join Us",
   "homepage.title": "Al-Muntada",
   "homepage.title_1": "The Arab Academic Imprint",
   "homepage.subtitle": "Aspiring to provide academics with the opportunity to establish an Arab academic network for multilateral sharing of knowledge related to the academic world.",
   "homepage.about": "About the Project",
+  "homepage.learn_more": "Learn More",
   "homepage.description": "Almuntada – The Arab Academic Imprint is a forum aiming for the advancement of academic achievements in the Arabic community. It does so by providing a platform for Arab academics of various educational backgrounds to meet, network, exchange experiences and create new opportunities.  Moreover, the forum aims to place itself as the main reference for the younger generation hoping to pursue an academic degree.",
   "homepage.about_2": "We believe that education in general and taking part in an academic journey in specific is considered one of the means for shrinking the gaps of poverty.  ",
   "homepage.description_2": "Studies have shown that the percentage of Arab academics is lower than Jewish academics in the country. \nThe Arab society faces many challenges represented in the socio-economic gaps, which is also reflected in the educational system in general and in the employment opportunities in specific.  Our forum would like to join the voices calling for fighting poverty.\n",
@@ -20,6 +23,9 @@
   "homepage.missfix.sub.title": "Acknowledgment and support",
   "homepage.missfix.desc": "The “Miss Fix” competition for social impact was held in September 2022, a competition held by the women’ lobby “Shdulat Nashim” sponsored by “Bank Hapoalim”.\nThe competition is set to allow shedding light on social initiatives as well as to women taking part in such initiatives. The fundamental values on which the competition evaluates the participating initiatives are: social justice, equality, sustainability, health, technology and human rights. These values would allow for a variety of initiatives to take part in the competition, focusing on those led by women entrepreneurs. \n183 women had participated in the 2022 competition, presenting a variety of initiatives. Over 70 thousand voters had voted for the various initiates in that competition. The “Al-Muntada” project won 2nd place.\n",
   "homepage.goals.title": "Our goals ",
+  "stepper.step1": "Personal information",
+  "stepper.step2": "Technical information",
+  "stepper.step3": "Social media",
   "homepage.goals": [
     {
       "desc": "Management and operation: \nAl-Muntada is a social platform for academy students as well as academy graduates in the Arab society. The platform is constantly growing and evolving as is open for new members wanting to take part in knowledge sharing, cooperation, and much more.   \n"
