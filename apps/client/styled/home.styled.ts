@@ -52,7 +52,7 @@ export const Heading = styled(motion.h1)`
   font-weight: bold;
   text-transform: uppercase;
   color: ${props => props.property || "white"};
-  font-size: 80px;
+  font-size: 60px;
   @media screen and (max-width: 1474px) {
     font-size: 40px;
     line-height: 74.4px;
@@ -95,12 +95,11 @@ export const SubHeading = styled(motion.h1)`
   }
 `;
 export const Text = styled(motion.p)`
-  font-size: ${props => props.id || "80px"};
+  font-size: ${props => props.id || "60px"};
   color: ${props => props.property || "white"};
   margin: 0;
   font-weight: 400;
   @media screen and (max-width: 1440px) {
-    text-align: center;
     font-size: ${props => props.about || "40px"};
     line-height: 74.4px;
   }

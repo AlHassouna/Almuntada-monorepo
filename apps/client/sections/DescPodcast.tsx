@@ -8,12 +8,19 @@ import {Skeleton} from "@mui/material";
 import {useGetPodcastByStatus} from "@lib/system-design";
 import Head from "next/head";
 import React from "react";
+import Lottie, {LottieRefCurrentProps} from "lottie-react";
+import animationData from "../assets/podcast.json";
+import {getDirection} from "../pages/_app";
+import {useRouter} from "next/router";
 
 export const DescPodcast = () => {
   const intl = useIntl();
   const title = intl.formatMessage({id: 'page.home.head.title'});
-  const {p: P} = motion
+  const {p: P, div: Div} = motion
   const {data, isLoading} = useGetPodcastByStatus(true);
+  const {locale} = useRouter();
+  const educationRef = React.useRef<LottieRefCurrentProps>(null);
+
   return (
     <MainContainer>
       <Head>
@@ -28,22 +35,38 @@ export const DescPodcast = () => {
           initial="hidden"
           whileInView="show"
           viewport={{once: false, amount: 0.25}}
-          className='mx-auto flex flex-col justify-center items-center gap-8'
+          className='mx-auto flex justify-center items-center gap-8'
         >
-          <P
-            variants={fadeIn('up', 'tween', 0.2, 1)}
-            className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[black]"
-          >
-            {intl.formatMessage({id: 'podcastpage.desc'})}
+          <div style={{
+            width: "50%"
+          }}>
+            <P
+              variants={fadeIn('up', 'tween', 0.2, 1)}
+              className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[black]"
+            >
+              {intl.formatMessage({id: 'podcastpage.desc'})}
 
-          </P>
-          <P
-            variants={fadeIn('up', 'tween', 0.6, 1)}
-            className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[black]"
-          >
-            {intl.formatMessage({id: 'podcastpage.subdesc'})}
+            </P>
+            <P
+              variants={fadeIn('up', 'tween', 0.6, 1)}
+              className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[black]"
+            >
+              {intl.formatMessage({id: 'podcastpage.subdesc'})}
 
-          </P>
+            </P>
+          </div>
+          <Div
+            variants={fadeIn(getDirection(locale) === 'rtl' ? 'left' : 'right', 'tween', 0.5, 1)}
+            className={`xl:flex-[1.5] flex justify-center items-center w-1/2 xl:h-screen`}
+          >
+            <Lottie
+              style={{
+                height: '100%',
+              }}
+              loop={true}
+              lottieRef={educationRef}
+              animationData={animationData}/>
+          </Div>
         </MotionContainer>
       </div>
       {

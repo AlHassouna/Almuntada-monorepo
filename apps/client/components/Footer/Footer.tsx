@@ -44,12 +44,6 @@ const Footer = () => {
           </ContactUsTitle>
           <ContactUsText>
             <ContactUsContainer>
-              <Phone/>
-              <span>
-            052-9086918
-              </span>
-            </ContactUsContainer>
-            <ContactUsContainer>
               <Email/>
               <span>
               almuntada.ac@gmail.com
@@ -66,6 +60,8 @@ const Footer = () => {
                         fgColor={'white'}
                         bgColor={'transparent'}/>
             <SocialIcon target="_blank" url="https://t.me/almuntata" fgColor={'white'}
+                        bgColor={'transparent'}/>
+            <SocialIcon target='_blank' url={"https://twitter.com/Almuntada_"} fgColor={'white'}
                         bgColor={'transparent'}/>
             <SocialIcon target="_blank" url="https://www.tiktok.com/@almuntada.ac?_t=8d8iCV5K44g&_r=1" fgColor={'white'}
                         bgColor={'#06143f'}/>

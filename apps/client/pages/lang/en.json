@@ -318,6 +318,8 @@
   "academicpage.dialog.error.email": "Email already exists",
   "academicpage.dialog.phone": "Phone Number",
   "academicpage.dialog.checkbox": "I confirm that I have read the privacy policy, I confirm that the information I provided is accurate and reliable, I agree to bear the responsibility for any inaccurate or unreliable information provided by myself. \nIn addition, I consent to the publishing of my personal profile picture on the website and in the ALMUNTADA forum's database and it's partners' database.",
+  "academicpage.dialog.linkedIn": "LinkedIn (optional)",
+  "academicpage.dialog.facebook": "Facebook (optional)",
   "contactpage.title": "Contact Us",
   "contactpage.text": "For contact us please fill the form below",
   "contactpage.submit": "Submit",
@@ -343,19 +345,7 @@
       "name": "Cooperation of operators or institutions"
     },
     {
-      "name": "Find a workshop or training"
-    },
-    {
-      "name": "Advice for choosing a career"
-    },
-    {
-      "name": "Find a job"
-    },
-    {
       "name": "I would like to volunteer for the forum"
-    },
-    {
-      "name": "Find a scholarship"
     },
     {
       "name": "Other"
@@ -366,5 +356,7 @@
   "footer.contactus": "Contact Us",
   "uploadPhoto.desc": "Please upload your photo that is not larger than 10MB",
   "addNewLine": "Press on the line to add",
-  "helperText": "If you don't see your subject in the list, please write it and click add"
+  "helperText": "If you don't see your subject in the list, please write it and click add",
+  "eventspage.title": "Upcoming lectures",
+  "eventspage.description": "We share through the \"Almonada\" forum platform the schedules in which lectures will be published through the association's social media networks, in collaboration with Arab academics from across the country. We will cover a variety of topics each time to share knowledge and contribute to the community.\n"
 }

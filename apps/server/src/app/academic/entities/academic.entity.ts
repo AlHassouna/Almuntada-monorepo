@@ -51,10 +51,17 @@ export class Academic {
   @ManyToOne(() => Company, (company) => company.user)
   company: Company;
 
+  @Column({default: ""})
+  linkedIn: string
+
+  @Column({default: ""})
+  facebook: string
+
   @Column({type: "boolean", default: false})
   isApproved: boolean;
   @Column({type: "boolean", default: false})
   isBlocked: boolean;
+
 
   @Column()
   isAgree: boolean;

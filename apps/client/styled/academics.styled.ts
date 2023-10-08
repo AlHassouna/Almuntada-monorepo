@@ -42,13 +42,26 @@ export const StyledForm = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem 1rem;
+
   @media screen and (max-width: 1024px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: auto; /* Set rows to 'auto' to allow the content to dictate the row height */
     grid-gap: 1rem 1rem;
+
+    /* Specify grid area for each child element to ensure they appear on separate lines */
+    & > * {
+      grid-column: 1;
+      grid-row: auto;
+    }
   }
 `;
+
 export const FieldContainer = styled.div`
   /* For larger screens, the field container takes half of the row (1fr) */
   grid-column: span 2;
+`;
+
+export const FieldC = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

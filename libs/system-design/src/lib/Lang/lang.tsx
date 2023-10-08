@@ -60,7 +60,13 @@ export const TemporaryDrawer = () => {
     <div>
       {(['top'] as const).map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>
+          <Button onClick={toggleDrawer(anchor, true)}
+                  sx={{
+                    color: "#faa717",
+                    fontSize: "22px",
+                    fontFamily: 'Noto Naskh Arabic'
+                  }}
+          >
             {
               intl.formatMessage({
                 id: 'navbar.language',
