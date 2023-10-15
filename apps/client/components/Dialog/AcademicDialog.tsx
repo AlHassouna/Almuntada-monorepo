@@ -93,8 +93,14 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
       company: Yup.string().matches(subjectsRegex, "Only English letters").required(String(required)),
       imageUrl: Yup.string().optional(),
       gender: Yup.string().required(String(required)),
-      facebook: Yup.string().optional(),
-      linkedIn: Yup.string().optional(),
+      facebook: Yup.string().matches(
+        /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
+        'Please enter valid url'
+      ).optional(),
+      linkedIn: Yup.string().matches(
+        /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
+        'Please enter valid url'
+      ).optional(),
     });
     const locale = useLocale();
     const [loading, setLoading] = React.useState(false);
