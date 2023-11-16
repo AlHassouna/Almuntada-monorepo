@@ -25,19 +25,6 @@ export class CreateUserDto {
   imageUrl: string;
 
   @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  @IsUrl()
-  facebook: string;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  @IsUrl()
-  linkedIn: string;
-
-
-  @ApiProperty()
   @Type(() => Date)
   age: string;
 
