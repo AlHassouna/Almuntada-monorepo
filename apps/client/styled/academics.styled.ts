@@ -42,7 +42,6 @@ export const StyledForm = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem 1rem;
-
   @media screen and (max-width: 1024px) {
     grid-template-columns: 1fr;
     grid-template-rows: auto; /* Set rows to 'auto' to allow the content to dictate the row height */

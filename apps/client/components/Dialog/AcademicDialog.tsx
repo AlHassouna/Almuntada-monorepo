@@ -148,7 +148,7 @@ export const AcademicDialog: FC<Props> = ({OnSubmit, handleClose, isOpen}) => {
             top: theme => theme.spacing(1),
           }}
         >
-          <CloseIcon/>
+          {/*<CloseIcon/>*/}
         </IconButton>
         <DialogContent>
           <DialogContentText>
@@ -410,4 +410,9 @@ const JoinUsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 1024px) {
+    width: 90%;
+  }
+}
 `;
