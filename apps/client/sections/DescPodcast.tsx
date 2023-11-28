@@ -1,8 +1,8 @@
 import {useIntl} from "react-intl";
 import {motion} from "framer-motion";
-import {MainContainer, MotionContainer} from "../styled/home.styled";
+import {Heading, MainContainer, MotionContainer} from "../styled/home.styled";
 import {AboutGradient} from '../styled/global.styled';
-import {fadeIn, staggerContainer} from "../utils/motion";
+import {fadeIn, staggerContainer, textVariant} from "../utils/motion";
 import PodcastCard from "../components/Podcast/PodcastCard";
 import {Skeleton} from "@mui/material";
 import {useGetPodcastByStatus} from "@lib/system-design";
@@ -40,16 +40,26 @@ export const DescPodcast = () => {
           <div style={{
             width: "50%"
           }}>
+            <Heading
+              property={"#06143f"}
+              variants={fadeIn('up', 'tween', 0.2, 1)}
+              className="mt-[8px] font-normal sm:text-[42px] text-[25px] text-center text-[black]"
+            >
+              {
+                intl.formatMessage({id: 'podcastpage.title'})
+              }
+
+            </Heading>
             <P
               variants={fadeIn('up', 'tween', 0.2, 1)}
-              className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[black]"
+              className="mt-[8px] font-normal sm:text-[22px] text-[14px] text-center text-[black]"
             >
               {intl.formatMessage({id: 'podcastpage.desc'})}
 
             </P>
             <P
               variants={fadeIn('up', 'tween', 0.6, 1)}
-              className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-[black]"
+              className="mt-[8px] font-normal sm:text-[22px] text-[14px] text-center text-[black]"
             >
               {intl.formatMessage({id: 'podcastpage.subdesc'})}
 

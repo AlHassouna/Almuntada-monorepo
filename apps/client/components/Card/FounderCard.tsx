@@ -17,7 +17,7 @@ export const FounderCard: FC<Props> = ({name, desc, image}) => {
     <Card sx={{width: 300, textAlign: "center", height: 500, overflow: 'auto'}}>
       <CardMedia sx={{height: 300, filter: "grayscale(100%)"}} image={image} title={name}/>
       <CardContent>
-        <Typography variant="h3" color="black">
+        <Typography variant="h4" color="black">
           {name}
         </Typography>
         <Typography

@@ -29,7 +29,7 @@ const MissFix = () => {
           <TitleText title={<>{intl.messages['homepage.missfix.sub.title']}</>} textStyles={'text-center'}/>
           <P
             variants={fadeIn('up', 'tween', 0.2, 1)}
-            className="mt-[8px] font-normal sm:text-[25px] text-[20px] text-center text-[black]"
+            className="mt-[8px] font-normal sm:text-[25px] text-[20px] text-right text-[black]"
           >
             {intl.formatMessage({id: "homepage.missfix.desc"})}
 
